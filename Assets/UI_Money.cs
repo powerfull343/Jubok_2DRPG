@@ -55,15 +55,15 @@ public class UI_Money : MonoBehaviour {
             //소지금이 감소할때
             if (!nMoneyRate)
             {
-                Debug.Log("Minus");
-                if(m_ChangeAmount <= 0)
+                if (m_ChangeAmount <= 0)
                 {
-                    nRenderingMoney += nUpdateMoneyAmount;
-                    m_ChangeAmount -= nUpdateMoneyAmount;
+                    nRenderingMoney -= nUpdateMoneyAmount;
+                    m_ChangeAmount += nUpdateMoneyAmount;
+                    //Debug.Log(m_ChangeAmount);
                 }
                 else
                 {
-                    Debug.Log("MinusEnd");
+                    //Debug.Log("MinusEnd");
                     nRenderingMoney =
                         DataController.GetInstance().InGameData.Money;
                     m_ChangeAmount = 0;
@@ -75,16 +75,16 @@ public class UI_Money : MonoBehaviour {
             }
             else //소지금이 증가할때
             {
-                Debug.Log("Plus");
+                //Debug.Log("Plus");
                 if (m_ChangeAmount >= 0)
                 {
                     nRenderingMoney += nUpdateMoneyAmount;
                     m_ChangeAmount -= nUpdateMoneyAmount;
-                    Debug.Log(nUpdateMoneyAmount);
+                    //Debug.Log(m_ChangeAmount);
                 }
                 else
                 {
-                    Debug.Log("PlusEnd");
+                    //Debug.Log("PlusEnd");
                     nRenderingMoney =
                         DataController.GetInstance().InGameData.Money;
                     m_ChangeAmount = 0;

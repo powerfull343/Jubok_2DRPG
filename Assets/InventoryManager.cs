@@ -110,15 +110,16 @@ public class InventoryManager :
         float fChangeAmount = (SelectedItem.ItemInfo.itemWeight * nItemCount * nPlustoMinus);
         m_fItemWeight += fChangeAmount;
 
+        //"N1" -> 소수점 1자리까지만 출력함.
         string strWeight = m_fItemWeight.ToString("N1");
         m_fItemWeight = float.Parse(strWeight);
-
 
         UpdateWeightLabel();
     }
 
     private void UpdateWeightLabel()
     {
+        Debug.Log("Update");
         m_Weightlabel.text = m_fItemWeight.ToString() + " / " + m_fItemMaxWeight.ToString();
     }
 
@@ -137,9 +138,9 @@ public class InventoryManager :
     {
         if (m_fItemWeight + fWeightSize > m_fItemMaxWeight)
         {
-            Debug.Log(m_fItemWeight);
-            Debug.Log(fWeightSize);
-            Debug.Log(m_fItemMaxWeight);
+            //Debug.Log(m_fItemWeight);
+            //Debug.Log(fWeightSize);
+            //Debug.Log(m_fItemMaxWeight);
             return false;
         }
 
@@ -181,6 +182,14 @@ public class InventoryManager :
         //소지될 무게 추가
         SetWeight(SelectedItem, nBuyItemCount, true);
 
+        //소지가짓수 체크
+        if(m_ItemSlotList.Last().ChildItem)
+        {
+            Debug.Log("Full Bag");
+            return;
+        }
+
+        Debug.Log("Additem");
         //아이템 추가
         AddItem(SelectedItem, nBuyItemCount);
     }
@@ -213,6 +222,18 @@ public class InventoryManager :
         GameObject ItemObject = null;
         List<Item_Interface> KindofItem;
         Item_Interface_Comp newItemInfo;
+
+        for (int i = 0; i < m_ItemSlotList.Count; ++i)
+        {
+            if (!m_ItemSlotList[i].ChildItem)
+            {
+                m_nItemCount = i;
+                Debug.Log(m_nItemCount);
+                break;
+            }
+        }
+
+        //현재 아이템이 목록에 없는경우
         if (!DataController.GetInstance().InGameData.Inventory.ContainsKey(ItemComp.ItemInfo.itemName))
         {
             //DataController에 추가한다.
@@ -222,28 +243,17 @@ public class InventoryManager :
                 ItemComp.ItemInfo.itemName, KindofItem);
 
             //InventoryManager에 아이템 목록을 추가한다.
-            
             ItemObject = ItemManager.GetInstance().ItemInfoToGameObject(ItemComp.ItemInfo);
             ItemObject.SetActive(false);
             newItemInfo = ItemObject.AddComponent<Item_Interface_Comp>();
             newItemInfo.ItemInfo = ItemComp.ItemInfo;
             newItemInfo.ItemInfo.itemCount = nItemCount;
 
-            for(int i = 0; i < m_ItemSlotList.Count; ++i)
-            {
-                if(!m_ItemSlotList[i].ChildItem)
-                {
-                    m_nItemCount = i;
-                    break;
-                }
-            }
-
             ItemObject.transform.parent = m_ItemSlotList[m_nItemCount].transform;
             ItemObject.transform.localScale = Vector3.one;
             ItemObject.transform.localPosition = Vector3.zero;
             ItemObject.SetActive(true);
-
-            m_ItemSlotList[m_nItemCount++].ChildItem = newItemInfo;
+            m_ItemSlotList[m_nItemCount].ChildItem = newItemInfo;
         }
         else
         {
@@ -258,15 +268,15 @@ public class InventoryManager :
                 ItemObject.SetActive(false);
                 newItemInfo = ItemObject.AddComponent<Item_Interface_Comp>();
                 newItemInfo.ItemInfo = ItemComp.ItemInfo;
-                ItemObject.transform.parent = m_ItemSlotList[m_nItemCount++].transform;
+                ItemObject.transform.parent = m_ItemSlotList[m_nItemCount].transform;
                 ItemObject.transform.localScale = Vector3.one;
                 ItemObject.transform.localPosition = Vector3.zero;
                 ItemObject.SetActive(true);
                 m_ItemSlotList[m_nItemCount].ChildItem = newItemInfo;
             }
         }
-
-       
+        
+        DataController.GetInstance().Save();
     }
 
     private void DeleteItem(Item_Interface_Comp ItemComp, int nSellItemCount)
@@ -295,16 +305,73 @@ public class InventoryManager :
 
         FindObject.itemCount -= nSellItemCount;
 
+        //갯수가 1개 이상 남아있을시 여기서 연산을 끝낸다.
         if (FindObject.itemCount >= 1)
             return;
 
+        //갯수가 0개가 되었을시 연산을 지속한다.
         KindofItem.Remove(FindObject);
-        ItemComp.transform.parent.GetComponent<Item_Slot>().ChildItem = null;
+        Item_Slot ParentSlot = ItemComp.transform.parent.GetComponent<Item_Slot>();
+        if(ParentSlot == null)
+        {
+            Debug.Log("Cannot Find " + ParentSlot.name);
+            return;
+        }
+
+        ParentSlot.ChildItem = null;
         Destroy(ItemComp.gameObject);
         if (KindofItem.Count == 0)
         {
             KindofItem.Clear();
             DataController.GetInstance().InGameData.Inventory.Remove(ItemKey);
         }
+
+        PushingInventory(ParentSlot);
+
+        Debug.Log("Save");
+        DataController.GetInstance().Save();
+    }
+
+    private void PushingInventory(Item_Slot DeletedSlot)
+    {
+        int SlotCount = m_ItemSlotList.Count;
+        int DeletedPoint = 0;
+        int EndPoint = SlotCount;
+        bool isFind = false;
+
+        for(int i = 0; i < SlotCount; ++i)
+        {
+            if(!isFind && m_ItemSlotList[i] == DeletedSlot)
+            {
+                DeletedPoint = i;
+                Debug.Log(DeletedPoint);
+                isFind = true;
+                continue;
+            }
+
+            if(isFind && !m_ItemSlotList[i].ChildItem)
+            {
+                EndPoint = i;
+                Debug.Log(EndPoint);
+                break;
+            }
+        }
+
+        //조건부 연산 종료 시퀀스 추가
+        //Deletenode와 EndNode위치가 같으면 종료
+
+        //아이템 밀기
+        GameObject MovedItem;
+        for(int i = DeletedPoint + 1; i < EndPoint; ++i)
+        {
+            Debug.Log("Index : " + i);
+            MovedItem = m_ItemSlotList[i].ChildItem.gameObject;
+            m_ItemSlotList[i - 1].ChildItem = m_ItemSlotList[i].ChildItem;
+            MovedItem.transform.parent = m_ItemSlotList[i - 1].transform;
+            MovedItem.transform.localPosition = Vector3.zero;
+        }
+
+        m_ItemSlotList[EndPoint - 1].ChildItem = null;
+        Debug.Log(m_ItemSlotList[EndPoint - 1].ChildItem);
     }
 }

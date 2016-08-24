@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Reflection;
 
 public class Item_Slot : MonoBehaviour {
 
@@ -36,6 +37,14 @@ public class Item_Slot : MonoBehaviour {
     {
         get { return m_ItemIconTrans; }
         set { m_ItemIconTrans = value; }
+    }
+
+    public Item_Slot(Item_Slot origin)
+    {
+        this.m_isSellerItem = origin.m_isSellerItem;
+        this.m_ChildItem = origin.m_ChildItem;
+        this.m_nRowIndex = origin.m_nRowIndex;
+        this.m_ItemIconTrans = origin.m_ItemIconTrans;
     }
     
     //public Item_Interface_Comp GetChildItem()
@@ -78,5 +87,28 @@ public class Item_Slot : MonoBehaviour {
         if(m_isSellerItem)
         UI_GroceryStore_SellList.GetInstance().RenderItemInfo(
             this.ChildItem.ItemInfo.itemWeight, this.ChildItem.ItemInfo.ItemValue);
+    }
+
+    public static void SwapItem(Item_Slot Slot1, Item_Slot Slot2)
+    {
+        Slot1.ChildItem.gameObject.SetActive(false);
+        Slot2.ChildItem.gameObject.SetActive(false);
+
+        Item_Interface_Comp TempItem = new Item_Interface_Comp(Slot1.ChildItem);
+        Slot1.ChildItem = Slot2.ChildItem;
+        Slot2.ChildItem = TempItem;
+
+        Transform Slot1ChildItemTrans =
+            Slot1.transform.FindChild("Sprite - ItemIcon(Clone)");
+        Slot1ChildItemTrans.parent = Slot2.transform;
+        Slot1ChildItemTrans.localPosition = Vector3.zero;
+
+        Transform Slot2ChildItemTrans =
+            Slot2.transform.FindChild("Sprite - ItemIcon(Clone)");
+        Slot2ChildItemTrans.parent = Slot1.transform;
+        Slot2ChildItemTrans.localPosition = Vector3.zero;
+
+        Slot1ChildItemTrans.gameObject.SetActive(true);
+        Slot2ChildItemTrans.gameObject.SetActive(true);
     }
 }

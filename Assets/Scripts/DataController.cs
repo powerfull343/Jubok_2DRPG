@@ -118,7 +118,7 @@ public class DataController : MonoBehaviour {
         m_InGameData.Mana = 20;
         m_InGameData.Attack = 1;
         m_InGameData.Stamina = 10;
-        m_InGameData.Money = 150;
+        m_InGameData.Money = 2000;
         FirstSettingItems();
         m_InGameData.tStat = new tagStatInfo(1, 50f, 1, 25f, 1, 80f);
 

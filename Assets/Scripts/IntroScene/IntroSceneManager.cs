@@ -11,10 +11,14 @@ public class IntroSceneManager : MonoBehaviour {
     private GameObject SubCam;
     [SerializeField]
     private UIWidget m_BackGround;
-    
+    [SerializeField]
+    private UILabel m_TestConsole;
+
+
     void Start()
     {
         MecroMethod.CheckExistComponent<UIWidget>(m_BackGround);
+        MecroMethod.CheckExistComponent<UILabel>(m_TestConsole);
         m_BackGround.SetDimensions(1280, 720);
     }
 

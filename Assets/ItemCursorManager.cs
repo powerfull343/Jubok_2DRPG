@@ -67,7 +67,7 @@ public class ItemCursorManager : MonoBehaviour
             }
             else
             {
-                Debug.Log(Input.mousePosition);
+                //Debug.Log(Input.mousePosition);
 
                 transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition); //-
                 if (Input.GetMouseButtonUp(0))
@@ -238,9 +238,9 @@ public class ItemCursorManager : MonoBehaviour
     
     private void HoveringToMouseUp()
     {
-        Item_Slot HoveringItemSlot = CheckItemSlot(UICamera.hoveredObject);
+        Item_Slot HoveredItemSlot = CheckItemSlot(UICamera.hoveredObject);
         //아이템 슬롯이 선택되지 않은 경우.
-        if (HoveringItemSlot == null)
+        if (HoveredItemSlot == null)
         {
             //리셋하고 끝을 낸다.
             Debug.Log(CheckingHoveringObject().transform.parent.name);
@@ -256,7 +256,7 @@ public class ItemCursorManager : MonoBehaviour
             return;
         }
 
-        HoveringEvent(HoveringItemSlot);
+        HoveringEvent(HoveredItemSlot);
 
         HoveringReset();
     }
@@ -301,7 +301,7 @@ public class ItemCursorManager : MonoBehaviour
             if (newSelectedItemPosition.ChildItem)
             {//새로운 포지션에 아이템이 존재해야 바꿀수있다.
                 //UISprite newHoveringSprite = HoveringItemTrans.GetComponent<UISprite>();
-                SwapItem(m_SelectedSlotPosition, newSelectedItemPosition);
+                Item_Slot.SwapItem(m_SelectedSlotPosition, newSelectedItemPosition);
             }
         }
     }
@@ -320,24 +320,6 @@ public class ItemCursorManager : MonoBehaviour
         }
     }
 
-    private void SwapItem(Item_Slot Slot1, Item_Slot Slot2)
-    {
-        Slot1.ChildItem.gameObject.SetActive(false);
-        Slot2.ChildItem.gameObject.SetActive(false);
-
-        GameObject TempObject = Slot1.ChildItem.gameObject;
-        TempObject.transform.parent = Slot2.transform;
-        TempObject.transform.localPosition = Vector3.zero;
-        TempObject.transform.localScale = Vector3.one;
-
-        TempObject = Slot2.ChildItem.gameObject;
-        TempObject.transform.parent = Slot1.transform;
-        TempObject.transform.localPosition = Vector3.zero;
-        TempObject.transform.localScale = Vector3.one;
-
-        Slot1.ChildItem.gameObject.SetActive(true);
-        Slot2.ChildItem.gameObject.SetActive(true);
-    }
 
     private void DebugingObjectInfo()
     {

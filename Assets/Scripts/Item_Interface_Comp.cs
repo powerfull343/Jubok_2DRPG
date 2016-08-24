@@ -9,4 +9,9 @@ public class Item_Interface_Comp : MonoBehaviour {
         get { return m_ItemInfo; }
         set { m_ItemInfo = value; }
     }
+
+    public Item_Interface_Comp(Item_Interface_Comp Origin)
+    {
+        this.m_ItemInfo = Origin.m_ItemInfo;
+    }
 }

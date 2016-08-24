@@ -36,7 +36,7 @@ public class IntroCameraAction : MonoBehaviour {
         }
 
         _HideBgTexture.enabled = true;
-        yield break;
+        yield return null;
     }
 	
 	
