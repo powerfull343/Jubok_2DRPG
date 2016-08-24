@@ -1,0 +1,508 @@
+fileFormatVersion: 2
+guid: 5381107e411e0e5448a5e1c7a62661a4
+timeCreated: 1468298782
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: bolting01_0
+    21300002: bolting01_1
+    21300004: bolting01_2
+    21300006: bolting01_3
+    21300008: bolting01_4
+    21300010: bolting01_5
+    21300012: bolting01_6
+    21300014: bolting01_7
+    21300016: bolting01_8
+    21300018: bolting01_9
+    21300020: bolting01_10
+    21300022: bolting01_11
+    21300024: bolting01_12
+    21300026: bolting01_13
+    21300028: bolting01_14
+    21300030: bolting01_15
+    21300032: bolting01_16
+    21300034: bolting01_17
+    21300036: bolting01_18
+    21300038: bolting01_19
+    21300040: bolting01_20
+    21300042: bolting01_21
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: bolting01_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 757
+        width: 134
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -67, y: 20}
+        - {x: -67, y: -17}
+        - {x: -65, y: -20}
+        - {x: 64, y: -20}
+        - {x: 67, y: -13}
+        - {x: 67, y: 2}
+        - {x: 34, y: 20}
+    - name: bolting01_1
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 716
+        width: 240
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102, y: 21.5}
+        - {x: -120, y: 5.5}
+        - {x: -120, y: -21.5}
+        - {x: 101, y: -21.5}
+        - {x: 120, y: -10.5}
+        - {x: 120, y: 21.5}
+    - name: bolting01_2
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 752
+        width: 166
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -37, y: 21.5}
+        - {x: -83, y: 0.5}
+        - {x: -83, y: -8.5}
+        - {x: -80, y: -21.5}
+        - {x: 75, y: -21.5}
+        - {x: 83, y: -18.5}
+        - {x: 83, y: 16.5}
+        - {x: 72, y: 21.5}
+    - name: bolting01_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 720
+        width: 45
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: bolting01_4
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 588
+        width: 41
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8.5, y: 80}
+        - {x: 6.5, y: 78}
+        - {x: -6.5, y: 43}
+        - {x: -20.5, y: -67}
+        - {x: -20.5, y: -80}
+        - {x: 1.5, y: -80}
+        - {x: 20.5, y: 12}
+        - {x: 20.5, y: 80}
+      - - {x: -20.5, y: 78}
+        - {x: -20.5, y: 57}
+        - {x: -5.5, y: 57}
+        - {x: 6.5, y: 68}
+        - {x: 6.5, y: 74}
+        - {x: -0.5, y: 78}
+    - name: bolting01_5
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 588
+        width: 44
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22, y: 80}
+        - {x: -22, y: -10}
+        - {x: -8, y: -80}
+        - {x: 22, y: -80}
+        - {x: 22, y: 29}
+        - {x: 4, y: 80}
+      - - {x: 17, y: 74}
+        - {x: 17, y: 48}
+        - {x: 19, y: 46}
+        - {x: 22, y: 46}
+        - {x: 22, y: 73}
+        - {x: 20, y: 75}
+    - name: bolting01_6
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 590
+        width: 74
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34, y: 80}
+        - {x: -37, y: 59}
+        - {x: -37, y: -80}
+        - {x: 23, y: -80}
+        - {x: 37, y: -35}
+        - {x: 37, y: 80}
+      - - {x: -34, y: 80}
+        - {x: -37, y: 78}
+        - {x: -37, y: 52}
+        - {x: -34, y: 52}
+        - {x: -23, y: 58}
+        - {x: -21, y: 60}
+        - {x: -21, y: 80}
+    - name: bolting01_7
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 589
+        width: 39
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.5, y: 80}
+        - {x: -19.5, y: 56}
+        - {x: -2.5, y: -47}
+        - {x: 6.5, y: -71}
+        - {x: 10.5, y: -80}
+        - {x: 19.5, y: -80}
+        - {x: 19.5, y: 15}
+        - {x: -5.5, y: 80}
+      - - {x: 16.5, y: 80}
+        - {x: 12.5, y: 72}
+        - {x: 12.5, y: 46}
+        - {x: 13.5, y: 34}
+        - {x: 16.5, y: 26}
+        - {x: 18.5, y: 24}
+        - {x: 19.5, y: 24}
+        - {x: 19.5, y: 80}
+    - name: bolting01_8
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 589
+        width: 38
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: -53}
+        - {x: -19, y: -80}
+        - {x: -12, y: -80}
+        - {x: -12, y: -68}
+        - {x: -16, y: -53}
+      - - {x: -2, y: 80}
+        - {x: -18, y: 80}
+        - {x: -19, y: 79}
+        - {x: -19, y: -11}
+        - {x: -13, y: -74}
+        - {x: 1, y: -80}
+        - {x: 19, y: -80}
+        - {x: 19, y: -20}
+        - {x: 16, y: -3}
+      - - {x: -19, y: -37}
+        - {x: -16, y: -36}
+        - {x: -16, y: -33}
+        - {x: -18, y: -31}
+        - {x: -19, y: -31}
+    - name: bolting01_9
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 550
+        width: 44
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1, y: 80}
+        - {x: -9, y: 60}
+        - {x: -22, y: -41}
+        - {x: -22, y: -80}
+        - {x: 6, y: -80}
+        - {x: 22, y: 14}
+        - {x: 22, y: 80}
+    - name: bolting01_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 382
+        width: 240
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -120, y: 80}
+        - {x: -120, y: -80}
+        - {x: 120, y: -80}
+        - {x: 120, y: 80}
+    - name: bolting01_11
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 383
+        width: 240
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -120, y: 80}
+        - {x: -120, y: -80}
+        - {x: 120, y: -80}
+        - {x: 120, y: 80}
+    - name: bolting01_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 264
+        width: 126
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -44, y: 54}
+        - {x: -63, y: 0}
+        - {x: -63, y: -54}
+        - {x: 25, y: -54}
+        - {x: 63, y: 13}
+        - {x: 63, y: 54}
+      - - {x: 59, y: -48}
+        - {x: 59, y: -53}
+        - {x: 60, y: -54}
+        - {x: 63, y: -54}
+        - {x: 63, y: -45}
+        - {x: 62, y: -45}
+    - name: bolting01_13
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 263
+        width: 122
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34, y: 54}
+        - {x: -58, y: 14}
+        - {x: -61, y: -14}
+        - {x: -61, y: -54}
+        - {x: 27, y: -54}
+        - {x: 61, y: 10}
+        - {x: 61, y: 54}
+    - name: bolting01_14
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 262
+        width: 124
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -36, y: 54}
+        - {x: -62, y: -8}
+        - {x: -62, y: -54}
+        - {x: 37, y: -54}
+        - {x: 62, y: -9}
+        - {x: 62, y: 54}
+    - name: bolting01_15
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 262
+        width: 126
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29, y: 54}
+        - {x: -41, y: 45}
+        - {x: -63, y: -27}
+        - {x: -63, y: -54}
+        - {x: 25, y: -54}
+        - {x: 56, y: -17}
+        - {x: 63, y: 4}
+        - {x: 63, y: 54}
+    - name: bolting01_16
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 143
+        width: 123
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33.5, y: 54}
+        - {x: -61.5, y: 18}
+        - {x: -61.5, y: -54}
+        - {x: 28.5, y: -54}
+        - {x: 61.5, y: 8}
+        - {x: 61.5, y: 54}
+    - name: bolting01_17
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 143
+        width: 127
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -37.5, y: 54}
+        - {x: -63.5, y: -7}
+        - {x: -63.5, y: -54}
+        - {x: 24.5, y: -54}
+        - {x: 63.5, y: -4}
+        - {x: 63.5, y: 54}
+      - - {x: 60.5, y: -51}
+        - {x: 62.5, y: -53}
+        - {x: 63.5, y: -53}
+        - {x: 63.5, y: -48}
+        - {x: 61.5, y: -48}
+    - name: bolting01_18
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 142
+        width: 128
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -38, y: 54}
+        - {x: -64, y: -8}
+        - {x: -64, y: -54}
+        - {x: 27, y: -54}
+        - {x: 64, y: -23}
+        - {x: 64, y: 54}
+    - name: bolting01_19
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 141
+        width: 117
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -38.5, y: 54}
+        - {x: -51.5, y: 48}
+        - {x: -58.5, y: -5}
+        - {x: -58.5, y: -54}
+        - {x: 25.5, y: -54}
+        - {x: 58.5, y: -2}
+        - {x: 58.5, y: 54}
+    - name: bolting01_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 17
+        width: 122
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31, y: 54}
+        - {x: -42, y: 41}
+        - {x: -61, y: -25}
+        - {x: -61, y: -54}
+        - {x: 17, y: -54}
+        - {x: 61, y: 7}
+        - {x: 61, y: 54}
+    - name: bolting01_21
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 16
+        width: 120
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29, y: 54}
+        - {x: -60, y: -29}
+        - {x: -60, y: -54}
+        - {x: 18, y: -54}
+        - {x: 47, y: -14}
+        - {x: 60, y: 11}
+        - {x: 60, y: 54}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

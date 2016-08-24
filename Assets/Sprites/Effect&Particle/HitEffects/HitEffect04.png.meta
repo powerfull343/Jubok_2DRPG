@@ -1,0 +1,260 @@
+fileFormatVersion: 2
+guid: 6de28857aecb20845a191d831e72bf32
+timeCreated: 1471666338
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: HitEffect01_0
+    21300002: HitEffect01_1
+    21300004: HitEffect01_2
+    21300006: HitEffect01_3
+    21300008: HitEffect01_4
+    21300010: HitEffect01_5
+    21300012: HitEffect01_6
+    21300014: HitEffect01_7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: HitEffect01_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 66
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4, y: 6}
+        - {x: -6, y: 3}
+        - {x: -6, y: -1}
+        - {x: -3, y: -6}
+        - {x: 6, y: -6}
+        - {x: 6, y: 6}
+    - name: HitEffect01_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 66
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 10}
+        - {x: -10, y: 6}
+        - {x: -10, y: -8}
+        - {x: -8, y: -10}
+        - {x: 1, y: -10}
+        - {x: 11, y: -5}
+        - {x: 11, y: 10}
+    - name: HitEffect01_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 66
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 1}
+        - {x: -20, y: 0}
+        - {x: -19, y: -3}
+        - {x: -11, y: -8}
+        - {x: -8, y: -17}
+        - {x: -7, y: -18}
+        - {x: -5, y: -18}
+        - {x: 18, y: -8}
+        - {x: 18, y: 13}
+        - {x: 17, y: 14}
+        - {x: -6, y: 14}
+    - name: HitEffect01_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 66
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2, y: 21}
+        - {x: -15, y: 14}
+        - {x: -21, y: 3}
+        - {x: -21, y: -5}
+        - {x: -10, y: -21}
+        - {x: 0, y: -21}
+        - {x: 22, y: -11}
+        - {x: 22, y: 0}
+        - {x: 17, y: 12}
+        - {x: 16, y: 15}
+        - {x: 3, y: 21}
+    - name: HitEffect01_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 66
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14, y: 22}
+        - {x: -11, y: 22}
+        - {x: -23, y: 11}
+        - {x: -23, y: -8}
+        - {x: -14, y: -22}
+        - {x: 7, y: -22}
+        - {x: 25, y: -10}
+        - {x: 25, y: -2}
+        - {x: 22, y: 17}
+    - name: HitEffect01_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 66
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22, y: 1}
+        - {x: -22, y: -4}
+        - {x: -11, y: -22}
+        - {x: 1, y: -22}
+        - {x: 24, y: -13}
+        - {x: 24, y: 4}
+        - {x: 21, y: 16}
+        - {x: 6, y: 22}
+        - {x: -1, y: 22}
+        - {x: -16, y: 15}
+    - name: HitEffect01_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1, y: 25}
+        - {x: -16, y: 20}
+        - {x: -26, y: 4}
+        - {x: -26, y: -3}
+        - {x: -25, y: -5}
+        - {x: -13, y: -24}
+        - {x: -2, y: -24}
+        - {x: 25, y: -13}
+        - {x: 25, y: 7}
+        - {x: 23, y: 19}
+        - {x: 8, y: 24}
+        - {x: 0, y: 25}
+    - name: HitEffect01_7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 2
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: -13}
+        - {x: -10, y: -16}
+        - {x: -10, y: -23}
+        - {x: -8, y: -24}
+        - {x: -4, y: -24}
+        - {x: -2, y: -20}
+        - {x: -2, y: -15}
+        - {x: -5, y: -13}
+      - - {x: 15, y: -2}
+        - {x: 14, y: -4}
+        - {x: 14, y: -8}
+        - {x: 18, y: -10}
+        - {x: 23, y: -10}
+        - {x: 24, y: -8}
+        - {x: 24, y: -4}
+        - {x: 20, y: -2}
+      - - {x: -21, y: 3}
+        - {x: -25, y: 0}
+        - {x: -25, y: -1}
+        - {x: -22, y: -4}
+        - {x: -17, y: -4}
+        - {x: -15, y: -3}
+        - {x: -14, y: 1}
+        - {x: -16, y: 3}
+      - - {x: -16, y: 17}
+        - {x: -18, y: 15}
+        - {x: -18, y: 13}
+        - {x: -16, y: 10}
+        - {x: -13, y: 9}
+        - {x: -11, y: 9}
+        - {x: -9, y: 10}
+        - {x: -9, y: 14}
+        - {x: -10, y: 17}
+      - - {x: 14, y: 19}
+        - {x: 9, y: 17}
+        - {x: 8, y: 12}
+        - {x: 11, y: 9}
+        - {x: 14, y: 9}
+        - {x: 18, y: 12}
+        - {x: 18, y: 17}
+        - {x: 17, y: 19}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

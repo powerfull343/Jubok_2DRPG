@@ -1,0 +1,4253 @@
+fileFormatVersion: 2
+guid: 12782cd68a4c9f34b92be423e1ec79f1
+timeCreated: 1465542591
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: HughBaldwin01_0
+    21300002: HughBaldwin01_1
+    21300004: HughBaldwin01_2
+    21300006: HughBaldwin01_3
+    21300008: HughBaldwin01_4
+    21300010: HughBaldwin01_5
+    21300012: HughBaldwin01_6
+    21300014: HughBaldwin01_7
+    21300016: HughBaldwin01_8
+    21300018: HughBaldwin01_9
+    21300020: HughBaldwin01_10
+    21300022: HughBaldwin01_11
+    21300024: HughBaldwin01_12
+    21300026: HughBaldwin01_13
+    21300028: HughBaldwin01_14
+    21300030: HughBaldwin01_15
+    21300032: HughBaldwin01_16
+    21300034: HughBaldwin01_17
+    21300036: HughBaldwin01_18
+    21300038: HughBaldwin01_19
+    21300040: HughBaldwin01_20
+    21300042: HughBaldwin01_21
+    21300044: HughBaldwin01_22
+    21300046: HughBaldwin01_23
+    21300048: HughBaldwin01_24
+    21300050: HughBaldwin01_25
+    21300052: HughBaldwin01_26
+    21300054: HughBaldwin01_27
+    21300056: HughBaldwin01_28
+    21300058: HughBaldwin01_29
+    21300060: HughBaldwin01_30
+    21300062: HughBaldwin01_31
+    21300064: HughBaldwin01_32
+    21300066: HughBaldwin01_33
+    21300068: HughBaldwin01_34
+    21300070: HughBaldwin01_35
+    21300072: HughBaldwin01_36
+    21300074: HughBaldwin01_37
+    21300076: HughBaldwin01_38
+    21300078: HughBaldwin01_39
+    21300080: HughBaldwin01_40
+    21300082: HughBaldwin01_41
+    21300084: HughBaldwin01_42
+    21300086: HughBaldwin01_43
+    21300088: HughBaldwin01_44
+    21300090: HughBaldwin01_45
+    21300092: HughBaldwin01_46
+    21300094: HughBaldwin01_47
+    21300096: HughBaldwin01_48
+    21300098: HughBaldwin01_49
+    21300100: HughBaldwin01_50
+    21300102: HughBaldwin01_51
+    21300104: HughBaldwin01_52
+    21300106: HughBaldwin01_53
+    21300108: HughBaldwin01_54
+    21300110: HughBaldwin01_55
+    21300112: HughBaldwin01_56
+    21300114: HughBaldwin01_57
+    21300116: HughBaldwin01_58
+    21300118: HughBaldwin01_59
+    21300120: HughBaldwin01_60
+    21300122: HughBaldwin01_61
+    21300124: HughBaldwin01_62
+    21300126: HughBaldwin01_63
+    21300128: HughBaldwin01_64
+    21300130: HughBaldwin01_65
+    21300132: HughBaldwin01_66
+    21300134: HughBaldwin01_67
+    21300136: HughBaldwin01_68
+    21300138: HughBaldwin01_69
+    21300140: HughBaldwin01_70
+    21300142: HughBaldwin01_71
+    21300144: HughBaldwin01_72
+    21300146: HughBaldwin01_73
+    21300148: HughBaldwin01_74
+    21300150: HughBaldwin01_75
+    21300152: HughBaldwin01_76
+    21300154: HughBaldwin01_77
+    21300156: HughBaldwin01_78
+    21300158: HughBaldwin01_79
+    21300160: HughBaldwin01_80
+    21300162: HughBaldwin01_81
+    21300164: HughBaldwin01_82
+    21300166: HughBaldwin01_83
+    21300168: HughBaldwin01_84
+    21300170: HughBaldwin01_85
+    21300172: HughBaldwin01_86
+    21300174: HughBaldwin01_87
+    21300176: HughBaldwin01_88
+    21300178: HughBaldwin01_89
+    21300180: HughBaldwin01_90
+    21300182: HughBaldwin01_91
+    21300184: HughBaldwin01_92
+    21300186: HughBaldwin01_93
+    21300188: HughBaldwin01_94
+    21300190: HughBaldwin01_95
+    21300192: HughBaldwin01_96
+    21300194: HughBaldwin01_97
+    21300196: HughBaldwin01_98
+    21300198: HughBaldwin01_99
+    21300200: HughBaldwin01_100
+    21300202: HughBaldwin01_101
+    21300204: HughBaldwin01_102
+    21300206: HughBaldwin01_103
+    21300208: HughBaldwin01_104
+    21300210: HughBaldwin01_105
+    21300212: HughBaldwin01_106
+    21300214: HughBaldwin01_107
+    21300216: HughBaldwin01_108
+    21300218: HughBaldwin01_109
+    21300220: HughBaldwin01_110
+    21300222: HughBaldwin01_111
+    21300224: HughBaldwin01_112
+    21300226: HughBaldwin01_113
+    21300228: HughBaldwin01_114
+    21300230: HughBaldwin01_115
+    21300232: HughBaldwin01_116
+    21300234: HughBaldwin01_117
+    21300236: HughBaldwin01_118
+    21300238: HughBaldwin01_119
+    21300240: HughBaldwin01_120
+    21300242: HughBaldwin01_121
+    21300244: HughBaldwin01_122
+    21300246: HughBaldwin01_123
+    21300248: HughBaldwin01_124
+    21300250: HughBaldwin01_125
+    21300252: HughBaldwin01_126
+    21300254: HughBaldwin01_127
+    21300256: HughBaldwin01_128
+    21300258: HughBaldwin01_129
+    21300260: HughBaldwin01_130
+    21300262: HughBaldwin01_131
+    21300264: HughBaldwin01_132
+    21300266: HughBaldwin01_133
+    21300268: HughBaldwin01_134
+    21300270: HughBaldwin01_135
+    21300272: HughBaldwin01_136
+    21300274: HughBaldwin01_137
+    21300276: HughBaldwin01_138
+    21300278: HughBaldwin01_139
+    21300280: HughBaldwin01_140
+    21300282: HughBaldwin01_141
+    21300284: HughBaldwin01_142
+    21300286: HughBaldwin01_143
+    21300288: HughBaldwin01_144
+    21300290: HughBaldwin01_145
+    21300292: HughBaldwin01_146
+    21300294: HughBaldwin01_147
+    21300296: HughBaldwin01_148
+    21300298: HughBaldwin01_149
+    21300300: HughBaldwin01_150
+    21300302: HughBaldwin01_151
+    21300304: HughBaldwin01_152
+    21300306: HughBaldwin01_153
+    21300308: HughBaldwin01_154
+    21300310: HughBaldwin01_155
+    21300312: HughBaldwin01_156
+    21300314: HughBaldwin01_157
+    21300316: HughBaldwin01_158
+    21300318: HughBaldwin01_159
+    21300320: HughBaldwin01_160
+    21300322: HughBaldwin01_161
+    21300324: HughBaldwin01_162
+    21300326: HughBaldwin01_163
+    21300328: HughBaldwin01_164
+    21300330: HughBaldwin01_165
+    21300332: HughBaldwin01_166
+    21300334: HughBaldwin01_167
+    21300336: HughBaldwin01_168
+    21300338: HughBaldwin01_169
+    21300340: HughBaldwin01_170
+    21300342: HughBaldwin01_171
+    21300344: HughBaldwin01_172
+    21300346: HughBaldwin01_173
+    21300348: HughBaldwin01_174
+    21300350: HughBaldwin01_175
+    21300352: HughBaldwin01_176
+    21300354: HughBaldwin01_177
+    21300356: HughBaldwin01_178
+    21300358: HughBaldwin01_179
+    21300360: HughBaldwin01_180
+    21300362: HughBaldwin01_181
+    21300364: HughBaldwin01_182
+    21300366: HughBaldwin01_183
+    21300368: HughBaldwin01_184
+    21300370: HughBaldwin01_185
+    21300372: HughBaldwin01_186
+    21300374: HughBaldwin01_187
+    21300376: HughBaldwin01_188
+    21300378: HughBaldwin01_189
+    21300380: HughBaldwin01_190
+    21300382: HughBaldwin01_191
+    21300384: HughBaldwin01_192
+    21300386: HughBaldwin01_193
+    21300388: HughBaldwin01_194
+    21300390: HughBaldwin01_195
+    21300392: HughBaldwin01_196
+    21300394: HughBaldwin01_197
+    21300396: HughBaldwin01_198
+    21300398: HughBaldwin01_199
+    21300400: HughBaldwin01_200
+    21300402: HughBaldwin01_201
+    21300404: HughBaldwin01_202
+    21300406: HughBaldwin01_203
+    21300408: HughBaldwin01_204
+    21300410: HughBaldwin01_205
+    21300412: HughBaldwin01_206
+    21300414: HughBaldwin01_207
+    21300416: HughBaldwin01_208
+    21300418: HughBaldwin01_209
+    21300420: HughBaldwin01_210
+    21300422: HughBaldwin01_211
+    21300424: HughBaldwin01_212
+    21300426: HughBaldwin01_213
+    21300428: HughBaldwin01_214
+    21300430: HughBaldwin01_215
+    21300432: HughBaldwin01_216
+    21300434: HughBaldwin01_217
+    21300436: HughBaldwin01_218
+    21300438: HughBaldwin01_219
+    21300440: HughBaldwin01_220
+    21300442: HughBaldwin01_221
+    21300444: HughBaldwin01_222
+    21300446: HughBaldwin01_223
+    21300448: HughBaldwin01_224
+    21300450: HughBaldwin01_225
+    21300452: HughBaldwin01_226
+    21300454: HughBaldwin01_227
+    21300456: HughBaldwin01_228
+    21300458: HughBaldwin01_229
+    21300460: HughBaldwin01_230
+    21300462: HughBaldwin01_231
+    21300464: HughBaldwin01_232
+    21300466: HughBaldwin01_233
+    21300468: HughBaldwin01_234
+    21300470: HughBaldwin01_235
+    21300472: HughBaldwin01_236
+    21300474: HughBaldwin01_237
+    21300476: HughBaldwin01_238
+    21300478: HughBaldwin01_239
+    21300480: HughBaldwin01_240
+    21300482: HughBaldwin01_241
+    21300484: HughBaldwin01_242
+    21300486: HughBaldwin01_243
+    21300488: HughBaldwin01_244
+    21300490: HughBaldwin01_245
+    21300492: HughBaldwin01_246
+    21300494: HughBaldwin01_247
+    21300496: HughBaldwin01_248
+    21300498: HughBaldwin01_249
+    21300500: HughBaldwin01_250
+    21300502: HughBaldwin01_251
+    21300504: HughBaldwin01_252
+    21300506: HughBaldwin01_253
+    21300508: HughBaldwin01_254
+    21300510: HughBaldwin01_255
+    21300512: HughBaldwin01_256
+    21300514: HughBaldwin01_257
+    21300516: HughBaldwin01_258
+    21300518: HughBaldwin01_259
+    21300520: HughBaldwin01_260
+    21300522: HughBaldwin01_261
+    21300524: HughBaldwin01_262
+    21300526: HughBaldwin01_263
+    21300528: HughBaldwin01_264
+    21300530: HughBaldwin01_265
+    21300532: HughBaldwin01_266
+    21300534: HughBaldwin01_267
+    21300536: HughBaldwin01_268
+    21300538: HughBaldwin01_269
+    21300540: HughBaldwin01_270
+    21300542: HughBaldwin01_271
+    21300544: HughBaldwin01_272
+    21300546: HughBaldwin01_273
+    21300548: HughBaldwin01_274
+    21300550: HughBaldwin01_275
+    21300552: HughBaldwin01_276
+    21300554: HughBaldwin01_277
+    21300556: HughBaldwin01_278
+    21300558: HughBaldwin01_279
+    21300560: HughBaldwin01_280
+    21300562: HughBaldwin01_281
+    21300564: HughBaldwin01_282
+    21300566: HughBaldwin01_283
+    21300568: HughBaldwin01_284
+    21300570: HughBaldwin01_285
+    21300572: HughBaldwin01_286
+    21300574: HughBaldwin01_287
+    21300576: HughBaldwin01_288
+    21300578: HughBaldwin01_289
+    21300580: HughBaldwin01_290
+    21300582: HughBaldwin01_291
+    21300584: HughBaldwin01_292
+    21300586: HughBaldwin01_293
+    21300588: HughBaldwin01_294
+    21300590: HughBaldwin01_295
+    21300592: HughBaldwin01_296
+    21300594: HughBaldwin01_297
+    21300596: HughBaldwin01_298
+    21300598: HughBaldwin01_299
+    21300600: HughBaldwin01_300
+    21300602: HughBaldwin01_301
+    21300604: HughBaldwin01_302
+    21300606: HughBaldwin01_303
+    21300608: HughBaldwin01_304
+    21300610: HughBaldwin01_305
+    21300612: HughBaldwin01_306
+    21300614: HughBaldwin01_307
+    21300616: HughBaldwin01_308
+    21300618: HughBaldwin01_309
+    21300620: HughBaldwin01_310
+    21300622: HughBaldwin01_311
+    21300624: HughBaldwin01_312
+    21300626: HughBaldwin01_313
+    21300628: HughBaldwin01_314
+    21300630: HughBaldwin01_315
+    21300632: HughBaldwin01_316
+    21300634: HughBaldwin01_317
+    21300636: HughBaldwin01_318
+    21300638: HughBaldwin01_319
+    21300640: HughBaldwin01_320
+    21300642: HughBaldwin01_321
+    21300644: HughBaldwin01_322
+    21300646: HughBaldwin01_323
+    21300648: HughBaldwin01_324
+    21300650: HughBaldwin01_325
+    21300652: HughBaldwin01_326
+    21300654: HughBaldwin01_327
+    21300656: HughBaldwin01_328
+    21300658: HughBaldwin01_329
+    21300660: HughBaldwin01_330
+    21300662: HughBaldwin01_331
+    21300664: HughBaldwin01_332
+    21300666: HughBaldwin01_333
+    21300668: HughBaldwin01_334
+    21300670: HughBaldwin01_335
+    21300672: HughBaldwin01_336
+    21300674: HughBaldwin01_337
+    21300676: HughBaldwin01_338
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: 2
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: HughBaldwin01_0
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 731
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_1
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 731
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_2
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 729
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_3
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 731
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_4
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 731
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_5
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 731
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_6
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 731
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_7
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 731
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_8
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 731
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_9
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 712
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_10
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 712
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_11
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 712
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_12
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 712
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_13
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 712
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_14
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 710
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_15
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 712
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_16
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 712
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_17
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 712
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_18
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 712
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_19
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 712
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_20
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 712
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_21
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 712
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_22
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 710
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_23
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 712
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_24
+      rect:
+        serializedVersion: 2
+        x: 633
+        y: 712
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_25
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 712
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_26
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 712
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_27
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 712
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_28
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 710
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_29
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 712
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_30
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 712
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_31
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 710
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_32
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 674
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_33
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 674
+        width: 15
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_34
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 674
+        width: 22
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_35
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 674
+        width: 15
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_36
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 674
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_37
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 674
+        width: 21
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_38
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 674
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_39
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 674
+        width: 25
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_40
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 674
+        width: 21
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_41
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 674
+        width: 22
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_42
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 674
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_43
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 674
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_44
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 674
+        width: 25
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_45
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 674
+        width: 23
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_46
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 674
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_47
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 674
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_48
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 677
+        width: 23
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_49
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 678
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_50
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 675
+        width: 25
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_51
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 674
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_52
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 674
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_53
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 674
+        width: 18
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_54
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 674
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_55
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 674
+        width: 25
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_56
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 674
+        width: 18
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_57
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 674
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_58
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 674
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_59
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 674
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_60
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 674
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_61
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 655
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_62
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 655
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_63
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 655
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_64
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 655
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_65
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 655
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_66
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 655
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_67
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 655
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_68
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 655
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_69
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 655
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_70
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 655
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_71
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 655
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_72
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 655
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_73
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 655
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_74
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 655
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_75
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 655
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_76
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 655
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_77
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 655
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_78
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 653
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_79
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 655
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_80
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 653
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_81
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 655
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_82
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 655
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_83
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 655
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_84
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 655
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_85
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 602
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_86
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 602
+        width: 21
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_87
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 602
+        width: 34
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 22.5}
+        - {x: -17, y: -22.5}
+        - {x: 13, y: -22.5}
+        - {x: 17, y: -8.5}
+        - {x: 17, y: 18.5}
+        - {x: 6, y: 22.5}
+    - name: HughBaldwin01_88
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 602
+        width: 37
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.5, y: 22}
+        - {x: -11.5, y: 19}
+        - {x: -15.5, y: 14}
+        - {x: -18.5, y: 8}
+        - {x: -18.5, y: -22}
+        - {x: 8.5, y: -22}
+        - {x: 18.5, y: -11}
+        - {x: 18.5, y: 12}
+        - {x: 5.5, y: 22}
+    - name: HughBaldwin01_89
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 602
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_90
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 602
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_91
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 602
+        width: 25
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_92
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 602
+        width: 21
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_93
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 602
+        width: 28
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_94
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 602
+        width: 22
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_95
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 602
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_96
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 602
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_97
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 602
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_98
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 602
+        width: 57
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_99
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 602
+        width: 58
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22, y: 17.5}
+        - {x: -29, y: 15.5}
+        - {x: -29, y: -17.5}
+        - {x: 1, y: -17.5}
+        - {x: 29, y: -6.5}
+        - {x: 29, y: 17.5}
+    - name: HughBaldwin01_100
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 602
+        width: 59
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29.5, y: 20}
+        - {x: -29.5, y: -20}
+        - {x: 26.5, y: -20}
+        - {x: 29.5, y: -11}
+        - {x: 29.5, y: 20}
+    - name: HughBaldwin01_101
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 602
+        width: 60
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 24}
+        - {x: -30, y: 21}
+        - {x: -30, y: -24}
+        - {x: 29, y: -24}
+        - {x: 30, y: -22}
+        - {x: 30, y: 24}
+    - name: HughBaldwin01_102
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 602
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_103
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 602
+        width: 25
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_104
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 602
+        width: 23
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_105
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 602
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_106
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 580
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_107
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 580
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_108
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 580
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_109
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 580
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_110
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 580
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_111
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 580
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_112
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 580
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_113
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 580
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_114
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 493
+        width: 26
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_115
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 559
+        width: 6
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_116
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 493
+        width: 26
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_117
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 559
+        width: 6
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_118
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 564
+        width: 5
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_119
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 558
+        width: 5
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_120
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 493
+        width: 50
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: 46}
+        - {x: -25, y: 45}
+        - {x: -25, y: -46}
+        - {x: -14, y: -46}
+        - {x: 1, y: -33}
+        - {x: 1, y: 32}
+        - {x: -8, y: 46}
+      - - {x: 9, y: 46}
+        - {x: 6, y: 45}
+        - {x: 1, y: 8}
+        - {x: 1, y: -17}
+        - {x: 19, y: -43}
+        - {x: 22, y: -41}
+        - {x: 22, y: -37}
+        - {x: 22, y: -41}
+        - {x: 24, y: -43}
+        - {x: 25, y: -43}
+        - {x: 25, y: 45}
+        - {x: 24, y: 46}
+      - - {x: 4, y: 30}
+        - {x: 2, y: 24}
+        - {x: 2, y: 14}
+        - {x: 4, y: 10}
+        - {x: 7, y: 10}
+        - {x: 9, y: 11}
+        - {x: 9, y: 30}
+        - {x: 7, y: 31}
+    - name: HughBaldwin01_121
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 558
+        width: 5
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_122
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 564
+        width: 5
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_123
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 496
+        width: 23
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_124
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 493
+        width: 20
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_125
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 493
+        width: 20
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_126
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 493
+        width: 20
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_127
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 493
+        width: 32
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 23}
+        - {x: -6, y: 21}
+        - {x: -16, y: -1}
+        - {x: -16, y: -23}
+        - {x: 15, y: -23}
+        - {x: 16, y: -21}
+        - {x: 16, y: 20}
+        - {x: 12, y: 23}
+    - name: HughBaldwin01_128
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 493
+        width: 36
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 16}
+        - {x: -18, y: 10}
+        - {x: -18, y: -16}
+        - {x: 18, y: -16}
+        - {x: 18, y: 16}
+    - name: HughBaldwin01_129
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 493
+        width: 58
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28, y: 32}
+        - {x: -29, y: 26}
+        - {x: -29, y: -32}
+        - {x: 29, y: -32}
+        - {x: 29, y: -5}
+        - {x: -3, y: 32}
+    - name: HughBaldwin01_130
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 493
+        width: 35
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.5, y: 32}
+        - {x: -15.5, y: 31}
+        - {x: -17.5, y: 5}
+        - {x: -17.5, y: -32}
+        - {x: 17.5, y: -32}
+        - {x: 17.5, y: 23}
+        - {x: 9.5, y: 32}
+    - name: HughBaldwin01_131
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 493
+        width: 24
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_132
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 524
+        width: 4
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_133
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 505
+        width: 16
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_134
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 524
+        width: 4
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_135
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 493
+        width: 32
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_136
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 493
+        width: 33
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_137
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 493
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_138
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 493
+        width: 39
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_139
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 493
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_140
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 493
+        width: 45
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_141
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 493
+        width: 22
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_142
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 493
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_143
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 493
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_144
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 493
+        width: 30
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_145
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 493
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_146
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 348
+        width: 22
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_147
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 348
+        width: 22
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_148
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 348
+        width: 95
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25.5, y: 57}
+        - {x: -47.5, y: -24}
+        - {x: -47.5, y: -57}
+        - {x: -4.5, y: -57}
+        - {x: 47.5, y: 13}
+        - {x: 47.5, y: 48}
+        - {x: 29.5, y: 57}
+    - name: HughBaldwin01_149
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 446
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_150
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 446
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_151
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 444
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_152
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 446
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_153
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 444
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_154
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 446
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_155
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 446
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_156
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 348
+        width: 20
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_157
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 348
+        width: 20
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_158
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 348
+        width: 20
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_159
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 348
+        width: 20
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_160
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 348
+        width: 120
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 32, y: 28.5}
+        - {x: 15, y: 25.5}
+        - {x: -60, y: 3.5}
+        - {x: -60, y: -28.5}
+        - {x: 58, y: -28.5}
+        - {x: 60, y: -25.5}
+        - {x: 60, y: 12.5}
+        - {x: 53, y: 28.5}
+    - name: HughBaldwin01_161
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 348
+        width: 113
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_162
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 348
+        width: 111
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_163
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 348
+        width: 57
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_164
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 350
+        width: 22
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_165
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 353
+        width: 49
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_166
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 348
+        width: 40
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_167
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 315
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_168
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 315
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_169
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 315
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_170
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 315
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_171
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 315
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_172
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 315
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_173
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 315
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_174
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 315
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_175
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 315
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_176
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 315
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_177
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 315
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_178
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 315
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_179
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 315
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_180
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 315
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_181
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 315
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_182
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 313
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_183
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 315
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_184
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 315
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_185
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 315
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_186
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 313
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_187
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 315
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_188
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 315
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_189
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 315
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_190
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 315
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_191
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 315
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_192
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 319
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_193
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 319
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_194
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 319
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_195
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 319
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_196
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 319
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_197
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 317
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_198
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 319
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_199
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 319
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_200
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 319
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_201
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 319
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_202
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 259
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_203
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 259
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_204
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 263
+        width: 30
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_205
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 259
+        width: 15
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_206
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 259
+        width: 25
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_207
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 259
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_208
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 259
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 3, y: 16}
+        - {x: -5, y: 16}
+        - {x: -16, y: 3}
+        - {x: -16, y: -12}
+        - {x: -10, y: -16}
+        - {x: 15, y: -16}
+        - {x: 16, y: -14}
+        - {x: 16, y: 1}
+        - {x: 12, y: 6}
+    - name: HughBaldwin01_209
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 259
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 16}
+        - {x: -16, y: 8}
+        - {x: -16, y: -7}
+        - {x: -13, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 9}
+        - {x: 13, y: 16}
+    - name: HughBaldwin01_210
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 259
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_211
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 259
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_212
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 259
+        width: 20
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_213
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 259
+        width: 20
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_214
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 282
+        width: 24
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_215
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 279
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_216
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 185
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -39, y: 64}
+        - {x: -64, y: 37}
+        - {x: -64, y: -52}
+        - {x: -37, y: -64}
+        - {x: 55, y: -64}
+        - {x: 64, y: -56}
+        - {x: 64, y: 40}
+        - {x: 56, y: 64}
+    - name: HughBaldwin01_217
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 259
+        width: 32
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_218
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 259
+        width: 28
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_219
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 259
+        width: 27
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_220
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 259
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_221
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 268
+        width: 24
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_222
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 264
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_223
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 237
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_224
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 237
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_225
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 237
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_226
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 237
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_227
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 237
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_228
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 232
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_229
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 230
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_230
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 232
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_231
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 232
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_232
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 232
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_233
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 232
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_234
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 232
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_235
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 232
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_236
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 230
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_237
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 232
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_238
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 232
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_239
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 230
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_240
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 225
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_241
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 225
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_242
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 225
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_243
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 225
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_244
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 225
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_245
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 225
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_246
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 225
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_247
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 223
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_248
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 223
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_249
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 225
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_250
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 225
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_251
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 225
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_252
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 225
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_253
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 223
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_254
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 225
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_255
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 225
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_256
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 225
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_257
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 225
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_258
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 225
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_259
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 225
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_260
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 223
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_261
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 225
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_262
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 225
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_263
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 225
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_264
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 186
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_265
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 186
+        width: 18
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_266
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 186
+        width: 18
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_267
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 186
+        width: 19
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_268
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 186
+        width: 13
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_269
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 186
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_270
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 186
+        width: 13
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_271
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 186
+        width: 18
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_272
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 186
+        width: 17
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_273
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 199
+        width: 39
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_274
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 200
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_275
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 199
+        width: 18
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_276
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 199
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_277
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 199
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_278
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 199
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_279
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 199
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_280
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 199
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_281
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 199
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_282
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 199
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_283
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 200
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_284
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 201
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_285
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 200
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_286
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 201
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_287
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 199
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_288
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 161
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_289
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 161
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_290
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 161
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_291
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 161
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_292
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 161
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_293
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 161
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_294
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 161
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_295
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 161
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_296
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 135
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_297
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 135
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_298
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 135
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_299
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 135
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_300
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 135
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_301
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 135
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_302
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 135
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_303
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 133
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_304
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 135
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_305
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 135
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_306
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 135
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_307
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 135
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_308
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 135
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_309
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 135
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_310
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 135
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_311
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 135
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_312
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 135
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_313
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 135
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_314
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 135
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_315
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 133
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_316
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 135
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_317
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 135
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_318
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 135
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_319
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 135
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_320
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 135
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_321
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 135
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_322
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 133
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_323
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 135
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_324
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 135
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_325
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 133
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_326
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 135
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_327
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 91
+        width: 21
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_328
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 91
+        width: 22
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_329
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 91
+        width: 34
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_330
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 91
+        width: 22
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_331
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 91
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_332
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 91
+        width: 15
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_333
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 91
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_334
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 91
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_335
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 91
+        width: 16
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_336
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 91
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_337
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 91
+        width: 16
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: HughBaldwin01_338
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 819
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -409.5, y: 42}
+        - {x: -409.5, y: -42}
+        - {x: 409.5, y: -42}
+        - {x: 409.5, y: 42}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

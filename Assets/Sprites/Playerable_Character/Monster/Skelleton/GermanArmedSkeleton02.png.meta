@@ -1,0 +1,498 @@
+fileFormatVersion: 2
+guid: 97994e4dc46fce446bc8cf4493d10971
+timeCreated: 1467338520
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: GermanArmedSkeleton02_0
+    21300002: GermanArmedSkeleton02_1
+    21300004: GermanArmedSkeleton02_2
+    21300006: GermanArmedSkeleton02_3
+    21300008: GermanArmedSkeleton02_4
+    21300010: GermanArmedSkeleton02_5
+    21300012: GermanArmedSkeleton02_6
+    21300014: GermanArmedSkeleton02_7
+    21300016: GermanArmedSkeleton02_8
+    21300018: GermanArmedSkeleton02_9
+    21300020: GermanArmedSkeleton02_10
+    21300022: GermanArmedSkeleton02_11
+    21300024: GermanArmedSkeleton02_12
+    21300026: GermanArmedSkeleton02_13
+    21300028: GermanArmedSkeleton02_14
+    21300030: GermanArmedSkeleton02_15
+    21300032: GermanArmedSkeleton02_16
+    21300034: GermanArmedSkeleton02_17
+    21300036: GermanArmedSkeleton02_18
+    21300038: GermanArmedSkeleton02_19
+    21300040: GermanArmedSkeleton02_20
+    21300042: GermanArmedSkeleton02_21
+    21300044: GermanArmedSkeleton02_22
+    21300046: GermanArmedSkeleton02_23
+    21300048: GermanArmedSkeleton02_24
+    21300050: GermanArmedSkeleton02_25
+    21300052: GermanArmedSkeleton02_26
+    21300054: GermanArmedSkeleton02_37
+    21300056: GermanArmedSkeleton02_38
+    21300058: GermanArmedSkeleton02_39
+    21300060: GermanArmedSkeleton02_43
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: GermanArmedSkeleton02_0
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 481
+        width: 48
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 24, y: 10}
+        - {x: 10, y: 25}
+        - {x: -18, y: 25}
+        - {x: -24, y: 21}
+        - {x: -24, y: -17}
+        - {x: -19, y: -25}
+        - {x: 1, y: -25}
+        - {x: 4, y: -21}
+        - {x: 4, y: -18}
+        - {x: 6, y: -25}
+        - {x: 17, y: -25}
+        - {x: 18, y: -24}
+        - {x: 18, y: -22}
+        - {x: 24, y: -10}
+    - name: GermanArmedSkeleton02_1
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 481
+        width: 32
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 37}
+        - {x: -16, y: -37}
+        - {x: 16, y: -37}
+        - {x: 16, y: 37}
+    - name: GermanArmedSkeleton02_2
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 397
+        width: 39
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.5, y: 25}
+        - {x: -19.5, y: 21}
+        - {x: -19.5, y: -10}
+        - {x: -15.5, y: -8}
+        - {x: -13.5, y: -5}
+        - {x: -15.5, y: -24}
+        - {x: -11.5, y: -25}
+        - {x: -3.5, y: -25}
+        - {x: -0.5, y: -21}
+        - {x: -0.5, y: -18}
+        - {x: 0.5, y: -25}
+        - {x: 13.5, y: -25}
+        - {x: 19.5, y: -18}
+        - {x: 19.5, y: 10}
+        - {x: 13.5, y: 25}
+    - name: GermanArmedSkeleton02_3
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 397
+        width: 29
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GermanArmedSkeleton02_4
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 397
+        width: 30
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GermanArmedSkeleton02_5
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 318
+        width: 43
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.5, y: 25.5}
+        - {x: -21.5, y: 8.5}
+        - {x: -21.5, y: -19.5}
+        - {x: -11.5, y: -25.5}
+        - {x: 21.5, y: -25.5}
+        - {x: 21.5, y: 19.5}
+        - {x: 19.5, y: 25.5}
+    - name: GermanArmedSkeleton02_6
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 318
+        width: 38
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 26.5}
+        - {x: -19, y: 6.5}
+        - {x: -19, y: -24.5}
+        - {x: -13, y: -26.5}
+        - {x: 16, y: -26.5}
+        - {x: 19, y: -25.5}
+        - {x: 19, y: 17.5}
+        - {x: 15, y: 26.5}
+    - name: GermanArmedSkeleton02_7
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 318
+        width: 26
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GermanArmedSkeleton02_8
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 318
+        width: 32
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 26}
+        - {x: -16, y: 15}
+        - {x: -16, y: -26}
+        - {x: 16, y: -26}
+        - {x: 16, y: 3}
+        - {x: 6, y: 26}
+    - name: GermanArmedSkeleton02_9
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 318
+        width: 32
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 26}
+        - {x: -16, y: 19}
+        - {x: -16, y: -23}
+        - {x: -10, y: -26}
+        - {x: 16, y: -26}
+        - {x: 16, y: 3}
+        - {x: 8, y: 26}
+    - name: GermanArmedSkeleton02_10
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 318
+        width: 37
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.5, y: 26}
+        - {x: -18.5, y: 6}
+        - {x: -18.5, y: -25}
+        - {x: -12.5, y: -26}
+        - {x: 17.5, y: -26}
+        - {x: 18.5, y: -25}
+        - {x: 18.5, y: 20}
+        - {x: 15.5, y: 26}
+    - name: GermanArmedSkeleton02_11
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 279
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GermanArmedSkeleton02_12
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 271
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GermanArmedSkeleton02_13
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 241
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GermanArmedSkeleton02_14
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 241
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GermanArmedSkeleton02_15
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 241
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GermanArmedSkeleton02_16
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 241
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GermanArmedSkeleton02_17
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 241
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GermanArmedSkeleton02_18
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 241
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GermanArmedSkeleton02_19
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 211
+        width: 5
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GermanArmedSkeleton02_20
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 212
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GermanArmedSkeleton02_21
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 216
+        width: 16
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GermanArmedSkeleton02_22
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 212
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GermanArmedSkeleton02_23
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 160
+        width: 25
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GermanArmedSkeleton02_24
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 174
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GermanArmedSkeleton02_25
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 175
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GermanArmedSkeleton02_26
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 124
+        width: 29
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GermanArmedSkeleton02_37
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 21
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GermanArmedSkeleton02_38
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 21
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GermanArmedSkeleton02_39
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 21
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GermanArmedSkeleton02_43
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 6
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

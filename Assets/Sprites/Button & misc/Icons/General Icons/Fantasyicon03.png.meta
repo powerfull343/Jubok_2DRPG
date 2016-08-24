@@ -1,0 +1,467 @@
+fileFormatVersion: 2
+guid: c762311aea5e09546ae5a2af088ba623
+timeCreated: 1464346027
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Fantasyicon03_0
+    21300002: Fantasyicon03_2
+    21300004: Fantasyicon03_3
+    21300006: Fantasyicon03_4
+    21300008: Fantasyicon03_8
+    21300010: Fantasyicon03_9
+    21300012: Fantasyicon03_10
+    21300014: Fantasyicon03_11
+    21300016: Fantasyicon03_12
+    21300018: Fantasyicon03_13
+    21300020: Fantasyicon03_16
+    21300022: Fantasyicon03_17
+    21300024: Fantasyicon03_18
+    21300026: Fantasyicon03_19
+    21300028: Fantasyicon03_20
+    21300030: Fantasyicon03_21
+    21300032: Fantasyicon03_23
+    21300034: Fantasyicon03_24
+    21300036: Fantasyicon03_25
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: 2
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Fantasyicon03_0
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 1137
+        width: 116
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 20, y: 77}
+        - {x: 0, y: 77}
+        - {x: 0, y: -77}
+        - {x: 15, y: -77}
+        - {x: 38, y: -46}
+        - {x: 40, y: -40}
+        - {x: 40, y: 46}
+      - - {x: -58, y: 64}
+        - {x: -58, y: -62}
+        - {x: -56, y: -63}
+        - {x: -24, y: -63}
+        - {x: -21, y: -43}
+        - {x: -21, y: 64}
+    - name: Fantasyicon03_2
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 1145
+        width: 206
+        height: 138
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 69}
+        - {x: -10, y: 68}
+        - {x: -103, y: -22}
+        - {x: -103, y: -66}
+        - {x: -102, y: -69}
+        - {x: 103, y: -69}
+        - {x: 103, y: 3}
+        - {x: 5, y: 69}
+      - - {x: 29, y: 20}
+        - {x: 32, y: 21}
+        - {x: 32, y: 24}
+        - {x: 29, y: 25}
+        - {x: 27, y: 23}
+    - name: Fantasyicon03_3
+      rect:
+        serializedVersion: 2
+        x: 753
+        y: 1139
+        width: 122
+        height: 151
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -37, y: 75.5}
+        - {x: -43, y: 74.5}
+        - {x: -61, y: 21.5}
+        - {x: -61, y: -50.5}
+        - {x: -32, y: -75.5}
+        - {x: 48, y: -75.5}
+        - {x: 61, y: -47.5}
+        - {x: 61, y: 41.5}
+        - {x: 40, y: 75.5}
+    - name: Fantasyicon03_4
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 1136
+        width: 129
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -41.5, y: 78.5}
+        - {x: -45.5, y: 68.5}
+        - {x: -64.5, y: 28.5}
+        - {x: -64.5, y: -43.5}
+        - {x: -53.5, y: -76.5}
+        - {x: -46.5, y: -78.5}
+        - {x: 45.5, y: -78.5}
+        - {x: 64.5, y: -59.5}
+        - {x: 64.5, y: 61.5}
+        - {x: 61.5, y: 78.5}
+    - name: Fantasyicon03_8
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 806
+        width: 175
+        height: 183
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 58.5, y: 91.5}
+        - {x: -52.5, y: 91.5}
+        - {x: -87.5, y: 56.5}
+        - {x: -87.5, y: -28.5}
+        - {x: -26.5, y: -91.5}
+        - {x: 35.5, y: -91.5}
+        - {x: 77.5, y: -25.5}
+        - {x: 87.5, y: 9.5}
+        - {x: 87.5, y: 60.5}
+    - name: Fantasyicon03_9
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 818
+        width: 177
+        height: 153
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -56.5, y: 76.5}
+        - {x: -88.5, y: 31.5}
+        - {x: -88.5, y: -74.5}
+        - {x: 86.5, y: -74.5}
+        - {x: 86.5, y: 37.5}
+        - {x: 46.5, y: 76.5}
+    - name: Fantasyicon03_10
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 814
+        width: 136
+        height: 165
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 39, y: 82.5}
+        - {x: 38, y: 80.5}
+        - {x: -66, y: 79.5}
+        - {x: -68, y: 77.5}
+        - {x: -68, y: -81.5}
+        - {x: -67, y: -82.5}
+        - {x: 68, y: -82.5}
+        - {x: 68, y: 79.5}
+        - {x: 58, y: 82.5}
+    - name: Fantasyicon03_11
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 840
+        width: 173
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 83.5, y: -42.5}
+        - {x: 17.5, y: -42.5}
+        - {x: 83.5, y: -42.5}
+        - {x: 85.5, y: -40.5}
+        - {x: 85.5, y: 54.5}
+        - {x: 83.5, y: 56.5}
+        - {x: 25.5, y: 56.5}
+        - {x: 15.5, y: 50.5}
+        - {x: 3.5, y: 55.5}
+        - {x: -10.5, y: 56.5}
+        - {x: -76.5, y: 56.5}
+        - {x: -75.5, y: 53.5}
+        - {x: -75.5, y: -39.5}
+        - {x: -72.5, y: -42.5}
+        - {x: -14.5, y: -42.5}
+        - {x: -73.5, y: -42.5}
+        - {x: -75.5, y: -44.5}
+        - {x: -75.5, y: -46.5}
+        - {x: -75.5, y: 37.5}
+        - {x: -77.5, y: 39.5}
+        - {x: -81.5, y: 39.5}
+        - {x: -83.5, y: 37.5}
+        - {x: -83.5, y: -55.5}
+        - {x: -82.5, y: -56.5}
+        - {x: 86.5, y: -56.5}
+        - {x: 86.5, y: -46.5}
+        - {x: 85.5, y: -44.5}
+    - name: Fantasyicon03_12
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 935
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Fantasyicon03_13
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 850
+        width: 170
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Fantasyicon03_16
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 510
+        width: 167
+        height: 145
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -39.5, y: 71.5}
+        - {x: -61.5, y: 61.5}
+        - {x: -78.5, y: -27.5}
+        - {x: -78.5, y: -72.5}
+        - {x: 50.5, y: -72.5}
+        - {x: 60.5, y: -65.5}
+        - {x: 83.5, y: 47.5}
+        - {x: 83.5, y: 71.5}
+    - name: Fantasyicon03_17
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 502
+        width: 149
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 58.5, y: 79}
+        - {x: -74.5, y: 79}
+        - {x: -74.5, y: -46}
+        - {x: -62.5, y: -79}
+        - {x: 58.5, y: -79}
+        - {x: 74.5, y: 19}
+        - {x: 74.5, y: 58}
+      - - {x: 17.5, y: 31}
+        - {x: 17.5, y: 23}
+        - {x: 20.5, y: 22}
+        - {x: 23.5, y: 22}
+        - {x: 26.5, y: 23}
+        - {x: 26.5, y: 29}
+        - {x: 25.5, y: 31}
+    - name: Fantasyicon03_18
+      rect:
+        serializedVersion: 2
+        x: 737
+        y: 495
+        width: 154
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5, y: 83.5}
+        - {x: -17, y: 83.5}
+        - {x: -77, y: 46.5}
+        - {x: -77, y: -82.5}
+        - {x: -74, y: -83.5}
+        - {x: 42, y: -83.5}
+        - {x: 77, y: -61.5}
+        - {x: 77, y: -1.5}
+        - {x: 65, y: 29.5}
+    - name: Fantasyicon03_19
+      rect:
+        serializedVersion: 2
+        x: 1055
+        y: 511
+        width: 167
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -83.5, y: 67.5}
+        - {x: -83.5, y: -17.5}
+        - {x: -29.5, y: -67.5}
+        - {x: 38.5, y: -67.5}
+        - {x: 58.5, y: -57.5}
+        - {x: 83.5, y: -9.5}
+        - {x: 83.5, y: 67.5}
+    - name: Fantasyicon03_20
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 189
+        width: 171
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 85.5, y: -1}
+        - {x: 85.5, y: 16}
+        - {x: 76.5, y: 28}
+        - {x: 30.5, y: 70}
+        - {x: 23.5, y: 70}
+        - {x: -85.5, y: -40}
+        - {x: -85.5, y: -68}
+        - {x: -77.5, y: -68}
+        - {x: -6.5, y: 0}
+        - {x: 25.5, y: -43}
+        - {x: 52.5, y: -37}
+    - name: Fantasyicon03_21
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 175
+        width: 135
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 55.5, y: 86.5}
+        - {x: -35.5, y: 86.5}
+        - {x: -67.5, y: 71.5}
+        - {x: -67.5, y: -75.5}
+        - {x: -52.5, y: -86.5}
+        - {x: 56.5, y: -86.5}
+        - {x: 67.5, y: -61.5}
+        - {x: 67.5, y: 80.5}
+    - name: Fantasyicon03_23
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 185
+        width: 141
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -67.5, y: -66}
+        - {x: -5.5, y: -66}
+        - {x: 8.5, y: -62}
+        - {x: 70.5, y: 53}
+        - {x: 70.5, y: 72}
+        - {x: 42.5, y: 72}
+        - {x: -67.5, y: 21}
+      - - {x: 13.5, y: 33}
+        - {x: 16.5, y: 34}
+        - {x: 16.5, y: 37}
+        - {x: 13.5, y: 38}
+        - {x: 11.5, y: 36}
+      - - {x: 21.5, y: 41}
+        - {x: 24.5, y: 42}
+        - {x: 24.5, y: 45}
+        - {x: 21.5, y: 46}
+        - {x: 19.5, y: 44}
+    - name: Fantasyicon03_24
+      rect:
+        serializedVersion: 2
+        x: 1070
+        y: 193
+        width: 137
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 51.5, y: 25}
+        - {x: 68.5, y: 27}
+        - {x: 68.5, y: 68}
+        - {x: 26.5, y: 68}
+        - {x: 13.5, y: 48}
+        - {x: -68.5, y: -53}
+        - {x: -68.5, y: -65}
+        - {x: -64.5, y: -68}
+        - {x: -51.5, y: -68}
+        - {x: 51.5, y: 16}
+        - {x: 58.5, y: 22}
+        - {x: 56.5, y: 25}
+    - name: Fantasyicon03_25
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 193
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

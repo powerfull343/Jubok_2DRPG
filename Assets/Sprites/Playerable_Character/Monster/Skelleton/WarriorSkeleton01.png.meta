@@ -1,0 +1,301 @@
+fileFormatVersion: 2
+guid: 83eb4e7dabc9cf746b4897bcc3891c81
+timeCreated: 1467728359
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: WarriorSkeleton01_0
+    21300002: WarriorSkeleton01_1
+    21300004: WarriorSkeleton01_2
+    21300006: WarriorSkeleton01_3
+    21300008: WarriorSkeleton01_4
+    21300010: WarriorSkeleton01_5
+    21300012: WarriorSkeleton01_6
+    21300014: WarriorSkeleton01_7
+    21300016: WarriorSkeleton01_8
+    21300018: WarriorSkeleton01_9
+    21300020: WarriorSkeleton01_10
+    21300022: WarriorSkeleton01_11
+    21300024: WarriorSkeleton01_12
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: WarriorSkeleton01_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 140
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 26}
+        - {x: -26, y: 11}
+        - {x: -26, y: -9}
+        - {x: -22, y: -26}
+        - {x: 11, y: -26}
+        - {x: 26, y: -16}
+        - {x: 26, y: 26}
+    - name: WarriorSkeleton01_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 140
+        width: 52
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 26.5}
+        - {x: -26, y: 9.5}
+        - {x: -26, y: -9.5}
+        - {x: -13, y: -26.5}
+        - {x: 1, y: -26.5}
+        - {x: 26, y: -14.5}
+        - {x: 26, y: 26.5}
+    - name: WarriorSkeleton01_2
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 140
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26, y: 26}
+        - {x: -26, y: -26}
+        - {x: 16, y: -26}
+        - {x: 26, y: -17}
+        - {x: 26, y: 24}
+        - {x: 25, y: 26}
+    - name: WarriorSkeleton01_3
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 140
+        width: 52
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26, y: -15.5}
+        - {x: -23, y: -26.5}
+        - {x: 3, y: -26.5}
+        - {x: 26, y: -14.5}
+        - {x: 26, y: 26.5}
+        - {x: -16, y: 26.5}
+        - {x: -18, y: 25.5}
+        - {x: -26, y: 20.5}
+    - name: WarriorSkeleton01_4
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 75
+        width: 49
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24.5, y: 28.5}
+        - {x: -24.5, y: 5.5}
+        - {x: -9.5, y: -28.5}
+        - {x: 24.5, y: -28.5}
+        - {x: 24.5, y: 28.5}
+    - name: WarriorSkeleton01_5
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 75
+        width: 51
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21.5, y: 27.5}
+        - {x: -25.5, y: 23.5}
+        - {x: -25.5, y: 12.5}
+        - {x: -24.5, y: 12.5}
+        - {x: -9.5, y: -27.5}
+        - {x: 25.5, y: -27.5}
+        - {x: 25.5, y: 27.5}
+    - name: WarriorSkeleton01_6
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 75
+        width: 65
+        height: 56
+      alignment: 9
+      pivot: {x: 0.15, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 3.25, y: 28}
+        - {x: -8.75, y: 11}
+        - {x: -9.75, y: 10}
+        - {x: -9.75, y: -21}
+        - {x: -4.75, y: -28}
+        - {x: 31.25, y: -28}
+        - {x: 55.25, y: -16}
+        - {x: 55.25, y: 13}
+        - {x: 48.25, y: 28}
+    - name: WarriorSkeleton01_7
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 75
+        width: 64
+        height: 52
+      alignment: 9
+      pivot: {x: 0.15, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 41.399994, y: 26}
+        - {x: -2.600006, y: 26}
+        - {x: -9.600006, y: 15}
+        - {x: -9.600006, y: -11}
+        - {x: -1.6000061, y: -26}
+        - {x: 30.399994, y: -26}
+        - {x: 54.399994, y: -7}
+        - {x: 54.399994, y: 10}
+        - {x: 52.399994, y: 18}
+    - name: WarriorSkeleton01_8
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 75
+        width: 62
+        height: 52
+      alignment: 9
+      pivot: {x: 0.15, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 50.700012, y: 20}
+        - {x: 38.700012, y: 24}
+        - {x: 35.700012, y: 13}
+        - {x: 27.700012, y: 26}
+        - {x: 7.700012, y: 26}
+        - {x: -9.299988, y: 17}
+        - {x: -9.299988, y: -26}
+        - {x: 28.700012, y: -26}
+        - {x: 52.700012, y: -8}
+        - {x: 52.700012, y: 10}
+    - name: WarriorSkeleton01_9
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 75
+        width: 61
+        height: 52
+      alignment: 9
+      pivot: {x: 0.15, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.149994, y: 26}
+        - {x: -9.149994, y: -26}
+        - {x: 47.850006, y: -26}
+        - {x: 51.850006, y: -25}
+        - {x: 51.850006, y: 26}
+    - name: WarriorSkeleton01_10
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 5
+        width: 47
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3.5, y: 30}
+        - {x: -8.5, y: 24}
+        - {x: -21.5, y: 4}
+        - {x: -23.5, y: -2}
+        - {x: -23.5, y: -22}
+        - {x: -4.5, y: -30}
+        - {x: 23.5, y: -30}
+        - {x: 23.5, y: 30}
+    - name: WarriorSkeleton01_11
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 20
+        width: 13
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: WarriorSkeleton01_12
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 6
+        width: 53
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.5, y: 29.5}
+        - {x: -26.5, y: 3.5}
+        - {x: -26.5, y: -15.5}
+        - {x: -4.5, y: -29.5}
+        - {x: 15.5, y: -29.5}
+        - {x: 26.5, y: 10.5}
+        - {x: 26.5, y: 29.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

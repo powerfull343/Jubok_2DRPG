@@ -1,0 +1,4891 @@
+fileFormatVersion: 2
+guid: 178fe62f13869c5439dfe9b9189ea9b4
+timeCreated: 1467337635
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: ArmorKnight01_0
+    21300002: ArmorKnight01_2
+    21300004: ArmorKnight01_3
+    21300006: ArmorKnight01_4
+    21300008: ArmorKnight01_5
+    21300010: ArmorKnight01_6
+    21300012: ArmorKnight01_7
+    21300014: ArmorKnight01_8
+    21300016: ArmorKnight01_9
+    21300018: ArmorKnight01_10
+    21300020: ArmorKnight01_11
+    21300022: ArmorKnight01_12
+    21300024: ArmorKnight01_13
+    21300026: ArmorKnight01_14
+    21300028: ArmorKnight01_16
+    21300030: ArmorKnight01_17
+    21300032: ArmorKnight01_18
+    21300034: ArmorKnight01_19
+    21300036: ArmorKnight01_20
+    21300038: ArmorKnight01_21
+    21300040: ArmorKnight01_22
+    21300042: ArmorKnight01_23
+    21300044: ArmorKnight01_24
+    21300046: ArmorKnight01_25
+    21300048: ArmorKnight01_26
+    21300050: ArmorKnight01_27
+    21300052: ArmorKnight01_28
+    21300054: ArmorKnight01_29
+    21300056: ArmorKnight01_30
+    21300058: ArmorKnight01_31
+    21300060: ArmorKnight01_32
+    21300062: ArmorKnight01_33
+    21300064: ArmorKnight01_34
+    21300066: ArmorKnight01_35
+    21300068: ArmorKnight01_36
+    21300070: ArmorKnight01_37
+    21300072: ArmorKnight01_38
+    21300074: ArmorKnight01_39
+    21300076: ArmorKnight01_40
+    21300078: ArmorKnight01_41
+    21300080: ArmorKnight01_42
+    21300082: ArmorKnight01_43
+    21300084: ArmorKnight01_44
+    21300086: ArmorKnight01_45
+    21300088: ArmorKnight01_46
+    21300090: ArmorKnight01_47
+    21300092: ArmorKnight01_48
+    21300094: ArmorKnight01_49
+    21300096: ArmorKnight01_50
+    21300098: ArmorKnight01_51
+    21300100: ArmorKnight01_52
+    21300102: ArmorKnight01_53
+    21300104: ArmorKnight01_54
+    21300106: ArmorKnight01_55
+    21300108: ArmorKnight01_56
+    21300110: ArmorKnight01_57
+    21300112: ArmorKnight01_58
+    21300114: ArmorKnight01_59
+    21300116: ArmorKnight01_60
+    21300118: ArmorKnight01_61
+    21300120: ArmorKnight01_62
+    21300122: ArmorKnight01_63
+    21300124: ArmorKnight01_64
+    21300126: ArmorKnight01_65
+    21300128: ArmorKnight01_66
+    21300130: ArmorKnight01_67
+    21300132: ArmorKnight01_68
+    21300134: ArmorKnight01_69
+    21300136: ArmorKnight01_70
+    21300138: ArmorKnight01_71
+    21300140: ArmorKnight01_72
+    21300142: ArmorKnight01_73
+    21300144: ArmorKnight01_74
+    21300146: ArmorKnight01_75
+    21300148: ArmorKnight01_76
+    21300150: ArmorKnight01_77
+    21300152: ArmorKnight01_78
+    21300154: ArmorKnight01_79
+    21300156: ArmorKnight01_80
+    21300158: ArmorKnight01_81
+    21300160: ArmorKnight01_82
+    21300162: ArmorKnight01_83
+    21300164: ArmorKnight01_84
+    21300166: ArmorKnight01_85
+    21300168: ArmorKnight01_86
+    21300170: ArmorKnight01_87
+    21300172: ArmorKnight01_88
+    21300174: ArmorKnight01_89
+    21300176: ArmorKnight01_90
+    21300178: ArmorKnight01_91
+    21300180: ArmorKnight01_92
+    21300182: ArmorKnight01_93
+    21300184: ArmorKnight01_94
+    21300186: ArmorKnight01_95
+    21300188: ArmorKnight01_96
+    21300190: ArmorKnight01_97
+    21300192: ArmorKnight01_98
+    21300194: ArmorKnight01_99
+    21300196: ArmorKnight01_100
+    21300198: ArmorKnight01_101
+    21300200: ArmorKnight01_102
+    21300202: ArmorKnight01_103
+    21300204: ArmorKnight01_104
+    21300206: ArmorKnight01_105
+    21300208: ArmorKnight01_106
+    21300210: ArmorKnight01_107
+    21300212: ArmorKnight01_108
+    21300214: ArmorKnight01_109
+    21300216: ArmorKnight01_110
+    21300218: ArmorKnight01_111
+    21300220: ArmorKnight01_112
+    21300222: ArmorKnight01_113
+    21300224: ArmorKnight01_114
+    21300226: ArmorKnight01_115
+    21300228: ArmorKnight01_116
+    21300230: ArmorKnight01_117
+    21300232: ArmorKnight01_118
+    21300234: ArmorKnight01_119
+    21300236: ArmorKnight01_120
+    21300238: ArmorKnight01_121
+    21300240: ArmorKnight01_122
+    21300242: ArmorKnight01_123
+    21300244: ArmorKnight01_124
+    21300246: ArmorKnight01_125
+    21300248: ArmorKnight01_126
+    21300250: ArmorKnight01_127
+    21300252: ArmorKnight01_128
+    21300254: ArmorKnight01_129
+    21300256: ArmorKnight01_130
+    21300258: ArmorKnight01_131
+    21300260: ArmorKnight01_132
+    21300262: ArmorKnight01_133
+    21300264: ArmorKnight01_134
+    21300266: ArmorKnight01_135
+    21300268: ArmorKnight01_136
+    21300270: ArmorKnight01_137
+    21300272: ArmorKnight01_138
+    21300274: ArmorKnight01_139
+    21300276: ArmorKnight01_140
+    21300278: ArmorKnight01_141
+    21300280: ArmorKnight01_142
+    21300282: ArmorKnight01_143
+    21300284: ArmorKnight01_144
+    21300286: ArmorKnight01_145
+    21300288: ArmorKnight01_146
+    21300290: ArmorKnight01_147
+    21300292: ArmorKnight01_148
+    21300294: ArmorKnight01_149
+    21300296: ArmorKnight01_150
+    21300298: ArmorKnight01_151
+    21300300: ArmorKnight01_152
+    21300302: ArmorKnight01_153
+    21300304: ArmorKnight01_154
+    21300306: ArmorKnight01_155
+    21300308: ArmorKnight01_156
+    21300310: ArmorKnight01_157
+    21300312: ArmorKnight01_158
+    21300314: ArmorKnight01_159
+    21300316: ArmorKnight01_160
+    21300318: ArmorKnight01_161
+    21300320: ArmorKnight01_162
+    21300322: ArmorKnight01_163
+    21300324: ArmorKnight01_164
+    21300326: ArmorKnight01_165
+    21300328: ArmorKnight01_166
+    21300330: ArmorKnight01_167
+    21300332: ArmorKnight01_168
+    21300334: ArmorKnight01_169
+    21300336: ArmorKnight01_170
+    21300338: ArmorKnight01_171
+    21300340: ArmorKnight01_172
+    21300342: ArmorKnight01_173
+    21300344: ArmorKnight01_174
+    21300346: ArmorKnight01_175
+    21300348: ArmorKnight01_176
+    21300350: ArmorKnight01_177
+    21300352: ArmorKnight01_178
+    21300354: ArmorKnight01_179
+    21300356: ArmorKnight01_180
+    21300358: ArmorKnight01_181
+    21300360: ArmorKnight01_182
+    21300362: ArmorKnight01_183
+    21300364: ArmorKnight01_184
+    21300366: ArmorKnight01_185
+    21300368: ArmorKnight01_186
+    21300370: ArmorKnight01_187
+    21300372: ArmorKnight01_188
+    21300374: ArmorKnight01_189
+    21300376: ArmorKnight01_190
+    21300378: ArmorKnight01_191
+    21300380: ArmorKnight01_192
+    21300382: ArmorKnight01_193
+    21300384: ArmorKnight01_194
+    21300386: ArmorKnight01_195
+    21300388: ArmorKnight01_196
+    21300390: ArmorKnight01_197
+    21300392: ArmorKnight01_198
+    21300394: ArmorKnight01_199
+    21300396: ArmorKnight01_200
+    21300398: ArmorKnight01_201
+    21300400: ArmorKnight01_202
+    21300402: ArmorKnight01_203
+    21300404: ArmorKnight01_204
+    21300406: ArmorKnight01_205
+    21300408: ArmorKnight01_206
+    21300410: ArmorKnight01_207
+    21300412: ArmorKnight01_208
+    21300414: ArmorKnight01_209
+    21300416: ArmorKnight01_210
+    21300418: ArmorKnight01_211
+    21300420: ArmorKnight01_212
+    21300422: ArmorKnight01_213
+    21300424: ArmorKnight01_214
+    21300426: ArmorKnight01_215
+    21300428: ArmorKnight01_216
+    21300430: ArmorKnight01_217
+    21300432: ArmorKnight01_218
+    21300434: ArmorKnight01_219
+    21300436: ArmorKnight01_220
+    21300438: ArmorKnight01_221
+    21300440: ArmorKnight01_222
+    21300442: ArmorKnight01_223
+    21300444: ArmorKnight01_224
+    21300446: ArmorKnight01_225
+    21300448: ArmorKnight01_226
+    21300450: ArmorKnight01_227
+    21300452: ArmorKnight01_228
+    21300454: ArmorKnight01_229
+    21300456: ArmorKnight01_230
+    21300458: ArmorKnight01_231
+    21300460: ArmorKnight01_232
+    21300462: ArmorKnight01_233
+    21300464: ArmorKnight01_234
+    21300466: ArmorKnight01_235
+    21300468: ArmorKnight01_236
+    21300470: ArmorKnight01_237
+    21300472: ArmorKnight01_238
+    21300474: ArmorKnight01_239
+    21300476: ArmorKnight01_240
+    21300478: ArmorKnight01_241
+    21300480: ArmorKnight01_242
+    21300482: ArmorKnight01_243
+    21300484: ArmorKnight01_244
+    21300486: ArmorKnight01_245
+    21300488: ArmorKnight01_246
+    21300490: ArmorKnight01_247
+    21300492: ArmorKnight01_248
+    21300494: ArmorKnight01_249
+    21300496: ArmorKnight01_250
+    21300498: ArmorKnight01_251
+    21300500: ArmorKnight01_252
+    21300502: ArmorKnight01_253
+    21300504: ArmorKnight01_254
+    21300506: ArmorKnight01_255
+    21300508: ArmorKnight01_256
+    21300510: ArmorKnight01_257
+    21300512: ArmorKnight01_258
+    21300514: ArmorKnight01_259
+    21300516: ArmorKnight01_260
+    21300518: ArmorKnight01_261
+    21300520: ArmorKnight01_262
+    21300522: ArmorKnight01_263
+    21300524: ArmorKnight01_264
+    21300526: ArmorKnight01_265
+    21300528: ArmorKnight01_266
+    21300530: ArmorKnight01_267
+    21300532: ArmorKnight01_268
+    21300534: ArmorKnight01_269
+    21300536: ArmorKnight01_270
+    21300538: ArmorKnight01_271
+    21300540: ArmorKnight01_272
+    21300542: ArmorKnight01_273
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 2
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: ArmorKnight01_0
+      rect:
+        serializedVersion: 2
+        x: 2025
+        y: 3330
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_2
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 3236
+        width: 43
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_3
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 3236
+        width: 46
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_4
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 3236
+        width: 44
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_5
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 3236
+        width: 45
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_6
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 3236
+        width: 45
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_7
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 3236
+        width: 46
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_8
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 3236
+        width: 46
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_9
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 3236
+        width: 46
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_10
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 3236
+        width: 46
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_11
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 3236
+        width: 44
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_12
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 3236
+        width: 44
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_13
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 3236
+        width: 44
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_14
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 3236
+        width: 46
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_16
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 3136
+        width: 46
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_17
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 3136
+        width: 44
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_18
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 3136
+        width: 44
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_19
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 3136
+        width: 44
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_20
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 3136
+        width: 44
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_21
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 3136
+        width: 44
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_22
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 3136
+        width: 44
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_23
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 3136
+        width: 46
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_24
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 3141
+        width: 46
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_25
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 3141
+        width: 46
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_26
+      rect:
+        serializedVersion: 2
+        x: 827
+        y: 3141
+        width: 46
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_27
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 3141
+        width: 44
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_28
+      rect:
+        serializedVersion: 2
+        x: 988
+        y: 3141
+        width: 44
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_29
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 3141
+        width: 44
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_30
+      rect:
+        serializedVersion: 2
+        x: 1148
+        y: 3141
+        width: 44
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_31
+      rect:
+        serializedVersion: 2
+        x: 1228
+        y: 3141
+        width: 44
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_32
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 3136
+        width: 44
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_33
+      rect:
+        serializedVersion: 2
+        x: 1388
+        y: 3136
+        width: 44
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_34
+      rect:
+        serializedVersion: 2
+        x: 1467
+        y: 3136
+        width: 46
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_35
+      rect:
+        serializedVersion: 2
+        x: 1547
+        y: 3136
+        width: 46
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_36
+      rect:
+        serializedVersion: 2
+        x: 1627
+        y: 3136
+        width: 46
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_37
+      rect:
+        serializedVersion: 2
+        x: 1707
+        y: 3136
+        width: 46
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_38
+      rect:
+        serializedVersion: 2
+        x: 1788
+        y: 3136
+        width: 44
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_39
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 3044
+        width: 72
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.157974, y: 19.545166}
+        - {x: -22.157974, y: 4.545166}
+        - {x: -22.157974, y: -16.454834}
+        - {x: -19.157974, y: -19.454834}
+        - {x: 20.842026, y: -19.454834}
+        - {x: 22.842026, y: -12.454834}
+        - {x: 22.842026, y: 19.545166}
+    - name: ArmorKnight01_40
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 3044
+        width: 78
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.015259, y: 18.545166}
+        - {x: -24.015259, y: -0.45483398}
+        - {x: -24.015259, y: -16.454834}
+        - {x: -21.015259, y: -18.454834}
+        - {x: 15.984741, y: -18.454834}
+        - {x: 24.984741, y: -5.454834}
+        - {x: 24.984741, y: 18.545166}
+    - name: ArmorKnight01_41
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 3044
+        width: 88
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25.03151, y: 18.045166}
+        - {x: -27.03151, y: 11.045166}
+        - {x: -27.03151, y: -11.954834}
+        - {x: -22.03151, y: -17.954834}
+        - {x: 7.9684906, y: -17.954834}
+        - {x: 27.96849, y: 8.045166}
+        - {x: 27.96849, y: 18.045166}
+    - name: ArmorKnight01_42
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 3044
+        width: 90
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22.61615, y: 17.045166}
+        - {x: -27.61615, y: 6.045166}
+        - {x: -27.61615, y: -10.954834}
+        - {x: -26.61615, y: -12.954834}
+        - {x: -14.61615, y: -16.954834}
+        - {x: 8.38385, y: -16.954834}
+        - {x: 28.38385, y: 6.045166}
+        - {x: 28.38385, y: 15.045166}
+        - {x: 27.38385, y: 17.045166}
+    - name: ArmorKnight01_43
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 3044
+        width: 90
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.769196, y: 18.045166}
+        - {x: -23.769196, y: 16.045166}
+        - {x: -27.769196, y: 6.045166}
+        - {x: -27.769196, y: -10.954834}
+        - {x: -26.769196, y: -13.954834}
+        - {x: -15.769196, y: -17.954834}
+        - {x: 9.230804, y: -17.954834}
+        - {x: 28.230804, y: 1.045166}
+        - {x: 28.230804, y: 15.045166}
+        - {x: 17.230804, y: 18.045166}
+    - name: ArmorKnight01_44
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 3044
+        width: 91
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27.808594, y: 18.045166}
+        - {x: -27.808594, y: -17.954834}
+        - {x: 4.1914062, y: -17.954834}
+        - {x: 7.1914062, y: -15.954834}
+        - {x: 29.191406, y: 3.045166}
+        - {x: 29.191406, y: 14.045166}
+        - {x: 27.191406, y: 18.045166}
+    - name: ArmorKnight01_45
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 3044
+        width: 90
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 22.538391, y: 18.045166}
+        - {x: -18.461609, y: 18.045166}
+        - {x: -27.461609, y: 8.045166}
+        - {x: -27.461609, y: -10.954834}
+        - {x: -23.461609, y: -15.954834}
+        - {x: -14.461609, y: -17.954834}
+        - {x: 6.538391, y: -17.954834}
+        - {x: 7.538391, y: -16.954834}
+        - {x: 28.538391, y: 2.045166}
+        - {x: 28.538391, y: 16.045166}
+    - name: ArmorKnight01_46
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 3044
+        width: 89
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.38733, y: 18.045166}
+        - {x: -27.38733, y: 9.045166}
+        - {x: -27.38733, y: -7.954834}
+        - {x: -24.38733, y: -12.954834}
+        - {x: -22.38733, y: -14.954834}
+        - {x: -12.387329, y: -14.954834}
+        - {x: -9.387329, y: -11.954834}
+        - {x: -5.387329, y: -17.954834}
+        - {x: 24.61267, y: -17.954834}
+        - {x: 28.61267, y: -5.954834}
+        - {x: 28.61267, y: 18.045166}
+    - name: ArmorKnight01_47
+      rect:
+        serializedVersion: 2
+        x: 1130
+        y: 3044
+        width: 90
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.540405, y: 18.045166}
+        - {x: -19.540405, y: 15.045166}
+        - {x: -27.540405, y: 3.045166}
+        - {x: -27.540405, y: -5.954834}
+        - {x: -23.540405, y: -15.954834}
+        - {x: -12.540405, y: -14.954834}
+        - {x: -8.540405, y: -10.954834}
+        - {x: -4.5404053, y: -17.954834}
+        - {x: 9.459595, y: -17.954834}
+        - {x: 28.459595, y: 6.045166}
+        - {x: 28.459595, y: 16.045166}
+        - {x: 14.459595, y: 18.045166}
+    - name: ArmorKnight01_48
+      rect:
+        serializedVersion: 2
+        x: 1267
+        y: 3044
+        width: 90
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.466064, y: 18.045166}
+        - {x: -22.466064, y: 13.045166}
+        - {x: -27.466064, y: 7.045166}
+        - {x: -27.466064, y: -17.954834}
+        - {x: 18.533936, y: -17.954834}
+        - {x: 28.533936, y: -0.954834}
+        - {x: 28.533936, y: 16.045166}
+        - {x: 21.533936, y: 18.045166}
+    - name: ArmorKnight01_49
+      rect:
+        serializedVersion: 2
+        x: 1397
+        y: 3044
+        width: 87
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.687561, y: 18.045166}
+        - {x: -26.687561, y: 5.045166}
+        - {x: -26.687561, y: -7.954834}
+        - {x: -18.687561, y: -17.954834}
+        - {x: -7.687561, y: -15.954834}
+        - {x: -4.687561, y: -10.954834}
+        - {x: -2.687561, y: -15.954834}
+        - {x: -1.687561, y: -17.954834}
+        - {x: 10.312439, y: -17.954834}
+        - {x: 27.312439, y: 7.045166}
+        - {x: 27.312439, y: 18.045166}
+    - name: ArmorKnight01_50
+      rect:
+        serializedVersion: 2
+        x: 1524
+        y: 3044
+        width: 77
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23.750061, y: 2.545166}
+        - {x: -23.750061, y: -16.454834}
+        - {x: -10.750061, y: -19.454834}
+        - {x: 13.249939, y: -19.454834}
+        - {x: 24.249939, y: 10.545166}
+        - {x: 24.249939, y: 19.545166}
+        - {x: -8.750061, y: 19.545166}
+        - {x: -16.750061, y: 17.545166}
+    - name: ArmorKnight01_51
+      rect:
+        serializedVersion: 2
+        x: 1655
+        y: 3044
+        width: 73
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5.357788, y: 20.045166}
+        - {x: -22.357788, y: -3.954834}
+        - {x: -22.357788, y: -14.954834}
+        - {x: -16.357788, y: -13.954834}
+        - {x: -2.357788, y: -19.954834}
+        - {x: 15.642212, y: -19.954834}
+        - {x: 23.642212, y: -6.954834}
+        - {x: 23.642212, y: 19.045166}
+        - {x: 22.642212, y: 20.045166}
+    - name: ArmorKnight01_52
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 2948
+        width: 74
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1.6722565, y: 20.631836}
+        - {x: -11.672256, y: 17.631836}
+        - {x: -22.672256, y: 0.63183594}
+        - {x: -22.672256, y: -15.368164}
+        - {x: -17.672256, y: -20.368164}
+        - {x: 21.327744, y: -20.368164}
+        - {x: 23.327744, y: -7.368164}
+        - {x: 23.327744, y: 20.631836}
+    - name: ArmorKnight01_53
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 2948
+        width: 78
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4.975403, y: 19.631836}
+        - {x: -23.975403, y: -2.368164}
+        - {x: -23.975403, y: -15.368164}
+        - {x: -15.975403, y: -19.368164}
+        - {x: 15.024597, y: -19.368164}
+        - {x: 25.024597, y: 12.631836}
+        - {x: 25.024597, y: 19.631836}
+    - name: ArmorKnight01_54
+      rect:
+        serializedVersion: 2
+        x: 889
+        y: 2948
+        width: 81
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.9375, y: 19.631836}
+        - {x: -22.9375, y: 4.631836}
+        - {x: -24.9375, y: 1.6318359}
+        - {x: -24.9375, y: -11.368164}
+        - {x: -11.9375, y: -19.368164}
+        - {x: 12.0625, y: -19.368164}
+        - {x: 14.0625, y: -18.368164}
+        - {x: 26.0625, y: 9.631836}
+        - {x: 26.0625, y: 19.631836}
+    - name: ArmorKnight01_55
+      rect:
+        serializedVersion: 2
+        x: 1228
+        y: 2948
+        width: 85
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.899658, y: 19.631836}
+        - {x: -25.899658, y: 6.631836}
+        - {x: -25.899658, y: -7.368164}
+        - {x: -6.899658, y: -19.368164}
+        - {x: 13.100342, y: -19.368164}
+        - {x: 27.100342, y: 2.631836}
+        - {x: 27.100342, y: 19.631836}
+    - name: ArmorKnight01_56
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 2948
+        width: 87
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26.748047, y: -3.368164}
+        - {x: -18.748047, y: -18.368164}
+        - {x: 10.251953, y: -18.368164}
+        - {x: 27.251953, y: -2.368164}
+        - {x: 27.251953, y: 18.631836}
+        - {x: -8.748047, y: 18.631836}
+        - {x: -26.748047, y: 7.631836}
+    - name: ArmorKnight01_57
+      rect:
+        serializedVersion: 2
+        x: 1911
+        y: 2949
+        width: 89
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.255493, y: 19.245483}
+        - {x: -24.255493, y: 16.245483}
+        - {x: -27.255493, y: 14.245483}
+        - {x: -27.255493, y: 7.2454834}
+        - {x: -15.255493, y: -17.754517}
+        - {x: 6.744507, y: -17.754517}
+        - {x: 28.744507, y: 8.245483}
+        - {x: 28.744507, y: 19.245483}
+    - name: ArmorKnight01_58
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 2861
+        width: 91
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26.967026, y: 18.741577}
+        - {x: -27.967026, y: 16.741577}
+        - {x: -27.967026, y: 2.7415771}
+        - {x: -19.967026, y: -17.258423}
+        - {x: -1.9670258, y: -17.258423}
+        - {x: 11.032974, y: -15.258423}
+        - {x: 29.032974, y: 13.741577}
+        - {x: 29.032974, y: 18.741577}
+    - name: ArmorKnight01_59
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 2861
+        width: 89
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27.201782, y: 18.741577}
+        - {x: -27.201782, y: -17.258423}
+        - {x: 10.798218, y: -17.258423}
+        - {x: 28.798218, y: -8.258423}
+        - {x: 28.798218, y: 18.741577}
+    - name: ArmorKnight01_60
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 2861
+        width: 91
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25.891235, y: 18.741577}
+        - {x: -27.891235, y: 17.741577}
+        - {x: -27.891235, y: 1.7415771}
+        - {x: -23.891235, y: -15.258423}
+        - {x: -22.891235, y: -17.258423}
+        - {x: 6.1087646, y: -17.258423}
+        - {x: 29.108765, y: 10.741577}
+        - {x: 29.108765, y: 18.741577}
+    - name: ArmorKnight01_61
+      rect:
+        serializedVersion: 2
+        x: 1244
+        y: 2861
+        width: 93
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28.58075, y: 18.741577}
+        - {x: -28.58075, y: -9.258423}
+        - {x: -26.58075, y: -17.258423}
+        - {x: 10.4192505, y: -17.258423}
+        - {x: 29.41925, y: -6.258423}
+        - {x: 29.41925, y: 18.741577}
+    - name: ArmorKnight01_62
+      rect:
+        serializedVersion: 2
+        x: 1581
+        y: 2861
+        width: 95
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29.270203, y: 18.741577}
+        - {x: -29.270203, y: -17.258423}
+        - {x: -0.27020264, y: -17.258423}
+        - {x: 29.729797, y: 11.741577}
+        - {x: 29.729797, y: 18.741577}
+    - name: ArmorKnight01_63
+      rect:
+        serializedVersion: 2
+        x: 1917
+        y: 2861
+        width: 95
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29.073364, y: 19.241577}
+        - {x: -29.073364, y: -17.758423}
+        - {x: 6.9266357, y: -17.758423}
+        - {x: 29.926636, y: 10.241577}
+        - {x: 29.926636, y: 19.241577}
+    - name: ArmorKnight01_64
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 2773
+        width: 95
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29.057587, y: 19.23767}
+        - {x: -29.057587, y: -16.76233}
+        - {x: -28.057587, y: -17.76233}
+        - {x: 3.9424133, y: -17.76233}
+        - {x: 29.942413, y: 11.237671}
+        - {x: 29.942413, y: 19.23767}
+    - name: ArmorKnight01_65
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 2773
+        width: 93
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28.74707, y: 19.23767}
+        - {x: -28.74707, y: -17.76233}
+        - {x: 11.25293, y: -17.76233}
+        - {x: 29.25293, y: -8.762329}
+        - {x: 29.25293, y: 19.23767}
+    - name: ArmorKnight01_66
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 2773
+        width: 93
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28.550232, y: 19.23767}
+        - {x: -28.550232, y: -17.76233}
+        - {x: 11.449768, y: -17.76233}
+        - {x: 29.449768, y: -4.762329}
+        - {x: 29.449768, y: 19.23767}
+    - name: ArmorKnight01_67
+      rect:
+        serializedVersion: 2
+        x: 1238
+        y: 2773
+        width: 91
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27.762817, y: 19.73767}
+        - {x: -27.762817, y: 1.7376709}
+        - {x: -19.762817, y: -18.26233}
+        - {x: 9.237183, y: -18.26233}
+        - {x: 29.237183, y: 11.737671}
+        - {x: 29.237183, y: 19.73767}
+    - name: ArmorKnight01_68
+      rect:
+        serializedVersion: 2
+        x: 1510
+        y: 2772
+        width: 119
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35.341553, y: 18.123901}
+        - {x: -36.341553, y: 17.123901}
+        - {x: -36.341553, y: -1.8760986}
+        - {x: -34.341553, y: -10.876099}
+        - {x: -11.341553, y: -17.876099}
+        - {x: 37.658447, y: -17.876099}
+        - {x: 37.658447, y: 17.123901}
+        - {x: 36.658447, y: 18.123901}
+    - name: ArmorKnight01_69
+      rect:
+        serializedVersion: 2
+        x: 1762
+        y: 2817
+        width: 92
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_70
+      rect:
+        serializedVersion: 2
+        x: 1915
+        y: 2772
+        width: 56
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.3007812, y: 17.123901}
+        - {x: -17.300781, y: 7.1239014}
+        - {x: -17.300781, y: -9.876099}
+        - {x: -16.300781, y: -14.876099}
+        - {x: -9.300781, y: -16.876099}
+        - {x: 17.699219, y: -16.876099}
+        - {x: 17.699219, y: 14.123901}
+        - {x: 11.699219, y: 17.123901}
+    - name: ArmorKnight01_71
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 2731
+        width: 64
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_72
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 2684
+        width: 54
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.557587, y: 17.119995}
+        - {x: -16.557587, y: 13.119995}
+        - {x: -16.557587, y: -14.880005}
+        - {x: -4.5575867, y: -16.880005}
+        - {x: 17.442413, y: -16.880005}
+        - {x: 17.442413, y: 15.119995}
+        - {x: 11.442413, y: 17.119995}
+    - name: ArmorKnight01_73
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 2684
+        width: 53
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.2470703, y: 18.119995}
+        - {x: -16.24707, y: 11.119995}
+        - {x: -16.24707, y: -15.880005}
+        - {x: -13.24707, y: -17.880005}
+        - {x: 16.75293, y: -17.880005}
+        - {x: 16.75293, y: 8.119995}
+        - {x: 7.7529297, y: 18.119995}
+    - name: ArmorKnight01_74
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 2684
+        width: 54
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.550232, y: 18.119995}
+        - {x: -16.550232, y: 11.119995}
+        - {x: -16.550232, y: -14.880005}
+        - {x: -12.550232, y: -15.880005}
+        - {x: -2.550232, y: -15.880005}
+        - {x: 0.44976807, y: -17.880005}
+        - {x: 16.449768, y: -17.880005}
+        - {x: 17.449768, y: -15.880005}
+        - {x: 17.449768, y: 12.119995}
+        - {x: 7.449768, y: 18.119995}
+    - name: ArmorKnight01_75
+      rect:
+        serializedVersion: 2
+        x: 1247
+        y: 2684
+        width: 53
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13.760315, y: 18.119995}
+        - {x: -15.239685, y: 18.119995}
+        - {x: -16.239685, y: 16.119995}
+        - {x: -16.239685, y: -17.880005}
+        - {x: 16.760315, y: -17.880005}
+        - {x: 16.760315, y: 1.1199951}
+        - {x: 15.760315, y: 10.119995}
+    - name: ArmorKnight01_76
+      rect:
+        serializedVersion: 2
+        x: 1583
+        y: 2684
+        width: 52
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_77
+      rect:
+        serializedVersion: 2
+        x: 1919
+        y: 2684
+        width: 52
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_78
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 2596
+        width: 52
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_79
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 2596
+        width: 53
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.24707, y: 17.116089}
+        - {x: -16.24707, y: 14.116089}
+        - {x: -16.24707, y: -16.883911}
+        - {x: 16.75293, y: -16.883911}
+        - {x: 16.75293, y: 17.116089}
+    - name: ArmorKnight01_80
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 2596
+        width: 52
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_81
+      rect:
+        serializedVersion: 2
+        x: 1251
+        y: 2596
+        width: 49
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_82
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 2596
+        width: 47
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_83
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 2596
+        width: 48
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_84
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 2508
+        width: 47
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_85
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 2508
+        width: 44
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_86
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 2508
+        width: 44
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_87
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 2508
+        width: 44
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_88
+      rect:
+        serializedVersion: 2
+        x: 1591
+        y: 2508
+        width: 46
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_89
+      rect:
+        serializedVersion: 2
+        x: 1927
+        y: 2508
+        width: 46
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_90
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 2420
+        width: 43
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_91
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 2420
+        width: 44
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_92
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 2291
+        width: 72
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5.1722565, y: 21.44336}
+        - {x: -11.172256, y: 19.44336}
+        - {x: -22.172256, y: -5.5566406}
+        - {x: -22.172256, y: -12.556641}
+        - {x: -3.1722565, y: -19.55664}
+        - {x: 14.827744, y: -19.55664}
+        - {x: 20.827744, y: -17.55664}
+        - {x: 22.827744, y: 1.4433594}
+        - {x: 22.827744, y: 21.44336}
+    - name: ArmorKnight01_93
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 2291
+        width: 79
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5.202759, y: 21.44336}
+        - {x: -24.202759, y: 2.4433594}
+        - {x: -24.202759, y: -11.556641}
+        - {x: -23.202759, y: -12.556641}
+        - {x: -20.202759, y: -12.556641}
+        - {x: -6.202759, y: -17.55664}
+        - {x: -1.2027588, y: -19.55664}
+        - {x: 11.797241, y: -19.55664}
+        - {x: 17.797241, y: -15.556641}
+        - {x: 24.797241, y: 10.443359}
+        - {x: 24.797241, y: 21.44336}
+    - name: ArmorKnight01_94
+      rect:
+        serializedVersion: 2
+        x: 884
+        y: 2291
+        width: 81
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3.0059204, y: 21.44336}
+        - {x: -25.00592, y: 0.44335938}
+        - {x: -25.00592, y: -9.556641}
+        - {x: -20.00592, y: -8.556641}
+        - {x: -10.00592, y: -14.556641}
+        - {x: -0.00592041, y: -19.55664}
+        - {x: 13.99408, y: -19.55664}
+        - {x: 25.99408, y: -4.5566406}
+        - {x: 25.99408, y: 21.44336}
+    - name: ArmorKnight01_95
+      rect:
+        serializedVersion: 2
+        x: 1218
+        y: 2291
+        width: 90
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27.536438, y: 21.44336}
+        - {x: -27.536438, y: -5.5566406}
+        - {x: -17.536438, y: -19.55664}
+        - {x: 24.463562, y: -19.55664}
+        - {x: 28.463562, y: -14.556641}
+        - {x: 28.463562, y: 15.443359}
+        - {x: 13.463562, y: 21.44336}
+    - name: ArmorKnight01_96
+      rect:
+        serializedVersion: 2
+        x: 1559
+        y: 2291
+        width: 79
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.27118, y: -19.55664}
+        - {x: 21.72882, y: -19.55664}
+        - {x: 25.72882, y: -16.55664}
+        - {x: 25.72882, y: 12.443359}
+        - {x: 19.72882, y: 21.44336}
+        - {x: -24.27118, y: 21.44336}
+        - {x: -24.27118, y: -1.5566406}
+    - name: ArmorKnight01_97
+      rect:
+        serializedVersion: 2
+        x: 1911
+        y: 2291
+        width: 53
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1.7445068, y: 16.44336}
+        - {x: -0.25549316, y: 15.443359}
+        - {x: -10.255493, y: 26.44336}
+        - {x: -16.255493, y: 26.44336}
+        - {x: -16.255493, y: 22.44336}
+        - {x: -15.255493, y: 19.44336}
+        - {x: -7.255493, y: -19.55664}
+        - {x: -2.2554932, y: -24.55664}
+        - {x: 14.744507, y: -24.55664}
+        - {x: 17.744507, y: -19.55664}
+        - {x: 17.744507, y: 11.443359}
+        - {x: 10.744507, y: 16.44336}
+    - name: ArmorKnight01_98
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 2172
+        width: 34
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_99
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 2172
+        width: 36
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_100
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 2172
+        width: 52
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_101
+      rect:
+        serializedVersion: 2
+        x: 1243
+        y: 2172
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10.805603, y: 26.915283}
+        - {x: -5.194397, y: 20.915283}
+        - {x: -22.194397, y: 3.9152832}
+        - {x: -22.194397, y: -12.084717}
+        - {x: -13.194397, y: -25.084717}
+        - {x: 7.805603, y: -25.084717}
+        - {x: 23.805603, y: 14.915283}
+        - {x: 23.805603, y: 26.915283}
+    - name: ArmorKnight01_102
+      rect:
+        serializedVersion: 2
+        x: 1573
+        y: 2172
+        width: 82
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 3.8203125, y: 22.915283}
+        - {x: -3.1796875, y: 21.915283}
+        - {x: -25.179688, y: 9.915283}
+        - {x: -25.179688, y: -2.0847168}
+        - {x: -10.1796875, y: -21.084717}
+        - {x: 6.8203125, y: -21.084717}
+        - {x: 18.820312, y: -0.0847168}
+        - {x: 25.820312, y: 13.915283}
+        - {x: 25.820312, y: 22.915283}
+    - name: ArmorKnight01_103
+      rect:
+        serializedVersion: 2
+        x: 1914
+        y: 2172
+        width: 72
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21.914429, y: 20.415283}
+        - {x: -21.914429, y: 13.415283}
+        - {x: -14.914429, y: -18.584717}
+        - {x: 6.0855713, y: -18.584717}
+        - {x: 11.085571, y: -12.584717}
+        - {x: 23.085571, y: 7.415283}
+        - {x: 23.085571, y: 20.415283}
+    - name: ArmorKnight01_104
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 2053
+        width: 57
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5.4891815, y: 24.387207}
+        - {x: -16.489182, y: 24.387207}
+        - {x: -17.489182, y: 22.387207}
+        - {x: -17.489182, y: -14.612793}
+        - {x: -10.4891815, y: -22.612793}
+        - {x: 3.5108185, y: -22.612793}
+        - {x: 13.5108185, y: -16.612793}
+        - {x: 18.510818, y: -6.612793}
+        - {x: 18.510818, y: 12.387207}
+    - name: ArmorKnight01_105
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 2053
+        width: 52
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_106
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 2053
+        width: 46
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_107
+      rect:
+        serializedVersion: 2
+        x: 1251
+        y: 2053
+        width: 47
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_108
+      rect:
+        serializedVersion: 2
+        x: 1586
+        y: 2053
+        width: 57
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12.298218, y: 29.387207}
+        - {x: 11.298218, y: 28.387207}
+        - {x: -17.701782, y: 8.387207}
+        - {x: -17.701782, y: -16.612793}
+        - {x: -15.701782, y: -27.612793}
+        - {x: 8.298218, y: -27.612793}
+        - {x: 16.298218, y: -23.612793}
+        - {x: 18.298218, y: 6.387207}
+        - {x: 18.298218, y: 29.387207}
+    - name: ArmorKnight01_109
+      rect:
+        serializedVersion: 2
+        x: 1922
+        y: 2053
+        width: 72
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15.994995, y: 27.887207}
+        - {x: -18.005005, y: 8.887207}
+        - {x: -22.005005, y: 3.887207}
+        - {x: -22.005005, y: -8.112793}
+        - {x: -21.005005, y: -12.112793}
+        - {x: -16.005005, y: -26.112793}
+        - {x: 1.9949951, y: -26.112793}
+        - {x: 10.994995, y: -22.112793}
+        - {x: 22.994995, y: 8.887207}
+        - {x: 22.994995, y: 27.887207}
+    - name: ArmorKnight01_110
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 1933
+        width: 85
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 27.010818, y: 16.745483}
+        - {x: 27.010818, y: 23.745483}
+        - {x: 16.010818, y: 23.745483}
+        - {x: -24.989182, y: 9.745483}
+        - {x: -25.989182, y: 6.7454834}
+        - {x: -25.989182, y: -14.254517}
+        - {x: -22.989182, y: -23.254517}
+        - {x: -1.9891815, y: -23.254517}
+        - {x: 5.0108185, y: -22.254517}
+        - {x: 8.0108185, y: -15.254517}
+        - {x: 3.0108185, y: -10.254517}
+        - {x: 9.0108185, y: -3.2545166}
+    - name: ArmorKnight01_111
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 1933
+        width: 94
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 29.139252, y: 19.745483}
+        - {x: 14.139252, y: 19.745483}
+        - {x: 1.1392517, y: 18.745483}
+        - {x: -26.860748, y: 13.745483}
+        - {x: -28.860748, y: 9.745483}
+        - {x: -28.860748, y: -0.2545166}
+        - {x: -22.860748, y: -18.254517}
+        - {x: -20.860748, y: -19.254517}
+        - {x: -2.8607483, y: -19.254517}
+        - {x: 5.1392517, y: -18.254517}
+        - {x: 9.139252, y: -11.254517}
+        - {x: 30.139252, y: 14.745483}
+        - {x: 30.139252, y: 18.745483}
+    - name: ArmorKnight01_112
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 1933
+        width: 95
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28.277588, y: 18.245483}
+        - {x: -29.277588, y: 17.245483}
+        - {x: -29.277588, y: -10.754517}
+        - {x: -28.277588, y: -17.754517}
+        - {x: 10.722412, y: -17.754517}
+        - {x: 29.722412, y: 9.245483}
+        - {x: 29.722412, y: 18.245483}
+    - name: ArmorKnight01_113
+      rect:
+        serializedVersion: 2
+        x: 1246
+        y: 1933
+        width: 94
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28.853394, y: 18.245483}
+        - {x: -28.853394, y: 2.2454834}
+        - {x: -22.853394, y: -17.754517}
+        - {x: 8.146606, y: -17.754517}
+        - {x: 30.146606, y: 7.2454834}
+        - {x: 30.146606, y: 18.245483}
+    - name: ArmorKnight01_114
+      rect:
+        serializedVersion: 2
+        x: 1583
+        y: 1933
+        width: 95
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29.042847, y: 19.245483}
+        - {x: -29.042847, y: -3.7545166}
+        - {x: -26.042847, y: -18.754517}
+        - {x: 9.957153, y: -18.754517}
+        - {x: 29.957153, y: 2.2454834}
+        - {x: 29.957153, y: 19.245483}
+    - name: ArmorKnight01_115
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 1933
+        width: 95
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28.2323, y: 19.745483}
+        - {x: -29.2323, y: 18.745483}
+        - {x: -29.2323, y: -0.2545166}
+        - {x: -24.2323, y: -18.254517}
+        - {x: -22.2323, y: -19.254517}
+        - {x: -4.2323, y: -19.254517}
+        - {x: 2.7677002, y: -18.254517}
+        - {x: 29.7677, y: 7.7454834}
+        - {x: 29.7677, y: 18.745483}
+        - {x: 27.7677, y: 19.745483}
+    - name: ArmorKnight01_116
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 1812
+        width: 96
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29.330215, y: 20.990112}
+        - {x: -29.330215, y: -13.009888}
+        - {x: -27.330215, y: -19.009888}
+        - {x: 8.669785, y: -19.009888}
+        - {x: 30.669785, y: -5.0098877}
+        - {x: 30.669785, y: 20.990112}
+    - name: ArmorKnight01_117
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 1812
+        width: 95
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25.156525, y: 20.990112}
+        - {x: -29.156525, y: 19.990112}
+        - {x: -29.156525, y: 1.9901123}
+        - {x: -16.156525, y: -19.009888}
+        - {x: -0.15652466, y: -19.009888}
+        - {x: 4.8434753, y: -18.009888}
+        - {x: 29.843475, y: 12.990112}
+        - {x: 29.843475, y: 19.990112}
+        - {x: 27.843475, y: 20.990112}
+    - name: ArmorKnight01_118
+      rect:
+        serializedVersion: 2
+        x: 861
+        y: 1812
+        width: 95
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29.120605, y: 19.990112}
+        - {x: -29.120605, y: 10.990112}
+        - {x: 7.8793945, y: -18.009888}
+        - {x: 29.879395, y: -18.009888}
+        - {x: 29.879395, y: 19.990112}
+    - name: ArmorKnight01_119
+      rect:
+        serializedVersion: 2
+        x: 1111
+        y: 1863
+        width: 92
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_120
+      rect:
+        serializedVersion: 2
+        x: 1244
+        y: 1812
+        width: 60
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_121
+      rect:
+        serializedVersion: 2
+        x: 1358
+        y: 1863
+        width: 93
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_122
+      rect:
+        serializedVersion: 2
+        x: 1583
+        y: 1812
+        width: 59
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.0428467, y: 18.490112}
+        - {x: -18.042847, y: 6.4901123}
+        - {x: -18.042847, y: -14.509888}
+        - {x: -6.0428467, y: -16.509888}
+        - {x: 18.957153, y: -16.509888}
+        - {x: 18.957153, y: 3.4901123}
+        - {x: 10.957153, y: 18.490112}
+    - name: ArmorKnight01_123
+      rect:
+        serializedVersion: 2
+        x: 1915
+        y: 1812
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8.699219, y: 18.990112}
+        - {x: -12.300781, y: 18.990112}
+        - {x: -17.300781, y: 13.990112}
+        - {x: -17.300781, y: -14.009888}
+        - {x: -4.3007812, y: -14.009888}
+        - {x: -2.3007812, y: -12.009888}
+        - {x: 5.6992188, y: -17.009888}
+        - {x: 14.699219, y: -17.009888}
+        - {x: 17.699219, y: -12.009888}
+        - {x: 17.699219, y: -2.0098877}
+        - {x: 13.699219, y: 11.990112}
+    - name: ArmorKnight01_124
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 1692
+        width: 56
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.284943, y: 18.348389}
+        - {x: -17.284943, y: 6.3483887}
+        - {x: -17.284943, y: -15.651611}
+        - {x: -12.284943, y: -17.651611}
+        - {x: 17.715057, y: -17.651611}
+        - {x: 17.715057, y: 15.348389}
+        - {x: 9.715057, y: 18.348389}
+    - name: ArmorKnight01_125
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 1692
+        width: 56
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.088104, y: 18.348389}
+        - {x: -17.088104, y: 4.3483887}
+        - {x: -17.088104, y: -17.651611}
+        - {x: 17.911896, y: -17.651611}
+        - {x: 17.911896, y: 12.348389}
+        - {x: 13.911896, y: 18.348389}
+    - name: ArmorKnight01_126
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 1692
+        width: 55
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.891235, y: 18.348389}
+        - {x: -16.891235, y: 6.3483887}
+        - {x: -16.891235, y: -14.651611}
+        - {x: -14.891235, y: -15.651611}
+        - {x: -3.8912354, y: -15.651611}
+        - {x: -1.8912354, y: -13.651611}
+        - {x: 4.1087646, y: -17.651611}
+        - {x: 17.108765, y: -17.651611}
+        - {x: 18.108765, y: -16.651611}
+        - {x: 18.108765, y: 13.348389}
+        - {x: 8.108765, y: 18.348389}
+    - name: ArmorKnight01_127
+      rect:
+        serializedVersion: 2
+        x: 1243
+        y: 1692
+        width: 55
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.694397, y: 18.348389}
+        - {x: -16.694397, y: 9.348389}
+        - {x: -16.694397, y: -17.651611}
+        - {x: 18.305603, y: -17.651611}
+        - {x: 18.305603, y: 13.348389}
+        - {x: 14.305603, y: 18.348389}
+    - name: ArmorKnight01_128
+      rect:
+        serializedVersion: 2
+        x: 1578
+        y: 1693
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4.111267, y: 18.962036}
+        - {x: -17.111267, y: 7.962036}
+        - {x: -17.111267, y: -13.037964}
+        - {x: -15.111267, y: -15.037964}
+        - {x: -7.111267, y: -17.037964}
+        - {x: 17.888733, y: -17.037964}
+        - {x: 17.888733, y: 13.962036}
+        - {x: 12.888733, y: 18.962036}
+    - name: ArmorKnight01_129
+      rect:
+        serializedVersion: 2
+        x: 1915
+        y: 1693
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.300781, y: 18.462036}
+        - {x: -17.300781, y: 12.462036}
+        - {x: -17.300781, y: -14.537964}
+        - {x: -13.300781, y: -16.537964}
+        - {x: 17.699219, y: -16.537964}
+        - {x: 17.699219, y: 16.462036}
+        - {x: 14.699219, y: 18.462036}
+    - name: ArmorKnight01_130
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 1573
+        width: 56
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.284943, y: 17.820312}
+        - {x: -15.284943, y: 16.820312}
+        - {x: -17.284943, y: 7.8203125}
+        - {x: -17.284943, y: -17.179688}
+        - {x: -4.2849426, y: -17.179688}
+        - {x: -2.2849426, y: -13.1796875}
+        - {x: 2.7150574, y: -17.179688}
+        - {x: 17.715057, y: -17.179688}
+        - {x: 17.715057, y: 15.8203125}
+        - {x: 15.715057, y: 17.820312}
+    - name: ArmorKnight01_131
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 1571
+        width: 53
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.2470703, y: 18.592957}
+        - {x: -16.24707, y: 7.5929565}
+        - {x: -16.24707, y: -18.407043}
+        - {x: 16.75293, y: -18.407043}
+        - {x: 16.75293, y: 14.592957}
+        - {x: 9.75293, y: 18.592957}
+    - name: ArmorKnight01_132
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 1571
+        width: 49
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_133
+      rect:
+        serializedVersion: 2
+        x: 1249
+        y: 1571
+        width: 47
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_134
+      rect:
+        serializedVersion: 2
+        x: 1588
+        y: 1571
+        width: 46
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_135
+      rect:
+        serializedVersion: 2
+        x: 1927
+        y: 1571
+        width: 44
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_136
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 1452
+        width: 43
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_137
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 1452
+        width: 44
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_138
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 1452
+        width: 44
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_139
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 1452
+        width: 44
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_140
+      rect:
+        serializedVersion: 2
+        x: 1591
+        y: 1452
+        width: 46
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_141
+      rect:
+        serializedVersion: 2
+        x: 1927
+        y: 1452
+        width: 46
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: ArmorKnight01_142
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 1338
+        width: 122
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.271652, y: 19.605286}
+        - {x: -35.271652, y: 15.605286}
+        - {x: -37.271652, y: 14.605286}
+        - {x: -37.271652, y: -9.394714}
+        - {x: -25.271652, y: -19.394714}
+        - {x: 36.728348, y: -19.394714}
+        - {x: 38.728348, y: -13.394714}
+        - {x: 38.728348, y: 13.605286}
+        - {x: 34.728348, y: 19.605286}
+    - name: ArmorKnight01_143
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 1338
+        width: 124
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.99115, y: 18.605286}
+        - {x: -37.99115, y: 13.605286}
+        - {x: -37.99115, y: 4.6052856}
+        - {x: -33.99115, y: 0.60528564}
+        - {x: 2.00885, y: -18.394714}
+        - {x: 39.00885, y: -18.394714}
+        - {x: 39.00885, y: 18.605286}
+    - name: ArmorKnight01_144
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 1338
+        width: 114
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34.91487, y: 18.605286}
+        - {x: -34.91487, y: 2.6052856}
+        - {x: -12.914871, y: -18.394714}
+        - {x: 36.08513, y: -18.394714}
+        - {x: 36.08513, y: 18.605286}
+    - name: ArmorKnight01_145
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 1338
+        width: 88
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26.746063, y: 18.605286}
+        - {x: -26.746063, y: -18.394714}
+        - {x: 28.253937, y: -18.394714}
+        - {x: 28.253937, y: 12.605286}
+        - {x: 13.253937, y: 18.605286}
+    - name: ArmorKnight01_146
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 1338
+        width: 86
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26.260345, y: 18.105286}
+        - {x: -26.260345, y: -17.894714}
+        - {x: 27.739655, y: -17.894714}
+        - {x: 27.739655, y: 16.105286}
+        - {x: 19.739655, y: 18.105286}
+    - name: ArmorKnight01_147
+      rect:
+        serializedVersion: 2
+        x: 957
+        y: 1338
+        width: 88
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27.207214, y: 18.105286}
+        - {x: -27.207214, y: -9.894714}
+        - {x: -26.207214, y: -17.894714}
+        - {x: 23.792786, y: -17.894714}
+        - {x: 27.792786, y: -12.894714}
+        - {x: 27.792786, y: 16.105286}
+        - {x: 15.792786, y: 18.105286}
+    - name: ArmorKnight01_148
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 1338
+        width: 87
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26.767761, y: 18.605286}
+        - {x: -26.767761, y: -18.394714}
+        - {x: 14.232239, y: -18.394714}
+        - {x: 27.232239, y: -5.3947144}
+        - {x: 27.232239, y: 15.605286}
+        - {x: 18.232239, y: 18.605286}
+    - name: ArmorKnight01_149
+      rect:
+        serializedVersion: 2
+        x: 1298
+        y: 1338
+        width: 85
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25.941956, y: 19.605286}
+        - {x: -25.941956, y: 13.605286}
+        - {x: -23.941956, y: 12.605286}
+        - {x: -15.941956, y: -13.394714}
+        - {x: -5.9419556, y: -19.394714}
+        - {x: 12.058044, y: -19.394714}
+        - {x: 17.058044, y: -16.394714}
+        - {x: 27.058044, y: -6.3947144}
+        - {x: 27.058044, y: 9.605286}
+        - {x: 18.058044, y: 19.605286}
+    - name: ArmorKnight01_150
+      rect:
+        serializedVersion: 2
+        x: 1471
+        y: 1338
+        width: 78
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13.2248535, y: 20.105286}
+        - {x: -23.775146, y: 20.105286}
+        - {x: -23.775146, y: 11.105286}
+        - {x: -2.7751465, y: -19.894714}
+        - {x: 13.2248535, y: -19.894714}
+        - {x: 16.224854, y: -15.894714}
+        - {x: 25.224854, y: -5.8947144}
+        - {x: 25.224854, y: 11.105286}
+    - name: ArmorKnight01_151
+      rect:
+        serializedVersion: 2
+        x: 1647
+        y: 1338
+        width: 73
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 23.732727, y: 11.605286}
+        - {x: 12.732727, y: 19.605286}
+        - {x: 0.73272705, y: 21.605286}
+        - {x: -22.267273, y: 21.605286}
+        - {x: -22.267273, y: 7.6052856}
+        - {x: -2.267273, y: -20.394714}
+        - {x: -0.26727295, y: -21.394714}
+        - {x: 13.732727, y: -21.394714}
+        - {x: 20.732727, y: -14.394714}
+        - {x: 23.732727, y: -1.3947144}
+    - name: ArmorKnight01_152
+      rect:
+        serializedVersion: 2
+        x: 1827
+        y: 1340
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21.804688, y: 22.332642}
+        - {x: -21.804688, y: 0.3326416}
+        - {x: -14.8046875, y: -21.667358}
+        - {x: 21.195312, y: -21.667358}
+        - {x: 22.195312, y: -18.667358}
+        - {x: 22.195312, y: 15.332642}
+        - {x: 4.1953125, y: 22.332642}
+    - name: ArmorKnight01_153
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 1236
+        width: 64
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4.5876007, y: 24.509827}
+        - {x: -19.5876, y: 24.509827}
+        - {x: -19.5876, y: -1.4901733}
+        - {x: -13.587601, y: -23.490173}
+        - {x: 9.412399, y: -23.490173}
+        - {x: 17.4124, y: -20.490173}
+        - {x: 20.4124, y: -18.490173}
+        - {x: 20.4124, y: 10.509827}
+    - name: ArmorKnight01_154
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 1236
+        width: 64
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.579727, y: 24.509827}
+        - {x: -19.579727, y: -23.490173}
+        - {x: 9.420273, y: -23.490173}
+        - {x: 20.420273, y: -19.490173}
+        - {x: 20.420273, y: 12.509827}
+        - {x: 0.42027283, y: 24.509827}
+    - name: ArmorKnight01_155
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 1236
+        width: 65
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.071869, y: 24.509827}
+        - {x: -20.071869, y: 24.509827}
+        - {x: -20.071869, y: -2.4901733}
+        - {x: -10.071869, y: -23.490173}
+        - {x: 14.928131, y: -23.490173}
+        - {x: 18.928131, y: -22.490173}
+        - {x: 20.928131, y: -16.490173}
+        - {x: 20.928131, y: 8.509827}
+        - {x: 9.928131, y: 15.509827}
+    - name: ArmorKnight01_156
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1237
+        width: 71
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15.208649, y: 15.123474}
+        - {x: -11.791351, y: 24.123474}
+        - {x: -21.791351, y: 24.123474}
+        - {x: -21.791351, y: 10.123474}
+        - {x: -20.791351, y: 4.123474}
+        - {x: -11.791351, y: -23.876526}
+        - {x: 18.208649, y: -23.876526}
+        - {x: 22.208649, y: -14.876526}
+        - {x: 22.208649, y: 5.123474}
+        - {x: 21.208649, y: 7.123474}
+    - name: ArmorKnight01_157
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 1239
+        width: 75
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.897156, y: 24.85083}
+        - {x: -22.897156, y: 24.85083}
+        - {x: -22.897156, y: -5.14917}
+        - {x: -8.897156, y: -24.14917}
+        - {x: 24.102844, y: -24.14917}
+        - {x: 24.102844, y: 10.85083}
+        - {x: 23.102844, y: 15.85083}
+    - name: ArmorKnight01_158
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 1239
+        width: 80
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24.457703, y: 24.85083}
+        - {x: -24.457703, y: 8.85083}
+        - {x: -8.457703, y: -24.14917}
+        - {x: 16.542297, y: -24.14917}
+        - {x: 25.542297, y: -19.14917}
+        - {x: 25.542297, y: 8.85083}
+        - {x: -15.457703, y: 24.85083}
+    - name: ArmorKnight01_159
+      rect:
+        serializedVersion: 2
+        x: 1117
+        y: 1237
+        width: 86
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.5182495, y: 24.123474}
+        - {x: -26.51825, y: 24.123474}
+        - {x: -26.51825, y: -10.876526}
+        - {x: -8.5182495, y: -23.876526}
+        - {x: 27.48175, y: -23.876526}
+        - {x: 27.48175, y: 5.123474}
+        - {x: 24.48175, y: 13.123474}
+    - name: ArmorKnight01_160
+      rect:
+        serializedVersion: 2
+        x: 1282
+        y: 1234
+        width: 91
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7.2391357, y: 23.78247}
+        - {x: -27.760864, y: 23.78247}
+        - {x: -27.760864, y: -1.2175293}
+        - {x: -19.760864, y: -23.21753}
+        - {x: 27.239136, y: -23.21753}
+        - {x: 29.239136, y: -18.21753}
+        - {x: 29.239136, y: 11.782471}
+        - {x: 27.239136, y: 20.78247}
+    - name: ArmorKnight01_161
+      rect:
+        serializedVersion: 2
+        x: 1459
+        y: 1234
+        width: 96
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29.639282, y: 21.78247}
+        - {x: -29.639282, y: 8.782471}
+        - {x: -8.639282, y: -17.21753}
+        - {x: -2.6392822, y: -21.21753}
+        - {x: 21.360718, y: -21.21753}
+        - {x: 30.360718, y: -14.217529}
+        - {x: 30.360718, y: 13.782471}
+        - {x: 28.360718, y: 18.78247}
+        - {x: 0.36071777, y: 21.78247}
+    - name: ArmorKnight01_162
+      rect:
+        serializedVersion: 2
+        x: 1630
+        y: 1234
+        width: 101
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26.19983, y: 19.78247}
+        - {x: -31.19983, y: 15.782471}
+        - {x: -31.19983, y: -2.2175293}
+        - {x: -8.199829, y: -17.21753}
+        - {x: 2.800171, y: -19.21753}
+        - {x: 21.80017, y: -19.21753}
+        - {x: 31.80017, y: -10.217529}
+        - {x: 31.80017, y: 19.78247}
+    - name: ArmorKnight01_163
+      rect:
+        serializedVersion: 2
+        x: 1810
+        y: 1234
+        width: 96
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1.7626953, y: 19.78247}
+        - {x: -29.237305, y: 2.7824707}
+        - {x: -29.237305, y: -14.217529}
+        - {x: -10.237305, y: -19.21753}
+        - {x: 23.762695, y: -19.21753}
+        - {x: 30.762695, y: -9.217529}
+        - {x: 30.762695, y: 13.782471}
+        - {x: 28.762695, y: 19.78247}
+    - name: ArmorKnight01_164
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 1131
+        width: 82
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4.292816, y: 20.073303}
+        - {x: -23.292816, y: 6.073303}
+        - {x: -25.292816, y: -0.9266968}
+        - {x: -25.292816, y: -19.926697}
+        - {x: 25.707184, y: -19.926697}
+        - {x: 25.707184, y: 17.073303}
+        - {x: 21.707184, y: 20.073303}
+    - name: ArmorKnight01_165
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 1131
+        width: 74
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22.648132, y: -6.926697}
+        - {x: -22.648132, y: -19.926697}
+        - {x: 21.351868, y: -19.926697}
+        - {x: 23.351868, y: -18.926697}
+        - {x: 23.351868, y: 20.073303}
+        - {x: -2.6481323, y: 20.073303}
+        - {x: -11.648132, y: 17.073303}
+    - name: ArmorKnight01_166
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 1131
+        width: 72
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0.08709717, y: 20.073303}
+        - {x: -6.912903, y: 14.073303}
+        - {x: -21.912903, y: -6.926697}
+        - {x: -21.912903, y: -14.926697}
+        - {x: -16.912903, y: -17.926697}
+        - {x: -9.912903, y: -19.926697}
+        - {x: 18.087097, y: -19.926697}
+        - {x: 23.087097, y: -7.926697}
+        - {x: 23.087097, y: 20.073303}
+    - name: ArmorKnight01_167
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 1131
+        width: 72
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2.9050293, y: 20.073303}
+        - {x: -21.90503, y: -7.926697}
+        - {x: -21.90503, y: -12.926697}
+        - {x: -19.90503, y: -13.926697}
+        - {x: -0.9050293, y: -19.926697}
+        - {x: 16.09497, y: -19.926697}
+        - {x: 23.09497, y: -11.926697}
+        - {x: 23.09497, y: 20.073303}
+    - name: ArmorKnight01_168
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 1027
+        width: 73
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.499016, y: 20.750488}
+        - {x: -22.499016, y: -0.24951172}
+        - {x: -22.499016, y: -17.249512}
+        - {x: -21.499016, y: -17.249512}
+        - {x: -14.499016, y: -20.249512}
+        - {x: 16.500984, y: -20.249512}
+        - {x: 20.500984, y: -18.249512}
+        - {x: 23.500984, y: -3.2495117}
+        - {x: 23.500984, y: 20.750488}
+    - name: ArmorKnight01_169
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 1027
+        width: 74
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5.6761856, y: 20.750488}
+        - {x: -22.676186, y: 1.7504883}
+        - {x: -22.676186, y: -20.249512}
+        - {x: 17.323814, y: -20.249512}
+        - {x: 23.323814, y: -17.249512}
+        - {x: 23.323814, y: 20.750488}
+    - name: ArmorKnight01_170
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 1027
+        width: 73
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3.2396698, y: 20.750488}
+        - {x: -9.23967, y: 15.750488}
+        - {x: -22.23967, y: -2.2495117}
+        - {x: -22.23967, y: -14.249512}
+        - {x: -21.23967, y: -16.249512}
+        - {x: -14.23967, y: -14.249512}
+        - {x: -5.23967, y: -19.249512}
+        - {x: 0.7603302, y: -20.249512}
+        - {x: 13.76033, y: -20.249512}
+        - {x: 21.76033, y: -9.249512}
+        - {x: 23.76033, y: 3.7504883}
+        - {x: 23.76033, y: 20.750488}
+    - name: ArmorKnight01_171
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 1027
+        width: 73
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.41684, y: 20.750488}
+        - {x: -14.41684, y: 19.750488}
+        - {x: -22.41684, y: 7.7504883}
+        - {x: -22.41684, y: -20.249512}
+        - {x: 18.58316, y: -20.249512}
+        - {x: 23.58316, y: 1.7504883}
+        - {x: 23.58316, y: 20.750488}
+    - name: ArmorKnight01_172
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 1027
+        width: 74
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.707703, y: 20.250488}
+        - {x: -22.707703, y: 1.2504883}
+        - {x: -22.707703, y: -14.749512}
+        - {x: -21.707703, y: -15.749512}
+        - {x: -9.707703, y: -19.749512}
+        - {x: 17.292297, y: -19.749512}
+        - {x: 24.292297, y: -1.7495117}
+        - {x: 24.292297, y: 20.250488}
+    - name: ArmorKnight01_173
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 1027
+        width: 75
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3.8848572, y: 20.250488}
+        - {x: -22.884857, y: -6.7495117}
+        - {x: -22.884857, y: -18.749512}
+        - {x: -19.884857, y: -19.749512}
+        - {x: 18.115143, y: -19.749512}
+        - {x: 24.115143, y: -1.7495117}
+        - {x: 24.115143, y: 20.250488}
+    - name: ArmorKnight01_174
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 1027
+        width: 75
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.0620117, y: 20.250488}
+        - {x: -23.062012, y: -3.7495117}
+        - {x: -23.062012, y: -12.749512}
+        - {x: -16.062012, y: -14.749512}
+        - {x: -1.0620117, y: -19.749512}
+        - {x: 16.937988, y: -19.749512}
+        - {x: 23.937988, y: -11.749512}
+        - {x: 23.937988, y: 20.250488}
+    - name: ArmorKnight01_175
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 1027
+        width: 77
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.739197, y: 20.250488}
+        - {x: -23.739197, y: 2.2504883}
+        - {x: -23.739197, y: -13.749512}
+        - {x: -7.739197, y: -19.749512}
+        - {x: 16.260803, y: -19.749512}
+        - {x: 24.260803, y: 1.2504883}
+        - {x: 24.260803, y: 20.250488}
+    - name: ArmorKnight01_176
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 1027
+        width: 77
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5.5300293, y: 20.250488}
+        - {x: -23.53003, y: -5.7495117}
+        - {x: -23.53003, y: -14.749512}
+        - {x: -11.530029, y: -19.749512}
+        - {x: 17.46997, y: -19.749512}
+        - {x: 24.46997, y: -9.749512}
+        - {x: 24.46997, y: 20.250488}
+    - name: ArmorKnight01_177
+      rect:
+        serializedVersion: 2
+        x: 957
+        y: 1027
+        width: 79
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.207214, y: 20.250488}
+        - {x: -22.207214, y: 1.2504883}
+        - {x: -24.207214, y: -4.7495117}
+        - {x: -24.207214, y: -13.749512}
+        - {x: -23.207214, y: -15.749512}
+        - {x: -11.207214, y: -19.749512}
+        - {x: 16.792786, y: -19.749512}
+        - {x: 24.792786, y: -1.7495117}
+        - {x: 24.792786, y: 20.250488}
+    - name: ArmorKnight01_178
+      rect:
+        serializedVersion: 2
+        x: 1062
+        y: 1027
+        width: 78
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.770691, y: 20.250488}
+        - {x: -23.77069, y: 1.2504883}
+        - {x: -23.77069, y: -13.749512}
+        - {x: -22.77069, y: -14.749512}
+        - {x: -4.770691, y: -19.749512}
+        - {x: 14.229309, y: -19.749512}
+        - {x: 23.22931, y: -5.7495117}
+        - {x: 25.22931, y: 4.2504883}
+        - {x: 25.22931, y: 20.250488}
+    - name: ArmorKnight01_179
+      rect:
+        serializedVersion: 2
+        x: 1166
+        y: 1027
+        width: 77
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.447876, y: 14.250488}
+        - {x: -23.447876, y: -3.7495117}
+        - {x: -23.447876, y: -19.749512}
+        - {x: 16.552124, y: -19.749512}
+        - {x: 24.552124, y: -3.7495117}
+        - {x: 24.552124, y: 20.250488}
+        - {x: -1.447876, y: 20.250488}
+    - name: ArmorKnight01_180
+      rect:
+        serializedVersion: 2
+        x: 1270
+        y: 1027
+        width: 77
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23.625061, y: 1.2504883}
+        - {x: -23.625061, y: -15.749512}
+        - {x: -10.625061, y: -19.749512}
+        - {x: 17.374939, y: -19.749512}
+        - {x: 24.374939, y: -2.7495117}
+        - {x: 24.374939, y: 20.250488}
+        - {x: -10.625061, y: 20.250488}
+        - {x: -16.625061, y: 19.250488}
+    - name: ArmorKnight01_181
+      rect:
+        serializedVersion: 2
+        x: 1374
+        y: 1027
+        width: 77
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.802185, y: 20.250488}
+        - {x: -23.802185, y: -1.7495117}
+        - {x: -23.802185, y: -13.749512}
+        - {x: -18.802185, y: -13.749512}
+        - {x: -13.802185, y: -9.749512}
+        - {x: -10.802185, y: -15.749512}
+        - {x: -4.802185, y: -19.749512}
+        - {x: 18.197815, y: -19.749512}
+        - {x: 24.197815, y: -4.7495117}
+        - {x: 24.197815, y: 20.250488}
+    - name: ArmorKnight01_182
+      rect:
+        serializedVersion: 2
+        x: 1477
+        y: 1027
+        width: 78
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.093018, y: 20.250488}
+        - {x: -23.093018, y: 2.2504883}
+        - {x: -24.093018, y: -0.7495117}
+        - {x: -24.093018, y: -11.749512}
+        - {x: -19.093018, y: -13.749512}
+        - {x: -5.0930176, y: -19.749512}
+        - {x: 16.906982, y: -19.749512}
+        - {x: 24.906982, y: 5.2504883}
+        - {x: 24.906982, y: 20.250488}
+    - name: ArmorKnight01_183
+      rect:
+        serializedVersion: 2
+        x: 1581
+        y: 1027
+        width: 79
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.2702026, y: 20.250488}
+        - {x: -24.270203, y: -3.7495117}
+        - {x: -24.270203, y: -13.749512}
+        - {x: -19.270203, y: -12.749512}
+        - {x: -7.2702026, y: -19.749512}
+        - {x: 15.729797, y: -19.749512}
+        - {x: 24.729797, y: 1.2504883}
+        - {x: 24.729797, y: 20.250488}
+    - name: ArmorKnight01_184
+      rect:
+        serializedVersion: 2
+        x: 1686
+        y: 1027
+        width: 76
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23.33374, y: -19.749512}
+        - {x: 16.66626, y: -19.749512}
+        - {x: 24.66626, y: 1.2504883}
+        - {x: 24.66626, y: 20.250488}
+        - {x: -9.33374, y: 20.250488}
+        - {x: -23.33374, y: 16.250488}
+    - name: ArmorKnight01_185
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 1027
+        width: 75
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.0108643, y: 20.250488}
+        - {x: -23.010864, y: -3.7495117}
+        - {x: -23.010864, y: -14.749512}
+        - {x: -18.010864, y: -19.749512}
+        - {x: 23.989136, y: -19.749512}
+        - {x: 23.989136, y: 20.250488}
+    - name: ArmorKnight01_186
+      rect:
+        serializedVersion: 2
+        x: 1894
+        y: 1027
+        width: 74
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.687988, y: 20.250488}
+        - {x: -14.687988, y: 19.250488}
+        - {x: -22.687988, y: -3.7495117}
+        - {x: -22.687988, y: -13.749512}
+        - {x: 0.31201172, y: -19.749512}
+        - {x: 14.312012, y: -19.749512}
+        - {x: 22.312012, y: -6.7495117}
+        - {x: 23.312012, y: -0.7495117}
+        - {x: 23.312012, y: 20.250488}
+    - name: ArmorKnight01_187
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 931
+        width: 75
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1.9990158, y: 20.837097}
+        - {x: -11.999016, y: 13.837097}
+        - {x: -22.999016, y: -5.162903}
+        - {x: -22.999016, y: -15.162903}
+        - {x: -21.999016, y: -18.162903}
+        - {x: -12.999016, y: -20.162903}
+        - {x: 18.000984, y: -20.162903}
+        - {x: 24.000984, y: -12.162903}
+        - {x: 24.000984, y: 20.837097}
+    - name: ArmorKnight01_188
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 931
+        width: 74
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4.6761856, y: 20.837097}
+        - {x: -19.676186, y: -3.1629028}
+        - {x: -22.676186, y: -8.162903}
+        - {x: -22.676186, y: -16.162903}
+        - {x: -21.676186, y: -17.162903}
+        - {x: -14.676186, y: -20.162903}
+        - {x: 16.323814, y: -20.162903}
+        - {x: 23.323814, y: -13.162903}
+        - {x: 23.323814, y: 20.837097}
+    - name: ArmorKnight01_189
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 931
+        width: 73
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3.2396698, y: 20.837097}
+        - {x: -15.23967, y: 12.837097}
+        - {x: -22.23967, y: -2.1629028}
+        - {x: -22.23967, y: -18.162903}
+        - {x: -12.23967, y: -20.162903}
+        - {x: 16.76033, y: -20.162903}
+        - {x: 23.76033, y: -10.162903}
+        - {x: 23.76033, y: 20.837097}
+    - name: ArmorKnight01_190
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 931
+        width: 72
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.9168396, y: 20.837097}
+        - {x: -21.91684, y: 5.837097}
+        - {x: -21.91684, y: -20.162903}
+        - {x: 19.08316, y: -20.162903}
+        - {x: 23.08316, y: 0.83709717}
+        - {x: 23.08316, y: 20.837097}
+    - name: ArmorKnight01_191
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 820
+        width: 73
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22.24754, y: 1.2184753}
+        - {x: -22.24754, y: -19.781525}
+        - {x: 19.75246, y: -19.781525}
+        - {x: 23.75246, y: -8.781525}
+        - {x: 23.75246, y: 20.218475}
+        - {x: -2.2475395, y: 20.218475}
+        - {x: -11.2475395, y: 18.218475}
+    - name: ArmorKnight01_192
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 815
+        width: 82
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1.1038513, y: 18.650085}
+        - {x: -25.103851, y: -4.3499146}
+        - {x: -25.103851, y: -14.349915}
+        - {x: -19.103851, y: -18.349915}
+        - {x: 23.896149, y: -18.349915}
+        - {x: 25.896149, y: -17.349915}
+        - {x: 25.896149, y: 18.650085}
+    - name: ArmorKnight01_193
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 817
+        width: 88
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4.914871, y: 18.377441}
+        - {x: -20.914871, y: 6.3774414}
+        - {x: -26.914871, y: 0.3774414}
+        - {x: -26.914871, y: -2.6225586}
+        - {x: -25.914871, y: -5.6225586}
+        - {x: -17.914871, y: -7.6225586}
+        - {x: 0.085128784, y: -17.622559}
+        - {x: 21.085129, y: -17.622559}
+        - {x: 28.085129, y: -10.622559}
+        - {x: 28.085129, y: 17.377441}
+        - {x: 26.085129, y: 18.377441}
+    - name: ArmorKnight01_194
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 817
+        width: 87
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.702759, y: 18.377441}
+        - {x: -26.702759, y: 17.377441}
+        - {x: -26.702759, y: -4.6225586}
+        - {x: -14.702759, y: -17.622559}
+        - {x: 24.297241, y: -17.622559}
+        - {x: 27.297241, y: -15.622559}
+        - {x: 27.297241, y: 14.377441}
+        - {x: 25.297241, y: 18.377441}
+    - name: ArmorKnight01_195
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 815
+        width: 79
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 19.805115, y: 18.650085}
+        - {x: -24.194885, y: 18.650085}
+        - {x: -24.194885, y: 8.650085}
+        - {x: -15.194885, y: 1.6500854}
+        - {x: -2.1948853, y: -18.349915}
+        - {x: 20.805115, y: -18.349915}
+        - {x: 24.805115, y: -10.349915}
+        - {x: 24.805115, y: 16.650085}
+    - name: ArmorKnight01_196
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 820
+        width: 70
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6.3129883, y: 22.718475}
+        - {x: -21.687012, y: 22.718475}
+        - {x: -21.687012, y: -1.2815247}
+        - {x: -14.687012, y: -22.281525}
+        - {x: 22.312988, y: -22.281525}
+        - {x: 22.312988, y: 14.718475}
+        - {x: 14.312988, y: 20.718475}
+    - name: ArmorKnight01_197
+      rect:
+        serializedVersion: 2
+        x: 1073
+        y: 820
+        width: 65
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20.020203, y: 24.218475}
+        - {x: -20.020203, y: -0.78152466}
+        - {x: -13.020203, y: -23.781525}
+        - {x: 19.979797, y: -23.781525}
+        - {x: 20.979797, y: -21.781525}
+        - {x: 20.979797, y: 16.218475}
+        - {x: 1.9797974, y: 24.218475}
+    - name: ArmorKnight01_198
+      rect:
+        serializedVersion: 2
+        x: 1243
+        y: 820
+        width: 63
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.194397, y: 24.218475}
+        - {x: -19.194397, y: -8.781525}
+        - {x: -16.194397, y: -23.781525}
+        - {x: 19.805603, y: -23.781525}
+        - {x: 20.805603, y: -21.781525}
+        - {x: 20.805603, y: 15.218475}
+        - {x: 4.805603, y: 24.218475}
+    - name: ArmorKnight01_199
+      rect:
+        serializedVersion: 2
+        x: 1407
+        y: 820
+        width: 67
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2.5507202, y: 23.718475}
+        - {x: -20.55072, y: 23.718475}
+        - {x: -20.55072, y: 2.7184753}
+        - {x: -11.55072, y: -19.281525}
+        - {x: -8.55072, y: -23.281525}
+        - {x: 21.44928, y: -23.281525}
+        - {x: 21.44928, y: 13.718475}
+        - {x: 11.44928, y: 17.718475}
+    - name: ArmorKnight01_200
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 820
+        width: 74
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.748047, y: 22.218475}
+        - {x: -22.748047, y: 22.218475}
+        - {x: -22.748047, y: 8.218475}
+        - {x: -8.748047, y: -21.781525}
+        - {x: 14.251953, y: -21.781525}
+        - {x: 23.251953, y: -16.781525}
+        - {x: 23.251953, y: 13.218475}
+        - {x: 20.251953, y: 15.218475}
+    - name: ArmorKnight01_201
+      rect:
+        serializedVersion: 2
+        x: 1731
+        y: 820
+        width: 77
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23.718018, y: 20.718475}
+        - {x: -23.718018, y: 3.7184753}
+        - {x: -7.7180176, y: -20.281525}
+        - {x: 16.281982, y: -20.281525}
+        - {x: 24.281982, y: -10.281525}
+        - {x: 24.281982, y: 17.718475}
+        - {x: 15.281982, y: 20.718475}
+    - name: ArmorKnight01_202
+      rect:
+        serializedVersion: 2
+        x: 1894
+        y: 820
+        width: 82
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25.187988, y: 19.718475}
+        - {x: -25.187988, y: -3.2815247}
+        - {x: -0.18798828, y: -19.281525}
+        - {x: 25.812012, y: -19.281525}
+        - {x: 25.812012, y: 18.718475}
+        - {x: 21.812012, y: 19.718475}
+    - name: ArmorKnight01_203
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 708
+        width: 83
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25.611713, y: 19.486206}
+        - {x: -25.611713, y: 9.486206}
+        - {x: 3.3882866, y: -18.513794}
+        - {x: 21.388287, y: -18.513794}
+        - {x: 26.388287, y: -10.513794}
+        - {x: 26.388287, y: 16.486206}
+        - {x: 24.388287, y: 19.486206}
+    - name: ArmorKnight01_204
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 708
+        width: 83
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.740662, y: 18.986206}
+        - {x: -25.740662, y: 17.986206}
+        - {x: -25.740662, y: 3.986206}
+        - {x: 3.2593384, y: -18.013794}
+        - {x: 26.259338, y: -18.013794}
+        - {x: 26.259338, y: 16.986206}
+        - {x: 24.259338, y: 18.986206}
+    - name: ArmorKnight01_205
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 708
+        width: 85
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20.142227, y: 18.486206}
+        - {x: -26.142227, y: 17.486206}
+        - {x: -26.142227, y: 4.486206}
+        - {x: 0.8577728, y: -17.513794}
+        - {x: 22.857773, y: -17.513794}
+        - {x: 26.857773, y: -7.513794}
+        - {x: 26.857773, y: 15.486206}
+        - {x: 24.857773, y: 18.486206}
+    - name: ArmorKnight01_206
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 708
+        width: 85
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26.043823, y: 18.486206}
+        - {x: -26.043823, y: 2.486206}
+        - {x: -9.043823, y: -17.513794}
+        - {x: 26.956177, y: -17.513794}
+        - {x: 26.956177, y: 17.486206}
+        - {x: 23.956177, y: 18.486206}
+    - name: ArmorKnight01_207
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 708
+        width: 85
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.945404, y: 18.986206}
+        - {x: -25.945404, y: 13.986206}
+        - {x: -25.945404, y: -2.013794}
+        - {x: -2.945404, y: -18.013794}
+        - {x: 27.054596, y: -18.013794}
+        - {x: 27.054596, y: 17.986206}
+        - {x: 25.054596, y: 18.986206}
+    - name: ArmorKnight01_208
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 708
+        width: 84
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25.733276, y: 18.986206}
+        - {x: -25.733276, y: 4.986206}
+        - {x: -22.733276, y: 1.986206}
+        - {x: 6.2667236, y: -18.013794}
+        - {x: 23.266724, y: -18.013794}
+        - {x: 26.266724, y: -11.013794}
+        - {x: 26.266724, y: 18.986206}
+    - name: ArmorKnight01_209
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 708
+        width: 88
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22.951782, y: -18.513794}
+        - {x: 25.048218, y: -18.513794}
+        - {x: 28.048218, y: -17.513794}
+        - {x: 28.048218, y: 11.486206}
+        - {x: 18.048218, y: 19.486206}
+        - {x: -23.951782, y: 19.486206}
+        - {x: -26.951782, y: 18.486206}
+        - {x: -26.951782, y: -2.513794}
+    - name: ArmorKnight01_210
+      rect:
+        serializedVersion: 2
+        x: 1249
+        y: 708
+        width: 93
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 29.48767, y: -4.513794}
+        - {x: 29.48767, y: 4.486206}
+        - {x: 8.487671, y: 19.486206}
+        - {x: -18.51233, y: 19.486206}
+        - {x: -23.51233, y: 17.486206}
+        - {x: -28.51233, y: 11.486206}
+        - {x: -28.51233, y: -6.513794}
+        - {x: -25.51233, y: -11.513794}
+        - {x: -20.51233, y: -9.513794}
+        - {x: -19.51233, y: -17.513794}
+        - {x: -17.51233, y: -18.513794}
+        - {x: -2.512329, y: -18.513794}
+        - {x: -1.5123291, y: -16.513794}
+        - {x: -1.5123291, y: -12.513794}
+        - {x: 28.48767, y: -6.513794}
+    - name: ArmorKnight01_211
+      rect:
+        serializedVersion: 2
+        x: 1415
+        y: 708
+        width: 90
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6.3587036, y: 19.986206}
+        - {x: -18.641296, y: 19.986206}
+        - {x: -27.641296, y: 15.986206}
+        - {x: -27.641296, y: -14.013794}
+        - {x: -25.641296, y: -19.013794}
+        - {x: 28.358704, y: -19.013794}
+        - {x: 28.358704, y: -1.013794}
+        - {x: 15.358704, y: 16.986206}
+    - name: ArmorKnight01_212
+      rect:
+        serializedVersion: 2
+        x: 1581
+        y: 708
+        width: 93
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25.770203, y: 19.986206}
+        - {x: -28.770203, y: 11.986206}
+        - {x: -28.770203, y: -15.013794}
+        - {x: -23.770203, y: -19.013794}
+        - {x: 29.229797, y: -19.013794}
+        - {x: 29.229797, y: -1.013794}
+        - {x: 13.229797, y: 19.986206}
+    - name: ArmorKnight01_213
+      rect:
+        serializedVersion: 2
+        x: 1749
+        y: 708
+        width: 95
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24.171753, y: 19.986206}
+        - {x: -29.171753, y: 9.986206}
+        - {x: -29.171753, y: -19.013794}
+        - {x: 29.828247, y: -19.013794}
+        - {x: 29.828247, y: 1.986206}
+        - {x: 7.828247, y: 19.986206}
+    - name: ArmorKnight01_214
+      rect:
+        serializedVersion: 2
+        x: 1922
+        y: 706
+        width: 86
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 27.494995, y: -7.24115}
+        - {x: 27.494995, y: 6.75885}
+        - {x: 9.494995, y: 19.75885}
+        - {x: -21.505005, y: 19.75885}
+        - {x: -26.505005, y: 9.75885}
+        - {x: -26.505005, y: -8.24115}
+        - {x: -21.505005, y: -10.24115}
+        - {x: -14.505005, y: -18.24115}
+        - {x: -13.505005, y: -19.24115}
+        - {x: -3.505005, y: -19.24115}
+        - {x: -0.5050049, y: -18.24115}
+        - {x: 1.4949951, y: -15.24115}
+        - {x: 1.4949951, y: -5.24115}
+        - {x: 26.494995, y: -8.24115}
+    - name: ArmorKnight01_215
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 595
+        width: 87
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.77067, y: 18.640228}
+        - {x: -26.77067, y: 14.640228}
+        - {x: -26.77067, y: -4.3597717}
+        - {x: -13.77067, y: -18.359772}
+        - {x: 6.22933, y: -18.359772}
+        - {x: 10.22933, y: -15.359772}
+        - {x: 12.22933, y: -11.359772}
+        - {x: 15.22933, y: -18.359772}
+        - {x: 27.22933, y: -18.359772}
+        - {x: 27.22933, y: 18.640228}
+    - name: ArmorKnight01_216
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 595
+        width: 123
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -37.696365, y: 10.640228}
+        - {x: -37.696365, y: -13.359772}
+        - {x: -17.696365, y: -18.359772}
+        - {x: 38.303635, y: -18.359772}
+        - {x: 38.303635, y: 18.640228}
+        - {x: -35.696365, y: 18.640228}
+    - name: ArmorKnight01_217
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 595
+        width: 122
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -37.597946, y: -10.359772}
+        - {x: -28.597946, y: -18.359772}
+        - {x: 38.402054, y: -18.359772}
+        - {x: 38.402054, y: 18.640228}
+        - {x: -20.597946, y: 18.640228}
+        - {x: -33.597946, y: 15.640228}
+        - {x: -37.597946, y: 11.640228}
+    - name: ArmorKnight01_218
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 595
+        width: 122
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -37.49951, y: 19.140228}
+        - {x: -37.49951, y: -16.859772}
+        - {x: -36.49951, y: -18.859772}
+        - {x: 38.50049, y: -18.859772}
+        - {x: 38.50049, y: 11.140228}
+        - {x: 35.50049, y: 19.140228}
+    - name: ArmorKnight01_219
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 595
+        width: 121
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.287415, y: 19.140228}
+        - {x: -37.287415, y: 16.140228}
+        - {x: -37.287415, y: -13.859772}
+        - {x: -30.287415, y: -18.859772}
+        - {x: 34.712585, y: -18.859772}
+        - {x: 37.712585, y: -9.859772}
+        - {x: 37.712585, y: 16.140228}
+        - {x: 35.712585, y: 19.140228}
+    - name: ArmorKnight01_220
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 595
+        width: 121
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.189026, y: 19.140228}
+        - {x: -19.189026, y: 18.140228}
+        - {x: -37.189026, y: 9.140228}
+        - {x: -37.189026, y: 0.14022827}
+        - {x: -32.189026, y: -5.8597717}
+        - {x: -15.189026, y: -18.859772}
+        - {x: 37.810974, y: -18.859772}
+        - {x: 37.810974, y: 12.140228}
+        - {x: 32.810974, y: 19.140228}
+    - name: ArmorKnight01_221
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 595
+        width: 121
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.090576, y: 19.140228}
+        - {x: -37.090576, y: 15.140228}
+        - {x: -37.090576, y: -7.8597717}
+        - {x: -23.090576, y: -18.859772}
+        - {x: 35.909424, y: -18.859772}
+        - {x: 37.909424, y: -15.859772}
+        - {x: 37.909424, y: 11.140228}
+        - {x: 34.909424, y: 19.140228}
+    - name: ArmorKnight01_222
+      rect:
+        serializedVersion: 2
+        x: 1192
+        y: 595
+        width: 121
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -0.99212646, y: 19.140228}
+        - {x: -17.992126, y: 15.140228}
+        - {x: -36.992126, y: 8.140228}
+        - {x: -36.992126, y: 0.14022827}
+        - {x: -31.992126, y: -5.8597717}
+        - {x: -3.9921265, y: -18.859772}
+        - {x: 36.007874, y: -18.859772}
+        - {x: 38.007874, y: -9.859772}
+        - {x: 38.007874, y: 10.140228}
+        - {x: 30.007874, y: 19.140228}
+    - name: ArmorKnight01_223
+      rect:
+        serializedVersion: 2
+        x: 1360
+        y: 595
+        width: 122
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -0.3937378, y: 19.140228}
+        - {x: -16.393738, y: 15.140228}
+        - {x: -37.393738, y: 9.140228}
+        - {x: -37.393738, y: -12.859772}
+        - {x: -18.393738, y: -18.859772}
+        - {x: 38.606262, y: -18.859772}
+        - {x: 38.606262, y: 12.140228}
+        - {x: 35.606262, y: 19.140228}
+    - name: ArmorKnight01_224
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 468
+        width: 73
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4.338093, y: 20.202759}
+        - {x: -22.338093, y: 0.20275879}
+        - {x: -22.338093, y: -18.797241}
+        - {x: -20.338093, y: -19.797241}
+        - {x: 16.661907, y: -19.797241}
+        - {x: 23.661907, y: -11.797241}
+        - {x: 23.661907, y: 20.202759}
+    - name: ArmorKnight01_225
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 468
+        width: 73
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.23967, y: 19.702759}
+        - {x: -22.23967, y: 2.7027588}
+        - {x: -22.23967, y: -12.297241}
+        - {x: -13.23967, y: -17.297241}
+        - {x: -7.23967, y: -19.297241}
+        - {x: 17.76033, y: -19.297241}
+        - {x: 19.76033, y: -10.297241}
+        - {x: 23.76033, y: 9.702759}
+        - {x: 23.76033, y: 19.702759}
+    - name: ArmorKnight01_226
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 468
+        width: 75
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.095978, y: 18.702759}
+        - {x: -23.095978, y: 7.702759}
+        - {x: -23.095978, y: -18.297241}
+        - {x: 23.904022, y: -18.297241}
+        - {x: 23.904022, y: 18.702759}
+    - name: ArmorKnight01_227
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 468
+        width: 76
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 23.661407, y: 18.702759}
+        - {x: -11.338593, y: 18.702759}
+        - {x: -23.338593, y: 6.702759}
+        - {x: -23.338593, y: -10.297241}
+        - {x: -18.338593, y: -18.297241}
+        - {x: 19.661407, y: -18.297241}
+        - {x: 24.661407, y: -10.297241}
+        - {x: 24.661407, y: 17.702759}
+    - name: ArmorKnight01_228
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 468
+        width: 59
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.080231, y: 18.702759}
+        - {x: -18.08023, y: 10.702759}
+        - {x: -18.08023, y: -3.2972412}
+        - {x: -14.080231, y: -16.297241}
+        - {x: -7.0802307, y: -18.297241}
+        - {x: 12.919769, y: -18.297241}
+        - {x: 18.91977, y: -11.297241}
+        - {x: 18.91977, y: 13.702759}
+        - {x: 14.919769, y: 18.702759}
+    - name: ArmorKnight01_229
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 468
+        width: 63
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.322876, y: 8.702759}
+        - {x: -19.322876, y: -17.297241}
+        - {x: -6.322876, y: -22.297241}
+        - {x: 20.677124, y: -22.297241}
+        - {x: 20.677124, y: 22.702759}
+        - {x: 2.677124, y: 22.702759}
+        - {x: -18.322876, y: 13.702759}
+    - name: ArmorKnight01_230
+      rect:
+        serializedVersion: 2
+        x: 1076
+        y: 468
+        width: 72
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15.820862, y: 27.202759}
+        - {x: -15.179138, y: 15.202759}
+        - {x: -22.179138, y: -5.797241}
+        - {x: -22.179138, y: -26.797241}
+        - {x: 13.820862, y: -26.797241}
+        - {x: 22.820862, y: -14.797241}
+        - {x: 22.820862, y: 27.202759}
+    - name: ArmorKnight01_231
+      rect:
+        serializedVersion: 2
+        x: 1249
+        y: 468
+        width: 64
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2.512329, y: 27.702759}
+        - {x: -19.51233, y: 5.702759}
+        - {x: -19.51233, y: -27.297241}
+        - {x: 17.48767, y: -27.297241}
+        - {x: 20.48767, y: -16.297241}
+        - {x: 20.48767, y: 27.702759}
+    - name: ArmorKnight01_232
+      rect:
+        serializedVersion: 2
+        x: 1420
+        y: 468
+        width: 62
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.072876, y: -26.797241}
+        - {x: 15.927124, y: -26.797241}
+        - {x: 19.927124, y: -24.797241}
+        - {x: 19.927124, y: 27.202759}
+        - {x: 5.927124, y: 27.202759}
+        - {x: -19.072876, y: 16.202759}
+    - name: ArmorKnight01_233
+      rect:
+        serializedVersion: 2
+        x: 1588
+        y: 468
+        width: 62
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11.025574, y: 26.702759}
+        - {x: -17.974426, y: 7.702759}
+        - {x: -18.974426, y: 5.702759}
+        - {x: -18.974426, y: -26.297241}
+        - {x: 13.025574, y: -26.297241}
+        - {x: 20.025574, y: -17.297241}
+        - {x: 20.025574, y: 26.702759}
+    - name: ArmorKnight01_234
+      rect:
+        serializedVersion: 2
+        x: 1757
+        y: 468
+        width: 61
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13.237671, y: 26.202759}
+        - {x: 10.237671, y: 25.202759}
+        - {x: -17.76233, y: 21.202759}
+        - {x: -18.76233, y: 17.202759}
+        - {x: -18.76233, y: -19.797241}
+        - {x: -14.762329, y: -18.797241}
+        - {x: -11.762329, y: -15.797241}
+        - {x: -13.762329, y: -18.797241}
+        - {x: -13.762329, y: -21.797241}
+        - {x: -12.762329, y: -23.797241}
+        - {x: -4.762329, y: -25.797241}
+        - {x: 9.237671, y: -25.797241}
+        - {x: 19.23767, y: -16.797241}
+        - {x: 19.23767, y: 26.202759}
+    - name: ArmorKnight01_235
+      rect:
+        serializedVersion: 2
+        x: 1922
+        y: 468
+        width: 64
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5.494995, y: 25.702759}
+        - {x: -16.505005, y: 18.702759}
+        - {x: -19.505005, y: 11.702759}
+        - {x: -19.505005, y: -22.297241}
+        - {x: -11.505005, y: -25.297241}
+        - {x: 13.494995, y: -25.297241}
+        - {x: 20.494995, y: -14.297241}
+        - {x: 20.494995, y: 25.702759}
+    - name: ArmorKnight01_236
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 356
+        width: 74
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22.656006, y: 10.470459}
+        - {x: -22.656006, y: -25.529541}
+        - {x: 12.343994, y: -25.529541}
+        - {x: 23.343994, y: -8.529541}
+        - {x: 23.343994, y: 26.470459}
+        - {x: 0.34399414, y: 26.470459}
+        - {x: -17.656006, y: 20.470459}
+    - name: ArmorKnight01_237
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 356
+        width: 75
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1.8302155, y: 27.970459}
+        - {x: -21.830215, y: 10.970459}
+        - {x: -22.830215, y: 3.970459}
+        - {x: -22.830215, y: -27.029541}
+        - {x: 13.169785, y: -27.029541}
+        - {x: 24.169785, y: -9.029541}
+        - {x: 24.169785, y: 26.970459}
+        - {x: 21.169785, y: 27.970459}
+    - name: ArmorKnight01_238
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 356
+        width: 90
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 20.198807, y: 22.970459}
+        - {x: -10.801193, y: 22.970459}
+        - {x: -27.801193, y: 4.970459}
+        - {x: -27.801193, y: -13.029541}
+        - {x: -2.8011932, y: -22.029541}
+        - {x: 27.198807, y: -22.029541}
+        - {x: 28.198807, y: -20.029541}
+        - {x: 28.198807, y: 20.970459}
+    - name: ArmorKnight01_239
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 356
+        width: 83
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1.3656311, y: 19.470459}
+        - {x: -7.634369, y: 16.470459}
+        - {x: -25.634369, y: -1.529541}
+        - {x: -25.634369, y: -17.529541}
+        - {x: -22.634369, y: -18.529541}
+        - {x: 24.365631, y: -18.529541}
+        - {x: 26.365631, y: -10.529541}
+        - {x: 26.365631, y: 19.470459}
+    - name: ArmorKnight01_240
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 356
+        width: 83
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25.53595, y: -18.529541}
+        - {x: 24.46405, y: -18.529541}
+        - {x: 26.46405, y: -10.529541}
+        - {x: 26.46405, y: 19.470459}
+        - {x: -12.53595, y: 19.470459}
+        - {x: -25.53595, y: 14.470459}
+    - name: ArmorKnight01_241
+      rect:
+        serializedVersion: 2
+        x: 889
+        y: 356
+        width: 83
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5.4375, y: 19.470459}
+        - {x: -25.4375, y: 5.470459}
+        - {x: -25.4375, y: -12.529541}
+        - {x: -19.4375, y: -12.529541}
+        - {x: -5.4375, y: -5.529541}
+        - {x: -4.4375, y: -14.529541}
+        - {x: 3.5625, y: -18.529541}
+        - {x: 21.5625, y: -18.529541}
+        - {x: 26.5625, y: -9.529541}
+        - {x: 26.5625, y: 15.470459}
+        - {x: 22.5625, y: 19.470459}
+    - name: ArmorKnight01_242
+      rect:
+        serializedVersion: 2
+        x: 1055
+        y: 356
+        width: 85
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2.9335327, y: 19.970459}
+        - {x: -26.066467, y: -3.029541}
+        - {x: -26.066467, y: -12.029541}
+        - {x: -25.066467, y: -13.029541}
+        - {x: -20.066467, y: -19.029541}
+        - {x: 26.933533, y: -19.029541}
+        - {x: 26.933533, y: 16.970459}
+        - {x: 19.933533, y: 19.970459}
+    - name: ArmorKnight01_243
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 359
+        width: 87
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.695374, y: 18.811508}
+        - {x: -26.695374, y: 13.811508}
+        - {x: -26.695374, y: -13.188492}
+        - {x: -18.695374, y: -18.188492}
+        - {x: 27.304626, y: -18.188492}
+        - {x: 27.304626, y: 17.811508}
+        - {x: 25.304626, y: 18.811508}
+    - name: ArmorKnight01_244
+      rect:
+        serializedVersion: 2
+        x: 1389
+        y: 361
+        width: 87
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.596985, y: 18.538864}
+        - {x: -26.596985, y: 15.538864}
+        - {x: -26.596985, y: -9.461136}
+        - {x: -19.596985, y: -17.461136}
+        - {x: 26.403015, y: -17.461136}
+        - {x: 27.403015, y: -15.461136}
+        - {x: 27.403015, y: 15.538864}
+        - {x: 24.403015, y: 18.538864}
+    - name: ArmorKnight01_245
+      rect:
+        serializedVersion: 2
+        x: 1562
+        y: 361
+        width: 80
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.430176, y: 18.538864}
+        - {x: -24.430176, y: 16.538864}
+        - {x: -24.430176, y: -0.46113586}
+        - {x: -7.430176, y: -17.461136}
+        - {x: 21.569824, y: -17.461136}
+        - {x: 25.569824, y: -14.461136}
+        - {x: 25.569824, y: 18.538864}
+    - name: ArmorKnight01_246
+      rect:
+        serializedVersion: 2
+        x: 1740
+        y: 358
+        width: 70
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21.194946, y: 21.19783}
+        - {x: -21.194946, y: -0.8021698}
+        - {x: -8.194946, y: -19.80217}
+        - {x: 21.805054, y: -19.80217}
+        - {x: 22.805054, y: -18.80217}
+        - {x: 22.805054, y: 21.19783}
+    - name: ArmorKnight01_247
+      rect:
+        serializedVersion: 2
+        x: 1914
+        y: 356
+        width: 65
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.914429, y: 24.470459}
+        - {x: -19.914429, y: -2.529541}
+        - {x: -14.914429, y: -23.529541}
+        - {x: 21.085571, y: -23.529541}
+        - {x: 21.085571, y: 16.470459}
+        - {x: -8.914429, y: 24.470459}
+    - name: ArmorKnight01_248
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 244
+        width: 64
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.497047, y: 24.73819}
+        - {x: -19.497047, y: -8.26181}
+        - {x: -16.497047, y: -23.26181}
+        - {x: 17.502953, y: -23.26181}
+        - {x: 20.502953, y: -20.26181}
+        - {x: 20.502953, y: 14.73819}
+        - {x: 1.5029526, y: 24.73819}
+    - name: ArmorKnight01_249
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 244
+        width: 67
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20.625992, y: 24.73819}
+        - {x: -20.625992, y: -23.26181}
+        - {x: 20.374008, y: -23.26181}
+        - {x: 21.374008, y: -19.26181}
+        - {x: 21.374008, y: 12.73819}
+        - {x: 0.37400818, y: 24.73819}
+    - name: ArmorKnight01_250
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 244
+        width: 72
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22.095978, y: 23.73819}
+        - {x: -22.095978, y: 14.73819}
+        - {x: -18.095978, y: 5.7381897}
+        - {x: -7.095978, y: -20.26181}
+        - {x: -5.095978, y: -22.26181}
+        - {x: 14.904022, y: -22.26181}
+        - {x: 22.904022, y: -14.26181}
+        - {x: 22.904022, y: 18.73819}
+        - {x: 6.904022, y: 23.73819}
+    - name: ArmorKnight01_251
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 244
+        width: 77
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6.206665, y: 22.23819}
+        - {x: -23.793335, y: 22.23819}
+        - {x: -23.793335, y: 0.2381897}
+        - {x: -11.793335, y: -20.76181}
+        - {x: 14.206665, y: -20.76181}
+        - {x: 24.206665, y: -11.76181}
+        - {x: 24.206665, y: 14.23819}
+        - {x: 14.206665, y: 21.23819}
+    - name: ArmorKnight01_252
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 244
+        width: 78
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4.9640503, y: 20.23819}
+        - {x: -2.0359497, y: 21.23819}
+        - {x: -24.03595, y: 21.23819}
+        - {x: -24.03595, y: 8.23819}
+        - {x: -2.0359497, y: -19.76181}
+        - {x: 20.96405, y: -19.76181}
+        - {x: 24.96405, y: -11.76181}
+        - {x: 24.96405, y: 17.23819}
+        - {x: 23.96405, y: 19.23819}
+    - name: ArmorKnight01_253
+      rect:
+        serializedVersion: 2
+        x: 884
+        y: 244
+        width: 83
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25.50592, y: 19.73819}
+        - {x: -25.50592, y: -1.2618103}
+        - {x: 2.4940796, y: -18.26181}
+        - {x: 26.49408, y: -18.26181}
+        - {x: 26.49408, y: 19.73819}
+    - name: ArmorKnight01_254
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 244
+        width: 83
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25.634888, y: 16.23819}
+        - {x: -25.634888, y: 4.2381897}
+        - {x: 3.3651123, y: -17.76181}
+        - {x: 26.365112, y: -17.76181}
+        - {x: 26.365112, y: 19.23819}
+        - {x: -14.634888, y: 19.23819}
+    - name: ArmorKnight01_255
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 244
+        width: 87
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21.763794, y: 19.23819}
+        - {x: -26.763794, y: 18.23819}
+        - {x: -26.763794, y: 4.2381897}
+        - {x: 1.236206, y: -17.76181}
+        - {x: 27.236206, y: -17.76181}
+        - {x: 27.236206, y: 17.23819}
+        - {x: 25.236206, y: 19.23819}
+    - name: ArmorKnight01_256
+      rect:
+        serializedVersion: 2
+        x: 1384
+        y: 244
+        width: 87
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.665405, y: 18.73819}
+        - {x: -26.665405, y: 16.73819}
+        - {x: -26.665405, y: 4.7381897}
+        - {x: -3.6654053, y: -17.26181}
+        - {x: 22.334595, y: -17.26181}
+        - {x: 27.334595, y: -6.2618103}
+        - {x: 27.334595, y: 14.73819}
+        - {x: 23.334595, y: 18.73819}
+    - name: ArmorKnight01_257
+      rect:
+        serializedVersion: 2
+        x: 1552
+        y: 244
+        width: 86
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.5669556, y: 19.23819}
+        - {x: -26.566956, y: 13.23819}
+        - {x: -26.566956, y: 6.2381897}
+        - {x: -12.566956, y: -1.7618103}
+        - {x: -0.56695557, y: -17.76181}
+        - {x: 22.433044, y: -17.76181}
+        - {x: 27.433044, y: -8.76181}
+        - {x: 27.433044, y: 16.23819}
+        - {x: 18.433044, y: 19.23819}
+    - name: ArmorKnight01_258
+      rect:
+        serializedVersion: 2
+        x: 1722
+        y: 244
+        width: 84
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21.74121, y: 19.23819}
+        - {x: -25.74121, y: 16.23819}
+        - {x: -25.74121, y: 2.2381897}
+        - {x: 1.2587891, y: -17.76181}
+        - {x: 22.25879, y: -17.76181}
+        - {x: 27.25879, y: -10.76181}
+        - {x: 27.25879, y: 14.23819}
+        - {x: 26.25879, y: 19.23819}
+    - name: ArmorKnight01_259
+      rect:
+        serializedVersion: 2
+        x: 1896
+        y: 244
+        width: 88
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.960693, y: 19.73819}
+        - {x: -26.960693, y: 17.73819}
+        - {x: -26.960693, y: 5.7381897}
+        - {x: -0.96069336, y: -18.26181}
+        - {x: 22.039307, y: -18.26181}
+        - {x: 28.039307, y: -12.26181}
+        - {x: 28.039307, y: 6.7381897}
+        - {x: 14.039307, y: 19.73819}
+    - name: ArmorKnight01_260
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 131
+        width: 93
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20.5876, y: 19.89222}
+        - {x: -28.5876, y: 12.89222}
+        - {x: -28.5876, y: -19.10778}
+        - {x: 29.4124, y: -19.10778}
+        - {x: 29.4124, y: 2.8922195}
+        - {x: 6.4123993, y: 19.89222}
+    - name: ArmorKnight01_261
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 131
+        width: 92
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.216537, y: 19.89222}
+        - {x: -26.216537, y: 17.89222}
+        - {x: -28.216537, y: 12.89222}
+        - {x: -28.216537, y: -10.10778}
+        - {x: -23.216537, y: -11.10778}
+        - {x: -17.216537, y: -19.10778}
+        - {x: 3.7834625, y: -19.10778}
+        - {x: 28.783463, y: -10.10778}
+        - {x: 28.783463, y: 0.89221954}
+        - {x: 10.783463, y: 19.89222}
+    - name: ArmorKnight01_262
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 131
+        width: 93
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20.459167, y: 20.39222}
+        - {x: -28.459167, y: 13.39222}
+        - {x: -28.459167, y: -19.60778}
+        - {x: 5.5408325, y: -19.60778}
+        - {x: 29.540833, y: -16.60778}
+        - {x: 29.540833, y: 4.3922195}
+        - {x: 11.5408325, y: 20.39222}
+    - name: ArmorKnight01_263
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 131
+        width: 93
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14.639252, y: 20.39222}
+        - {x: -23.360748, y: 20.39222}
+        - {x: -28.360748, y: 17.39222}
+        - {x: -28.360748, y: -9.60778}
+        - {x: -15.360748, y: -19.60778}
+        - {x: 26.639252, y: -19.60778}
+        - {x: 29.639252, y: -17.60778}
+        - {x: 29.639252, y: -1.6077805}
+    - name: ArmorKnight01_264
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 131
+        width: 95
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29.148651, y: -7.1077805}
+        - {x: -28.148651, y: -8.10778}
+        - {x: -26.148651, y: -19.10778}
+        - {x: 29.851349, y: -19.10778}
+        - {x: 29.851349, y: -2.1077805}
+        - {x: 15.851349, y: 19.89222}
+        - {x: -22.148651, y: 19.89222}
+        - {x: -29.148651, y: 14.89222}
+    - name: ArmorKnight01_265
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 131
+        width: 75
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23.118652, y: 18.89222}
+        - {x: -23.118652, y: 0.89221954}
+        - {x: -20.118652, y: -16.10778}
+        - {x: -14.118652, y: -18.10778}
+        - {x: 23.881348, y: -18.10778}
+        - {x: 23.881348, y: 15.89222}
+        - {x: 12.881348, y: 18.89222}
+    - name: ArmorKnight01_266
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 131
+        width: 123
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -0.8179321, y: 19.39222}
+        - {x: -37.817932, y: 8.39222}
+        - {x: -37.817932, y: -3.6077805}
+        - {x: 7.182068, y: -18.60778}
+        - {x: 38.182068, y: -18.60778}
+        - {x: 38.182068, y: 10.39222}
+        - {x: 31.182068, y: 19.39222}
+    - name: ArmorKnight01_267
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 131
+        width: 123
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2.2804565, y: 18.89222}
+        - {x: -34.719543, y: 9.89222}
+        - {x: -37.719543, y: 8.89222}
+        - {x: -37.719543, y: -6.1077805}
+        - {x: -17.719543, y: -18.10778}
+        - {x: 37.280457, y: -18.10778}
+        - {x: 38.280457, y: -17.10778}
+        - {x: 38.280457, y: 11.89222}
+        - {x: 34.280457, y: 18.89222}
+    - name: ArmorKnight01_268
+      rect:
+        serializedVersion: 2
+        x: 1360
+        y: 131
+        width: 122
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -0.3937378, y: 18.89222}
+        - {x: -36.393738, y: 12.89222}
+        - {x: -37.393738, y: 11.89222}
+        - {x: -37.393738, y: -17.10778}
+        - {x: -33.393738, y: -18.10778}
+        - {x: 38.606262, y: -18.10778}
+        - {x: 38.606262, y: 9.89222}
+        - {x: 33.606262, y: 18.89222}
+    - name: ArmorKnight01_269
+      rect:
+        serializedVersion: 2
+        x: 1528
+        y: 131
+        width: 122
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35.295288, y: 19.39222}
+        - {x: -37.295288, y: 13.39222}
+        - {x: -37.295288, y: -6.6077805}
+        - {x: -36.295288, y: -9.60778}
+        - {x: -6.295288, y: -18.60778}
+        - {x: 38.704712, y: -18.60778}
+        - {x: 38.704712, y: 17.39222}
+        - {x: 36.704712, y: 19.39222}
+    - name: ArmorKnight01_270
+      rect:
+        serializedVersion: 2
+        x: 1696
+        y: 131
+        width: 122
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20.1969, y: 19.39222}
+        - {x: -23.1969, y: 18.39222}
+        - {x: -37.1969, y: 8.39222}
+        - {x: -37.1969, y: -14.60778}
+        - {x: -16.1969, y: -18.60778}
+        - {x: 38.8031, y: -18.60778}
+        - {x: 38.8031, y: 17.39222}
+        - {x: 37.8031, y: 19.39222}
+    - name: ArmorKnight01_271
+      rect:
+        serializedVersion: 2
+        x: 1863
+        y: 131
+        width: 123
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 34.28784, y: 19.39222}
+        - {x: -18.712158, y: 19.39222}
+        - {x: -37.71216, y: 15.39222}
+        - {x: -37.71216, y: -9.60778}
+        - {x: -1.7121582, y: -18.60778}
+        - {x: 33.28784, y: -18.60778}
+        - {x: 35.28784, y: -14.60778}
+        - {x: 38.28784, y: -5.6077805}
+        - {x: 38.28784, y: 12.39222}
+    - name: ArmorKnight01_272
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 19
+        width: 123
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.794785, y: 19.65994}
+        - {x: -37.794785, y: 13.659941}
+        - {x: -37.794785, y: -7.3400593}
+        - {x: -23.794785, y: -18.34006}
+        - {x: 8.205215, y: -18.34006}
+        - {x: 10.205215, y: -16.34006}
+        - {x: 12.205215, y: -12.340059}
+        - {x: 22.205215, y: -18.34006}
+        - {x: 37.205215, y: -18.34006}
+        - {x: 38.205215, y: -17.34006}
+        - {x: 38.205215, y: 12.659941}
+        - {x: 33.205215, y: 19.65994}
+    - name: ArmorKnight01_273
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 19
+        width: 123
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.696365, y: 19.65994}
+        - {x: -34.696365, y: 12.659941}
+        - {x: -37.696365, y: 6.6599407}
+        - {x: -37.696365, y: 1.6599407}
+        - {x: -34.696365, y: -3.3400593}
+        - {x: -1.6963654, y: -17.34006}
+        - {x: 10.303635, y: -16.34006}
+        - {x: 17.303635, y: -18.34006}
+        - {x: 33.303635, y: -18.34006}
+        - {x: 37.303635, y: -17.34006}
+        - {x: 38.303635, y: -15.340059}
+        - {x: 38.303635, y: 17.65994}
+        - {x: 32.303635, y: 19.65994}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

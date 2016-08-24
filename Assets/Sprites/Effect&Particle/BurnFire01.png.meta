@@ -1,0 +1,1499 @@
+fileFormatVersion: 2
+guid: af0ca909f96598b4bb0eb97f12c5eed2
+timeCreated: 1464934409
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: BurnFire01_0
+    21300002: BurnFire01_1
+    21300004: BurnFire01_2
+    21300006: BurnFire01_3
+    21300008: BurnFire01_4
+    21300010: BurnFire01_5
+    21300012: BurnFire01_6
+    21300014: BurnFire01_7
+    21300016: BurnFire01_8
+    21300018: BurnFire01_9
+    21300020: BurnFire01_10
+    21300022: BurnFire01_11
+    21300024: BurnFire01_12
+    21300026: BurnFire01_13
+    21300028: BurnFire01_14
+    21300030: BurnFire01_15
+    21300032: BurnFire01_16
+    21300034: BurnFire01_17
+    21300036: BurnFire01_18
+    21300038: BurnFire01_19
+    21300040: BurnFire01_20
+    21300042: BurnFire01_21
+    21300044: BurnFire01_22
+    21300046: BurnFire01_23
+    21300048: BurnFire01_24
+    21300050: BurnFire01_25
+    21300052: BurnFire01_26
+    21300054: BurnFire01_27
+    21300056: BurnFire01_28
+    21300058: BurnFire01_29
+    21300060: BurnFire01_30
+    21300062: BurnFire01_31
+    21300064: BurnFire01_32
+    21300066: BurnFire01_33
+    21300068: BurnFire01_34
+    21300070: BurnFire01_35
+    21300072: BurnFire01_36
+    21300074: BurnFire01_37
+    21300076: BurnFire01_38
+    21300078: BurnFire01_39
+    21300080: BurnFire01_40
+    21300082: BurnFire01_41
+    21300084: BurnFire01_42
+    21300086: BurnFire01_43
+    21300088: BurnFire01_44
+    21300090: BurnFire01_45
+    21300092: BurnFire01_46
+    21300094: BurnFire01_47
+    21300096: BurnFire01_48
+    21300098: BurnFire01_49
+    21300100: BurnFire01_50
+    21300102: BurnFire01_51
+    21300104: BurnFire01_52
+    21300106: BurnFire01_53
+    21300108: BurnFire01_54
+    21300110: BurnFire01_55
+    21300112: BurnFire01_56
+    21300114: BurnFire01_57
+    21300116: BurnFire01_58
+    21300118: BurnFire01_59
+    21300120: BurnFire01_60
+    21300122: BurnFire01_61
+    21300124: BurnFire01_62
+    21300126: BurnFire01_63
+    21300128: BurnFire01_64
+    21300130: BurnFire01_65
+    21300132: BurnFire01_66
+    21300134: BurnFire01_67
+    21300136: BurnFire01_68
+    21300138: BurnFire01_69
+    21300140: BurnFire01_70
+    21300142: BurnFire01_71
+    21300144: BurnFire01_72
+    21300146: BurnFire01_73
+    21300148: BurnFire01_74
+    21300150: BurnFire01_75
+    21300152: BurnFire01_76
+    21300154: BurnFire01_77
+    21300156: BurnFire01_78
+    21300158: BurnFire01_79
+    21300160: BurnFire01_80
+    21300162: BurnFire01_81
+    21300164: BurnFire01_82
+    21300166: BurnFire01_83
+    21300168: BurnFire01_84
+    21300170: BurnFire01_85
+    21300172: BurnFire01_86
+    21300174: BurnFire01_87
+    21300176: BurnFire01_88
+    21300178: BurnFire01_89
+    21300180: BurnFire01_90
+    21300182: BurnFire01_91
+    21300184: BurnFire01_92
+    21300186: BurnFire01_93
+    21300188: BurnFire01_94
+    21300190: BurnFire01_95
+    21300192: BurnFire01_96
+    21300194: BurnFire01_97
+    21300196: BurnFire01_98
+    21300198: BurnFire01_99
+    21300200: BurnFire01_100
+    21300202: BurnFire01_101
+    21300204: BurnFire01_102
+    21300206: BurnFire01_103
+    21300208: BurnFire01_104
+    21300210: BurnFire01_105
+    21300212: BurnFire01_106
+    21300214: BurnFire01_107
+    21300216: BurnFire01_108
+    21300218: BurnFire01_109
+    21300220: BurnFire01_110
+    21300222: BurnFire01_111
+    21300224: BurnFire01_112
+    21300226: BurnFire01_113
+    21300228: BurnFire01_114
+    21300230: BurnFire01_115
+    21300232: BurnFire01_116
+    21300234: BurnFire01_117
+    21300236: BurnFire01_118
+    21300238: BurnFire01_119
+    21300240: BurnFire01_120
+    21300242: BurnFire01_121
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 1
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: 2
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 0
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: BurnFire01_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 455
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_1
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 455
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_2
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 455
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_3
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 455
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_4
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 455
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_5
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 455
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_6
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 455
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_7
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 455
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_8
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 455
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_9
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 455
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_10
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 455
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 412
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_13
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 412
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_14
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 412
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_15
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 412
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_16
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 412
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_17
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 412
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_18
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 412
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_19
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 412
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_20
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 412
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_21
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 412
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_22
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 412
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_23
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 368
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_24
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 368
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_25
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 368
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_26
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 368
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_27
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 368
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_28
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 368
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_29
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 368
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_30
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 368
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_31
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 368
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_32
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 368
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_33
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 368
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_34
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 324
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_35
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 324
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_36
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 324
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_37
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 324
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_38
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 324
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_39
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 325
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_40
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 325
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_41
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 324
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_42
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 324
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_43
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 324
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_44
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 324
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 281
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_46
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 281
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_47
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 281
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_48
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 281
+        width: 29
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_49
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 281
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_50
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 281
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_51
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 281
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_52
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 281
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_53
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 281
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_54
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 281
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_55
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 281
+        width: 29
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 237
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_57
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 237
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_58
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 237
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_59
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 237
+        width: 29
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_60
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 237
+        width: 29
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_61
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 237
+        width: 29
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_62
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 237
+        width: 29
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_63
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 237
+        width: 29
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_64
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 237
+        width: 29
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_65
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 237
+        width: 29
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_66
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 237
+        width: 29
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_67
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 194
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_68
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 194
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_69
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 194
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_70
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 194
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_71
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 194
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_72
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 194
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_73
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 194
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_74
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 194
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_75
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 194
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_76
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 194
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_77
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 194
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_78
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 150
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_79
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 150
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_80
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 150
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_81
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 150
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_82
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 150
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_83
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 150
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_84
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 150
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_85
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 150
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_86
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 150
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_87
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 150
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_88
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 150
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_89
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 106
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_90
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 106
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_91
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 106
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_92
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 106
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_93
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 106
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_94
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 106
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_95
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 106
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_96
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 106
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_97
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 106
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_98
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 106
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_99
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 106
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_100
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 63
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_101
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 63
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_102
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 63
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_103
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 63
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_104
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 63
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_105
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 63
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_106
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 63
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_107
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 63
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_108
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 63
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_109
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 63
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_110
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 63
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_111
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 19
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_112
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 19
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_113
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 19
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_114
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 19
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_115
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 19
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_116
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 19
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_117
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 19
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_118
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 19
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_119
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 19
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: BurnFire01_120
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 19
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
