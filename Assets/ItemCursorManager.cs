@@ -67,8 +67,6 @@ public class ItemCursorManager : MonoBehaviour
             }
             else
             {
-                //Debug.Log(Input.mousePosition);
-
                 transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition); //-
                 if (Input.GetMouseButtonUp(0))
                 {
@@ -119,8 +117,13 @@ public class ItemCursorManager : MonoBehaviour
     private void ShowDetailItemData(out Item_Slot SelectedSlot)
     {
         SelectedSlot = CheckItemSlot(UICamera.selectedObject);
+
         if (SelectedSlot == null || !SelectedSlot.ChildItem)
+        {
+            Debug.Log("SelectedSlot : " + SelectedSlot.name);
+            Debug.Log("SelectedSlot.ChildItem : " + SelectedSlot.ChildItem);
             return;
+        }
 
         if(SelectedSlot.isSelleritem)
         {//상점 아이템 간편 UI에 무게와 가격을 표시한다.
@@ -195,13 +198,19 @@ public class ItemCursorManager : MonoBehaviour
     private Item_Slot CheckItemSlot(GameObject CheckingObject)
     {
         if (CheckingObject == null)
+        {
+            Debug.Log("UICamera Checking Object is Null");
             return null;
+        }
 
         Item_Slot Result =
             CheckingObject.GetComponent<Item_Slot>();
 
         if (Result == null)
+        {
+            Debug.Log("UICamera Checking Object Cannot have Item_Slot Comp");
             return null;
+        }
 
         return Result;
     }

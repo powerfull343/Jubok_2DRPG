@@ -67,6 +67,8 @@ public class InventoryManager :
         m_fItemMaxWeight = 100f +
             LoadedPlayData.tStat.Str * 10f;
 
+        Debug.Log("Loaded Inventory Data : " + LoadedPlayData.Inventory.Count);
+
         for (int i = 0; i < LoadedPlayData.Inventory.Count; ++i)
         {
             m_fItemWeight += 
@@ -127,8 +129,12 @@ public class InventoryManager :
     float CalcItemWeight(List<Item_Interface> ItemInfo)
     {
         float fWeightAmount = 0f;
+
         foreach(Item_Interface item in ItemInfo)
         {
+            Debug.Log("ItemName : " + item.itemName + 
+                " /  ItemWeight : " + item.itemWeight +
+                " /  ItemCount : " + item.itemCount);
             fWeightAmount += (item.itemWeight * item.itemCount);
         }
         return fWeightAmount;

@@ -18,6 +18,7 @@ public class Item_Slot : MonoBehaviour {
         set { m_isSellerItem = value; }
     }
 
+    [SerializeField]
     private Item_Interface_Comp m_ChildItem;
     public Item_Interface_Comp ChildItem
     {
@@ -94,19 +95,28 @@ public class Item_Slot : MonoBehaviour {
         Slot1.ChildItem.gameObject.SetActive(false);
         Slot2.ChildItem.gameObject.SetActive(false);
 
-        Item_Interface_Comp TempItem = new Item_Interface_Comp(Slot1.ChildItem);
-        Slot1.ChildItem = Slot2.ChildItem;
-        Slot2.ChildItem = TempItem;
+        //Debug.Log("Slot1 : " + Slot1.ChildItem.ItemInfo.itemName);
+        //Debug.Log("Slot2 : " + Slot2.ChildItem.ItemInfo.itemName);
+
+        //Item_Interface_Comp TempItem = new Item_Interface_Comp(Slot1.ChildItem);
+        //Slot1.ChildItem = Slot2.ChildItem;
+        //Slot2.ChildItem = TempItem;
+
+        //Debug.Log("After Swap");
+        //Debug.Log("Slot1 : " + Slot1.ChildItem.ItemInfo.itemName);
+        //Debug.Log("Slot2 : " + Slot2.ChildItem.ItemInfo.itemName);
 
         Transform Slot1ChildItemTrans =
             Slot1.transform.FindChild("Sprite - ItemIcon(Clone)");
         Slot1ChildItemTrans.parent = Slot2.transform;
         Slot1ChildItemTrans.localPosition = Vector3.zero;
+        Slot2.ChildItem = Slot1ChildItemTrans.GetComponent<Item_Interface_Comp>();
 
         Transform Slot2ChildItemTrans =
             Slot2.transform.FindChild("Sprite - ItemIcon(Clone)");
         Slot2ChildItemTrans.parent = Slot1.transform;
         Slot2ChildItemTrans.localPosition = Vector3.zero;
+        Slot1.ChildItem = Slot1ChildItemTrans.GetComponent<Item_Interface_Comp>();
 
         Slot1ChildItemTrans.gameObject.SetActive(true);
         Slot2ChildItemTrans.gameObject.SetActive(true);

@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using System.Reflection;
+
 
 public class UI_Inventory_DeatilSquare : MonoBehaviour {
 
@@ -45,6 +47,7 @@ public class UI_Inventory_DeatilSquare : MonoBehaviour {
         if (!SelectedItemSlot.ChildItem)
             return;
 
+        Debug.Log("ShowItemDetailWindow");
         this.gameObject.SetActive(false);
         SettingPosition(SelectedItemSlot.RowIndex);
         SettingStatWindow(SelectedItemSlot.ChildItem);
@@ -125,10 +128,13 @@ public class UI_Inventory_DeatilSquare : MonoBehaviour {
         m_ItemValueLabel.text = "$ " + string.Format("{0:#,###}", _ItemComp.ItemInfo.ItemValue);
         m_ItemExpressionLabel.text = _ItemComp.ItemInfo.Explainitem;
 
+        string ItemTypeString = _ItemComp.ItemInfo.itemType.ToString();
+        ItemTypeString = ItemTypeString.Substring(5);
+        m_ItemTypeLabel.text = ItemTypeString;
+            //((EquipMent_Interface)_ItemComp.ItemInfo).EqiupmentId.ToString();
+
         if (_ItemComp.ItemInfo is EquipMent_Interface)
         {
-            m_ItemTypeLabel.text = ((EquipMent_Interface)_ItemComp.ItemInfo).EqiupmentId.ToString();
-
             if(((EquipMent_Interface)_ItemComp.ItemInfo).Attack == 0)
             {//Attack
                 m_ItemAbliltyLabel.text 
@@ -139,7 +145,10 @@ public class UI_Inventory_DeatilSquare : MonoBehaviour {
                 m_ItemAbliltyLabel.text 
                     = "Hp : " + ((EquipMent_Interface)_ItemComp.ItemInfo).Hp.ToString();
             }
-            
+        }
+        else
+        {
+            m_ItemAbliltyLabel.text = "None";
         }
     }
 
