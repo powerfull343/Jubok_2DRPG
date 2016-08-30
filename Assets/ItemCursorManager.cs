@@ -120,8 +120,8 @@ public class ItemCursorManager : MonoBehaviour
 
         if (SelectedSlot == null || !SelectedSlot.ChildItem)
         {
-            Debug.Log("SelectedSlot : " + SelectedSlot.name);
-            Debug.Log("SelectedSlot.ChildItem : " + SelectedSlot.ChildItem);
+            //Debug.Log("SelectedSlot : " + SelectedSlot.name);
+            //Debug.Log("SelectedSlot.ChildItem : " + SelectedSlot.ChildItem);
             return;
         }
 

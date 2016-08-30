@@ -12,6 +12,9 @@ public class UI_Money : MonoBehaviour {
     private bool m_isMoneyUpdating = false;
     private bool m_isUpdatingChange = false;
 
+    public float m_fMoneyMaxTime = 2f;
+    public float m_fMoneyTickCount = 0.01f;
+
 	void Start () {
         Mecro.MecroMethod.CheckExistComponent<UILabel>(m_MoneyText);
         m_MoneyText.text = 
@@ -94,7 +97,7 @@ public class UI_Money : MonoBehaviour {
                 m_MoneyText.text = nRenderingMoney.ToString();
             }
 
-            yield return new WaitForFixedUpdate();
+            yield return new WaitForSeconds(m_fMoneyTickCount);
         }
 
         m_isMoneyUpdating = false;
@@ -104,66 +107,26 @@ public class UI_Money : MonoBehaviour {
 
     private int SetTickMoneySize()
     {
-        if(m_ChangeAmount / 10 <= 0)
+        float fFrameTimeTick = m_fMoneyMaxTime / m_fMoneyTickCount;
+        float fFrameTick = (float)m_ChangeAmount / fFrameTimeTick;
+
+        int nResult = (int)fFrameTick;
+
+        Debug.Log(m_ChangeAmount);
+        Debug.Log(fFrameTimeTick);
+        Debug.Log(fFrameTick);
+        Debug.Log(nResult);
+
+        if (nResult <= 0)
             return 1;
 
-        return m_ChangeAmount / 10;
+        return nResult;
+
+        //if(m_ChangeAmount / 10 <= 0)
+        //    return 1;
+
+        //return m_ChangeAmount / 10;
     }
-
-    //IEnumerator StartUpdateMoneySize()
-    //{
-    //    m_MoneyUpdating = true;
-    //    int nCurrentRenderingMoney = 0;
-    //    int nBeforeMoney = DataController.GetInstance().InGameData.Money;
-
-    //    int nChangeForSecond = m_ChangeAmount / 10;
-
-    //    DataController.GetInstance().InGameData.Money += m_ChangeAmount;
-    //    int nMaxSize = 
-    //        DataController.GetInstance().InGameData.Money;
-
-    //    if (!ChangeAmountCheck(nBeforeMoney, nMaxSize))
-    //    {
-    //        while (true)
-    //        {
-    //            if(nCurrentRenderingMoney > m_ChangeAmount)
-    //                nCurrentRenderingMoney += nChangeForSecond;
-    //            else
-    //            {
-    //                nCurrentRenderingMoney = m_ChangeAmount;
-    //                m_MoneyText.text =
-    //                    (nBeforeMoney + nCurrentRenderingMoney).ToString();
-    //                break;
-    //            }
-    //            Debug.Log("less");
-    //            m_MoneyText.text =
-    //                (nBeforeMoney + nCurrentRenderingMoney).ToString();
-    //            yield return new WaitForSeconds(0.25f);
-    //        }
-    //    }
-    //    else
-    //    {
-    //        while (true)
-    //        {
-    //            if (nCurrentRenderingMoney < m_ChangeAmount)
-    //                nCurrentRenderingMoney += nChangeForSecond;
-    //            else
-    //            {
-    //                nCurrentRenderingMoney = m_ChangeAmount;
-    //                m_MoneyText.text =
-    //                    (nBeforeMoney + nCurrentRenderingMoney).ToString();
-    //                break;
-    //            }
-    //            Debug.Log("plus");
-    //            m_MoneyText.text =
-    //                (nBeforeMoney + nCurrentRenderingMoney).ToString();
-    //            yield return new WaitForSeconds(0.25f);
-    //        }
-    //    }
-
-    //    m_MoneyUpdating = false;
-    //    yield break;
-    //}
 
     IEnumerator MoneySpriteRotate()
     {

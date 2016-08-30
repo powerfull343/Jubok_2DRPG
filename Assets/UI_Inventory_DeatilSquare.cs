@@ -47,7 +47,6 @@ public class UI_Inventory_DeatilSquare : MonoBehaviour {
         if (!SelectedItemSlot.ChildItem)
             return;
 
-        Debug.Log("ShowItemDetailWindow");
         this.gameObject.SetActive(false);
         SettingPosition(SelectedItemSlot.RowIndex);
         SettingStatWindow(SelectedItemSlot.ChildItem);
