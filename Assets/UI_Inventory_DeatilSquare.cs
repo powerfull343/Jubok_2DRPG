@@ -130,25 +130,39 @@ public class UI_Inventory_DeatilSquare : MonoBehaviour {
         string ItemTypeString = _ItemComp.ItemInfo.itemType.ToString();
         ItemTypeString = ItemTypeString.Substring(5);
         m_ItemTypeLabel.text = ItemTypeString;
-            //((EquipMent_Interface)_ItemComp.ItemInfo).EqiupmentId.ToString();
+        //((EquipMent_Interface)_ItemComp.ItemInfo).EqiupmentId.ToString();
 
-        if (_ItemComp.ItemInfo is EquipMent_Interface)
+        SetAbillityLabel(_ItemComp.ItemInfo);
+    }
+
+    private void SetAbillityLabel(Item_Interface _ItemInfo)
+    {
+        if (_ItemInfo.itemType == ITEMTYPEID.ITEM_EQUIP)
         {
-            if(((EquipMent_Interface)_ItemComp.ItemInfo).Attack == 0)
+            if (((EquipMent_Interface)_ItemInfo).Hp == 0)
             {//Attack
-                m_ItemAbliltyLabel.text 
-                    = "Attack : " + ((EquipMent_Interface)_ItemComp.ItemInfo).Attack.ToString();
+                m_ItemAbliltyLabel.text
+                    = "Attack : " + ((EquipMent_Interface)_ItemInfo).Attack.ToString();
             }
             else
             {//Hp
-                m_ItemAbliltyLabel.text 
-                    = "Hp : " + ((EquipMent_Interface)_ItemComp.ItemInfo).Hp.ToString();
+                m_ItemAbliltyLabel.text
+                    = "Hp : " + ((EquipMent_Interface)_ItemInfo).Hp.ToString();
             }
         }
-        else
+        else if(_ItemInfo.itemType == ITEMTYPEID.ITEM_POTION ||
+            _ItemInfo.itemType == ITEMTYPEID.ITEM_FOOD)
         {
-            m_ItemAbliltyLabel.text = "None";
+            //Debug.Log(_ItemInfo is EquipMent_Interface);
+            //Debug.Log(_ItemInfo is Supplies_Interface);
+            
+            string EffectType = ((Supplies_Interface)_ItemInfo).SupplieEffectId.ToString();
+            EffectType = EffectType.Substring(7);
+
+            m_ItemAbliltyLabel.text = EffectType + " : " + ((Supplies_Interface)_ItemInfo).EffectAmount.ToString();
         }
+        else
+            m_ItemAbliltyLabel.text = "None";
     }
 
 

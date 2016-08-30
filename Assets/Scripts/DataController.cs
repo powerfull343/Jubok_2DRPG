@@ -118,7 +118,7 @@ public class DataController : MonoBehaviour {
         m_InGameData.Mana = 20;
         m_InGameData.Attack = 1;
         m_InGameData.Stamina = 10;
-        m_InGameData.Money = 2000;
+        m_InGameData.Money = 200000;
         FirstSettingItems();
         m_InGameData.tStat = new tagStatInfo(1, 50f, 1, 25f, 1, 80f);
 
@@ -129,10 +129,14 @@ public class DataController : MonoBehaviour {
     {
         m_InGameData.Inventory = new Dictionary<string, List<Item_Interface>>();
 
-        Item_Interface Test1 = new Item_Interface();
-        Test1 = Item_Interface.CreateNormalSpriteItem("Apple", 10, 0.3f, 10,
-            ITEMTYPEID.ITEM_FOOD, ITEMGRADEID.ITEMGRADE_NORMAL,
-            NORMAL_SPRITE_ICONS.NORMAL_SPRITE_ICON2, 78);
+        Item_Interface Test1 = new Supplies_Interface();
+        //Test1 = Supplies_Interface.CreateSupplies("Apple", 10, 0.3f, 10,
+        //    ITEMTYPEID.ITEM_FOOD, ITEMGRADEID.ITEMGRADE_NORMAL,
+        //    NORMAL_SPRITE_ICONS.NORMAL_SPRITE_ICON2, 78);
+        Test1 = Supplies_Interface.CreateSupplies("Apple", 10, 0.3f, SUPPLIESEFFECTID.EFFECT_STAMINA, 10
+            , ITEMTYPEID.ITEM_FOOD, ITEMGRADEID.ITEMGRADE_NORMAL, SPRITE_TYPEID.SPRITE_NORMAL, NORMAL_SPRITE_ICONS.NORMAL_SPRITE_ICON2,
+            78);
+
 
         EquipMent_Interface Test2 = new EquipMent_Interface();
         Test2 = EquipMent_Interface.CreateEquipMent("Sword", 100, 3f, 3, 0,

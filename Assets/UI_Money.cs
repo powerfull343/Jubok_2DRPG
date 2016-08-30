@@ -12,8 +12,9 @@ public class UI_Money : MonoBehaviour {
     private bool m_isMoneyUpdating = false;
     private bool m_isUpdatingChange = false;
 
-    public float m_fMoneyMaxTime = 2f;
-    public float m_fMoneyTickCount = 0.01f;
+    public float m_fMoneyMaxTime = 0.1f;
+    public float m_fMoneyTickCount = 0.001f;
+    public int m_nMoneyChangeMultiplyRate = 8;
 
 	void Start () {
         Mecro.MecroMethod.CheckExistComponent<UILabel>(m_MoneyText);
@@ -43,6 +44,8 @@ public class UI_Money : MonoBehaviour {
     {
         int nRenderingMoney = m_BeforeMoneyAmount;
         int nUpdateMoneyAmount = SetTickMoneySize();
+        //Debug.LogError(nUpdateMoneyAmount);
+
         bool nMoneyRate = ChangeAmountCheck(m_BeforeMoneyAmount,
                 m_BeforeMoneyAmount + m_ChangeAmount);
         m_isMoneyUpdating = true;
@@ -52,6 +55,7 @@ public class UI_Money : MonoBehaviour {
             if (m_isUpdatingChange)
             {
                 nUpdateMoneyAmount = SetTickMoneySize();
+                //Debug.LogError(nUpdateMoneyAmount);
                 m_isUpdatingChange = false;
             }
 
@@ -62,11 +66,9 @@ public class UI_Money : MonoBehaviour {
                 {
                     nRenderingMoney -= nUpdateMoneyAmount;
                     m_ChangeAmount += nUpdateMoneyAmount;
-                    //Debug.Log(m_ChangeAmount);
                 }
                 else
                 {
-                    //Debug.Log("MinusEnd");
                     nRenderingMoney =
                         DataController.GetInstance().InGameData.Money;
                     m_ChangeAmount = 0;
@@ -78,16 +80,13 @@ public class UI_Money : MonoBehaviour {
             }
             else //소지금이 증가할때
             {
-                //Debug.Log("Plus");
                 if (m_ChangeAmount >= 0)
                 {
                     nRenderingMoney += nUpdateMoneyAmount;
                     m_ChangeAmount -= nUpdateMoneyAmount;
-                    //Debug.Log(m_ChangeAmount);
                 }
                 else
                 {
-                    //Debug.Log("PlusEnd");
                     nRenderingMoney =
                         DataController.GetInstance().InGameData.Money;
                     m_ChangeAmount = 0;
@@ -96,7 +95,6 @@ public class UI_Money : MonoBehaviour {
                 }
                 m_MoneyText.text = nRenderingMoney.ToString();
             }
-
             yield return new WaitForSeconds(m_fMoneyTickCount);
         }
 
@@ -108,24 +106,18 @@ public class UI_Money : MonoBehaviour {
     private int SetTickMoneySize()
     {
         float fFrameTimeTick = m_fMoneyMaxTime / m_fMoneyTickCount;
+        //Debug.Log("fFrameTimeTick : " + fFrameTimeTick);
         float fFrameTick = (float)m_ChangeAmount / fFrameTimeTick;
+        //Debug.Log("fFrameTick : " + fFrameTick);
+        int nResult = Mathf.Abs((int)fFrameTick);
 
-        int nResult = (int)fFrameTick;
-
-        Debug.Log(m_ChangeAmount);
-        Debug.Log(fFrameTimeTick);
-        Debug.Log(fFrameTick);
-        Debug.Log(nResult);
-
-        if (nResult <= 0)
-            return 1;
-
-        return nResult;
-
-        //if(m_ChangeAmount / 10 <= 0)
-        //    return 1;
-
-        //return m_ChangeAmount / 10;
+        if (Mathf.Abs(nResult) <= 1)
+        {
+            //Debug.LogError("nResult : 1");
+            return 1 * m_nMoneyChangeMultiplyRate;
+        }
+        //Debug.LogError("nResult : " + nResult * m_nMoneyChangeMultiplyRate);
+        return nResult * m_nMoneyChangeMultiplyRate;
     }
 
     IEnumerator MoneySpriteRotate()

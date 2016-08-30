@@ -85,7 +85,7 @@ public class UI_GroceryStore_SellList :
         //Testing Method
         List<Item_Interface> LoadItemList = new List<Item_Interface>();
 
-        Item_Interface Potion01 = new Item_Interface();
+        Item_Interface Potion01 = new Supplies_Interface();
         Potion01.itemName = "Potion01";
         Potion01.ItemValue = 10;
         Potion01.itemWeight = 0.5f;
@@ -93,9 +93,11 @@ public class UI_GroceryStore_SellList :
         Potion01.SpriteType = SPRITE_TYPEID.SPRITE_NORMAL;
         Potion01.NormalSprite_iconType = NORMAL_SPRITE_ICONS.NORMAL_SPRITE_ICON2;
         Potion01.NormalSprite_iconNumber = 37;
+        ((Supplies_Interface)Potion01).SupplieEffectId = SUPPLIESEFFECTID.EFFECT_HP;
+        ((Supplies_Interface)Potion01).EffectAmount = 10;
         LoadItemList.Add(Potion01);
 
-        Item_Interface Potion02 = new Item_Interface();
+        Item_Interface Potion02 = new Supplies_Interface();
         Potion02.itemName = "Potion02";
         Potion02.ItemValue = 30;
         Potion02.itemWeight = 0.3f;
@@ -103,9 +105,11 @@ public class UI_GroceryStore_SellList :
         Potion02.SpriteType = SPRITE_TYPEID.SPRITE_NORMAL;
         Potion02.NormalSprite_iconType = NORMAL_SPRITE_ICONS.NORMAL_SPRITE_ICON2;
         Potion02.NormalSprite_iconNumber = 38;
+        ((Supplies_Interface)Potion02).SupplieEffectId = SUPPLIESEFFECTID.EFFECT_HP;
+        ((Supplies_Interface)Potion02).EffectAmount = 30;
         LoadItemList.Add(Potion02);
 
-        Item_Interface Potion03 = new Item_Interface();
+        Item_Interface Potion03 = new Supplies_Interface();
         Potion03.itemName = "Potion03";
         Potion03.ItemValue = 50;
         Potion03.itemWeight = 0.7f;
@@ -113,6 +117,8 @@ public class UI_GroceryStore_SellList :
         Potion03.SpriteType = SPRITE_TYPEID.SPRITE_NORMAL;
         Potion03.NormalSprite_iconType = NORMAL_SPRITE_ICONS.NORMAL_SPRITE_ICON2;
         Potion03.NormalSprite_iconNumber = 39;
+        ((Supplies_Interface)Potion03).SupplieEffectId = SUPPLIESEFFECTID.EFFECT_MANA;
+        ((Supplies_Interface)Potion03).EffectAmount = 40;
         LoadItemList.Add(Potion03);
 
         Item_Interface Sword = new EquipMent_Interface();
@@ -163,7 +169,7 @@ public class UI_GroceryStore_SellList :
         Staff01.NormalSprite_iconNumber = 48;
         LoadItemList.Add(Staff01);
 
-        Item_Interface Apple = new Item_Interface();
+        Item_Interface Apple = new Supplies_Interface();
         Apple.itemName = "Apple";
         Apple.ItemValue = 5;
         Apple.itemWeight = 0.1f;
@@ -171,6 +177,8 @@ public class UI_GroceryStore_SellList :
         Apple.SpriteType = SPRITE_TYPEID.SPRITE_NORMAL;
         Apple.NormalSprite_iconType = NORMAL_SPRITE_ICONS.NORMAL_SPRITE_ICON2;
         Apple.NormalSprite_iconNumber = 78;
+        ((Supplies_Interface)Apple).SupplieEffectId = SUPPLIESEFFECTID.EFFECT_STAMINA;
+        ((Supplies_Interface)Apple).EffectAmount = 10;
         LoadItemList.Add(Apple);
         
         AddMerchantSellList(LoadItemList);

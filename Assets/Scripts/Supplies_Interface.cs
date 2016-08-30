@@ -1,7 +1,14 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 
+[Serializable]
 public class Supplies_Interface : Item_Interface {
+
+    public Supplies_Interface() : base()
+    {
+        itemType = ITEMTYPEID.ITEM_FOOD;
+    }
 
     protected SUPPLIESEFFECTID m_SupplieEffectId;
     public SUPPLIESEFFECTID SupplieEffectId
@@ -21,7 +28,7 @@ public class Supplies_Interface : Item_Interface {
     /// if(SpriteTypeId == NORMAL_SPRITE) you must setting SpriteIconType, SpriteIconNumber
     /// else if(SpriteTypeId == NGUI_SPRITE) setting AtalsName, AtlasSpriteName
     /// </summary>
-    public static Supplies_Interface CreateEquipMent(string _itemName, int _itemValue,
+    public static Supplies_Interface CreateSupplies(string _itemName, int _itemValue,
         float _itemWeight, SUPPLIESEFFECTID _EffectId, int _EffectAmount,
         ITEMTYPEID _ItemTypeId, ITEMGRADEID _ItemGradeId,
         SPRITE_TYPEID _SpriteTypeId,

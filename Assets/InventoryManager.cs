@@ -8,9 +8,11 @@ public class InventoryManager :
 
     [SerializeField]
     private UILabel m_Weightlabel;
-    
-    private float m_fItemWeight;
-    private float m_fItemMaxWeight;
+
+    private float m_fInvenWeight;
+    public float InvenWeight { get { return m_fInvenWeight; } }
+    private float m_fInvenMaxWeight;
+    public float InvenMaxWeight { get { return m_fInvenMaxWeight; } }
 
     [SerializeField]
     private Transform m_GridTransform;
@@ -64,14 +66,14 @@ public class InventoryManager :
         //Max Weight Count
         PlayerData LoadedPlayData = DataController.GetInstance().InGameData;
 
-        m_fItemMaxWeight = 100f +
+        m_fInvenMaxWeight = 100f +
             LoadedPlayData.tStat.Str * 10f;
 
         Debug.Log("Loaded Inventory Data : " + LoadedPlayData.Inventory.Count);
 
         for (int i = 0; i < LoadedPlayData.Inventory.Count; ++i)
         {
-            m_fItemWeight += 
+            m_fInvenWeight += 
                 CalcItemWeight(LoadedPlayData.Inventory.Values.ToList()[i]);
         }
 
@@ -110,11 +112,11 @@ public class InventoryManager :
 
         //소지될 무게 감소
         float fChangeAmount = (SelectedItem.ItemInfo.itemWeight * nItemCount * nPlustoMinus);
-        m_fItemWeight += fChangeAmount;
+        m_fInvenWeight += fChangeAmount;
 
         //"N1" -> 소수점 1자리까지만 출력함.
-        string strWeight = m_fItemWeight.ToString("N1");
-        m_fItemWeight = float.Parse(strWeight);
+        string strWeight = m_fInvenWeight.ToString("N1");
+        m_fInvenWeight = float.Parse(strWeight);
 
         UpdateWeightLabel();
     }
@@ -122,7 +124,8 @@ public class InventoryManager :
     private void UpdateWeightLabel()
     {
         Debug.Log("Update");
-        m_Weightlabel.text = m_fItemWeight.ToString() + " / " + m_fItemMaxWeight.ToString();
+        m_Weightlabel.text = m_fInvenWeight.ToString() + " / " +
+            m_fInvenMaxWeight.ToString();
     }
 
 
@@ -142,7 +145,7 @@ public class InventoryManager :
 
     public bool CompareWeight(float fWeightSize)
     {
-        if (m_fItemWeight + fWeightSize > m_fItemMaxWeight)
+        if (m_fInvenWeight + fWeightSize > m_fInvenMaxWeight)
         {
             //Debug.Log(m_fItemWeight);
             //Debug.Log(fWeightSize);
@@ -155,6 +158,7 @@ public class InventoryManager :
 
     public void BuyItem(Item_Slot SelectedItemSlot, int nBuyItemCount)
     {
+        Debug.Log("nBuyItemCount : " + nBuyItemCount);
         //슬롯에 존재하는 아이템을 가지고온다.
         Item_Interface_Comp SelectedItem =
             SelectedItemSlot.ChildItem;
@@ -234,7 +238,7 @@ public class InventoryManager :
             if (!m_ItemSlotList[i].ChildItem)
             {
                 m_nItemCount = i;
-                Debug.Log(m_nItemCount);
+                //Debug.Log(m_nItemCount);
                 break;
             }
         }
@@ -243,6 +247,7 @@ public class InventoryManager :
         if (!DataController.GetInstance().InGameData.Inventory.ContainsKey(ItemComp.ItemInfo.itemName))
         {
             //DataController에 추가한다.
+            Debug.Log("AddList");
             KindofItem = new List<Item_Interface>();
             KindofItem.Add(ItemComp.ItemInfo);
             DataController.GetInstance().InGameData.Inventory.Add(
@@ -263,21 +268,28 @@ public class InventoryManager :
         }
         else
         {
+            Debug.Log("List Added");
             KindofItem = DataController.GetInstance().InGameData.Inventory[ItemComp.ItemInfo.itemName];
             //장비가 아닐 경우에는 갯수만 추가하고 그렇지 않을 경우 공간을 새로 만든다.
             if (ItemComp.ItemInfo.itemType != ITEMTYPEID.ITEM_EQUIP)
+            {
+                Debug.Log("Not EquipMent");
                 KindofItem[0].itemCount += nItemCount;
+            }
             else
             {
+                //Debug.Log("EquipMent");
                 KindofItem.Add(ItemComp.ItemInfo);
                 ItemObject = ItemManager.GetInstance().ItemInfoToGameObject(ItemComp.ItemInfo);
                 ItemObject.SetActive(false);
                 newItemInfo = ItemObject.AddComponent<Item_Interface_Comp>();
                 newItemInfo.ItemInfo = ItemComp.ItemInfo;
+                newItemInfo.ItemInfo.itemCount = nItemCount;
                 ItemObject.transform.parent = m_ItemSlotList[m_nItemCount].transform;
                 ItemObject.transform.localScale = Vector3.one;
                 ItemObject.transform.localPosition = Vector3.zero;
                 ItemObject.SetActive(true);
+                //아이템 슬롯에 추가한다.
                 m_ItemSlotList[m_nItemCount].ChildItem = newItemInfo;
             }
         }
