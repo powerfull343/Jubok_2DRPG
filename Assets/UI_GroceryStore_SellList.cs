@@ -46,6 +46,9 @@ public class UI_GroceryStore_SellList :
         set { m_SubUI = value; }
     }
 
+    [SerializeField]
+    private GameObject m_CursorPanel;
+
     void Awake()
     {
         CreateInstance();
@@ -213,11 +216,15 @@ public class UI_GroceryStore_SellList :
         if (!m_SelectedItemSlot || !m_SelectedItemSlot.isSelleritem)
             return;
 
-        if(m_SelectedItemSlot.ChildItem.ItemInfo.itemType == ITEMTYPEID.ITEM_EQUIP)
+        //장비 구매시 1개만 구매
+        if (m_SelectedItemSlot.ChildItem.ItemInfo.itemType == ITEMTYPEID.ITEM_EQUIP)
         {
             InventoryManager.GetInstance().BuyItem(m_SelectedItemSlot, 1);
             return;
         }
+
+        //보조 구매 메뉴 오픈시 커서패널 비활성화
+        m_CursorPanel.SetActive(false);
 
         m_SubUI.HideAndShowTradeMenu();
         m_SubUI.InitSubTradeMenu(m_SelectedItemSlot, true);
@@ -233,6 +240,9 @@ public class UI_GroceryStore_SellList :
             InventoryManager.GetInstance().SellItem(m_SelectedItemSlot, 1);
             return;
         }
+
+        //보조 구매 메뉴 오픈시 커서패널 비활성화
+        m_CursorPanel.SetActive(false);
 
         m_SubUI.HideAndShowTradeMenu();
         m_SubUI.InitSubTradeMenu(m_SelectedItemSlot, false);

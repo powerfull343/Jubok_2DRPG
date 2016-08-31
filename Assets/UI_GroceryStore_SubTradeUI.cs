@@ -29,7 +29,7 @@ public class UI_GroceryStore_SubTradeUI : MonoBehaviour {
 
     private int m_CurrentItemCount = 1;
     private int m_MaxItemCount = 1;
-    private bool m_isSliderClick = false;
+    private bool m_isSliderClick = true;
 
     void Start()
     {
@@ -96,6 +96,12 @@ public class UI_GroceryStore_SubTradeUI : MonoBehaviour {
     private void ResetSubTradeUI()
     {
         m_ItemCountScrollBar.value = 0f;
+
+        float fBarSize = 1f / m_MaxItemCount;
+        if (fBarSize <= 0.1f)
+            fBarSize = 0.1f;
+
+        m_ItemCountScrollBar.barSize = fBarSize;
         m_CurrentItemCount = 1;
         UpdateItemCountLabel();
     }
@@ -107,25 +113,32 @@ public class UI_GroceryStore_SubTradeUI : MonoBehaviour {
 
     public void UpdateSliderCtrlToCount()
     {
-        m_CurrentItemCount = (int)(m_MaxItemCount * m_ItemCountScrollBar.value) + 1;
-        //Debug.Log(m_CurrentItemCount);
-        //if (m_CurrentItemCount == m_MaxItemCount)
-        //{
-        //    m_ItemCountScrollBar.value = 1f;
-        //    m_CurrentItemCount = m_MaxItemCount;
-        //}
+        if (!m_isSliderClick)
+        {
+            m_isSliderClick = true;
+            return;
+        }
 
+        Debug.Log("UpdateSlider");
+        m_CurrentItemCount = (int)(m_MaxItemCount * m_ItemCountScrollBar.value) + 1;
         UpdateItemCountLabel();
+    }
+
+    public void SetCannotValueToChangeMethod()
+    {
+        m_isSliderClick = false;
     }
 
     public void PlusItemCount()
     {
+        Debug.Log("ClickButton");
         if (m_ItemCountScrollBar.value >= 1f)
         {
             Debug.Log("Value is full");
             return;
         }
 
+        SetCannotValueToChangeMethod();
         ++m_CurrentItemCount;
         float fScrollBarValue = (float)m_CurrentItemCount / m_MaxItemCount;
         Debug.Log("m_CurrentItemCount : " + m_CurrentItemCount);
@@ -138,12 +151,14 @@ public class UI_GroceryStore_SubTradeUI : MonoBehaviour {
 
     public void MinusItemCount()
     {
+        Debug.Log("ClickButton"); 
         if (m_ItemCountScrollBar.value <= 0f)
         {
             Debug.Log("Value is Low");
             return;
         }
 
+        SetCannotValueToChangeMethod();
         --m_CurrentItemCount;
         float fScrollBarValue = (float)m_CurrentItemCount / m_MaxItemCount;
         Debug.Log("m_CurrentItemCount : " + m_CurrentItemCount);
@@ -156,6 +171,7 @@ public class UI_GroceryStore_SubTradeUI : MonoBehaviour {
     
     public void MinItemCount()
     {
+        SetCannotValueToChangeMethod();
         m_ItemCountScrollBar.value = 0f;
         m_CurrentItemCount = 1;
         UpdateItemCountLabel();
@@ -163,6 +179,7 @@ public class UI_GroceryStore_SubTradeUI : MonoBehaviour {
 
     public void MaxItemCount()
     {
+        SetCannotValueToChangeMethod();
         m_ItemCountScrollBar.value = 1f;
         m_CurrentItemCount = m_MaxItemCount;
         UpdateItemCountLabel();

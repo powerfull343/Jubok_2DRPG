@@ -153,10 +153,8 @@ public class UI_Inventory_DeatilSquare : MonoBehaviour {
         else if(_ItemInfo.itemType == ITEMTYPEID.ITEM_POTION ||
             _ItemInfo.itemType == ITEMTYPEID.ITEM_FOOD)
         {
-            //Debug.Log(_ItemInfo is EquipMent_Interface);
-            //Debug.Log(_ItemInfo is Supplies_Interface);
-            
             string EffectType = ((Supplies_Interface)_ItemInfo).SupplieEffectId.ToString();
+            //EFFECT_ 
             EffectType = EffectType.Substring(7);
 
             m_ItemAbliltyLabel.text = EffectType + " : " + ((Supplies_Interface)_ItemInfo).EffectAmount.ToString();

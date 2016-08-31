@@ -130,7 +130,6 @@ public class UI_Money : MonoBehaviour {
         }
         yield return null;
     }
-    
 
     /// <summary>
     /// return false는 소지금이 감소하였을시 true는 증가
