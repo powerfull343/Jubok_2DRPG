@@ -16,13 +16,43 @@ public class UI_GroceryStore_SellList_DetailWindow : MonoBehaviour {
     [SerializeField]
     private UILabel m_ItemStat;
 
+    private bool m_isCloseButtonClicked = false;
+
     void OnEnable()
     {
-        if(!m_OwnPanel)
+        m_isCloseButtonClicked = false;
+
+        if (!m_OwnPanel)
             m_OwnPanel = MecroMethod.CheckGetComponent<UIPanel>(this.gameObject);
 
         if(m_OwnPanel.alpha <= 0f)
-            TweenAlpha.Begin(this.gameObject, 0.2f, 1f);
+            TweenAlpha.Begin(this.gameObject, 1f, 1f);
+    }
+
+    public void ClosePanel()
+    {
+        if (m_isCloseButtonClicked)
+            return;
+        else
+            m_isCloseButtonClicked = true;
+
+        StartCoroutine("ClosingPanel");
+    }
+
+    IEnumerator ClosingPanel()
+    {
+        float fClosingDelay = 0.025f;
+
+        while(true)
+        {
+            m_OwnPanel.alpha -= 0.05f;
+            if (m_OwnPanel.alpha <= 0f)
+                break;
+            yield return new WaitForSeconds(fClosingDelay);
+        }
+
+        gameObject.SetActive(false);
+        yield return null;
     }
 
 	// Use this for initialization
@@ -37,6 +67,13 @@ public class UI_GroceryStore_SellList_DetailWindow : MonoBehaviour {
 
     public void SetItemData(GameObject SelectedItem)
     {
+        if (m_isCloseButtonClicked)
+        {
+            m_isCloseButtonClicked = false;
+            m_OwnPanel.alpha = 1f;
+            StopCoroutine("ClosingPanel");
+        }
+
         Item_Interface_Comp ItemComp =
             MecroMethod.CheckGetComponent<Item_Interface_Comp>(SelectedItem);
 
@@ -89,12 +126,12 @@ public class UI_GroceryStore_SellList_DetailWindow : MonoBehaviour {
     {
         if (((EquipMent_Interface)SelectedItem).Attack > 0)
         {
-            m_ItemStat.text = "[00ff00]Attack : [-]" +
+            m_ItemStat.text = "[00ff00]Attack[-]" + " : " +
                 ((EquipMent_Interface)SelectedItem).Attack.ToString();
         }
         else
         {
-            m_ItemStat.text = "[ff0000]Hp : [-]" +
+            m_ItemStat.text = "[ff0000]Hp[-]" + " : " +
                 ((EquipMent_Interface)SelectedItem).Hp.ToString();
         }
     }
@@ -110,17 +147,17 @@ public class UI_GroceryStore_SellList_DetailWindow : MonoBehaviour {
         switch(Selecteditemtype)
         {
             case SUPPLIESEFFECTID.EFFECT_HP:
-                m_ItemStat.text = "[ff0000]" + EffectType + "[-]" +
+                m_ItemStat.text = "[ff0000]" + EffectType + "[-]" + " : " +
                     ((Supplies_Interface)SelectedItem).EffectAmount;
                 break;
 
             case SUPPLIESEFFECTID.EFFECT_MANA:
-                m_ItemStat.text = "[0000ff]" + EffectType + "[-]" +
+                m_ItemStat.text = "[0000ff]" + EffectType + "[-]" + " : " +
                     ((Supplies_Interface)SelectedItem).EffectAmount;
                 break;
 
             case SUPPLIESEFFECTID.EFFECT_STAMINA:
-                m_ItemStat.text = "[00ff00]" + EffectType + "[-]" +
+                m_ItemStat.text = "[00ff00]" + EffectType + "[-]" + " : " +
                     ((Supplies_Interface)SelectedItem).EffectAmount;
                 break;
 

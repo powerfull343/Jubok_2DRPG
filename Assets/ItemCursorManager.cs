@@ -9,6 +9,10 @@ public class ItemCursorManager : MonoBehaviour
     private UISprite m_Spritecomp;
     private UI2DSprite m_2DSpriteComp;
 
+    //Grocery Store Detail Window
+    [SerializeField]
+    private UI_GroceryStore_SellList_DetailWindow m_ItemWindow;
+
     //Hovered Position
     private UISprite m_HoveredSprite;
     private UI2DSprite m_Hovered2DSprite;
@@ -17,6 +21,7 @@ public class ItemCursorManager : MonoBehaviour
     private Item_Slot m_SelectedSlotPosition;
     //Memory Pool
     private GameObject m_SelectedEdgeSquare;
+   
 
     private bool m_isSelected = false;
     private bool m_isSelectedSellerItem = false;
@@ -35,6 +40,9 @@ public class ItemCursorManager : MonoBehaviour
         m_2DSpriteComp = Mecro.MecroMethod.CheckGetComponent<UI2DSprite>(this.gameObject);
         m_Hovered2DSprite = m_2DSpriteComp;
         m_2DSpriteComp.enabled = false;
+
+        Mecro.MecroMethod.CheckExistComponent<
+            UI_GroceryStore_SellList_DetailWindow>(m_ItemWindow);
 
         m_SelectedEdgeSquare = Resources.Load("ItemIcons/Sprite - SelectedArea") as GameObject;
     }
@@ -126,8 +134,14 @@ public class ItemCursorManager : MonoBehaviour
         }
 
         if(SelectedSlot.isSelleritem)
-        {//상점 아이템 간편 UI에 무게와 가격을 표시한다.
+        {
+            //상점 아이템 간편 UI에 무게와 가격을 표시한다.
             SelectedSlot.ApplyItemToMerchantInfo();
+
+            //상점 아이템 좌측에 간단한 아이템 정보를 표시한다.
+            m_ItemWindow.SetItemData(SelectedSlot.ChildItem.gameObject);
+            if(!m_ItemWindow.gameObject.activeSelf)
+                m_ItemWindow.gameObject.SetActive(true);
         }
         else
         {//인벤토리 아이템 말풍선을 띄운다.

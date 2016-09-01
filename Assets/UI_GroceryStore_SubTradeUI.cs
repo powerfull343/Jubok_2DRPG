@@ -30,7 +30,7 @@ public class UI_GroceryStore_SubTradeUI : MonoBehaviour {
     private int m_CurrentItemCount = 1;
     private int m_MaxItemCount = 1;
     private bool m_isSliderClick = true;
-
+    private float m_fSliderGap = 0.5f;
 
     [SerializeField]
     private GameObject m_PlusCollider;
@@ -40,13 +40,11 @@ public class UI_GroceryStore_SubTradeUI : MonoBehaviour {
 
     void OnEnable()
     {
-        Debug.Log("Onenable");
         StartCoroutine("ClickPressEvent");
     }
 
     void Start()
     {
-        Debug.Log("Start");
         MecroMethod.CheckExistComponent<UILabel>(m_TradeTitleText);
         MecroMethod.CheckExistComponent<UIScrollBar>(m_ItemCountScrollBar);
         MecroMethod.CheckExistComponent<UILabel>(m_ItemCountLabel);
@@ -65,8 +63,11 @@ public class UI_GroceryStore_SubTradeUI : MonoBehaviour {
             {
                 fEventDelay = 0.5f;
                 PressingEvent = null;
-                yield return new WaitForEndOfFrame();
+                //yield return new WaitForEndOfFrame();
             }
+
+            if(PressingEvent != null)
+                Debug.LogError("PressingEvent : Exist");
 
             if (Input.GetMouseButton(0) && PressingEvent != null)
             {
@@ -149,8 +150,9 @@ public class UI_GroceryStore_SubTradeUI : MonoBehaviour {
             Debug.Log(nWeightMaxCount);
 
             m_MaxItemCount = nMoneyMaxCount > nWeightMaxCount ?
-                nWeightMaxCount - 1: nMoneyMaxCount - 1;
+                nWeightMaxCount : nMoneyMaxCount ;
 
+            m_fSliderGap = 1f / (m_MaxItemCount - 1);
         }
         else
             m_MaxItemCount = m_ItemTarget.ChildItem.ItemInfo.itemCount;
@@ -184,6 +186,12 @@ public class UI_GroceryStore_SubTradeUI : MonoBehaviour {
 
         Debug.Log("UpdateSlider");
         m_CurrentItemCount = (int)(m_MaxItemCount * m_ItemCountScrollBar.value) + 1;
+
+        if (m_ItemCountScrollBar.value <= 0f)
+            m_CurrentItemCount = 1;
+        else if (m_ItemCountScrollBar.value >= 1f)
+            m_CurrentItemCount = m_MaxItemCount;
+
         UpdateItemCountLabel();
     }
 
@@ -194,41 +202,45 @@ public class UI_GroceryStore_SubTradeUI : MonoBehaviour {
 
     public void PlusItemCount()
     {
-        Debug.Log("ClickButton");
-        if (m_ItemCountScrollBar.value >= 1f)
+        Debug.Log("Plus");
+        SetCannotValueToChangeMethod();
+        if (m_ItemCountScrollBar.value >= 1f ||
+            m_CurrentItemCount == m_MaxItemCount)
         {
+            m_ItemCountScrollBar.value = 1f;
             Debug.Log("Value is full");
             return;
         }
-
-        SetCannotValueToChangeMethod();
+        
         ++m_CurrentItemCount;
-        float fScrollBarValue = (float)m_CurrentItemCount / m_MaxItemCount;
+        //float fScrollBarValue = (float)m_CurrentItemCount / m_MaxItemCount;
         Debug.Log("m_CurrentItemCount : " + m_CurrentItemCount);
         Debug.Log("m_MaxItemCount : " + m_MaxItemCount);
-        Debug.Log("fScrollBarValue : " + fScrollBarValue);
+        //Debug.Log("fScrollBarValue : " + fScrollBarValue);
 
-        m_ItemCountScrollBar.value = fScrollBarValue;
+        m_ItemCountScrollBar.value += m_fSliderGap;
         UpdateItemCountLabel();
     }
 
     public void MinusItemCount()
     {
-        Debug.Log("ClickButton"); 
-        if (m_ItemCountScrollBar.value <= 0f)
+        Debug.Log("Minus");
+        SetCannotValueToChangeMethod();
+        if (m_ItemCountScrollBar.value <= 0f ||
+            m_CurrentItemCount == 1)
         {
+            m_ItemCountScrollBar.value = 0f;
             Debug.Log("Value is Low");
             return;
         }
-
-        SetCannotValueToChangeMethod();
+        
         --m_CurrentItemCount;
-        float fScrollBarValue = (float)m_CurrentItemCount / m_MaxItemCount;
+        //float fScrollBarValue = (float)m_CurrentItemCount / m_MaxItemCount;
         Debug.Log("m_CurrentItemCount : " + m_CurrentItemCount);
         Debug.Log("m_MaxItemCount : " + m_MaxItemCount);
-        Debug.Log("fScrollBarValue : " + fScrollBarValue);
+        //Debug.Log("fScrollBarValue : " + fScrollBarValue);
 
-        m_ItemCountScrollBar.value = fScrollBarValue;
+        m_ItemCountScrollBar.value -= m_fSliderGap;
         UpdateItemCountLabel();
     }
     
@@ -244,7 +256,7 @@ public class UI_GroceryStore_SubTradeUI : MonoBehaviour {
     {
         SetCannotValueToChangeMethod();
         m_ItemCountScrollBar.value = 1f;
-        m_CurrentItemCount = m_MaxItemCount + 1;
+        m_CurrentItemCount = m_MaxItemCount;
         UpdateItemCountLabel();
     }
 
