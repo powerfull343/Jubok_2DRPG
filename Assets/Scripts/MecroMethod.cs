@@ -20,7 +20,7 @@ namespace Mecro
 
             if (component == null)
             {
-                Debug.Log(component.GetType() + " component is null");
+                Debug.LogError(component.GetType() + " component is null");
             }
 
             return component;

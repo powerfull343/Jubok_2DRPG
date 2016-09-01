@@ -31,11 +31,74 @@ public class UI_GroceryStore_SubTradeUI : MonoBehaviour {
     private int m_MaxItemCount = 1;
     private bool m_isSliderClick = true;
 
+
+    [SerializeField]
+    private GameObject m_PlusCollider;
+    [SerializeField]
+    private GameObject m_MinusCollider;
+    private delegate void PressEvent();
+
+    void OnEnable()
+    {
+        Debug.Log("Onenable");
+        StartCoroutine("ClickPressEvent");
+    }
+
     void Start()
     {
+        Debug.Log("Start");
         MecroMethod.CheckExistComponent<UILabel>(m_TradeTitleText);
         MecroMethod.CheckExistComponent<UIScrollBar>(m_ItemCountScrollBar);
         MecroMethod.CheckExistComponent<UILabel>(m_ItemCountLabel);
+        MecroMethod.CheckExistObejct<GameObject>(m_PlusCollider);
+        MecroMethod.CheckExistObejct<GameObject>(m_MinusCollider);
+    }
+
+    IEnumerator ClickPressEvent()
+    {
+        float fEventDelay = 0.5f;
+        PressEvent PressingEvent = null;
+
+        while (true)
+        {
+            if (!ColliderChecking(ref PressingEvent))
+            {
+                fEventDelay = 0.5f;
+                PressingEvent = null;
+                yield return new WaitForEndOfFrame();
+            }
+
+            if (Input.GetMouseButton(0) && PressingEvent != null)
+            {
+                fEventDelay *= 0.8f;
+                if (fEventDelay <= 0.1f)
+                    fEventDelay = 0.1f;
+
+                PressingEvent();
+            }
+
+            yield return new WaitForSeconds(fEventDelay);
+        }
+
+        yield return null;
+    }
+
+    private bool ColliderChecking(ref PressEvent _PressEvent)
+    {
+        if (UICamera.hoveredObject == m_PlusCollider)
+        {
+            _PressEvent = PlusItemCount;
+            return true;
+        }
+        else if (UICamera.hoveredObject == m_MinusCollider)
+        {
+            _PressEvent = MinusItemCount;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public void HideAndShowTradeMenu()
@@ -144,7 +207,7 @@ public class UI_GroceryStore_SubTradeUI : MonoBehaviour {
         Debug.Log("m_CurrentItemCount : " + m_CurrentItemCount);
         Debug.Log("m_MaxItemCount : " + m_MaxItemCount);
         Debug.Log("fScrollBarValue : " + fScrollBarValue);
-        
+
         m_ItemCountScrollBar.value = fScrollBarValue;
         UpdateItemCountLabel();
     }
@@ -164,7 +227,7 @@ public class UI_GroceryStore_SubTradeUI : MonoBehaviour {
         Debug.Log("m_CurrentItemCount : " + m_CurrentItemCount);
         Debug.Log("m_MaxItemCount : " + m_MaxItemCount);
         Debug.Log("fScrollBarValue : " + fScrollBarValue);
-        
+
         m_ItemCountScrollBar.value = fScrollBarValue;
         UpdateItemCountLabel();
     }
@@ -181,7 +244,7 @@ public class UI_GroceryStore_SubTradeUI : MonoBehaviour {
     {
         SetCannotValueToChangeMethod();
         m_ItemCountScrollBar.value = 1f;
-        m_CurrentItemCount = m_MaxItemCount;
+        m_CurrentItemCount = m_MaxItemCount + 1;
         UpdateItemCountLabel();
     }
 
@@ -206,7 +269,4 @@ public class UI_GroceryStore_SubTradeUI : MonoBehaviour {
         LobbyManager.LobbyController.GetInstance().HidingBlockPanel();
         HideAndShowTradeMenu();
     }
-
-    
-
 }
