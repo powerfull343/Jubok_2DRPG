@@ -37,10 +37,11 @@ public class UI_GroceryStore_SubTradeUI : MonoBehaviour {
     [SerializeField]
     private GameObject m_MinusCollider;
     private delegate void PressEvent();
+    
 
     void OnEnable()
     {
-        StartCoroutine("ClickPressEvent");
+        StartCoroutine("UpdateUI");
     }
 
     void Start()
@@ -52,33 +53,43 @@ public class UI_GroceryStore_SubTradeUI : MonoBehaviour {
         MecroMethod.CheckExistObejct<GameObject>(m_MinusCollider);
     }
 
-    IEnumerator ClickPressEvent()
+    IEnumerator UpdateUI()
     {
-        float fEventDelay = 0.5f;
         PressEvent PressingEvent = null;
+        IEnumerator FuncController = null;
+        bool isClicking = false;
 
         while (true)
         {
-            if (!ColliderChecking(ref PressingEvent))
+            if (Input.GetMouseButtonDown(0) && 
+                ColliderChecking(ref PressingEvent))
             {
-                fEventDelay = 0.5f;
-                PressingEvent = null;
-                //yield return new WaitForEndOfFrame();
+                 FuncController = ClickButtonFunc(PressingEvent);
+                 StartCoroutine(FuncController);
             }
 
-            if(PressingEvent != null)
-                Debug.LogError("PressingEvent : Exist");
+            yield return new WaitForFixedUpdate();
+        }
 
-            if (Input.GetMouseButton(0) && PressingEvent != null)
-            {
-                fEventDelay *= 0.8f;
-                if (fEventDelay <= 0.1f)
-                    fEventDelay = 0.1f;
+        yield return null;
+    }
 
-                PressingEvent();
-            }
+    IEnumerator ClickButtonFunc(PressEvent PlayingEvent)
+    {
+        float fTickTime = 0.5f;
 
-            yield return new WaitForSeconds(fEventDelay);
+        while(true)
+        {
+            if (!Input.GetMouseButton(0))
+                break;
+
+            fTickTime *= 0.8f;
+            if (fTickTime <= 0.01f)
+                fTickTime = 0.01f;
+
+            PlayingEvent();
+
+            yield return new WaitForSeconds(fTickTime);
         }
 
         yield return null;
@@ -98,6 +109,7 @@ public class UI_GroceryStore_SubTradeUI : MonoBehaviour {
         }
         else
         {
+            _PressEvent = null;
             return false;
         }
     }
@@ -204,6 +216,8 @@ public class UI_GroceryStore_SubTradeUI : MonoBehaviour {
     {
         Debug.Log("Plus");
         SetCannotValueToChangeMethod();
+
+        //bug Section
         if (m_ItemCountScrollBar.value >= 1f ||
             m_CurrentItemCount == m_MaxItemCount)
         {
@@ -213,10 +227,8 @@ public class UI_GroceryStore_SubTradeUI : MonoBehaviour {
         }
         
         ++m_CurrentItemCount;
-        //float fScrollBarValue = (float)m_CurrentItemCount / m_MaxItemCount;
         Debug.Log("m_CurrentItemCount : " + m_CurrentItemCount);
         Debug.Log("m_MaxItemCount : " + m_MaxItemCount);
-        //Debug.Log("fScrollBarValue : " + fScrollBarValue);
 
         m_ItemCountScrollBar.value += m_fSliderGap;
         UpdateItemCountLabel();
@@ -226,6 +238,8 @@ public class UI_GroceryStore_SubTradeUI : MonoBehaviour {
     {
         Debug.Log("Minus");
         SetCannotValueToChangeMethod();
+
+        //bug Section
         if (m_ItemCountScrollBar.value <= 0f ||
             m_CurrentItemCount == 1)
         {
@@ -235,10 +249,8 @@ public class UI_GroceryStore_SubTradeUI : MonoBehaviour {
         }
         
         --m_CurrentItemCount;
-        //float fScrollBarValue = (float)m_CurrentItemCount / m_MaxItemCount;
         Debug.Log("m_CurrentItemCount : " + m_CurrentItemCount);
         Debug.Log("m_MaxItemCount : " + m_MaxItemCount);
-        //Debug.Log("fScrollBarValue : " + fScrollBarValue);
 
         m_ItemCountScrollBar.value -= m_fSliderGap;
         UpdateItemCountLabel();
