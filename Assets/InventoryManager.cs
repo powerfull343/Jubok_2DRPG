@@ -127,8 +127,7 @@ public class InventoryManager :
         m_Weightlabel.text = m_fInvenWeight.ToString() + " / " +
             m_fInvenMaxWeight.ToString();
     }
-
-
+    
     float CalcItemWeight(List<Item_Interface> ItemInfo)
     {
         float fWeightAmount = 0f;
@@ -227,6 +226,7 @@ public class InventoryManager :
         //아이템 삭제
         DeleteItem(SelectedItem, nSellItemCount);
     }
+
     private void AddItem(Item_Interface_Comp ItemComp, int nItemCount)
     {
         GameObject ItemObject = null;

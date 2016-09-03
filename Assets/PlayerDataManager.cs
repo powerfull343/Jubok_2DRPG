@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerDataManager : 
     Singleton<PlayerDataManager>
 {
+    
+
     //Add Inventory Stat, what else
     private PlayerData m_AddedStat;
     //Final Calced Datas

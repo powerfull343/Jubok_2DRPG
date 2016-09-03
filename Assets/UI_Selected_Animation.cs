@@ -8,7 +8,7 @@ public class UI_Selected_Animation : MonoBehaviour {
         = new List<Color>();
     private static bool m_isColorSetting;
 
-    void Start()
+    void Awake()
     {
         if (!m_isColorSetting)
         {
@@ -25,8 +25,11 @@ public class UI_Selected_Animation : MonoBehaviour {
             m_ColorList.Add(new Color(0f, 0.5f, 0.5f, 0f));
             m_isColorSetting = true;
         }
-        StartCoroutine("ColorAnimation");
+    }
 
+    void OnEnable()
+    {
+        StartCoroutine("ColorAnimation");
     }
 
     IEnumerator ColorAnimation()

@@ -167,7 +167,8 @@ public class PlayerData
 
     public tagStatInfo tStat;
 
-    public Dictionary<string, List<Item_Interface>> Inventory;    
+    public Dictionary<string, List<Item_Interface>> Inventory;
+    public Dictionary<EQUIPMENTTYPEID, Item_Interface> ArmedEquip;
 }
 
 [Serializable]
