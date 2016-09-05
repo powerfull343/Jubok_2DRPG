@@ -80,6 +80,13 @@ public enum ITEMTYPEID
     ITEM_GEM,
 };
 
+public enum ITEM_SLOT_TYPE
+{
+    SLOT_INVENTORY,
+    SLOT_STORE,
+    SLOT_ARMED,
+    SLOT_MAX,
+};
 
 public enum ITEMGRADEID
 {
@@ -93,11 +100,14 @@ public enum ITEMGRADEID
 
 public enum EQUIPMENTTYPEID
 {
-    EQUIP_WEAPON,
-    EQUIP_ARMOR,
+    EQUIP_NONE = -1,
+    EQUIP_WEAPON = 0,
+    EQUIP_SUBWEAPON,
+    EQUIP_HELMET,
+    EQUIP_UPPERARMOR,
+    EQUIP_TROUSERS,
     EQUIP_GLOVE,
     EQUIP_FOOTS,
-    EQUIP_TROUSERS,
     EQUIP_MAX,
 };
 

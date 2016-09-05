@@ -76,7 +76,8 @@ public class UI_GroceryStore_SellList :
             {
                 Item_Slot EmptyItemSlot =
                     Mecro.MecroMethod.CheckGetComponent<Item_Slot>(HorizontalGridTransform.GetChild(j));
-                EmptyItemSlot.isSelleritem = true;
+                //EmptyItemSlot.isSelleritem = true;
+                EmptyItemSlot.ItemSlotType = ITEM_SLOT_TYPE.SLOT_STORE;
                 EmptyItemSlot.RowIndex = i;
                 m_MerchantBackpack.Add(EmptyItemSlot);
             }
@@ -153,7 +154,7 @@ public class UI_GroceryStore_SellList :
         Robe.ItemValue = 500;
         Robe.itemWeight = 10f;
         Robe.itemType = ITEMTYPEID.ITEM_EQUIP;
-        ((EquipMent_Interface)Robe).EqiupmentId = EQUIPMENTTYPEID.EQUIP_ARMOR;
+        ((EquipMent_Interface)Robe).EqiupmentId = EQUIPMENTTYPEID.EQUIP_UPPERARMOR;
         ((EquipMent_Interface)Robe).Hp = 10;
         Robe.SpriteType = SPRITE_TYPEID.SPRITE_NORMAL;
         Robe.NormalSprite_iconType = NORMAL_SPRITE_ICONS.NORMAL_SPRITE_ICON2;
@@ -213,7 +214,9 @@ public class UI_GroceryStore_SellList :
 
     public void ClickBuyButton()
     {
-        if (!m_SelectedItemSlot || !m_SelectedItemSlot.isSelleritem)
+        //if (!m_SelectedItemSlot || !m_SelectedItemSlot.isSelleritem)
+        if (!m_SelectedItemSlot || 
+            m_SelectedItemSlot.ItemSlotType != ITEM_SLOT_TYPE.SLOT_STORE)
             return;
 
         //장비 구매시 1개만 구매
@@ -232,7 +235,9 @@ public class UI_GroceryStore_SellList :
 
     public void ClickSellButton()
     {
-        if (!m_SelectedItemSlot || m_SelectedItemSlot.isSelleritem)
+        //if (!m_SelectedItemSlot || m_SelectedItemSlot.isSelleritem)
+        if (!m_SelectedItemSlot || 
+            m_SelectedItemSlot.ItemSlotType == ITEM_SLOT_TYPE.SLOT_STORE)
             return;
 
         if (m_SelectedItemSlot.ChildItem.ItemInfo.itemType == ITEMTYPEID.ITEM_EQUIP)

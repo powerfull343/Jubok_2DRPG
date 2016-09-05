@@ -4,18 +4,18 @@ using System.Reflection;
 
 public class Item_Slot : MonoBehaviour {
 
-    //private bool m_isExistItem = false;
-    //public bool ExistItem
+    //private bool m_isSellerItem = false;
+    //public bool isSelleritem
     //{
-    //    get { return m_isExistItem; }
-    //    set { m_isExistItem = value; }
+    //    get { return m_isSellerItem; }
+    //    set { m_isSellerItem = value; }
     //}
-
-    private bool m_isSellerItem = false;
-    public bool isSelleritem
+    [SerializeField]
+    private ITEM_SLOT_TYPE m_ItemSlotType = ITEM_SLOT_TYPE.SLOT_INVENTORY;
+    public ITEM_SLOT_TYPE ItemSlotType
     {
-        get { return m_isSellerItem; }
-        set { m_isSellerItem = value; }
+        get { return m_ItemSlotType; }
+        set { m_ItemSlotType = value; }
     }
 
     [SerializeField]
@@ -40,12 +40,22 @@ public class Item_Slot : MonoBehaviour {
         set { m_ItemIconTrans = value; }
     }
 
+    [SerializeField]
+    private EQUIPMENTTYPEID m_EquipMentId = EQUIPMENTTYPEID.EQUIP_NONE;
+    public EQUIPMENTTYPEID EquipMentId
+    {
+        get { return m_EquipMentId; }
+        set { m_EquipMentId = value; }
+    }
+    
     public Item_Slot(Item_Slot origin)
     {
-        this.m_isSellerItem = origin.m_isSellerItem;
+        //this.m_isSellerItem = origin.m_isSellerItem;
+        this.m_ItemSlotType = origin.m_ItemSlotType;
         this.m_ChildItem = origin.m_ChildItem;
         this.m_nRowIndex = origin.m_nRowIndex;
         this.m_ItemIconTrans = origin.m_ItemIconTrans;
+        this.m_EquipMentId = origin.m_EquipMentId;
     }
     
     //public Item_Interface_Comp GetChildItem()
@@ -85,7 +95,8 @@ public class Item_Slot : MonoBehaviour {
         //if (SelectedItem == null)
         //    Debug.LogError("Cannot Find Item Transform but ExistItem is True!!");
 
-        if(m_isSellerItem)
+        //if(m_isSellerItem)
+        if(m_ItemSlotType == ITEM_SLOT_TYPE.SLOT_STORE)
         UI_GroceryStore_SellList.GetInstance().RenderItemInfo(
             this.ChildItem.ItemInfo.itemWeight, this.ChildItem.ItemInfo.ItemValue);
     }
@@ -94,17 +105,6 @@ public class Item_Slot : MonoBehaviour {
     {
         Slot1.ChildItem.gameObject.SetActive(false);
         Slot2.ChildItem.gameObject.SetActive(false);
-
-        //Debug.Log("Slot1 : " + Slot1.ChildItem.ItemInfo.itemName);
-        //Debug.Log("Slot2 : " + Slot2.ChildItem.ItemInfo.itemName);
-
-        //Item_Interface_Comp TempItem = new Item_Interface_Comp(Slot1.ChildItem);
-        //Slot1.ChildItem = Slot2.ChildItem;
-        //Slot2.ChildItem = TempItem;
-
-        //Debug.Log("After Swap");
-        //Debug.Log("Slot1 : " + Slot1.ChildItem.ItemInfo.itemName);
-        //Debug.Log("Slot2 : " + Slot2.ChildItem.ItemInfo.itemName);
 
         Transform Slot1ChildItemTrans =
             Slot1.transform.FindChild("Sprite - ItemIcon(Clone)");

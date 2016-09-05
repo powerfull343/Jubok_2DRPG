@@ -133,7 +133,8 @@ public class ItemCursorManager : MonoBehaviour
             return;
         }
 
-        if(SelectedSlot.isSelleritem)
+        //if(SelectedSlot.isSelleritem)
+        if (SelectedSlot.ItemSlotType == ITEM_SLOT_TYPE.SLOT_STORE)
         {
             //상점 아이템 간편 UI에 무게와 가격을 표시한다.
             SelectedSlot.ApplyItemToMerchantInfo();
@@ -164,7 +165,10 @@ public class ItemCursorManager : MonoBehaviour
             //    return;
 
             //3. 인벤토리인지 상점 인벤토리인지 확인
-            m_isSelectedSellerItem = SelectedItemSlot.isSelleritem;
+            //m_isSelectedSellerItem = SelectedItemSlot.isSelleritem;
+            if (SelectedItemSlot.ItemSlotType == ITEM_SLOT_TYPE.SLOT_STORE)
+                m_isSelectedSellerItem = true;
+                
 
             //4. 아이템 슬롯에 아이템이 존재하는지 확인 존재하지 않으면 이벤트 발생하지 않는다.
             Transform SelectedItem =
@@ -203,7 +207,8 @@ public class ItemCursorManager : MonoBehaviour
         else
         {
             //0. 인벤토리 아이템 상세정보창을 띄웠을때 이를 해지한다.
-            if(!SelectedItemSlot.isSelleritem)
+            //if(!SelectedItemSlot.isSelleritem)
+            if(SelectedItemSlot.ItemSlotType != ITEM_SLOT_TYPE.SLOT_STORE)
                 InventoryManager.GetInstance().DetailWindow.gameObject.SetActive(true);
         }
 
@@ -297,13 +302,17 @@ public class ItemCursorManager : MonoBehaviour
     private void HoveringEvent(Item_Slot newSelectedItemPosition)
     {
         //1.상점 -> 상점은 아무런 이벤트가 발생하지 않는다.
-        if (m_isSelectedSellerItem && newSelectedItemPosition.isSelleritem)
+        //if (m_isSelectedSellerItem && newSelectedItemPosition.isSelleritem)
+        if (m_isSelectedSellerItem && 
+            newSelectedItemPosition.ItemSlotType == ITEM_SLOT_TYPE.SLOT_STORE)
             return;
 
         //2.상점 -> 인벤토리는 상점에 있는 물건을 인벤토리에 추가시키며 인벤토리 컨테이너에 추가한다.
 
         //무게가 가득 차거나 공간이 남아있지 않은 경우는 메시지를 띄우며 구매하지 않는다.
-        else if (m_isSelectedSellerItem && !newSelectedItemPosition.isSelleritem)
+        //else if (m_isSelectedSellerItem && !newSelectedItemPosition.isSelleritem)
+        else if (m_isSelectedSellerItem && 
+            newSelectedItemPosition.ItemSlotType == ITEM_SLOT_TYPE.SLOT_INVENTORY)
         {
             //InventoryManager.GetInstance().BuyItem(m_SelectedSlotPosition);
             UI_GroceryStore_SellList.GetInstance().ClickBuyButton();
@@ -311,15 +320,20 @@ public class ItemCursorManager : MonoBehaviour
 
         //3.인벤토리 -> 상점은 인벤토리에 있는 물건을 제거시키며 Value의 30%값의 금액을 
         //플레이어 매니져에 추가시키고 무게도 감소시킨다. 
-        else if (!m_isSelectedSellerItem && newSelectedItemPosition.isSelleritem)
+        //else if (!m_isSelectedSellerItem && newSelectedItemPosition.isSelleritem)
+        else if (!m_isSelectedSellerItem && 
+            newSelectedItemPosition.ItemSlotType == ITEM_SLOT_TYPE.SLOT_STORE)
         {
             //InventoryManager.GetInstance().SellItem(m_SelectedSlotPosition);
             UI_GroceryStore_SellList.GetInstance().ClickSellButton();
         }
 
         //4. 둘다 false 일경우에는 인벤토리에 있는 아이템 끼리 이동하는것과 비슷하다.
+        //else if (m_SelectedSlotPosition != null &&
+        //    (!m_isSelectedSellerItem && !newSelectedItemPosition.isSelleritem))
         else if (m_SelectedSlotPosition != null &&
-            (!m_isSelectedSellerItem && !newSelectedItemPosition.isSelleritem))
+            (!m_isSelectedSellerItem && 
+            newSelectedItemPosition.ItemSlotType != ITEM_SLOT_TYPE.SLOT_STORE))
         {
             if (newSelectedItemPosition.ChildItem)
             {//새로운 포지션에 아이템이 존재해야 바꿀수있다.

@@ -11,6 +11,9 @@ public class UI_Inventory_CursorManager : MonoBehaviour
     [SerializeField]
     private Item_Interface_Comp m_SelectedItem;
 
+    [SerializeField]
+    private GameObject m_ItemSlotBG;
+
     //Memory Pool
     private GameObject m_SelectedEdgeSquare;
 
@@ -52,17 +55,19 @@ public class UI_Inventory_CursorManager : MonoBehaviour
 
                     ControllDetailItemWindow();
                     AttachItem(SelectedSlot);
+                    CursorTransformSetting();
                     AttachItemImage(SelectedSlot);
                     SelectedItem = true;
                 }
             }
             else
             {
-                transform.position = 
-                    Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                CursorTransformSetting();
                 if (Input.GetMouseButtonUp(0))
                 {
                     //Event Add On
+                    HoveringUpEvent();
+                    SelectReset();
                     SelectedItem = false;
                 }
             }
@@ -143,6 +148,12 @@ public class UI_Inventory_CursorManager : MonoBehaviour
             Debug.Log("Cannot Attach");
     }
 
+    private void CursorTransformSetting()
+    {
+        transform.position =
+                    Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    }
+
     private void AttachItemImage(Item_Slot _SelectedSlot)
     {
         SPRITE_TYPEID ItemSpriteType =
@@ -159,6 +170,7 @@ public class UI_Inventory_CursorManager : MonoBehaviour
                         (_SelectedSlot.ChildItem.gameObject);
                 m_NormalSprite.enabled = true;
                 m_NormalSprite.sprite2D = NormalSprite.sprite2D;
+                m_NormalSprite.color = new Color(1f, 1f, 1f, 0.5f);
                 break;
 
             case SPRITE_TYPEID.SPRITE_NGUISPRITE:
@@ -168,4 +180,21 @@ public class UI_Inventory_CursorManager : MonoBehaviour
                 break;
         }
     }
+
+    private void HoveringUpEvent()
+    {
+        //0. Object 확인
+        GameObject HoveredObject = UICamera.hoveredObject;
+        
+        //1. 인벤 -> 인벤
+        
+    }
+
+    private void SelectReset()
+    {
+        m_SelectedItem = null;
+        m_AtlasSprite.enabled = false;
+        m_NormalSprite.enabled = false;
+    }
+        
 }
