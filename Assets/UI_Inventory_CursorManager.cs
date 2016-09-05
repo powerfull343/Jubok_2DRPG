@@ -1,15 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using Mecro;
 
 public class UI_Inventory_CursorManager : MonoBehaviour
 {
-
     private UISprite m_AtlasSprite;
     private UI2DSprite m_NormalSprite;
 
     [SerializeField]
     private Item_Interface_Comp m_SelectedItem;
+    private ITEM_SLOT_TYPE m_SelectedSlotType;
 
     [SerializeField]
     private GameObject m_ItemSlotBG;
@@ -66,8 +67,8 @@ public class UI_Inventory_CursorManager : MonoBehaviour
                 if (Input.GetMouseButtonUp(0))
                 {
                     //Event Add On
-                    HoveringUpEvent();
-                    SelectReset();
+                    HoveringUpEvent(SelectedSlot);
+                    HoveringReset(out SelectedSlot);
                     SelectedItem = false;
                 }
             }
@@ -100,6 +101,8 @@ public class UI_Inventory_CursorManager : MonoBehaviour
             Debug.Log("Item_Slot Cannot have Child Item");
             return false;
         }
+
+        m_SelectedSlotType = _SelectedSlot.ItemSlotType;
 
         return true;
     }
@@ -181,17 +184,102 @@ public class UI_Inventory_CursorManager : MonoBehaviour
         }
     }
 
-    private void HoveringUpEvent()
+    private void HoveringUpEvent(Item_Slot _SelectedSlot)
     {
         //0. Object 확인
-        GameObject HoveredObject = UICamera.hoveredObject;
-        
+        Item_Slot HoveredUpItemSlot = null;
+        bool isHoveredUpArmedCollider = false;
+        GameObject HoveredUpObject = UICamera.hoveredObject;
+
+
+        if (!CheckingHoveringUpEvent(HoveredUpObject, out HoveredUpItemSlot,
+            out isHoveredUpArmedCollider))
+            return;
+
         //1. 인벤 -> 인벤
-        
+        if (m_SelectedSlotType == ITEM_SLOT_TYPE.SLOT_INVENTORY &&
+            HoveredUpItemSlot.ItemSlotType == ITEM_SLOT_TYPE.SLOT_INVENTORY)
+        {
+            InvenSlotChange();
+        }
+
+        //2. 인벤 -> 장착창
+        else if(m_SelectedSlotType == ITEM_SLOT_TYPE.SLOT_INVENTORY &&
+            HoveredUpItemSlot.ItemSlotType == ITEM_SLOT_TYPE.SLOT_ARMED)
+        {
+            if (!ItemEquipOrSwap(_SelectedSlot))
+                return;
+        }
+        //3. 인벤 -> 장착창 내부의 콜라이더
+        else if(m_SelectedSlotType == ITEM_SLOT_TYPE.SLOT_INVENTORY &&
+            isHoveredUpArmedCollider)
+        {
+            if (!ItemEquipOrSwap(_SelectedSlot))
+                return;
+        }
+
+        //4. 장착창 -> 인벤
+        else if(m_SelectedSlotType == ITEM_SLOT_TYPE.SLOT_ARMED &&
+            HoveredUpItemSlot.ItemSlotType == ITEM_SLOT_TYPE.SLOT_INVENTORY)
+        {
+
+        }
     }
 
-    private void SelectReset()
+    private bool CheckingHoveringUpEvent(GameObject _HoveredUpObject, 
+        out Item_Slot _HoveredUpSlot, out bool _isHoveredUpArmedCollider)
     {
+        _HoveredUpSlot = _HoveredUpObject.GetComponent<Item_Slot>();
+        _isHoveredUpArmedCollider = false;
+
+        if (_HoveredUpSlot != null)
+            return true;
+
+        if(_HoveredUpObject.name == "Collider - ArmedSlotArea")
+        {
+            _isHoveredUpArmedCollider = true;
+            return true;
+        }
+
+        return false;
+    }
+
+    private void InvenSlotChange()
+    {
+
+    }
+
+    private bool ItemEquipOrSwap(Item_Slot _HoveredSlot)
+    {
+        if (m_SelectedItem.ItemInfo.itemType != ITEMTYPEID.ITEM_EQUIP)
+            return false;
+
+        Dictionary<EQUIPMENTTYPEID, Item_Interface> EquipList =
+            DataController.GetInstance().InGameData.ArmedEquip;
+
+        EQUIPMENTTYPEID SelectedEquipId =
+            ((EquipMent_Interface)m_SelectedItem.ItemInfo).EqiupmentId;
+
+        //아이템 장착창에 해당 종류의 장비가 장착되어 있을때
+        if(EquipList.ContainsKey(SelectedEquipId))
+        {
+            
+        }
+        else //장착된 장비가 하나도 존재하지 않을 경우
+        {
+            EquipList.Add(SelectedEquipId, m_SelectedItem.ItemInfo);
+            m_SelectedItem
+        }
+
+
+
+
+        return true;   
+    }
+
+    private void HoveringReset(out Item_Slot _SelectedSlot)
+    {
+        _SelectedSlot = null;
         m_SelectedItem = null;
         m_AtlasSprite.enabled = false;
         m_NormalSprite.enabled = false;

@@ -120,6 +120,7 @@ public class DataController : MonoBehaviour {
         m_InGameData.Stamina = 10;
         m_InGameData.Money = 2000;
         FirstSettingItems();
+        FirstSettingEquipItem();
         m_InGameData.tStat = new tagStatInfo(1, 50f, 1, 25f, 1, 80f);
 
         Save();
@@ -153,6 +154,12 @@ public class DataController : MonoBehaviour {
         MultiItem2.Add(Test2);
         m_InGameData.Inventory.Add(Test2.itemName, MultiItem2);
         Debug.Log("m_InGameData.Inventory Count : " + m_InGameData.Inventory.Count);
+    }
+
+    private void FirstSettingEquipItem()
+    {
+        m_InGameData.ArmedEquip = 
+            new Dictionary<EQUIPMENTTYPEID, Item_Interface>();
     }
 }
 
