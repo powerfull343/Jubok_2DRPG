@@ -10,6 +10,11 @@ public class Item_Interface_Comp : MonoBehaviour {
         set { m_ItemInfo = value; }
     }
 
+    public Item_Interface_Comp(Item_Interface CopyitemInfo)
+    {
+        this.m_ItemInfo = CopyitemInfo;
+    }
+
     public Item_Interface_Comp(Item_Interface_Comp Origin)
     {
         this.m_ItemInfo = Origin.m_ItemInfo;

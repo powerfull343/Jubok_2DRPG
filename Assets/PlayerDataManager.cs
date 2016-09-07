@@ -5,8 +5,6 @@ using System.Collections.Generic;
 public class PlayerDataManager : 
     Singleton<PlayerDataManager>
 {
-    
-
     //Add Inventory Stat, what else
     private PlayerData m_AddedStat;
     //Final Calced Datas
@@ -17,6 +15,11 @@ public class PlayerDataManager :
         set { m_ResultStat = value; }
     }
 
+    private GameObject m_InventoryInstance;
+    public GameObject InventoryInst
+    { get { return m_InventoryInstance; } }
+    public bool m_AttachedInvenInst = false;
+    
     void Awake()
     {
         CreateInstance();
@@ -28,9 +31,44 @@ public class PlayerDataManager :
         m_ResultStat = new PlayerData();
 
         UpdateEquipedStat();
+        InitInventoryInst();
         InitStat();
     }
-  
+
+    void InitInventoryInst()
+    {
+        m_InventoryInstance = Instantiate(
+            Resources.Load("UIPanels/InventoryContainer") as GameObject);
+        m_InventoryInstance.transform.parent = this.transform;
+        m_InventoryInstance.SetActive(false);
+        m_AttachedInvenInst = false;
+    }
+
+    public void InvenInst_HideAndShow(Transform TargetTrans)
+    {
+        if (!m_AttachedInvenInst)
+            InventoryInstMoving_Target(TargetTrans);
+        else
+            InventoryInstMoving_Origin();
+    }
+
+    private void InventoryInstMoving_Target(Transform TargetTrans)
+    {
+        m_InventoryInstance.transform.parent = TargetTrans;
+        m_InventoryInstance.transform.localPosition = Vector3.zero;
+        m_InventoryInstance.transform.localScale = Vector3.one;
+
+        m_AttachedInvenInst = true;
+        m_InventoryInstance.gameObject.SetActive(true);
+    }
+
+    private void InventoryInstMoving_Origin()
+    {
+        //m_InventoryInstance.transform.parent = this.transform;
+        m_AttachedInvenInst = false;
+        m_InventoryInstance.gameObject.SetActive(false);
+    }
+
     public void UpdateEquipedStat()
     {
 

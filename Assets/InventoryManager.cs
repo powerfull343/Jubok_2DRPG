@@ -224,10 +224,10 @@ public class InventoryManager :
 
         SetWeight(SelectedItem, nSellItemCount, false);
         //아이템 삭제
-        DeleteItem(SelectedItem, nSellItemCount);
+        DestroyItem(SelectedItem, nSellItemCount);
     }
 
-    private void AddItem(Item_Interface_Comp ItemComp, int nItemCount)
+    public void AddItem(Item_Interface_Comp ItemComp, int nItemCount)
     {
         GameObject ItemObject = null;
         List<Item_Interface> KindofItem;
@@ -297,7 +297,8 @@ public class InventoryManager :
         DataController.GetInstance().Save();
     }
 
-    private void DeleteItem(Item_Interface_Comp ItemComp, int nSellItemCount)
+    //Destroy Instance
+    public void DestroyItem(Item_Interface_Comp ItemComp, int nDeleteCount)
     {
         List<Item_Interface> KindofItem;
         if (!DataController.GetInstance().InGameData.Inventory.ContainsKey(ItemComp.ItemInfo.itemName))
@@ -321,7 +322,7 @@ public class InventoryManager :
             return;
         }
 
-        FindObject.itemCount -= nSellItemCount;
+        FindObject.itemCount -= nDeleteCount;
 
         //갯수가 1개 이상 남아있을시 여기서 연산을 끝낸다.
         if (FindObject.itemCount >= 1)
@@ -350,19 +351,50 @@ public class InventoryManager :
         DataController.GetInstance().Save();
     }
 
-    private void PushingInventory(Item_Slot DeletedSlot)
+    //Only Remove Instance
+    public void RemoveItem(Item_Interface_Comp ItemComp,
+        Item_Slot SelectedSlot)
     {
+        List<Item_Interface> KindofItem;
+        if (!DataController.GetInstance().InGameData.Inventory.ContainsKey(ItemComp.ItemInfo.itemName))
+            Debug.LogError("Cannot find item Object");
+
+        string ItemKey = ItemComp.ItemInfo.itemName;
+        KindofItem =
+            DataController.GetInstance().InGameData.Inventory[ItemComp.ItemInfo.itemName];
+
+        Item_Interface FindObject = KindofItem.Find
+        (
+            delegate (Item_Interface item)
+            {
+                return item == ItemComp.ItemInfo;
+            }
+        );
+
+        KindofItem.Remove(FindObject);
+        PushingInventory(SelectedSlot);
+    }
+
+
+    public void PushingInventory(Item_Slot DeletedSlot)
+    {
+        Debug.Log("PushingInventory Start");
         int SlotCount = m_ItemSlotList.Count;
         int DeletedPoint = 0;
         int EndPoint = SlotCount;
         bool isFind = false;
 
-        for(int i = 0; i < SlotCount; ++i)
+        Debug.Log("Slot Count : " + SlotCount);
+        Debug.Log("DeletedPoint : " + DeletedPoint);
+        Debug.Log("EndPoint : " + EndPoint);
+
+
+        for (int i = 0; i < SlotCount; ++i)
         {
             if(!isFind && m_ItemSlotList[i] == DeletedSlot)
             {
                 DeletedPoint = i;
-                Debug.Log(DeletedPoint);
+                Debug.Log("DeletedPoint : " + DeletedPoint);
                 isFind = true;
                 continue;
             }
@@ -370,9 +402,11 @@ public class InventoryManager :
             if(isFind && !m_ItemSlotList[i].ChildItem)
             {
                 EndPoint = i;
-                Debug.Log(EndPoint);
+                Debug.Log("EndPoint : " + EndPoint);
                 break;
             }
+
+            Debug.Log(i + "th");
         }
 
         //조건부 연산 종료 시퀀스 추가
@@ -383,6 +417,7 @@ public class InventoryManager :
         for(int i = DeletedPoint + 1; i < EndPoint; ++i)
         {
             Debug.Log("Index : " + i);
+            Debug.Log("Child Item : " + m_ItemSlotList[i].ChildItem);
             MovedItem = m_ItemSlotList[i].ChildItem.gameObject;
             m_ItemSlotList[i - 1].ChildItem = m_ItemSlotList[i].ChildItem;
             MovedItem.transform.parent = m_ItemSlotList[i - 1].transform;

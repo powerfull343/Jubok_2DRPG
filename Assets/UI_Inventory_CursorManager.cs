@@ -196,28 +196,26 @@ public class UI_Inventory_CursorManager : MonoBehaviour
             out isHoveredUpArmedCollider))
             return;
 
-        //1. 인벤 -> 인벤
+        //1. 인벤 -> 장착창 내부의 콜라이더
         if (m_SelectedSlotType == ITEM_SLOT_TYPE.SLOT_INVENTORY &&
-            HoveredUpItemSlot.ItemSlotType == ITEM_SLOT_TYPE.SLOT_INVENTORY)
-        {
-            InvenSlotChange();
-        }
-
-        //2. 인벤 -> 장착창
-        else if(m_SelectedSlotType == ITEM_SLOT_TYPE.SLOT_INVENTORY &&
-            HoveredUpItemSlot.ItemSlotType == ITEM_SLOT_TYPE.SLOT_ARMED)
-        {
-            if (!ItemEquipOrSwap(_SelectedSlot))
-                return;
-        }
-        //3. 인벤 -> 장착창 내부의 콜라이더
-        else if(m_SelectedSlotType == ITEM_SLOT_TYPE.SLOT_INVENTORY &&
             isHoveredUpArmedCollider)
         {
             if (!ItemEquipOrSwap(_SelectedSlot))
                 return;
         }
-
+        //2. 인벤 -> 장착창
+        else if (m_SelectedSlotType == ITEM_SLOT_TYPE.SLOT_INVENTORY &&
+            HoveredUpItemSlot.ItemSlotType == ITEM_SLOT_TYPE.SLOT_ARMED)
+        {
+            if (!ItemEquipOrSwap(_SelectedSlot))
+                return;
+        }
+        //3. 인벤 -> 인벤
+        else if (m_SelectedSlotType == ITEM_SLOT_TYPE.SLOT_INVENTORY &&
+            HoveredUpItemSlot.ItemSlotType == ITEM_SLOT_TYPE.SLOT_INVENTORY)
+        {
+            InvenSlotChange();
+        }
         //4. 장착창 -> 인벤
         else if(m_SelectedSlotType == ITEM_SLOT_TYPE.SLOT_ARMED &&
             HoveredUpItemSlot.ItemSlotType == ITEM_SLOT_TYPE.SLOT_INVENTORY)
@@ -252,28 +250,13 @@ public class UI_Inventory_CursorManager : MonoBehaviour
     private bool ItemEquipOrSwap(Item_Slot _HoveredSlot)
     {
         if (m_SelectedItem.ItemInfo.itemType != ITEMTYPEID.ITEM_EQUIP)
+        {
+            Debug.Log("Not Equip Type");
             return false;
-
-        Dictionary<EQUIPMENTTYPEID, Item_Interface> EquipList =
-            DataController.GetInstance().InGameData.ArmedEquip;
-
-        EQUIPMENTTYPEID SelectedEquipId =
-            ((EquipMent_Interface)m_SelectedItem.ItemInfo).EqiupmentId;
+        }
 
         //아이템 장착창에 해당 종류의 장비가 장착되어 있을때
-        if(EquipList.ContainsKey(SelectedEquipId))
-        {
-            
-        }
-        else //장착된 장비가 하나도 존재하지 않을 경우
-        {
-            EquipList.Add(SelectedEquipId, m_SelectedItem.ItemInfo);
-            m_SelectedItem
-        }
-
-
-
-
+        UI_EquipStat_PlayerArmed.EquipItem(m_SelectedItem, _HoveredSlot);
         return true;   
     }
 

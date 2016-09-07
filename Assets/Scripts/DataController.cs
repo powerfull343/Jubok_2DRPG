@@ -76,6 +76,7 @@ public class DataController : MonoBehaviour {
         data.Stamina = m_InGameData.Stamina;
         data.Money = m_InGameData.Money;
         data.Inventory = m_InGameData.Inventory;
+        data.ArmedEquip = m_InGameData.ArmedEquip;
         data.tStat = m_InGameData.tStat;
 
         bf.Serialize(file, data);
@@ -103,6 +104,7 @@ public class DataController : MonoBehaviour {
             m_InGameData.Stamina = data.Stamina;
             m_InGameData.Money = data.Money;
             m_InGameData.Inventory = data.Inventory;
+            m_InGameData.ArmedEquip = data.ArmedEquip;
             m_InGameData.tStat = data.tStat;
         }
         catch (FileNotFoundException e)
@@ -159,7 +161,7 @@ public class DataController : MonoBehaviour {
     private void FirstSettingEquipItem()
     {
         m_InGameData.ArmedEquip = 
-            new Dictionary<EQUIPMENTTYPEID, Item_Interface>();
+            new Dictionary<EQUIPMENTTYPEID, EquipMent_Interface>();
     }
 }
 
@@ -175,7 +177,7 @@ public class PlayerData
     public tagStatInfo tStat;
 
     public Dictionary<string, List<Item_Interface>> Inventory;
-    public Dictionary<EQUIPMENTTYPEID, Item_Interface> ArmedEquip;
+    public Dictionary<EQUIPMENTTYPEID, EquipMent_Interface> ArmedEquip;
 }
 
 [Serializable]
