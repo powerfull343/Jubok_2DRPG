@@ -145,12 +145,7 @@ public class InventoryManager :
     public bool CompareWeight(float fWeightSize)
     {
         if (m_fInvenWeight + fWeightSize > m_fInvenMaxWeight)
-        {
-            //Debug.Log(m_fItemWeight);
-            //Debug.Log(fWeightSize);
-            //Debug.Log(m_fItemMaxWeight);
             return false;
-        }
 
         return true;
     }
@@ -384,17 +379,11 @@ public class InventoryManager :
         int EndPoint = SlotCount;
         bool isFind = false;
 
-        Debug.Log("Slot Count : " + SlotCount);
-        Debug.Log("DeletedPoint : " + DeletedPoint);
-        Debug.Log("EndPoint : " + EndPoint);
-
-
         for (int i = 0; i < SlotCount; ++i)
         {
             if(!isFind && m_ItemSlotList[i] == DeletedSlot)
             {
                 DeletedPoint = i;
-                Debug.Log("DeletedPoint : " + DeletedPoint);
                 isFind = true;
                 continue;
             }
@@ -402,11 +391,8 @@ public class InventoryManager :
             if(isFind && !m_ItemSlotList[i].ChildItem)
             {
                 EndPoint = i;
-                Debug.Log("EndPoint : " + EndPoint);
                 break;
             }
-
-            Debug.Log(i + "th");
         }
 
         //조건부 연산 종료 시퀀스 추가

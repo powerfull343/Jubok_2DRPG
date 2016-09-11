@@ -58,7 +58,6 @@ public class UI_EquipStat_PlayerArmed : MonoBehaviour {
                 m_AttachedItemSlot[LoadedItem.EqiupmentId].transform;
             LoadedItemInstance.transform.localPosition = Vector3.zero;
             LoadedItemInstance.transform.localScale = Vector3.one;
-
         }
     }
 
@@ -75,14 +74,17 @@ public class UI_EquipStat_PlayerArmed : MonoBehaviour {
         EquipMent_Interface SelectedEquip =
             ((EquipMent_Interface)_SelectedEquip.ItemInfo);
 
-        Debug.Log(m_AttachedItemSlot[SelectedEquip.EqiupmentId].ChildItem.name);
+        //Debug.Log(m_AttachedItemSlot[SelectedEquip.EqiupmentId].ChildItem.name);
 
-        //이미 해당 부위에 아이템을 착용하는 경우
+        //이미 해당 부위에 아이템을 착용되있는 경우
         if (m_AttachedItemSlot[SelectedEquip.EqiupmentId].ChildItem != null)
         {
             //1. Item_Slot 내에 있는 아이템의 위치를 교체해준다.
             Item_Slot.SwapItem(_HoveredSlot, m_AttachedItemSlot[SelectedEquip.EqiupmentId]);
 
+            //2. Inventory에 있는 아이템과 ArmedEquip에 있는 아이템을 교체한다.
+            Item_Slot.SwapItemCollectionPosition(m_AttachedItemSlot[SelectedEquip.EqiupmentId],
+                _HoveredSlot);
 
         }
         //착용 부위에 아이템을 착용하지 않은 경우
@@ -114,5 +116,7 @@ public class UI_EquipStat_PlayerArmed : MonoBehaviour {
         DataController.GetInstance().Save();
         return ChangedItem;
     }
+
+    
 
 }

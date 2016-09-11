@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using System.Reflection;
 
 public class Item_Slot : MonoBehaviour {
@@ -58,32 +59,6 @@ public class Item_Slot : MonoBehaviour {
         this.m_EquipMentId = origin.m_EquipMentId;
     }
     
-    //public Item_Interface_Comp GetChildItem()
-    //{
-    //    if (!m_isExistItem)
-    //        return null;
-
-    //    Transform SelectedItemTrans = transform.FindChild("Sprite - ItemIcon(Clone)");
-    //    if (SelectedItemTrans == null)
-    //    {
-    //        m_isExistItem = false;
-    //        Debug.Log("No Exist item But m_isExistItem is ture");
-    //        return null;
-    //    }
-
-    //    Item_Interface_Comp SelectedItem =
-    //        SelectedItemTrans.GetComponent<Item_Interface_Comp>();
-
-    //    if(SelectedItem == null)
-    //    {
-    //        m_isExistItem = false;
-    //        Debug.Log("No Exist item But m_isExistItem is ture");
-    //        return null;
-    //    }
-
-    //    return SelectedItem;
-    //}
-
     public void ApplyItemToMerchantInfo()
     {
         //if (!m_isExistItem)
@@ -108,17 +83,32 @@ public class Item_Slot : MonoBehaviour {
 
         Transform Slot1ChildItemTrans =
             Slot1.transform.FindChild("Sprite - ItemIcon(Clone)");
+        Transform Slot2ChildItemTrans =
+            Slot2.transform.FindChild("Sprite - ItemIcon(Clone)");
+
         Slot1ChildItemTrans.parent = Slot2.transform;
         Slot1ChildItemTrans.localPosition = Vector3.zero;
         Slot2.ChildItem = Slot1ChildItemTrans.GetComponent<Item_Interface_Comp>();
-
-        Transform Slot2ChildItemTrans =
-            Slot2.transform.FindChild("Sprite - ItemIcon(Clone)");
+        
         Slot2ChildItemTrans.parent = Slot1.transform;
         Slot2ChildItemTrans.localPosition = Vector3.zero;
         Slot1.ChildItem = Slot1ChildItemTrans.GetComponent<Item_Interface_Comp>();
 
         Slot1ChildItemTrans.gameObject.SetActive(true);
         Slot2ChildItemTrans.gameObject.SetActive(true);
+    }
+
+    public static void SwapItemCollectionPosition(Item_Slot InventorySlot,
+        Item_Slot EquipSlot)
+    {
+        EquipMent_Interface InventoryItem = null, Armeditem = null;
+
+        Dictionary<string, List<Item_Interface>> InvenList =
+            DataController.GetInstance().InGameData.Inventory;
+
+        Dictionary<EQUIPMENTTYPEID, EquipMent_Interface> EquipList =
+            DataController.GetInstance().InGameData.ArmedEquip;
+
+
     }
 }

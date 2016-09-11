@@ -18,6 +18,7 @@ public class PlayerDataManager :
     private GameObject m_InventoryInstance;
     public GameObject InventoryInst
     { get { return m_InventoryInstance; } }
+    [HideInInspector]
     public bool m_AttachedInvenInst = false;
     
     void Awake()
