@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 using Mecro;
@@ -69,6 +70,7 @@ public class IntroSceneManager : MonoBehaviour {
 
     public void GoNextScene()
     {
-        Application.LoadLevel(1);
+        SceneManager.LoadScene(1);
+        //Application.LoadLevel(1);
     }
 }

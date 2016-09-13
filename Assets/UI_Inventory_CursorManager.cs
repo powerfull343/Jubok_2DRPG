@@ -25,6 +25,7 @@ public class UI_Inventory_CursorManager : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("Start");
         m_AtlasSprite = MecroMethod.CheckGetComponent<UISprite>(gameObject);
         m_NormalSprite = MecroMethod.CheckGetComponent<UI2DSprite>(gameObject);
         if (!m_SelectedEdgeSquare)
@@ -49,7 +50,7 @@ public class UI_Inventory_CursorManager : MonoBehaviour
                 {
                     SettingItemEdgeSquare(SelectedSlot);
                     SettingDetailItemWindow(SelectedSlot);
-                    yield return new WaitForSeconds(0.1f);
+                    yield return new WaitForSeconds(0.15f);
 
                     if (!Input.GetMouseButton(0))
                         continue;
@@ -154,7 +155,7 @@ public class UI_Inventory_CursorManager : MonoBehaviour
     private void CursorTransformSetting()
     {
         transform.position =
-                    Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 
     private void AttachItemImage(Item_Slot _SelectedSlot)

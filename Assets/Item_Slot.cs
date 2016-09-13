@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Linq;
 
 public class Item_Slot : MonoBehaviour {
 
@@ -42,11 +43,11 @@ public class Item_Slot : MonoBehaviour {
     }
 
     [SerializeField]
-    private EQUIPMENTTYPEID m_EquipMentId = EQUIPMENTTYPEID.EQUIP_NONE;
-    public EQUIPMENTTYPEID EquipMentId
+    private EQUIPMENTTYPEID m_EquipMentSlotId = EQUIPMENTTYPEID.EQUIP_NONE;
+    public EQUIPMENTTYPEID EquipMentSlotId
     {
-        get { return m_EquipMentId; }
-        set { m_EquipMentId = value; }
+        get { return m_EquipMentSlotId; }
+        set { m_EquipMentSlotId = value; }
     }
     
     public Item_Slot(Item_Slot origin)
@@ -56,24 +57,16 @@ public class Item_Slot : MonoBehaviour {
         this.m_ChildItem = origin.m_ChildItem;
         this.m_nRowIndex = origin.m_nRowIndex;
         this.m_ItemIconTrans = origin.m_ItemIconTrans;
-        this.m_EquipMentId = origin.m_EquipMentId;
+        this.m_EquipMentSlotId = origin.m_EquipMentSlotId;
     }
     
     public void ApplyItemToMerchantInfo()
     {
-        //if (!m_isExistItem)
-        //    return;
-
-        //Item_Interface_Comp SelectedItem = 
-        //    transform.FindChild("Sprite - ItemIcon(Clone)").GetComponent<Item_Interface_Comp>();
-
-        //if (SelectedItem == null)
-        //    Debug.LogError("Cannot Find Item Transform but ExistItem is True!!");
-
-        //if(m_isSellerItem)
-        if(m_ItemSlotType == ITEM_SLOT_TYPE.SLOT_STORE)
-        UI_GroceryStore_SellList.GetInstance().RenderItemInfo(
-            this.ChildItem.ItemInfo.itemWeight, this.ChildItem.ItemInfo.ItemValue);
+        if (m_ItemSlotType == ITEM_SLOT_TYPE.SLOT_STORE)
+        {
+            UI_GroceryStore_SellList.GetInstance().RenderItemInfo(
+                this.ChildItem.ItemInfo.itemWeight, this.ChildItem.ItemInfo.ItemValue);
+        }
     }
 
     public static void SwapItem(Item_Slot Slot1, Item_Slot Slot2)
@@ -101,14 +94,31 @@ public class Item_Slot : MonoBehaviour {
     public static void SwapItemCollectionPosition(Item_Slot InventorySlot,
         Item_Slot EquipSlot)
     {
-        EquipMent_Interface InventoryItem = null, Armeditem = null;
+        EquipMent_Interface InventoryItem = null, Equipitem = null;
 
+        EQUIPMENTTYPEID Equipid = 
+            ((EquipMent_Interface)InventorySlot.ChildItem.ItemInfo).EqiupmentId;
+        string ItemName = InventorySlot.ChildItem.ItemInfo.itemName;
+
+        //Inventory Data Remove
         Dictionary<string, List<Item_Interface>> InvenList =
             DataController.GetInstance().InGameData.Inventory;
+        InventoryItem = 
+            ((EquipMent_Interface)InvenList[ItemName].Find(
+            delegate (Item_Interface item)
+            {return item == InventorySlot.ChildItem.ItemInfo;}));
+        InventoryManager.GetInstance().RemoveItem(InventoryItem);
 
-        Dictionary<EQUIPMENTTYPEID, EquipMent_Interface> EquipList =
+        //Equip Data Remove
+        Dictionary < EQUIPMENTTYPEID, EquipMent_Interface> EquipList =
             DataController.GetInstance().InGameData.ArmedEquip;
+        Equipitem = EquipList[((EquipMent_Interface)InventoryItem).EqiupmentId];
+        EquipList.Remove(Equipitem.EqiupmentId);
 
+        //Data Swaping
+        InventoryManager.GetInstance().AddItem(Equipitem, 1);
+        EquipList.Add(Equipid, InventoryItem);
 
+        DataController.GetInstance().Save();
     }
 }

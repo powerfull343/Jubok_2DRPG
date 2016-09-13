@@ -45,6 +45,12 @@ public class InventoryManager :
         InitBackPackItems();
     }
 
+    void OnDisable()
+    {
+        if (m_DetailWindow.gameObject.activeSelf)
+            m_DetailWindow.gameObject.SetActive(false);
+    }
+
     void InitBackPackMemory()
     {
         Item_Slot SlotInstance;
@@ -195,7 +201,7 @@ public class InventoryManager :
 
         Debug.Log("Additem");
         //아이템 추가
-        AddItem(SelectedItem, nBuyItemCount);
+        CreateItem(SelectedItem.ItemInfo, nBuyItemCount);
     }
 
     public void SellItem(Item_Slot SelectedItemSlot, int nSellItemCount)
@@ -222,74 +228,71 @@ public class InventoryManager :
         DestroyItem(SelectedItem, nSellItemCount);
     }
 
-    public void AddItem(Item_Interface_Comp ItemComp, int nItemCount)
+    //Only Input Container
+    //return Type - if you Create Instance true
+    public bool AddItem(Item_Interface ItemComp, int nItemCount)
     {
-        GameObject ItemObject = null;
         List<Item_Interface> KindofItem;
-        Item_Interface_Comp newItemInfo;
 
+        //Input Item Potision
         for (int i = 0; i < m_ItemSlotList.Count; ++i)
         {
             if (!m_ItemSlotList[i].ChildItem)
             {
                 m_nItemCount = i;
-                //Debug.Log(m_nItemCount);
                 break;
             }
         }
 
-        //현재 아이템이 목록에 없는경우
-        if (!DataController.GetInstance().InGameData.Inventory.ContainsKey(ItemComp.ItemInfo.itemName))
+        if (!DataController.GetInstance(
+           ).InGameData.Inventory.ContainsKey(ItemComp.itemName))
         {
             //DataController에 추가한다.
-            Debug.Log("AddList");
             KindofItem = new List<Item_Interface>();
-            KindofItem.Add(ItemComp.ItemInfo);
+            KindofItem.Add(ItemComp);
             DataController.GetInstance().InGameData.Inventory.Add(
-                ItemComp.ItemInfo.itemName, KindofItem);
-
-            //InventoryManager에 아이템 목록을 추가한다.
-            ItemObject = ItemManager.GetInstance().ItemInfoToGameObject(ItemComp.ItemInfo);
-            ItemObject.SetActive(false);
-            newItemInfo = ItemObject.AddComponent<Item_Interface_Comp>();
-            newItemInfo.ItemInfo = ItemComp.ItemInfo;
-            newItemInfo.ItemInfo.itemCount = nItemCount;
-
-            ItemObject.transform.parent = m_ItemSlotList[m_nItemCount].transform;
-            ItemObject.transform.localScale = Vector3.one;
-            ItemObject.transform.localPosition = Vector3.zero;
-            ItemObject.SetActive(true);
-            m_ItemSlotList[m_nItemCount].ChildItem = newItemInfo;
+                ItemComp.itemName, KindofItem);
         }
         else
         {
-            Debug.Log("List Added");
-            KindofItem = DataController.GetInstance().InGameData.Inventory[ItemComp.ItemInfo.itemName];
+            KindofItem = DataController.GetInstance(
+                ).InGameData.Inventory[ItemComp.itemName];
             //장비가 아닐 경우에는 갯수만 추가하고 그렇지 않을 경우 공간을 새로 만든다.
-            if (ItemComp.ItemInfo.itemType != ITEMTYPEID.ITEM_EQUIP)
+            if (ItemComp.itemType != ITEMTYPEID.ITEM_EQUIP)
             {
-                Debug.Log("Not EquipMent");
                 KindofItem[0].itemCount += nItemCount;
+                DataController.GetInstance().Save();
+                return false;
             }
+            //장비인 경우에는 리스트에 추가한다.
             else
-            {
-                //Debug.Log("EquipMent");
-                KindofItem.Add(ItemComp.ItemInfo);
-                ItemObject = ItemManager.GetInstance().ItemInfoToGameObject(ItemComp.ItemInfo);
-                ItemObject.SetActive(false);
-                newItemInfo = ItemObject.AddComponent<Item_Interface_Comp>();
-                newItemInfo.ItemInfo = ItemComp.ItemInfo;
-                newItemInfo.ItemInfo.itemCount = nItemCount;
-                ItemObject.transform.parent = m_ItemSlotList[m_nItemCount].transform;
-                ItemObject.transform.localScale = Vector3.one;
-                ItemObject.transform.localPosition = Vector3.zero;
-                ItemObject.SetActive(true);
-                //아이템 슬롯에 추가한다.
-                m_ItemSlotList[m_nItemCount].ChildItem = newItemInfo;
-            }
+                KindofItem.Add(ItemComp);
         }
-        
+
         DataController.GetInstance().Save();
+        return true;
+    }
+
+    //Create Item Object
+    public void CreateItem(Item_Interface ItemComp, int nItemCount)
+    {
+        if (!AddItem(ItemComp, nItemCount))
+            return;
+
+        GameObject ItemObject = null;
+        Item_Interface_Comp newItemInfo;
+
+        ItemObject = ItemManager.GetInstance().ItemInfoToGameObject(ItemComp);
+        ItemObject.SetActive(false);
+        newItemInfo = ItemObject.AddComponent<Item_Interface_Comp>();
+        newItemInfo.ItemInfo = ItemComp;
+        newItemInfo.ItemInfo.itemCount = nItemCount;
+
+        ItemObject.transform.parent = m_ItemSlotList[m_nItemCount].transform;
+        ItemObject.transform.localScale = Vector3.one;
+        ItemObject.transform.localPosition = Vector3.zero;
+        ItemObject.SetActive(true);
+        m_ItemSlotList[m_nItemCount].ChildItem = newItemInfo;
     }
 
     //Destroy Instance
@@ -347,27 +350,26 @@ public class InventoryManager :
     }
 
     //Only Remove Instance
-    public void RemoveItem(Item_Interface_Comp ItemComp,
-        Item_Slot SelectedSlot)
+    public void RemoveItem(Item_Interface SelectedItem)
     {
         List<Item_Interface> KindofItem;
-        if (!DataController.GetInstance().InGameData.Inventory.ContainsKey(ItemComp.ItemInfo.itemName))
+        if (!DataController.GetInstance(
+            ).InGameData.Inventory.ContainsKey(SelectedItem.itemName))
             Debug.LogError("Cannot find item Object");
 
-        string ItemKey = ItemComp.ItemInfo.itemName;
+        string ItemKey = SelectedItem.itemName;
         KindofItem =
-            DataController.GetInstance().InGameData.Inventory[ItemComp.ItemInfo.itemName];
+            DataController.GetInstance().InGameData.Inventory[SelectedItem.itemName];
 
         Item_Interface FindObject = KindofItem.Find
         (
             delegate (Item_Interface item)
             {
-                return item == ItemComp.ItemInfo;
+                return item == SelectedItem;
             }
         );
 
         KindofItem.Remove(FindObject);
-        PushingInventory(SelectedSlot);
     }
 
 

@@ -57,7 +57,6 @@ public class UI_GroceryStore_SubTradeUI : MonoBehaviour {
     {
         PressEvent PressingEvent = null;
         IEnumerator FuncController = null;
-        bool isClicking = false;
 
         while (true)
         {
