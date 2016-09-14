@@ -30,6 +30,9 @@ public class InventoryManager :
         set { m_DetailWindow = value; }
     }
 
+    //Memory Pool
+    private GameObject m_SelectedEdgeSquare;
+
     void Awake()
     {
         CreateInstance();
@@ -43,12 +46,16 @@ public class InventoryManager :
         InitBackPackMemory();
         InitWeightLabel();
         InitBackPackItems();
+        m_SelectedEdgeSquare = Instantiate(Resources.Load("ItemIcons/Sprite - SelectedArea") as GameObject);
+        m_SelectedEdgeSquare.gameObject.SetActive(false);
     }
 
     void OnDisable()
     {
         if (m_DetailWindow.gameObject.activeSelf)
             m_DetailWindow.gameObject.SetActive(false);
+        if (m_SelectedEdgeSquare.gameObject.activeSelf)
+            m_SelectedEdgeSquare.gameObject.SetActive(false);
     }
 
     void InitBackPackMemory()
@@ -110,6 +117,25 @@ public class InventoryManager :
                 m_ItemSlotList[m_nItemCount].ChildItem = newItemInfo;
             }
         }
+    }
+
+    public void ShowDetailSquare(Item_Slot SlotTarget)
+    {
+        if (!SlotTarget.ChildItem)
+            return;
+
+        if (!m_SelectedEdgeSquare)
+            Debug.LogError(m_SelectedEdgeSquare == null);
+
+        m_SelectedEdgeSquare.SetActive(false);
+        UIWidget SelectedItemSlotWidget = m_SelectedEdgeSquare.GetComponent<UIWidget>();
+        SelectedItemSlotWidget.depth = 4;
+
+        m_SelectedEdgeSquare.transform.parent = SlotTarget.transform;
+        m_SelectedEdgeSquare.transform.localPosition = Vector3.zero;
+        m_SelectedEdgeSquare.transform.localScale = Vector3.one;
+        m_SelectedEdgeSquare.transform.rotation = Quaternion.identity;
+        m_SelectedEdgeSquare.SetActive(true);
     }
 
     private void SetWeight(Item_Interface_Comp SelectedItem, int nItemCount, bool isGetItem)
@@ -316,7 +342,7 @@ public class InventoryManager :
 
         if (FindObject == null)
         {
-            Debug.LogError("Warning Item is Cannot existing");
+            Debug.LogError("Warning) Item is Cannot existing");
             return;
         }
 

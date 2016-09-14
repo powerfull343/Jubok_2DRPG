@@ -15,8 +15,6 @@ public class UI_Inventory_CursorManager : MonoBehaviour
     [SerializeField]
     private GameObject m_ItemSlotBG;
 
-    //Memory Pool
-    private GameObject m_SelectedEdgeSquare;
 
     void OnEnable()
     {
@@ -28,12 +26,6 @@ public class UI_Inventory_CursorManager : MonoBehaviour
         Debug.Log("Start");
         m_AtlasSprite = MecroMethod.CheckGetComponent<UISprite>(gameObject);
         m_NormalSprite = MecroMethod.CheckGetComponent<UI2DSprite>(gameObject);
-        if (!m_SelectedEdgeSquare)
-        {
-            m_SelectedEdgeSquare = 
-                Instantiate(Resources.Load("ItemIcons/Sprite - SelectedArea") as GameObject);
-            m_SelectedEdgeSquare.SetActive(false);
-        }
     }
 
     IEnumerator CursorProgress()
@@ -48,7 +40,7 @@ public class UI_Inventory_CursorManager : MonoBehaviour
                 if (Input.GetMouseButton(0) &&
                     CheckingItemSlot(out SelectedSlot))
                 {
-                    SettingItemEdgeSquare(SelectedSlot);
+                    InventoryManager.GetInstance().ShowDetailSquare(SelectedSlot);
                     SettingDetailItemWindow(SelectedSlot);
                     yield return new WaitForSeconds(0.15f);
 
@@ -108,22 +100,6 @@ public class UI_Inventory_CursorManager : MonoBehaviour
         return true;
     }
 
-    private void SettingItemEdgeSquare(Item_Slot _SelectedSlot)
-    {
-        if (!_SelectedSlot.ChildItem)
-            return;
-
-        m_SelectedEdgeSquare.SetActive(false);
-        UIWidget SelectedItemSlotWidget = m_SelectedEdgeSquare.GetComponent<UIWidget>();
-        SelectedItemSlotWidget.depth = 4;
-
-        m_SelectedEdgeSquare.transform.parent = _SelectedSlot.transform;
-        m_SelectedEdgeSquare.transform.localPosition = Vector3.zero;
-        m_SelectedEdgeSquare.transform.localScale = Vector3.one;
-        m_SelectedEdgeSquare.transform.rotation = Quaternion.identity;
-        m_SelectedEdgeSquare.SetActive(true);
-    }
-
     private void SettingDetailItemWindow(Item_Slot _SelectedSlot)
     {
         if (!_SelectedSlot.ChildItem)
@@ -133,6 +109,12 @@ public class UI_Inventory_CursorManager : MonoBehaviour
             ).DetailWindow.OpenDetailItemInfo(_SelectedSlot);
         InventoryManager.GetInstance(
             ).DetailWindow.gameObject.SetActive(true);
+
+        //Debuging
+        Debug.Log(InventoryManager.GetInstance(
+            ).DetailWindow.gameObject.name);
+        Debug.Log(InventoryManager.GetInstance(
+            ).DetailWindow.gameObject.activeSelf);
         Debug.Log("Open");
     }
 

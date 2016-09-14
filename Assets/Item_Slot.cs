@@ -85,7 +85,12 @@ public class Item_Slot : MonoBehaviour {
         
         Slot2ChildItemTrans.parent = Slot1.transform;
         Slot2ChildItemTrans.localPosition = Vector3.zero;
-        Slot1.ChildItem = Slot1ChildItemTrans.GetComponent<Item_Interface_Comp>();
+        Slot1.ChildItem = Slot2ChildItemTrans.GetComponent<Item_Interface_Comp>();
+
+        //Debug.Log(Slot1.name);
+        //Debug.Log(Slot1.ChildItem.ItemInfo.itemName);
+        //Debug.Log(Slot2.name);
+        //Debug.Log(Slot2.ChildItem.ItemInfo.itemName);
 
         Slot1ChildItemTrans.gameObject.SetActive(true);
         Slot2ChildItemTrans.gameObject.SetActive(true);
@@ -118,6 +123,28 @@ public class Item_Slot : MonoBehaviour {
         //Data Swaping
         InventoryManager.GetInstance().AddItem(Equipitem, 1);
         EquipList.Add(Equipid, InventoryItem);
+
+        //Debuging
+        Item_Interface Item = null;
+        for(int i = 0; i < InvenList.Count; ++i)
+        {
+            for(int j = 0; j < InvenList.ToList()[i].Value.Count; ++j)
+            {
+                Item = InvenList.ToList()[i].Value[j];
+
+                Debug.Log("ItemName : " + Item.itemName +
+                    " /  ItemWeight : " + Item.itemWeight +
+                    " /  ItemCount : " + Item.itemCount);
+            }
+        }
+
+        foreach(KeyValuePair<EQUIPMENTTYPEID, EquipMent_Interface> Equip in EquipList)
+        {
+            Debug.Log("=============");
+            Debug.Log("ItemName : " + Equip.Value.itemName +
+                    " /  ItemWeight : " + Equip.Value.itemWeight +
+                    " /  Itemtype : " + Equip.Value.itemType);
+        }
 
         DataController.GetInstance().Save();
     }

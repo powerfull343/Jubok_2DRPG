@@ -19,8 +19,7 @@ public class ItemCursorManager : MonoBehaviour
 
     //OneClickSelected
     private Item_Slot m_SelectedSlotPosition;
-    //Memory Pool
-    private GameObject m_SelectedEdgeSquare;
+    
    
 
     private bool m_isSelected = false;
@@ -43,8 +42,6 @@ public class ItemCursorManager : MonoBehaviour
 
         Mecro.MecroMethod.CheckExistComponent<
             UI_GroceryStore_SellList_DetailWindow>(m_ItemWindow);
-
-        m_SelectedEdgeSquare = Resources.Load("ItemIcons/Sprite - SelectedArea") as GameObject;
     }
 
     void OnEnable()
@@ -66,7 +63,7 @@ public class ItemCursorManager : MonoBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                     //== Click Item Once ==//
-                    ShowDetailItemData(out SelectedItemSlot);
+                    ShowDetailItemDataWindow(out SelectedItemSlot);
                     SelectedItemSlotEdgeSquareRendering(SelectedItemSlot);
                     yield return new WaitForSeconds(0.1f);
                     //== Still Click Item over the 0.1 Sec==//
@@ -95,34 +92,14 @@ public class ItemCursorManager : MonoBehaviour
         if (m_SelectedSlotPosition == SelectedItemSlot)
             return;
 
-        if (m_SelectedSlotPosition != null)
-        {
-            Transform PreviousSelectedEdgeSquare = 
-                m_SelectedSlotPosition.transform.FindChild("Sprite - SelectedArea(Clone)");
-
-            if (PreviousSelectedEdgeSquare != null)
-                Destroy(PreviousSelectedEdgeSquare.gameObject);
-        }
-
         m_SelectedSlotPosition = SelectedItemSlot;
         UI_GroceryStore_SellList.GetInstance().SelectedItemSlot = 
             m_SelectedSlotPosition;
 
-        GameObject SelectedEdgeSquare =
-            Instantiate(m_SelectedEdgeSquare) as GameObject;
-
-        SelectedEdgeSquare.SetActive(false);
-        UIWidget SelectedItemSlotWidget = SelectedEdgeSquare.GetComponent<UIWidget>();
-        SelectedItemSlotWidget.depth = 4;
-
-        SelectedEdgeSquare.transform.parent = SelectedItemSlot.transform;
-        SelectedEdgeSquare.transform.localPosition = Vector3.zero;
-        SelectedEdgeSquare.transform.localScale = Vector3.one;
-        SelectedEdgeSquare.transform.rotation = Quaternion.identity;
-        SelectedEdgeSquare.SetActive(true);
+        InventoryManager.GetInstance().ShowDetailSquare(SelectedItemSlot);
     }
 
-    private void ShowDetailItemData(out Item_Slot SelectedSlot)
+    private void ShowDetailItemDataWindow(out Item_Slot SelectedSlot)
     {
         SelectedSlot = CheckItemSlot(UICamera.selectedObject);
 
