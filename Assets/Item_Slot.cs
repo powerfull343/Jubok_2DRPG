@@ -87,11 +87,6 @@ public class Item_Slot : MonoBehaviour {
         Slot2ChildItemTrans.localPosition = Vector3.zero;
         Slot1.ChildItem = Slot2ChildItemTrans.GetComponent<Item_Interface_Comp>();
 
-        //Debug.Log(Slot1.name);
-        //Debug.Log(Slot1.ChildItem.ItemInfo.itemName);
-        //Debug.Log(Slot2.name);
-        //Debug.Log(Slot2.ChildItem.ItemInfo.itemName);
-
         Slot1ChildItemTrans.gameObject.SetActive(true);
         Slot2ChildItemTrans.gameObject.SetActive(true);
     }
@@ -108,6 +103,7 @@ public class Item_Slot : MonoBehaviour {
         //Inventory Data Remove
         Dictionary<string, List<Item_Interface>> InvenList =
             DataController.GetInstance().InGameData.Inventory;
+
         InventoryItem = 
             ((EquipMent_Interface)InvenList[ItemName].Find(
             delegate (Item_Interface item)
@@ -143,7 +139,7 @@ public class Item_Slot : MonoBehaviour {
             Debug.Log("=============");
             Debug.Log("ItemName : " + Equip.Value.itemName +
                     " /  ItemWeight : " + Equip.Value.itemWeight +
-                    " /  Itemtype : " + Equip.Value.itemType);
+                    " /  EqiupId : " + Equip.Value.EqiupmentId);
         }
 
         DataController.GetInstance().Save();
