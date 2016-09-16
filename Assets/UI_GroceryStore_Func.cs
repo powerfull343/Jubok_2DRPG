@@ -9,8 +9,8 @@ public class UI_GroceryStore_Func : MonoBehaviour {
     private GameObject_Extension m_InvenToryObject;
     [SerializeField]
     private GameObject_Extension m_SellerItemListGameObject;
-    [SerializeField]
-    private GameObject_Extension m_CursorManager;
+    //[SerializeField]
+    //private GameObject_Extension m_CursorManager;
 
     void Start()
     {
@@ -19,7 +19,7 @@ public class UI_GroceryStore_Func : MonoBehaviour {
 
         Mecro.MecroMethod.CheckExistComponent<GameObject_Extension>(m_InvenToryObject);
         Mecro.MecroMethod.CheckExistComponent<GameObject_Extension>(m_SellerItemListGameObject);
-        Mecro.MecroMethod.CheckExistComponent<GameObject_Extension>(m_CursorManager);
+        //Mecro.MecroMethod.CheckExistComponent<GameObject_Extension>(m_CursorManager);
     }
     
     void OnEnable()
@@ -45,7 +45,7 @@ public class UI_GroceryStore_Func : MonoBehaviour {
             m_InvenToryObject.transform);
         m_InvenToryObject.HideAndShow();
         m_SellerItemListGameObject.HideAndShow();
-        m_CursorManager.HideAndShow();
+        //m_CursorManager.HideAndShow();
     }
     
 }

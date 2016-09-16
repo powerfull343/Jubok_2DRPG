@@ -15,7 +15,6 @@ public class UI_Inventory_CursorManager : MonoBehaviour
     [SerializeField]
     private GameObject m_ItemSlotBG;
 
-
     void OnEnable()
     {
         StartCoroutine("CursorProgress");
@@ -40,7 +39,7 @@ public class UI_Inventory_CursorManager : MonoBehaviour
                 if (Input.GetMouseButton(0) &&
                     CheckingItemSlot(out SelectedSlot))
                 {
-                    InventoryManager.GetInstance().ShowDetailSquare(SelectedSlot);
+                    InventoryManager.GetInstance().InvenFunc.ShowDetailSquare(SelectedSlot);
                     SettingDetailItemWindow(SelectedSlot);
                     yield return new WaitForSeconds(0.15f);
 
@@ -96,26 +95,32 @@ public class UI_Inventory_CursorManager : MonoBehaviour
         }
 
         m_SelectedSlotType = _SelectedSlot.ItemSlotType;
-
         return true;
     }
 
     private void SettingDetailItemWindow(Item_Slot _SelectedSlot)
     {
-        if (!_SelectedSlot.ChildItem)
-            return;
+        Debug.Log("Open Detail Window");
+        if (_SelectedSlot.ItemSlotType == ITEM_SLOT_TYPE.SLOT_INVENTORY)
+        {
+            Debug.Log(InventoryManager.GetInstance(
+                ).InvenFunc.DetailWindow.name);
 
-        InventoryManager.GetInstance(
-            ).DetailWindow.OpenDetailItemInfo(_SelectedSlot);
-        InventoryManager.GetInstance(
-            ).DetailWindow.gameObject.SetActive(true);
+            InventoryManager.GetInstance(
+                ).InvenFunc.DetailWindow.OpenDetailItemInfo(_SelectedSlot);
+            InventoryManager.GetInstance(
+                ).InvenFunc.DetailWindow.gameObject.SetActive(true);
+        }
+        else
+        { 
+             _SelectedSlot.ApplyItemToMerchantInfo();
+             UI_Inventory_LeftItemWindow LeftItemWin =
+                 InventoryManager.GetInstance().InvenFunc.LeftItemWindow;
 
-        //Debuging
-        Debug.Log(InventoryManager.GetInstance(
-            ).DetailWindow.gameObject.name);
-        Debug.Log(InventoryManager.GetInstance(
-            ).DetailWindow.gameObject.activeSelf);
-        Debug.Log("Open");
+             LeftItemWin.SetItemData(_SelectedSlot.ChildItem.gameObject);
+             if (!LeftItemWin.gameObject.activeSelf)
+                 LeftItemWin.gameObject.SetActive(true);
+        }
     }
 
     private void ControllDetailItemWindow()
@@ -123,7 +128,7 @@ public class UI_Inventory_CursorManager : MonoBehaviour
         if(Input.GetMouseButton(0))
         {
             InventoryManager.GetInstance(
-            ).DetailWindow.gameObject.SetActive(false);
+            ).InvenFunc.DetailWindow.gameObject.SetActive(false);
         }
     }
 

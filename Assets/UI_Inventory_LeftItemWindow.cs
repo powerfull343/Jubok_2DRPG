@@ -2,7 +2,7 @@
 using System.Collections;
 using Mecro;
 
-public class UI_GroceryStore_SellList_DetailWindow : MonoBehaviour {
+public class UI_Inventory_LeftItemWindow : MonoBehaviour {
 
     private UIPanel m_OwnPanel;
     [SerializeField]

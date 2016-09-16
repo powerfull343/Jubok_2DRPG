@@ -46,14 +46,13 @@ public class UI_Inventory_DeatilSquare : MonoBehaviour {
     {
         if (!SelectedItemSlot.ChildItem)
         {
-            Debug.Log("SelectedItemSlot.ChildItem NOt");
+            Debug.Log("SelectedItemSlot.ChildItem Not have");
             return;
         }
 
         this.gameObject.SetActive(false);
         SettingPosition(SelectedItemSlot.RowIndex);
         SettingStatWindow(SelectedItemSlot.ChildItem);
-        //this.gameObject.SetActive(true);
     }
 
     private void SettingPosition(int GridPosition)
