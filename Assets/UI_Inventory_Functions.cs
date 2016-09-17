@@ -9,15 +9,12 @@ public class UI_Inventory_Functions : MonoBehaviour {
     [SerializeField]
     private UILabel m_Weightlabel;
 
-    [SerializeField]
     private UI_Inventory_DeatilSquare m_DetailWindow;
     public UI_Inventory_DeatilSquare DetailWindow
     {
         get { return m_DetailWindow; }
-        set { m_DetailWindow = value; }
     }
 
-    [SerializeField]
     private UI_Inventory_LeftItemWindow m_LeftItemWindow;
     public UI_Inventory_LeftItemWindow LeftItemWindow
     { get { return m_LeftItemWindow; } }
@@ -31,11 +28,16 @@ public class UI_Inventory_Functions : MonoBehaviour {
     // Use this for initialization
     void Start () {
         MecroMethod.CheckExistComponent<UILabel>(m_Weightlabel);
-        MecroMethod.CheckExistComponent<UI_Inventory_DeatilSquare>(m_DetailWindow);
-        m_DetailWindow.gameObject.SetActive(false);
-
-        MecroMethod.CheckExistComponent<UI_Inventory_LeftItemWindow>(m_LeftItemWindow);
         MecroMethod.CheckExistComponent<UI_Inventory_CursorManager>(m_CursorManager);
+
+        GameObject DetailItemWindow = Instantiate(Resources.Load("UIPanels/Inventory - ItemDetailWindow") as GameObject);
+        MecroMethod.SetPartent(DetailItemWindow.transform, this.transform);
+        m_DetailWindow = MecroMethod.CheckGetComponent<UI_Inventory_DeatilSquare>(DetailItemWindow);
+
+        GameObject LeftItemWindow = Instantiate(Resources.Load("UIPanels/Inventory - LeftItemWindow") as GameObject);
+        MecroMethod.SetPartent(LeftItemWindow.transform, this.transform);
+        m_LeftItemWindow = MecroMethod.CheckGetComponent<UI_Inventory_LeftItemWindow>(LeftItemWindow);
+
 
         InitWeightLabel();
         m_SelectedEdgeSquare = Instantiate(Resources.Load("ItemIcons/Sprite - SelectedArea") as GameObject);
@@ -44,6 +46,7 @@ public class UI_Inventory_Functions : MonoBehaviour {
 
     void OnDisable()
     {
+        Debug.Log("Disable");
         if (m_DetailWindow.gameObject.activeSelf)
             m_DetailWindow.gameObject.SetActive(false);
         if (m_LeftItemWindow.gameObject.activeSelf)
@@ -183,5 +186,19 @@ public class UI_Inventory_Functions : MonoBehaviour {
         //아이템 삭제
         InventoryManager.GetInstance(
             ).DestroyItem(SelectedItem, nSellItemCount);
+    }
+
+    public void OpenItemDetailWindow(Item_Slot _SelectedSlot)
+    {
+        if (!_SelectedSlot.ChildItem)
+        {
+            Debug.Log("Cannot Find Child Item");
+            return;
+        }
+        m_DetailWindow.gameObject.SetActive(false);
+
+        m_DetailWindow.OpenDetailItemInfo(_SelectedSlot);
+        m_DetailWindow.gameObject.SetActive(true);
+        m_DetailWindow.m_OwnExtension.enabled = true;
     }
 }

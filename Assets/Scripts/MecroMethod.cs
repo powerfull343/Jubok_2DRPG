@@ -154,6 +154,16 @@ namespace Mecro
 
             return vResult;
         }
+
+        public static string TraceHierarchyObject(Transform Target)
+        {
+            string strResult = Target.name;
+
+            if (Target.parent != null)
+                strResult = TraceHierarchyObject(Target.parent) + "\\" + strResult;
+
+            return strResult;
+        }
         
     }
 }

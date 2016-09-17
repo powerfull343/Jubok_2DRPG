@@ -44,9 +44,12 @@ public class UI_Inventory_CursorManager : MonoBehaviour
                     yield return new WaitForSeconds(0.15f);
 
                     if (!Input.GetMouseButton(0))
+                    {
+                        AttachDetailWindow_HideFunc();
                         continue;
+                    }
 
-                    ControllDetailItemWindow();
+                    DisappearDetailItemWindow();
                     AttachItem(SelectedSlot);
                     CursorTransformSetting();
                     AttachItemImage(SelectedSlot);
@@ -103,13 +106,8 @@ public class UI_Inventory_CursorManager : MonoBehaviour
         Debug.Log("Open Detail Window");
         if (_SelectedSlot.ItemSlotType == ITEM_SLOT_TYPE.SLOT_INVENTORY)
         {
-            Debug.Log(InventoryManager.GetInstance(
-                ).InvenFunc.DetailWindow.name);
-
             InventoryManager.GetInstance(
-                ).InvenFunc.DetailWindow.OpenDetailItemInfo(_SelectedSlot);
-            InventoryManager.GetInstance(
-                ).InvenFunc.DetailWindow.gameObject.SetActive(true);
+                ).InvenFunc.OpenItemDetailWindow(_SelectedSlot);
         }
         else
         { 
@@ -123,7 +121,14 @@ public class UI_Inventory_CursorManager : MonoBehaviour
         }
     }
 
-    private void ControllDetailItemWindow()
+    private void AttachDetailWindow_HideFunc()
+    {
+        InventoryManager.GetInstance(
+            ).InvenFunc.DetailWindow.m_OwnExtension.StartHidingClickAnotherArea();
+        
+    }
+
+    private void DisappearDetailItemWindow()
     {
         if(Input.GetMouseButton(0))
         {

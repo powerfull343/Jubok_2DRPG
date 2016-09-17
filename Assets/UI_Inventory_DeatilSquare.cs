@@ -25,6 +25,8 @@ public class UI_Inventory_DeatilSquare : MonoBehaviour {
     [SerializeField]
     private UILabel m_ItemExpressionLabel;
 
+    public GameObject_Extension m_OwnExtension;
+
     void Start()
     {
         Mecro.MecroMethod.CheckExistComponent<UILabel>(m_ItemNameLabel);
@@ -34,6 +36,14 @@ public class UI_Inventory_DeatilSquare : MonoBehaviour {
         Mecro.MecroMethod.CheckExistComponent<UILabel>(m_ItemWeightLabel);
         Mecro.MecroMethod.CheckExistComponent<UILabel>(m_ItemValueLabel);
         Mecro.MecroMethod.CheckExistComponent<UILabel>(m_ItemExpressionLabel);
+
+        Mecro.MecroMethod.CheckExistComponent<GameObject_Extension>
+            (m_OwnExtension);
+    }
+
+    void OnDisable()
+    {
+        m_OwnExtension.StopHidingClickAnotherArea();
     }
 
     private void ResetWindow()

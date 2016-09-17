@@ -77,6 +77,18 @@ public class GameObject_Extension
         Destroy(this.gameObject);
     }
 
+    public void StartHidingClickAnotherArea()
+    {
+        ClickAnotherAreaHide = true;
+        StartCoroutine("HideClickAnotherArea");
+    }
+
+    public void StopHidingClickAnotherArea()
+    {
+        ClickAnotherAreaHide = false;
+        StopCoroutine("HideClickAnotherArea");
+    }
+
     IEnumerator HideClickAnotherArea()
     {
         while (true)
