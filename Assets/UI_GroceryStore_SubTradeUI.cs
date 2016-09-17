@@ -290,6 +290,8 @@ public class UI_GroceryStore_SubTradeUI : MonoBehaviour {
     {
         ResetSubTradeUI();
         LobbyManager.LobbyController.GetInstance().HidingBlockPanel();
+        InventoryManager.GetInstance().InvenFunc.ControllCursorManager();
+        
         HideAndShowTradeMenu();
     }
 }

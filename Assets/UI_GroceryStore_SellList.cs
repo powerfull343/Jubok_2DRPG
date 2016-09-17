@@ -211,13 +211,18 @@ public class UI_GroceryStore_SellList :
 
     public void ClickBuyButton()
     {
-        //if (!m_SelectedItemSlot || !m_SelectedItemSlot.isSelleritem)
-        if (!m_SelectedItemSlot || 
-            m_SelectedItemSlot.ItemSlotType != ITEM_SLOT_TYPE.SLOT_STORE)
+        if (!m_SelectedItemSlot ||
+            m_SelectedItemSlot.ItemSlotType != 
+                ITEM_SLOT_TYPE.SLOT_STORE)
+        {
+            Debug.Log("Buy Failed");
+            Debug.Log(m_SelectedItemSlot.ItemSlotType);
             return;
+        }
 
         //장비 구매시 1개만 구매
-        if (m_SelectedItemSlot.ChildItem.ItemInfo.itemType == ITEMTYPEID.ITEM_EQUIP)
+        if (m_SelectedItemSlot.ChildItem.ItemInfo.itemType ==
+                ITEMTYPEID.ITEM_EQUIP)
         {
             InventoryManager.GetInstance().InvenFunc.BuyItem(m_SelectedItemSlot, 1);
             return;
@@ -225,6 +230,7 @@ public class UI_GroceryStore_SellList :
 
         //보조 구매 메뉴 오픈시 커서패널 비활성화
         //m_CursorPanel.SetActive(false);
+        InventoryManager.GetInstance().InvenFunc.ControllCursorManager();
 
         m_SubUI.HideAndShowTradeMenu();
         m_SubUI.InitSubTradeMenu(m_SelectedItemSlot, true);
@@ -233,9 +239,12 @@ public class UI_GroceryStore_SellList :
     public void ClickSellButton()
     {
         //if (!m_SelectedItemSlot || m_SelectedItemSlot.isSelleritem)
-        if (!m_SelectedItemSlot || 
-            m_SelectedItemSlot.ItemSlotType == ITEM_SLOT_TYPE.SLOT_STORE)
+        if (!m_SelectedItemSlot ||
+            m_SelectedItemSlot.ItemSlotType != ITEM_SLOT_TYPE.SLOT_INVENTORY)
+        {
+            Debug.Log(m_SelectedItemSlot.ItemSlotType);
             return;
+        }
 
         if (m_SelectedItemSlot.ChildItem.ItemInfo.itemType == ITEMTYPEID.ITEM_EQUIP)
         {
@@ -245,6 +254,7 @@ public class UI_GroceryStore_SellList :
 
         //보조 구매 메뉴 오픈시 커서패널 비활성화
         //m_CursorPanel.SetActive(false);
+        InventoryManager.GetInstance().InvenFunc.ControllCursorManager();
 
         m_SubUI.HideAndShowTradeMenu();
         m_SubUI.InitSubTradeMenu(m_SelectedItemSlot, false);

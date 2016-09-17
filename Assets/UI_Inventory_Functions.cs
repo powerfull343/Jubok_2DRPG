@@ -21,6 +21,8 @@ public class UI_Inventory_Functions : MonoBehaviour {
 
     [SerializeField]
     private UI_Inventory_CursorManager m_CursorManager;
+    public UI_Inventory_CursorManager CursorManager
+    { get { return m_CursorManager; } }
 
     //Memory Pool
     private GameObject m_SelectedEdgeSquare;
@@ -36,6 +38,7 @@ public class UI_Inventory_Functions : MonoBehaviour {
 
         GameObject LeftItemWindow = Instantiate(Resources.Load("UIPanels/Inventory - LeftItemWindow") as GameObject);
         MecroMethod.SetPartent(LeftItemWindow.transform, this.transform);
+        LeftItemWindow.transform.localPosition = new Vector3(-540f, 0f, 0f);
         m_LeftItemWindow = MecroMethod.CheckGetComponent<UI_Inventory_LeftItemWindow>(LeftItemWindow);
 
 
@@ -186,6 +189,14 @@ public class UI_Inventory_Functions : MonoBehaviour {
         //아이템 삭제
         InventoryManager.GetInstance(
             ).DestroyItem(SelectedItem, nSellItemCount);
+    }
+
+    public void ControllCursorManager()
+    {
+        if(CursorManager.gameObject.activeSelf)
+            CursorManager.gameObject.SetActive(false);
+        else
+            CursorManager.gameObject.SetActive(true);
     }
 
     public void OpenItemDetailWindow(Item_Slot _SelectedSlot)
