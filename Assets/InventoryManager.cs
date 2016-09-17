@@ -2,36 +2,48 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Mecro;
 
 public class InventoryManager : 
     Singleton<InventoryManager> {
 
-    [SerializeField]
-    private UILabel m_Weightlabel;
-
     private float m_fInvenWeight;
-    public float InvenWeight { get { return m_fInvenWeight; } }
+    public float InvenWeight
+    {
+        get { return m_fInvenWeight; }
+        set { m_fInvenWeight = value; }
+    }
     private float m_fInvenMaxWeight;
-    public float InvenMaxWeight { get { return m_fInvenMaxWeight; } }
+    public float InvenMaxWeight
+    {
+        get { return m_fInvenMaxWeight; }
+        set { m_fInvenMaxWeight = value; }
+    }
+
+    private static int m_nItemCreatePosition = 0;
+    public static int ItemCreatePosition
+    {
+        get { return m_nItemCreatePosition; }
+        set { m_nItemCreatePosition = value; }
+    }
 
     [SerializeField]
     private Transform m_GridTransform;
 
     private List<Item_Slot> m_ItemSlotList
         = new List<Item_Slot>();
-
-    private int m_nItemCount = 0;
-
-    [SerializeField]
-    private UI_Inventory_DeatilSquare m_DetailWindow;
-    public UI_Inventory_DeatilSquare DetailWindow
+    public List<Item_Slot> ItemSlotList
     {
-        get { return m_DetailWindow; }
-        set { m_DetailWindow = value; }
+        get { return m_ItemSlotList; }
+        set { m_ItemSlotList = value; }
     }
 
-    //Memory Pool
-    private GameObject m_SelectedEdgeSquare;
+    [SerializeField]
+    private UI_Inventory_Functions m_InvenFunc;
+    public UI_Inventory_Functions InvenFunc
+    {
+        get { return m_InvenFunc; }
+    }
 
     void Awake()
     {
@@ -40,22 +52,11 @@ public class InventoryManager :
 
     void Start()
     {
-        Mecro.MecroMethod.CheckExistComponent<UILabel>(m_Weightlabel);
-        Mecro.MecroMethod.CheckExistComponent<Transform>(m_GridTransform);
-        Mecro.MecroMethod.CheckExistComponent<UI_Inventory_DeatilSquare>(m_DetailWindow);
+        MecroMethod.CheckExistComponent<Transform>(m_GridTransform);
+        MecroMethod.CheckExistComponent<
+            UI_Inventory_Functions>(m_InvenFunc);
         InitBackPackMemory();
-        InitWeightLabel();
         InitBackPackItems();
-        m_SelectedEdgeSquare = Instantiate(Resources.Load("ItemIcons/Sprite - SelectedArea") as GameObject);
-        m_SelectedEdgeSquare.gameObject.SetActive(false);
-    }
-
-    void OnDisable()
-    {
-        if (m_DetailWindow.gameObject.activeSelf)
-            m_DetailWindow.gameObject.SetActive(false);
-        if (m_SelectedEdgeSquare.gameObject.activeSelf)
-            m_SelectedEdgeSquare.gameObject.SetActive(false);
     }
 
     void InitBackPackMemory()
@@ -74,26 +75,7 @@ public class InventoryManager :
         }
     }
 
-    void InitWeightLabel()
-    {
-        //Max Weight Count
-        PlayerData LoadedPlayData = DataController.GetInstance().InGameData;
-
-        m_fInvenMaxWeight = 100f +
-            LoadedPlayData.tStat.Str * 10f;
-
-        Debug.Log("Loaded Inventory Data : " + LoadedPlayData.Inventory.Count);
-
-        for (int i = 0; i < LoadedPlayData.Inventory.Count; ++i)
-        {
-            m_fInvenWeight += 
-                CalcItemWeight(LoadedPlayData.Inventory.Values.ToList()[i]);
-        }
-
-        UpdateWeightLabel();
-    }
-
-    void InitBackPackItems()
+    private void InitBackPackItems()
     {
         GameObject ItemObject;
         Item_Interface_Comp newItemInfo;
@@ -101,66 +83,27 @@ public class InventoryManager :
         Dictionary<string, List<Item_Interface>> ItemList =
             ItemManager.GetInstance().InventoryItems;
         List<Item_Interface> KindofItems;
-        for(int i = 0; i < ItemList.Count; ++i)
+
+        for (int i = 0; i < ItemList.Count; ++i)
         {
             KindofItems = ItemList.Values.ToList()[i];
-            for(int j = 0; j < KindofItems.Count; ++j, ++m_nItemCount)
+            for (int j = 0; j < KindofItems.Count; ++j, ++ItemCreatePosition)
             {
                 ItemObject = ItemManager.GetInstance().ItemInfoToGameObject(KindofItems[j]);
                 ItemObject.SetActive(false);
                 newItemInfo = ItemObject.AddComponent<Item_Interface_Comp>();
                 newItemInfo.ItemInfo = KindofItems[j];
-                ItemObject.transform.parent = m_ItemSlotList[m_nItemCount].transform;
+                ItemObject.transform.parent =
+                    ItemSlotList[ItemCreatePosition].transform;
                 ItemObject.transform.localScale = Vector3.one;
                 ItemObject.transform.localPosition = Vector3.zero;
                 ItemObject.SetActive(true);
-                m_ItemSlotList[m_nItemCount].ChildItem = newItemInfo;
+                ItemSlotList[ItemCreatePosition].ChildItem = newItemInfo;
             }
         }
     }
 
-    public void ShowDetailSquare(Item_Slot SlotTarget)
-    {
-        if (!SlotTarget.ChildItem)
-            return;
-
-        if (!m_SelectedEdgeSquare)
-            Debug.LogError(m_SelectedEdgeSquare == null);
-
-        m_SelectedEdgeSquare.SetActive(false);
-        UIWidget SelectedItemSlotWidget = m_SelectedEdgeSquare.GetComponent<UIWidget>();
-        SelectedItemSlotWidget.depth = 4;
-
-        m_SelectedEdgeSquare.transform.parent = SlotTarget.transform;
-        m_SelectedEdgeSquare.transform.localPosition = Vector3.zero;
-        m_SelectedEdgeSquare.transform.localScale = Vector3.one;
-        m_SelectedEdgeSquare.transform.rotation = Quaternion.identity;
-        m_SelectedEdgeSquare.SetActive(true);
-    }
-
-    private void SetWeight(Item_Interface_Comp SelectedItem, int nItemCount, bool isGetItem)
-    {
-        int nPlustoMinus = (isGetItem == true) ? 1 : -1;
-
-        //소지될 무게 감소
-        float fChangeAmount = (SelectedItem.ItemInfo.itemWeight * nItemCount * nPlustoMinus);
-        m_fInvenWeight += fChangeAmount;
-
-        //"N1" -> 소수점 1자리까지만 출력함.
-        string strWeight = m_fInvenWeight.ToString("N1");
-        m_fInvenWeight = float.Parse(strWeight);
-
-        UpdateWeightLabel();
-    }
-
-    private void UpdateWeightLabel()
-    {
-        Debug.Log("Update");
-        m_Weightlabel.text = m_fInvenWeight.ToString() + " / " +
-            m_fInvenMaxWeight.ToString();
-    }
-    
-    float CalcItemWeight(List<Item_Interface> ItemInfo)
+    public float CalcItemWeight(List<Item_Interface> ItemInfo)
     {
         float fWeightAmount = 0f;
 
@@ -182,78 +125,6 @@ public class InventoryManager :
         return true;
     }
 
-    public void BuyItem(Item_Slot SelectedItemSlot, int nBuyItemCount)
-    {
-        Debug.Log("nBuyItemCount : " + nBuyItemCount);
-        //슬롯에 존재하는 아이템을 가지고온다.
-        Item_Interface_Comp SelectedItem =
-            SelectedItemSlot.ChildItem;
-
-        //아이템이 존재하지 않을시 실행하지 않음.
-        if (SelectedItem == null)
-        {
-            Debug.Log("Not Have Item");
-            return;
-        }
-
-        //슬롯에 있는 아이템과 현재 소지금을 비교한다.
-        if (!LobbyManager.LobbyController.GetInstance().UpperStatusPanel.CompareMoney(
-            -SelectedItem.ItemInfo.ItemValue * nBuyItemCount))
-        {
-            Debug.Log("Not Have Money");
-            return;
-        }
-
-        //무게 제한을 검사한다.
-        if (!CompareWeight(SelectedItem.ItemInfo.itemWeight * nBuyItemCount))
-        {
-            Debug.Log("Heavy");
-            return;
-        }
-
-        //소지금 감소
-        LobbyManager.LobbyController.GetInstance(
-            ).UpperStatusPanel.SetMoney(-(SelectedItem.ItemInfo.ItemValue * nBuyItemCount));
-
-        //소지될 무게 추가
-        SetWeight(SelectedItem, nBuyItemCount, true);
-
-        //소지가짓수 체크
-        if(m_ItemSlotList.Last().ChildItem)
-        {
-            Debug.Log("Full Bag");
-            return;
-        }
-
-        Debug.Log("Additem");
-        //아이템 추가
-        CreateItem(SelectedItem.ItemInfo, nBuyItemCount);
-    }
-
-    public void SellItem(Item_Slot SelectedItemSlot, int nSellItemCount)
-    {
-        //슬롯에 존재하는 아이템을 가지고온다.
-        Item_Interface_Comp SelectedItem =
-            SelectedItemSlot.transform.FindChild("Sprite - ItemIcon(Clone)").GetComponent<Item_Interface_Comp>();
-
-        //아이템이 존재하지 않을시 실행하지 않음.
-        if (SelectedItem == null)
-        {
-            Debug.Log("Not Have Item");
-            return;
-        }
-
-        int nGetPrice = (int)SelectedItem.ItemInfo.ItemValue * 3 / 10;
-
-        //소지금 증가
-        LobbyManager.LobbyController.GetInstance(
-            ).UpperStatusPanel.SetMoney(nGetPrice * nSellItemCount);
-
-        SetWeight(SelectedItem, nSellItemCount, false);
-        //아이템 삭제
-        DestroyItem(SelectedItem, nSellItemCount);
-    }
-
     //Only Input Container
     //return Type - if you Create Instance true
     public bool AddItem(Item_Interface ItemComp, int nItemCount)
@@ -265,7 +136,7 @@ public class InventoryManager :
         {
             if (!m_ItemSlotList[i].ChildItem)
             {
-                m_nItemCount = i;
+                m_nItemCreatePosition = i;
                 break;
             }
         }
@@ -314,11 +185,11 @@ public class InventoryManager :
         newItemInfo.ItemInfo = ItemComp;
         newItemInfo.ItemInfo.itemCount = nItemCount;
 
-        ItemObject.transform.parent = m_ItemSlotList[m_nItemCount].transform;
+        ItemObject.transform.parent = m_ItemSlotList[m_nItemCreatePosition].transform;
         ItemObject.transform.localScale = Vector3.one;
         ItemObject.transform.localPosition = Vector3.zero;
         ItemObject.SetActive(true);
-        m_ItemSlotList[m_nItemCount].ChildItem = newItemInfo;
+        m_ItemSlotList[m_nItemCreatePosition].ChildItem = newItemInfo;
     }
 
     //Destroy Instance

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Mecro;
+using LobbyManager;
 
 public class UI_Inventory_CursorManager : MonoBehaviour
 {
@@ -15,10 +16,13 @@ public class UI_Inventory_CursorManager : MonoBehaviour
     [SerializeField]
     private GameObject m_ItemSlotBG;
 
+    private delegate void MouseUpEvent(Item_Slot _SelectedSlot);
+    private MouseUpEvent HoveringUpEvent;
 
     void OnEnable()
     {
         StartCoroutine("CursorProgress");
+        SetHoveringEvent();
     }
 
     void Start()
@@ -26,6 +30,26 @@ public class UI_Inventory_CursorManager : MonoBehaviour
         Debug.Log("Start");
         m_AtlasSprite = MecroMethod.CheckGetComponent<UISprite>(gameObject);
         m_NormalSprite = MecroMethod.CheckGetComponent<UI2DSprite>(gameObject);
+    }
+
+    private void SetHoveringEvent()
+    {
+        switch(LobbyController.GetInstance().OpenedPanel)
+        {
+            case LobbyButtonFunc.IDSUBPANEL.PANELID_GROCERYSTORE:
+                HoveringUpEvent = StoreInventory_Event;
+                Debug.Log("StoreHoveringEvent");
+                break;
+
+            case LobbyButtonFunc.IDSUBPANEL.PANELID_PLAYERSTAT:
+                HoveringUpEvent = EquipInventory_Event;
+                Debug.Log("EquipHoveringEvent");
+                break;
+
+            default:
+                Debug.LogError("Warning! it is not find panel id : " + LobbyController.GetInstance().OpenedPanel);
+                break;
+        }
     }
 
     IEnumerator CursorProgress()
@@ -40,14 +64,17 @@ public class UI_Inventory_CursorManager : MonoBehaviour
                 if (Input.GetMouseButton(0) &&
                     CheckingItemSlot(out SelectedSlot))
                 {
-                    InventoryManager.GetInstance().ShowDetailSquare(SelectedSlot);
+                    InventoryManager.GetInstance().InvenFunc.ShowDetailSquare(SelectedSlot);
                     SettingDetailItemWindow(SelectedSlot);
                     yield return new WaitForSeconds(0.15f);
 
                     if (!Input.GetMouseButton(0))
+                    {
+                        AttachDetailWindow_HideFunc();
                         continue;
+                    }
 
-                    ControllDetailItemWindow();
+                    DisappearDetailItemWindow();
                     AttachItem(SelectedSlot);
                     CursorTransformSetting();
                     AttachItemImage(SelectedSlot);
@@ -96,34 +123,44 @@ public class UI_Inventory_CursorManager : MonoBehaviour
         }
 
         m_SelectedSlotType = _SelectedSlot.ItemSlotType;
-
         return true;
     }
 
     private void SettingDetailItemWindow(Item_Slot _SelectedSlot)
     {
-        if (!_SelectedSlot.ChildItem)
+        if (_SelectedSlot.ItemSlotType == ITEM_SLOT_TYPE.SLOT_INVENTORY)
+        {
+            InventoryManager.GetInstance(
+                ).InvenFunc.OpenItemDetailWindow(_SelectedSlot);
+        }
+        else
+        {
+            _SelectedSlot.ApplyItemToMerchantInfo();
+             UI_Inventory_LeftItemWindow LeftItemWin =
+                 InventoryManager.GetInstance().InvenFunc.LeftItemWindow;
+
+             LeftItemWin.SetItemData(_SelectedSlot.ChildItem.gameObject);
+             if (!LeftItemWin.gameObject.activeSelf)
+                 LeftItemWin.gameObject.SetActive(true);
+        }
+    }
+
+    private void AttachDetailWindow_HideFunc()
+    {
+        if (m_SelectedSlotType != ITEM_SLOT_TYPE.SLOT_INVENTORY)
             return;
 
         InventoryManager.GetInstance(
-            ).DetailWindow.OpenDetailItemInfo(_SelectedSlot);
-        InventoryManager.GetInstance(
-            ).DetailWindow.gameObject.SetActive(true);
-
-        //Debuging
-        Debug.Log(InventoryManager.GetInstance(
-            ).DetailWindow.gameObject.name);
-        Debug.Log(InventoryManager.GetInstance(
-            ).DetailWindow.gameObject.activeSelf);
-        Debug.Log("Open");
+            ).InvenFunc.DetailWindow.m_OwnExtension.StartHidingClickAnotherArea();
+        
     }
 
-    private void ControllDetailItemWindow()
+    private void DisappearDetailItemWindow()
     {
         if(Input.GetMouseButton(0))
         {
             InventoryManager.GetInstance(
-            ).DetailWindow.gameObject.SetActive(false);
+            ).InvenFunc.DetailWindow.gameObject.SetActive(false);
         }
     }
 
@@ -167,15 +204,14 @@ public class UI_Inventory_CursorManager : MonoBehaviour
         }
     }
 
-    private void HoveringUpEvent(Item_Slot _SelectedSlot)
+    private void EquipInventory_Event(Item_Slot _SelectedSlot)
     {
         //0. Object 확인
         Item_Slot HoveredUpItemSlot = null;
         bool isHoveredUpArmedCollider = false;
         GameObject HoveredUpObject = UICamera.hoveredObject;
 
-
-        if (!CheckingHoveringUpEvent(HoveredUpObject, out HoveredUpItemSlot,
+        if (!CheckingEquip_HoveringUpEvent(HoveredUpObject, out HoveredUpItemSlot,
             out isHoveredUpArmedCollider))
             return;
 
@@ -196,18 +232,55 @@ public class UI_Inventory_CursorManager : MonoBehaviour
         //3. 인벤 -> 인벤
         else if (m_SelectedSlotType == ITEM_SLOT_TYPE.SLOT_INVENTORY &&
             HoveredUpItemSlot.ItemSlotType == ITEM_SLOT_TYPE.SLOT_INVENTORY)
-        {
-            InvenSlotChange();
-        }
+            return;
+
         //4. 장착창 -> 인벤
-        else if(m_SelectedSlotType == ITEM_SLOT_TYPE.SLOT_ARMED &&
+        else if (m_SelectedSlotType == ITEM_SLOT_TYPE.SLOT_ARMED &&
             HoveredUpItemSlot.ItemSlotType == ITEM_SLOT_TYPE.SLOT_INVENTORY)
         {
 
         }
     }
 
-    private bool CheckingHoveringUpEvent(GameObject _HoveredUpObject, 
+    private void StoreInventory_Event(Item_Slot _SelectedSlot)
+    {
+        //0. Object 확인
+        Item_Slot HoveredUpItemSlot = null;
+        GameObject HoveredUpObject = UICamera.hoveredObject;
+
+        HoveredUpItemSlot = HoveredUpObject.GetComponent<Item_Slot>();
+        if (!HoveredUpItemSlot)
+            return;
+        
+        //1. Store -> Store, Inventory -> Inventory
+        //haven't Event
+        if (_SelectedSlot.ItemSlotType == HoveredUpItemSlot.ItemSlotType)
+            return;
+
+        //2. Inventory -> Store
+        else if(_SelectedSlot.ItemSlotType == ITEM_SLOT_TYPE.SLOT_INVENTORY &&
+            HoveredUpItemSlot.ItemSlotType == ITEM_SLOT_TYPE.SLOT_STORE)
+        {
+            Debug.Log("Inventory -> Store");
+            UI_GroceryStore_SellList.GetInstance().SelectedItemSlot =
+                _SelectedSlot;
+            UI_GroceryStore_SellList.GetInstance().ClickSellButton();
+        }
+
+        //3. Store -> Inventory
+        else if (_SelectedSlot.ItemSlotType == ITEM_SLOT_TYPE.SLOT_STORE &&
+            HoveredUpItemSlot.ItemSlotType == ITEM_SLOT_TYPE.SLOT_INVENTORY)
+        {
+            Debug.Log("Store -> Inventory");
+            UI_GroceryStore_SellList.GetInstance().SelectedItemSlot =
+                _SelectedSlot;
+            UI_GroceryStore_SellList.GetInstance().ClickBuyButton();
+        }
+
+    }
+
+    //
+    private bool CheckingEquip_HoveringUpEvent(GameObject _HoveredUpObject, 
         out Item_Slot _HoveredUpSlot, out bool _isHoveredUpArmedCollider)
     {
         _HoveredUpSlot = _HoveredUpObject.GetComponent<Item_Slot>();
@@ -223,11 +296,6 @@ public class UI_Inventory_CursorManager : MonoBehaviour
         }
 
         return false;
-    }
-
-    private void InvenSlotChange()
-    {
-
     }
 
     private bool ItemEquipOrSwap(Item_Slot _HoveredSlot)

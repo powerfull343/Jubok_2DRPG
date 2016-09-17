@@ -128,6 +128,13 @@ namespace Mecro
             return vResult;
         }
 
+        public static void SetPartent(Transform ChildTarget, Transform ParentTarget)
+        {
+            ChildTarget.parent = ParentTarget;
+            ChildTarget.localPosition = Vector3.zero;
+            ChildTarget.localScale = Vector3.one;
+        }
+
         //Second Option use Vector3.zero
         public static Vector3 GetWorldPos(Transform Target,
             Vector3 vCalcWorldPos)
@@ -146,6 +153,16 @@ namespace Mecro
             }
 
             return vResult;
+        }
+
+        public static string TraceHierarchyObject(Transform Target)
+        {
+            string strResult = Target.name;
+
+            if (Target.parent != null)
+                strResult = TraceHierarchyObject(Target.parent) + "\\" + strResult;
+
+            return strResult;
         }
         
     }

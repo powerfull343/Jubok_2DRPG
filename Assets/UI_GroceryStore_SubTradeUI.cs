@@ -274,9 +274,9 @@ public class UI_GroceryStore_SubTradeUI : MonoBehaviour {
     public void AccessTrade()
     {
         if(m_isBuy)
-            InventoryManager.GetInstance().BuyItem(m_ItemTarget, m_CurrentItemCount);
+            InventoryManager.GetInstance().InvenFunc.BuyItem(m_ItemTarget, m_CurrentItemCount);
         else
-            InventoryManager.GetInstance().SellItem(m_ItemTarget, m_CurrentItemCount);
+            InventoryManager.GetInstance().InvenFunc.SellItem(m_ItemTarget, m_CurrentItemCount);
 
         HideSubTradeUI();
     }
@@ -290,6 +290,8 @@ public class UI_GroceryStore_SubTradeUI : MonoBehaviour {
     {
         ResetSubTradeUI();
         LobbyManager.LobbyController.GetInstance().HidingBlockPanel();
+        InventoryManager.GetInstance().InvenFunc.ControllCursorManager();
+        
         HideAndShowTradeMenu();
     }
 }

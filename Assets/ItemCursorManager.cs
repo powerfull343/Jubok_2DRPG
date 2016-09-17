@@ -9,9 +9,9 @@ public class ItemCursorManager : MonoBehaviour
     private UISprite m_Spritecomp;
     private UI2DSprite m_2DSpriteComp;
 
-    //Grocery Store Detail Window
-    [SerializeField]
-    private UI_GroceryStore_SellList_DetailWindow m_ItemWindow;
+    ////Grocery Store Detail Window
+    //[SerializeField]
+    //private UI_GroceryStore_SellList_DetailWindow m_ItemWindow;
 
     //Hovered Position
     private UISprite m_HoveredSprite;
@@ -40,8 +40,8 @@ public class ItemCursorManager : MonoBehaviour
         m_Hovered2DSprite = m_2DSpriteComp;
         m_2DSpriteComp.enabled = false;
 
-        Mecro.MecroMethod.CheckExistComponent<
-            UI_GroceryStore_SellList_DetailWindow>(m_ItemWindow);
+        //Mecro.MecroMethod.CheckExistComponent<
+        //    UI_GroceryStore_SellList_DetailWindow>(m_ItemWindow);
     }
 
     void OnEnable()
@@ -96,7 +96,7 @@ public class ItemCursorManager : MonoBehaviour
         UI_GroceryStore_SellList.GetInstance().SelectedItemSlot = 
             m_SelectedSlotPosition;
 
-        InventoryManager.GetInstance().ShowDetailSquare(SelectedItemSlot);
+        InventoryManager.GetInstance().InvenFunc.ShowDetailSquare(SelectedItemSlot);
     }
 
     private void ShowDetailItemDataWindow(out Item_Slot SelectedSlot)
@@ -117,14 +117,14 @@ public class ItemCursorManager : MonoBehaviour
             SelectedSlot.ApplyItemToMerchantInfo();
 
             //상점 아이템 좌측에 간단한 아이템 정보를 표시한다.
-            m_ItemWindow.SetItemData(SelectedSlot.ChildItem.gameObject);
-            if(!m_ItemWindow.gameObject.activeSelf)
-                m_ItemWindow.gameObject.SetActive(true);
+            //m_ItemWindow.SetItemData(SelectedSlot.ChildItem.gameObject);
+            //if(!m_ItemWindow.gameObject.activeSelf)
+            //    m_ItemWindow.gameObject.SetActive(true);
         }
         else
         {//인벤토리 아이템 말풍선을 띄운다.
             InventoryManager.GetInstance(
-                ).DetailWindow.OpenDetailItemInfo(SelectedSlot);
+                ).InvenFunc.DetailWindow.OpenDetailItemInfo(SelectedSlot);
         }
     }
 
@@ -186,7 +186,7 @@ public class ItemCursorManager : MonoBehaviour
             //0. 인벤토리 아이템 상세정보창을 띄웠을때 이를 해지한다.
             //if(!SelectedItemSlot.isSelleritem)
             if(SelectedItemSlot.ItemSlotType != ITEM_SLOT_TYPE.SLOT_STORE)
-                InventoryManager.GetInstance().DetailWindow.gameObject.SetActive(true);
+                InventoryManager.GetInstance().InvenFunc.DetailWindow.gameObject.SetActive(true);
         }
 
     }

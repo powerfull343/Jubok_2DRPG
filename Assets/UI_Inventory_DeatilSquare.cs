@@ -25,6 +25,8 @@ public class UI_Inventory_DeatilSquare : MonoBehaviour {
     [SerializeField]
     private UILabel m_ItemExpressionLabel;
 
+    public GameObject_Extension m_OwnExtension;
+
     void Start()
     {
         Mecro.MecroMethod.CheckExistComponent<UILabel>(m_ItemNameLabel);
@@ -34,6 +36,14 @@ public class UI_Inventory_DeatilSquare : MonoBehaviour {
         Mecro.MecroMethod.CheckExistComponent<UILabel>(m_ItemWeightLabel);
         Mecro.MecroMethod.CheckExistComponent<UILabel>(m_ItemValueLabel);
         Mecro.MecroMethod.CheckExistComponent<UILabel>(m_ItemExpressionLabel);
+
+        Mecro.MecroMethod.CheckExistComponent<GameObject_Extension>
+            (m_OwnExtension);
+    }
+
+    void OnDisable()
+    {
+        m_OwnExtension.StopHidingClickAnotherArea();
     }
 
     private void ResetWindow()
@@ -46,14 +56,13 @@ public class UI_Inventory_DeatilSquare : MonoBehaviour {
     {
         if (!SelectedItemSlot.ChildItem)
         {
-            Debug.Log("SelectedItemSlot.ChildItem NOt");
+            Debug.Log("SelectedItemSlot.ChildItem Not have");
             return;
         }
 
         this.gameObject.SetActive(false);
         SettingPosition(SelectedItemSlot.RowIndex);
         SettingStatWindow(SelectedItemSlot.ChildItem);
-        //this.gameObject.SetActive(true);
     }
 
     private void SettingPosition(int GridPosition)
