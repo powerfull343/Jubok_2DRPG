@@ -106,6 +106,7 @@ public abstract class Monster_Interface : Moveable_Object {
 
         if (Hp <= 0)
         {
+            Debug.Log("Hp Zero");
             MagicianCtrl.ColMonsters.Remove(this);
             MonsterManager.GetInstance().RemovesMonster(this.ObjectName,
                 this.transform.parent.gameObject);
@@ -181,7 +182,7 @@ public abstract class Monster_Interface : Moveable_Object {
     protected void KillMonster()
     {
         Debug.Log("KillMonster");
-        DropObjects();
+        DropItemObjects();
         if (grade >= MONSTERGRADEID.GRADE_BOSS)
             MonsterManager.GetInstance().CheckBossExist = false;
         MecroMethod.CheckGetComponent<GameObject_Extension>(mParentTrans).SelfDestroy();
@@ -194,7 +195,7 @@ public abstract class Monster_Interface : Moveable_Object {
         return MoneyResult;
     }
 
-    private void DropObjects()
+    private void DropItemObjects()
     {
         ItemDropManager.GetInstance().DropItem(m_ObjectName, transform.position);
         ItemDropManager.GetInstance().DropCoin(transform.position, 10);

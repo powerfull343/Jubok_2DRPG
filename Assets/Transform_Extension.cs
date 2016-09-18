@@ -16,8 +16,6 @@ public class Transform_Extension : MonoBehaviour {
 
 	void Start()
     {
-        Debug.Log(Screen.width);
-        Debug.Log(Screen.height);
         SetPositionSetting();
     }
 
