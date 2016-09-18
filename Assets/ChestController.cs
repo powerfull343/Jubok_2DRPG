@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 
 public class ChestController : MonoBehaviour
@@ -19,12 +20,40 @@ public class ChestController : MonoBehaviour
 
     private bool m_isAnimationLoopEnd = false;
 
+    static ChestController()
+    {
+        MonsterKey_Extension Key = new MonsterKey_Extension();
+        Key.MonsterCreatePosition = SUMMONPOSITIONID.POSITION_INANDOUT;
+        Key.MonsterPrefabName = "Mimic";
+
+        LoadedMonsterElement MonsterElement = new LoadedMonsterElement();
+
+        string LoadFullPath = "BattleScene/Monsters/" + "Mimic";
+        GameObject MonsterObject = Resources.Load(LoadFullPath) as GameObject;
+        Mecro.MecroMethod.CheckExistObejct<GameObject>(MonsterObject);
+        
+        Monster_Interface MonsterInterface = Monster_NameList.CreateMonster("Mimic");
+        MonsterInterface.ObjectType = Moveable_Type.TYPE_MONSTER;
+        MonsterInterface.ObjectName = Key.MonsterPrefabName;
+        MonsterInterface.Hp = 10;
+        MonsterInterface.Atk = 2;
+        MonsterInterface.LoadPrefabName = "Mimic";
+        MonsterInterface.atktype = ATKTYPEID.ATT_MELEE;
+        MonsterInterface.grade = MONSTERGRADEID.GRADE_HIDDEN;
+        MonsterInterface.CreatePosition = Key.MonsterCreatePosition;
+
+        MonsterElement.OriginGameObject = MonsterObject;
+        MonsterElement.OriginInterfaceComp = MonsterInterface;
+
+        MonsterManager.FieldSpecialMonsterData.Add(Key, MonsterElement);
+    }
+
     void Start()
     {
         m_StartTime = Time.time;
 
-        Vector3 vFlyPower = new Vector3(Random.Range(50f, 100f),
-            Random.Range(-10f, 50f), 0f);
+        Vector3 vFlyPower = new Vector3(UnityEngine.Random.Range(50f, 100f),
+            UnityEngine.Random.Range(-10f, 50f), 0f);
 
         m_StartPosition = transform.localPosition;
         m_StartPosition.z = 0f;
@@ -41,7 +70,7 @@ public class ChestController : MonoBehaviour
 
     IEnumerator RotateAnimation()
     {
-        float fRotateSpeed = Random.Range(2f, 8f);
+        float fRotateSpeed = UnityEngine.Random.Range(2f, 8f);
         while(true)
         {
             transform.Rotate(new Vector3(0f, fRotateSpeed, 0f));
@@ -52,7 +81,6 @@ public class ChestController : MonoBehaviour
         }
         yield return null;
     }
-
 
     IEnumerator DropAnimation()
     {
@@ -77,7 +105,7 @@ public class ChestController : MonoBehaviour
 
         //==그게 아닌 경우==//
 
-        
+        //Mimic인 경우//
 
         StartCoroutine("HideAnimation");
         yield break;
@@ -87,7 +115,7 @@ public class ChestController : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
 
-        m_FallTime = Random.Range(0.05f, 0.25f);
+        m_FallTime = UnityEngine.Random.Range(0.05f, 0.25f);
         m_StartPosition = transform.localPosition;
         m_FallPosition = ItemDropManager.GetInstance().ObtainPosition;
         m_Center = ((m_StartPosition + m_FallPosition) * 0.5f) + new Vector3(0f, 3f, 0f);

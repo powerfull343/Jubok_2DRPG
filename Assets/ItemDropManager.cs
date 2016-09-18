@@ -143,7 +143,7 @@ public class ItemDropManager :
         Item_Interface item4 = new Item_Interface();
         item4.DropItemRate = 300;
         item4.itemName = "item4";
-        item4.itemGrade = ITEMGRADEID.ITEMGRADE_UNIQUE;
+        item4.itemGrade = ITEMGRADEID.ITEMGRADE_MIMIC;
 
         Item_Interface item5 = new Item_Interface();
         item5.DropItemRate = 100;
@@ -198,18 +198,29 @@ public class ItemDropManager :
     public void DropCoin(Vector3 MonsterPosition, int MoneySize, 
         int MinMoneyDrop = 3, int MaxMoneyDrop = 5)
     {
-        int nRdmIdx = UnityEngine.Random.Range(MinMoneyDrop, MaxMoneyDrop);
+        int nCoinDrops = UnityEngine.Random.Range(MinMoneyDrop, MaxMoneyDrop);
+        int nBigCoin = 0;
 
-        for (int i = 0; i < nRdmIdx; ++i)
+        for (int i = 0; i < nCoinDrops; ++i)
         {
+            nBigCoin = UnityEngine.Random.Range(0, 100);
             GameObject CoinInst = Instantiate(m_CoinPrefab) as GameObject;
             CoinInst.SetActive(false);
             CoinInst.transform.parent = m_ObtainParent;
             CoinInst.transform.position =
                 MecroMethod.NormalToNGUIWorldPos(MonsterPosition);
-            CoinInst.transform.localScale = Vector3.one;
 
-            MecroMethod.CheckGetComponent<ChestController>(CoinInst).MoneySize = MoneySize;
+            if (nBigCoin >= 5)
+            {
+                CoinInst.transform.localScale = Vector3.one;
+                MecroMethod.CheckGetComponent<ChestController>(CoinInst).MoneySize = MoneySize;
+            }
+            else
+            {
+                Debug.Log("bigCoin");
+                CoinInst.transform.localScale = Vector3.one * 1.5f;
+                MecroMethod.CheckGetComponent<ChestController>(CoinInst).MoneySize = MoneySize * 5;
+            }
             
             CoinInst.SetActive(true);
         }

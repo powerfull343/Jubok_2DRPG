@@ -18,6 +18,11 @@ public class MonsterManager
     /// </summary>
     public static Dictionary<MonsterKey_Extension, LoadedMonsterElement> FieldEliteMonsterData
         = new Dictionary<MonsterKey_Extension, LoadedMonsterElement>();
+    /// <summary>
+    /// 로드된 몬스터 항목(특수한조건)
+    /// </summary>
+    public static Dictionary<MonsterKey_Extension, LoadedMonsterElement> FieldSpecialMonsterData
+        = new Dictionary<MonsterKey_Extension, LoadedMonsterElement>();
 
     /// <summary>
     /// 현재 소환된 몬스터 항목
@@ -89,7 +94,7 @@ public class MonsterManager
         StartCoroutine(iRegenMonster);
     }
     
-    void InitCreateMonster()
+    void InitCreateMonsters()
     {
         bool isCreateElite;
         int nCreateMonsterCount;
@@ -310,7 +315,7 @@ public class MonsterManager
                 float fDelayTime = Random.Range(RegenMinWidth, RegenMaxWidth);
 
                 //몬스터 생성 시작
-                InitCreateMonster();
+                InitCreateMonsters();
 
                 //생성 후 대기
                 yield return new WaitForSeconds(fDelayTime);
