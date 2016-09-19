@@ -19,7 +19,7 @@ public class ChestController : MonoBehaviour
     }
 
     private bool m_isAnimationLoopEnd = false;
-    private static bool isMimicCreated = false;
+    
 
     void Start()
     {
@@ -35,44 +35,10 @@ public class ChestController : MonoBehaviour
 
         m_Center = m_StartPosition + (vFlyPower / 2f) + new Vector3(0f, 200f, 0f);
 
-        if (!isMimicCreated)
-        {
-            AddChestToMimicMonster();
-            isMimicCreated = true;
-        }
-
         if (m_isCoin)
             StartCoroutine("RotateAnimation");
 
         StartCoroutine("DropAnimation");
-    }
-
-    private void AddChestToMimicMonster()
-    {
-        MonsterKey_Extension Key = new MonsterKey_Extension();
-        Key.MonsterCreatePosition = SUMMONPOSITIONID.POSITION_INANDOUT;
-        Key.MonsterPrefabName = "Mimic";
-
-        LoadedMonsterElement MonsterElement = new LoadedMonsterElement();
-
-        string LoadFullPath = "BattleScene/Monsters/" + "Mimic";
-        GameObject MonsterObject = Resources.Load(LoadFullPath) as GameObject;
-        Mecro.MecroMethod.CheckExistObejct<GameObject>(MonsterObject);
-
-        Monster_Interface MonsterInterface = Monster_NameList.CreateMonster("Mimic");
-        MonsterInterface.ObjectType = Moveable_Type.TYPE_MONSTER;
-        MonsterInterface.ObjectName = Key.MonsterPrefabName;
-        MonsterInterface.Hp = 10;
-        MonsterInterface.Atk = 2;
-        MonsterInterface.LoadPrefabName = "Mimic";
-        MonsterInterface.atktype = ATKTYPEID.ATT_MELEE;
-        MonsterInterface.grade = MONSTERGRADEID.GRADE_HIDDEN;
-        MonsterInterface.CreatePosition = Key.MonsterCreatePosition;
-
-        MonsterElement.OriginGameObject = MonsterObject;
-        MonsterElement.OriginInterfaceComp = MonsterInterface;
-
-        MonsterManager.FieldSpecialMonsterData.Add(Key, MonsterElement);
     }
 
     IEnumerator RotateAnimation()

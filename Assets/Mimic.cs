@@ -7,8 +7,6 @@ public class Mimic : Monster_Interface
     void Start()
     {
         base.Initializing();
-
-        StartCoroutine("ActionCoroutine");
     }
 
     public override void AutoAction()
@@ -44,9 +42,12 @@ public class Mimic : Monster_Interface
 
             yield return new WaitForFixedUpdate();
         }
-
         yield break;
+    }
 
+    public void BornEnd()
+    {
+        StartCoroutine("ActionCoroutine");
     }
 
     void OnTriggerEnter(Collider other)
