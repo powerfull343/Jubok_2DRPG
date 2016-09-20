@@ -69,6 +69,8 @@ public class XMLLoadMonster : MonoBehaviour {
 
             if (gradeid == MONSTERGRADEID.GRADE_NORMAL)
                 MonsterManager.FieldMonsterData.Add(KeyExtension, monster);
+            else if(gradeid == MONSTERGRADEID.GRADE_HIDDEN)
+                MonsterManager.FieldSpecialMonsterData.Add(KeyExtension, monster);
             else
             {
                 MonsterManager.FieldEliteMonsterData.Add(KeyExtension, monster);

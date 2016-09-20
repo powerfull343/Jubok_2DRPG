@@ -59,7 +59,7 @@ public class ItemDropManager :
         get { return m_ObtainParent; }
     }
 
-    private static bool isMimicCreated = false;
+    //private static bool isMimicCreated = false;
 
     void Awake()
     {
@@ -68,44 +68,10 @@ public class ItemDropManager :
 
     void Start()
     {
-        if (!isMimicCreated)
-        {
-            AddChestToMimicMonster();
-            isMimicCreated = true;
-        }
-
         CheckingPropertys();
         LoadChestGameObjects();
         LoadCoinObjects();
         LoadDropList();
-    }
-
-    private void AddChestToMimicMonster()
-    {
-        MonsterKey_Extension Key = new MonsterKey_Extension();
-        Key.MonsterCreatePosition = SUMMONPOSITIONID.POSITION_OPTIONAL;
-        Key.MonsterPrefabName = "Mimic";
-
-        LoadedMonsterElement MonsterElement = new LoadedMonsterElement();
-
-        string LoadFullPath = "BattleScene/Monsters/" + "Mimic";
-        GameObject MonsterObject = Resources.Load(LoadFullPath) as GameObject;
-        Mecro.MecroMethod.CheckExistObejct<GameObject>(MonsterObject);
-
-        Monster_Interface MonsterInterface = Monster_NameList.CreateMonster("Mimic");
-        MonsterInterface.ObjectType = Moveable_Type.TYPE_MONSTER;
-        MonsterInterface.ObjectName = Key.MonsterPrefabName;
-        MonsterInterface.Hp = 100;
-        MonsterInterface.Atk = 2;
-        MonsterInterface.LoadPrefabName = "Mimic";
-        MonsterInterface.atktype = ATKTYPEID.ATT_MELEE;
-        MonsterInterface.grade = MONSTERGRADEID.GRADE_HIDDEN;
-        MonsterInterface.CreatePosition = Key.MonsterCreatePosition;
-
-        MonsterElement.OriginGameObject = MonsterObject;
-        MonsterElement.OriginInterfaceComp = MonsterInterface;
-
-        MonsterManager.FieldSpecialMonsterData.Add(Key, MonsterElement);
     }
 
     private void CheckingPropertys()

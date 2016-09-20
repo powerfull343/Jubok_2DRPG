@@ -13,12 +13,16 @@ public class MonsterHpUICtrl : MonoBehaviour {
         set { _HpBar = value; }
     }
 
+    private Vector3 m_HpBarOffset;
+
     void Start()
     {
         ForeHpUI =
             MecroMethod.CheckGetComponent<Transform>(this.transform.FindChild("ForeUI"));
         MonsterInfo =
             MecroMethod.CheckGetComponent<Monster_Interface>(this.transform.parent.FindChild("MonsterBody"));
+
+        m_HpBarOffset = transform.localPosition;
 
         Debug.Log(MonsterInfo.grade);
         if (MonsterInfo.grade >= MONSTERGRADEID.GRADE_BOSS)
@@ -41,6 +45,9 @@ public class MonsterHpUICtrl : MonoBehaviour {
                 ForeHpUI.localScale.z);
 
             ForeHpUI.localScale = Vector3.Lerp(ForeHpUI.localScale, vUIscale, 1f);
+
+            transform.localPosition = MonsterInfo.transform.localPosition + m_HpBarOffset;
+
             yield return new WaitForFixedUpdate();
         }
 

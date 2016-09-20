@@ -65,4 +65,13 @@
     <Monster_Grade>GRADE_BOSS</Monster_Grade>
     <Monster_Create_Position>POSITION_INANDOUT</Monster_Create_Position>
   </Monster>
+  <Monster>
+    <Monster_Name>Mimic</Monster_Name>
+    <Monster_Hp>100</Monster_Hp>
+    <Monster_Atk>1</Monster_Atk>
+    <Monster_PrefabName>Mimic</Monster_PrefabName>
+    <Monster_AtkType>ATT_MELEE</Monster_AtkType>
+    <Monster_Grade>GRADE_HIDDEN</Monster_Grade>
+    <Monster_Create_Position>POSITION_OPTIONAL</Monster_Create_Position>
+  </Monster>
 </Field>

@@ -19,6 +19,9 @@ public class MeleeColScript : MonoBehaviour {
             Monster_Interface MonsterInfo =
                 MecroMethod.CheckGetComponent<Monster_Interface>(other.transform);
 
+            if (!MonsterInfo.m_isReadyFight)
+                return;
+
             _Player.ResetRangeAtkTrigger();
 
             if (MagicianCtrl.ColMonsters.Count >= 15)
@@ -26,8 +29,8 @@ public class MeleeColScript : MonoBehaviour {
             
             MagicianCtrl.ColMonsters.Add(MonsterInfo);
 
-            Debug.Log("AddCol");
-            Debug.Log("ColMonsters : " + MagicianCtrl.ColMonsters.Count);
+            //Debug.Log("AddCol");
+            //Debug.Log("ColMonsters : " + MagicianCtrl.ColMonsters.Count);
         }
     }
 

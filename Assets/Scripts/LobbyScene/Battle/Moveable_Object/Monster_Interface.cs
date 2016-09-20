@@ -6,7 +6,6 @@ using System.Reflection;
 using System.Xml;
 using Mecro;
 
-
 public abstract class Monster_Interface : Moveable_Object {
 
     protected ATKTYPEID m_atktype;
@@ -39,6 +38,7 @@ public abstract class Monster_Interface : Moveable_Object {
         get { return m_isOutSummonMonster; }
         set { m_isOutSummonMonster = value; }
     }
+    public bool m_isReadyFight = true;
     
     public float mMonsterWalkingSpeed = 4f;
     

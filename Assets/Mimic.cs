@@ -7,6 +7,7 @@ public class Mimic : Monster_Interface
     void Start()
     {
         base.Initializing();
+        m_isReadyFight = false;
     }
 
     public override void AutoAction()
@@ -47,13 +48,16 @@ public class Mimic : Monster_Interface
 
     public void BornEnd()
     {
+        m_isReadyFight = true;
         StartCoroutine("ActionCoroutine");
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (m_isOutSummonMonster)
-            OutFieldMonsterAddMonsterCount(other);
+        if (!m_isReadyFight)
+            return;
+        //if (m_isOutSummonMonster)
+        //    OutFieldMonsterAddMonsterCount(other);
 
         if (other.gameObject.CompareTag("DontGoAwayCollider"))
         {

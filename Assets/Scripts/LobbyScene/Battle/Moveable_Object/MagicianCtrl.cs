@@ -138,10 +138,8 @@ public class MagicianCtrl : Moveable_Object {
     {
         //Skill Choice
         int nRdmIdx = SkillManager.GetInstance().LoadedSkill.Count;
-
         
         //EarthForce, Thunder02, PinPanel
-
         m_ChoiceSkillName = "PinPanel";
 
         if(!SkillManager.GetInstance().CheckingSkillUse(m_ChoiceSkillName))
