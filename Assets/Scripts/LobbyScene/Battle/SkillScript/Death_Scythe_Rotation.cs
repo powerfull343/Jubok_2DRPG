@@ -42,7 +42,9 @@ public class Death_Scythe_Rotation : MonoBehaviour {
 
     private void MoveUpperScythe()
     {
-        Vector3 vTargetUpper = new Vector3(0f, EnvironmentManager.WorldScreenHeight * (4f / 5f), 0f);
+        float fDist = Vector3.zero.x - 
+            PlayerCtrlManager.GetInstance().Player.position.x;
+        Vector3 vTargetUpper = new Vector3(0f, fDist, 0f);
 
         TweenPosition.Begin(this.gameObject, 0.75f, vTargetUpper);
         StartCoroutine("AutoRotateAxis");
@@ -58,6 +60,7 @@ public class Death_Scythe_Rotation : MonoBehaviour {
         while(true)
         {
             transform.RotateAround(Vector3.zero, Vector3.forward, 3f);
+            //transform.RotateAround()
 
             if (Time.time - fStartTime > fEndTime)
                 break;
