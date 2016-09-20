@@ -1,0 +1,1662 @@
+fileFormatVersion: 2
+guid: 7eb991992b4ba9741be6b2a0b9226110
+timeCreated: 1474175363
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Mimic01_0
+    21300002: Mimic01_1
+    21300004: Mimic01_2
+    21300006: Mimic01_3
+    21300008: Mimic01_4
+    21300010: Mimic01_5
+    21300012: Mimic01_6
+    21300014: Mimic01_7
+    21300016: Mimic01_8
+    21300018: Mimic01_9
+    21300020: Mimic01_10
+    21300022: Mimic01_11
+    21300024: Mimic01_12
+    21300026: Mimic01_13
+    21300028: Mimic01_14
+    21300030: Mimic01_15
+    21300032: Mimic01_16
+    21300034: Mimic01_17
+    21300036: Mimic01_18
+    21300038: Mimic01_19
+    21300040: Mimic01_20
+    21300042: Mimic01_21
+    21300044: Mimic01_22
+    21300046: Mimic01_23
+    21300048: Mimic01_24
+    21300050: Mimic01_25
+    21300052: Mimic01_26
+    21300054: Mimic01_27
+    21300056: Mimic01_28
+    21300058: Mimic01_29
+    21300060: Mimic01_30
+    21300062: Mimic01_31
+    21300064: Mimic01_32
+    21300066: Mimic01_33
+    21300068: Mimic01_34
+    21300070: Mimic01_35
+    21300072: Mimic01_36
+    21300074: Mimic01_37
+    21300076: Mimic01_38
+    21300078: Mimic01_39
+    21300080: Mimic01_40
+    21300082: Mimic01_41
+    21300084: Mimic01_42
+    21300086: Mimic01_43
+    21300088: Mimic01_44
+    21300090: Mimic01_45
+    21300092: Mimic01_46
+    21300094: Mimic01_47
+    21300096: Mimic01_48
+    21300098: Mimic01_49
+    21300100: Mimic01_50
+    21300102: Mimic01_51
+    21300104: Mimic01_52
+    21300106: Mimic01_53
+    21300108: Mimic01_54
+    21300110: Mimic01_55
+    21300112: Mimic01_56
+    21300114: Mimic01_57
+    21300116: Mimic01_58
+    21300118: Mimic01_59
+    21300120: Mimic01_60
+    21300122: Mimic01_61
+    21300124: Mimic01_62
+    21300126: Mimic01_63
+    21300128: Mimic01_64
+    21300130: Mimic01_65
+    21300132: Mimic01_66
+    21300134: Mimic01_67
+    21300136: Mimic01_68
+    21300138: Mimic01_69
+    21300140: Mimic01_70
+    21300142: Mimic01_71
+    21300144: Mimic01_72
+    21300146: Mimic01_73
+    21300148: Mimic01_74
+    21300150: Mimic01_75
+    21300152: Mimic01_76
+    21300154: Mimic01_77
+    21300156: Mimic01_78
+    21300158: Mimic01_79
+    21300160: Mimic01_80
+    21300162: Mimic01_81
+    21300164: Mimic01_82
+    21300166: Mimic01_83
+    21300168: Mimic01_84
+    21300170: Mimic01_85
+    21300172: Mimic01_86
+    21300174: Mimic01_87
+    21300176: Mimic01_88
+    21300178: Mimic01_89
+    21300180: Mimic01_90
+    21300182: Mimic01_91
+    21300184: Mimic01_92
+    21300186: Mimic01_93
+    21300188: Mimic01_94
+    21300190: Mimic01_95
+    21300192: Mimic01_96
+    21300194: Mimic01_97
+    21300196: Mimic01_98
+    21300198: Mimic01_99
+    21300200: Mimic01_100
+    21300202: Mimic01_101
+    21300204: Mimic01_102
+    21300206: Mimic01_103
+    21300208: Mimic01_104
+    21300210: Mimic01_105
+    21300212: Mimic01_106
+    21300214: Mimic01_107
+    21300216: Mimic01_108
+    21300218: Mimic01_109
+    21300220: Mimic01_110
+    21300222: Mimic01_111
+    21300224: Mimic01_112
+    21300226: Mimic01_113
+    21300228: Mimic01_114
+    21300230: Mimic01_115
+    21300232: Mimic01_116
+    21300234: Mimic01_117
+    21300236: Mimic01_118
+    21300238: Mimic01_119
+    21300240: Mimic01_120
+    21300242: Mimic01_121
+    21300244: Mimic01_122
+    21300246: Mimic01_123
+    21300248: Mimic01_124
+    21300250: Mimic01_125
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Mimic01_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 860
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 860
+        width: 30
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_2
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 860
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_3
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 860
+        width: 28
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_4
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 860
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_5
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 860
+        width: 30
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_6
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 860
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_7
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 860
+        width: 28
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_8
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 820
+        width: 26
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_9
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 820
+        width: 26
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_10
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 820
+        width: 26
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_11
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 820
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_12
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 820
+        width: 26
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_13
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 820
+        width: 26
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_14
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 820
+        width: 26
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_15
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 820
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_16
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 780
+        width: 20
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_17
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 780
+        width: 21
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_18
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 780
+        width: 20
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_19
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 780
+        width: 20
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_20
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 780
+        width: 20
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_21
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 780
+        width: 21
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_22
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 780
+        width: 20
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_23
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 780
+        width: 20
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_24
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 740
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_25
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 740
+        width: 26
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_26
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 740
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_27
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 740
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_28
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 740
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_29
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 740
+        width: 26
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_30
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 740
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_31
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 740
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_32
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 700
+        width: 28
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_33
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 701
+        width: 28
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_34
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 700
+        width: 28
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_35
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 701
+        width: 26
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_36
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 700
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_37
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 701
+        width: 28
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_38
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 700
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_39
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 701
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_40
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 667
+        width: 30
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_41
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 664
+        width: 36
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_42
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 667
+        width: 36
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_43
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 663
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_44
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 663
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 604
+        width: 33
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.5, y: 17.5}
+        - {x: -15.5, y: 16.5}
+        - {x: -15.5, y: 0.5}
+        - {x: -10.5, y: -17.5}
+        - {x: 11.5, y: -17.5}
+        - {x: 16.5, y: -13.5}
+        - {x: 16.5, y: 17.5}
+      - - {x: -13.5, y: 5.5}
+        - {x: -13.5, y: 8.5}
+        - {x: -16.5, y: 9.5}
+        - {x: -16.5, y: 4.5}
+    - name: Mimic01_46
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 604
+        width: 28
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_47
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 604
+        width: 29
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_48
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 604
+        width: 25
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_49
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 604
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_50
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 606
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_51
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 604
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_52
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 564
+        width: 26
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_53
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 566
+        width: 28
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_54
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 566
+        width: 28
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_55
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 566
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_56
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 566
+        width: 28
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_57
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 565
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_58
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 564
+        width: 25
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_59
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 524
+        width: 20
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_60
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 526
+        width: 23
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_61
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 526
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_62
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 526
+        width: 30
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_63
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 526
+        width: 29
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_64
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 524
+        width: 35
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.5, y: -9.5}
+        - {x: -3.5, y: -16.5}
+        - {x: 17.5, y: -16.5}
+        - {x: 17.5, y: -1.5}
+        - {x: 13.5, y: 15.5}
+        - {x: 11.5, y: 16.5}
+        - {x: -11.5, y: 16.5}
+        - {x: -17.5, y: 12.5}
+    - name: Mimic01_65
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 524
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_66
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 484
+        width: 24
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_67
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 484
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_68
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 484
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_69
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 484
+        width: 25
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_70
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 484
+        width: 25
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_71
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 484
+        width: 28
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_72
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 484
+        width: 25
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_73
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 444
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_74
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 444
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_75
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 445
+        width: 28
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_76
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 445
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_77
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 445
+        width: 27
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_78
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 445
+        width: 28
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_79
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 444
+        width: 28
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_80
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 415
+        width: 30
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_81
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 414
+        width: 38
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_82
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 415
+        width: 35
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_83
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 413
+        width: 37
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_84
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 413
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_85
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 349
+        width: 33
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16.5, y: 18}
+        - {x: -13.5, y: 18}
+        - {x: -16.5, y: 16}
+        - {x: -16.5, y: 4}
+        - {x: -13.5, y: 5}
+        - {x: -11.5, y: -3}
+        - {x: -10.5, y: -12}
+        - {x: -7.5, y: -18}
+        - {x: 7.5, y: -18}
+        - {x: 12.5, y: -15}
+        - {x: 15.5, y: -3}
+        - {x: 16.5, y: 6}
+    - name: Mimic01_86
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 348
+        width: 30
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_87
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 348
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_88
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 350
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_89
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 348
+        width: 28
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_90
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 348
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_91
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 308
+        width: 26
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_92
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 308
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10.5, y: 18}
+        - {x: -13.5, y: 18}
+        - {x: -17.5, y: 12}
+        - {x: -17.5, y: -18}
+        - {x: 11.5, y: -18}
+        - {x: 14.5, y: -10}
+        - {x: 17.5, y: -1}
+        - {x: 17.5, y: 17}
+    - name: Mimic01_93
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 308
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_94
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 310
+        width: 25
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_95
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 308
+        width: 29
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_96
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 311
+        width: 29
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_97
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 268
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 18}
+        - {x: -10, y: 8}
+        - {x: -10, y: -8}
+        - {x: -8, y: -16}
+        - {x: -2, y: -18}
+        - {x: 11, y: -18}
+        - {x: 16, y: -9}
+        - {x: 16, y: 13}
+        - {x: 14, y: 18}
+      - - {x: -16, y: -1}
+        - {x: -13, y: 0}
+        - {x: -13, y: 4}
+        - {x: -15, y: 6}
+        - {x: -16, y: 6}
+    - name: Mimic01_98
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 268
+        width: 33
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.5, y: 18}
+        - {x: -16.5, y: 12}
+        - {x: -16.5, y: -18}
+        - {x: 14.5, y: -18}
+        - {x: 16.5, y: -12}
+        - {x: 16.5, y: 18}
+    - name: Mimic01_99
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 268
+        width: 25
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_100
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 271
+        width: 20
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_101
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 268
+        width: 28
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_102
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 271
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_103
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 228
+        width: 30
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_104
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 228
+        width: 38
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 16}
+        - {x: -19, y: 13}
+        - {x: -19, y: -16}
+        - {x: 7, y: -16}
+        - {x: 19, y: -1}
+        - {x: 19, y: 16}
+    - name: Mimic01_105
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 228
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_106
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 233
+        width: 26
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_107
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 228
+        width: 29
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_108
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 188
+        width: 32
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 16.5}
+        - {x: -16, y: -0.5}
+        - {x: -8, y: -14.5}
+        - {x: -6, y: -16.5}
+        - {x: 10, y: -16.5}
+        - {x: 13, y: -14.5}
+        - {x: 16, y: 1.5}
+        - {x: 16, y: 16.5}
+      - - {x: -16, y: -16.5}
+        - {x: -13, y: -15.5}
+        - {x: -13, y: -11.5}
+        - {x: -15, y: -9.5}
+        - {x: -16, y: -9.5}
+      - - {x: -13, y: 13.5}
+        - {x: -13, y: 16.5}
+        - {x: -16, y: 16.5}
+        - {x: -16, y: 12.5}
+    - name: Mimic01_109
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 188
+        width: 28
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_110
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 188
+        width: 28
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_111
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 194
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_112
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 188
+        width: 29
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_113
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 146
+        width: 33
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 3.5, y: 18}
+        - {x: -12.5, y: 7}
+        - {x: -12.5, y: -6}
+        - {x: 0.5, y: -17}
+        - {x: 10.5, y: -17}
+        - {x: 16.5, y: -10}
+        - {x: 16.5, y: 18}
+      - - {x: -13.5, y: 5}
+        - {x: -13.5, y: 8}
+        - {x: -16.5, y: 9}
+        - {x: -16.5, y: 4}
+    - name: Mimic01_114
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 153
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_115
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 155
+        width: 28
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_116
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 159
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_117
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 159
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_118
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 160
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_119
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 160
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_120
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 160
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_121
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 135
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_122
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 135
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_123
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 136
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_124
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 136
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mimic01_125
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 136
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

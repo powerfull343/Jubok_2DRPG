@@ -21,7 +21,7 @@ public class BossHpBar : MonoBehaviour {
         set { m_MonsterInfo = value; }
     }
 
-    float m_fStartTime = 0, m_fEndTime = 0, m_fDiscountAmount = 0;
+    //float m_fStartTime = 0, m_fEndTime = 0, m_fDiscountAmount = 0;
 
     void Awake()
     {

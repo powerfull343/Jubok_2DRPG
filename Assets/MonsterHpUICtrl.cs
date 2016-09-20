@@ -20,6 +20,7 @@ public class MonsterHpUICtrl : MonoBehaviour {
         MonsterInfo =
             MecroMethod.CheckGetComponent<Monster_Interface>(this.transform.parent.FindChild("MonsterBody"));
 
+        Debug.Log(MonsterInfo.grade);
         if (MonsterInfo.grade >= MONSTERGRADEID.GRADE_BOSS)
             ShowBossHpUI();
         else

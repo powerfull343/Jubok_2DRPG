@@ -82,7 +82,9 @@ public class SkeletonBomber : Monster_Interface
 
     public void ThrowingBomb()
     {
+        Debug.Log("throw");
         GameObject BombObject = Instantiate(mBomb, mBombThrowTrans.position, Quaternion.identity) as GameObject;
         BombObject.GetComponent<Bullet_Extension>().m_AtkPower = 3f;
+        Debug.Log(BombObject.name);
     }
 }

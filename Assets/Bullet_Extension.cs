@@ -159,12 +159,19 @@ public class Bullet_Extension : GameObject_Extension {
             //}
             //몬스터 HP 0일시 관통 그 외에는 삭제
             if (m_isCollisionDestroy)
+            {
+                Debug.Log("Collision Des");
                 SelfDestroy();
+            }
         }
 
         //영역 초과시 삭제
         if (other.gameObject.CompareTag("OverTheArea"))
+        {
+            Debug.Log("Over Des");
+            Debug.Log(other.gameObject.name);
             SelfDestroy();
+        }
     }
 	
 }

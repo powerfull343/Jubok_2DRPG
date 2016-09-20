@@ -98,7 +98,7 @@ public class BossHpBarCtrlManager : MonoBehaviour {
         if (!BossHpWidget)
             Debug.LogError("Cannot Find " + BossHpWidget.name);
 
-        float fHeight = (Screen.height / 2f) -
+        float fHeight = (BattleScene_NGUI_Panel.fScreenHeight / 2f) -
             LobbyController.GetInstance().UpperStatusPanel.m_fUISize -
             (BossHpWidget.localSize.y / 2f);
 

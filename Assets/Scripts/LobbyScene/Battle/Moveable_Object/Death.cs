@@ -208,7 +208,7 @@ public class Death : Monster_Interface
     {
         if(m_BigScytheObject != null)
             Destroy(m_BigScytheObject);
-        DisableMonsterComps();
+        //DisableMonsterComps();
 
         mAnim.SetTrigger("Die");
         Invoke("KillMonster", 2f);

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Mecro;
+using System.Linq;
 
 public class ItemDropManager :
     Singleton<ItemDropManager>
@@ -58,6 +59,8 @@ public class ItemDropManager :
         get { return m_ObtainParent; }
     }
 
+    private static bool isMimicCreated = false;
+
     void Awake()
     {
         CreateInstance();
@@ -65,10 +68,44 @@ public class ItemDropManager :
 
     void Start()
     {
+        if (!isMimicCreated)
+        {
+            AddChestToMimicMonster();
+            isMimicCreated = true;
+        }
+
         CheckingPropertys();
         LoadChestGameObjects();
         LoadCoinObjects();
         LoadDropList();
+    }
+
+    private void AddChestToMimicMonster()
+    {
+        MonsterKey_Extension Key = new MonsterKey_Extension();
+        Key.MonsterCreatePosition = SUMMONPOSITIONID.POSITION_OPTIONAL;
+        Key.MonsterPrefabName = "Mimic";
+
+        LoadedMonsterElement MonsterElement = new LoadedMonsterElement();
+
+        string LoadFullPath = "BattleScene/Monsters/" + "Mimic";
+        GameObject MonsterObject = Resources.Load(LoadFullPath) as GameObject;
+        Mecro.MecroMethod.CheckExistObejct<GameObject>(MonsterObject);
+
+        Monster_Interface MonsterInterface = Monster_NameList.CreateMonster("Mimic");
+        MonsterInterface.ObjectType = Moveable_Type.TYPE_MONSTER;
+        MonsterInterface.ObjectName = Key.MonsterPrefabName;
+        MonsterInterface.Hp = 100;
+        MonsterInterface.Atk = 2;
+        MonsterInterface.LoadPrefabName = "Mimic";
+        MonsterInterface.atktype = ATKTYPEID.ATT_MELEE;
+        MonsterInterface.grade = MONSTERGRADEID.GRADE_HIDDEN;
+        MonsterInterface.CreatePosition = Key.MonsterCreatePosition;
+
+        MonsterElement.OriginGameObject = MonsterObject;
+        MonsterElement.OriginInterfaceComp = MonsterInterface;
+
+        MonsterManager.FieldSpecialMonsterData.Add(Key, MonsterElement);
     }
 
     private void CheckingPropertys()
@@ -141,9 +178,9 @@ public class ItemDropManager :
         item3.itemGrade = ITEMGRADEID.ITEMGRADE_RARE;
 
         Item_Interface item4 = new Item_Interface();
-        item4.DropItemRate = 300;
+        item4.DropItemRate = 900;
         item4.itemName = "item4";
-        item4.itemGrade = ITEMGRADEID.ITEMGRADE_UNIQUE;
+        item4.itemGrade = ITEMGRADEID.ITEMGRADE_MIMIC;
 
         Item_Interface item5 = new Item_Interface();
         item5.DropItemRate = 100;
@@ -165,7 +202,7 @@ public class ItemDropManager :
         m_LoadedItemDropList.Add("Skeleton02", TestList2);
     }
 
-    public void DropItem(string MonsterName, Vector3 MonsterPosition)
+    public void DropItem(string MonsterName, Vector3 _DeadMonsterPos)
     {
         if (!m_LoadedItemDropList.ContainsKey(MonsterName))
         {
@@ -182,15 +219,11 @@ public class ItemDropManager :
 
             if (nRdmIdx <= itemList[i].DropItemRate)
             {
-                GameObject ChestObject = Instantiate(
-                    m_LoadedChestPrefabs[itemList[i].itemGrade]) as GameObject;
-
-                ChestObject.SetActive(false);
-                ChestObject.transform.parent = m_ObtainParent;
-                ChestObject.transform.position =
-                    MecroMethod.NormalToNGUIWorldPos(MonsterPosition);
-                ChestObject.transform.localScale = Vector3.one;
-                ChestObject.SetActive(true);
+                if (itemList[i].itemGrade != ITEMGRADEID.ITEMGRADE_MIMIC)
+                    OriginChest(itemList[i], _DeadMonsterPos);
+                else
+                    MonsterManager.MonsterFactory(MonsterManager.MonsterSummonID.SUMMON_SPECIAL,
+                        "Mimic", _DeadMonsterPos);
             }
         }
     }
@@ -198,30 +231,47 @@ public class ItemDropManager :
     public void DropCoin(Vector3 MonsterPosition, int MoneySize, 
         int MinMoneyDrop = 3, int MaxMoneyDrop = 5)
     {
-        int nRdmIdx = UnityEngine.Random.Range(MinMoneyDrop, MaxMoneyDrop);
+        int nCoinDrops = UnityEngine.Random.Range(MinMoneyDrop, MaxMoneyDrop);
+        int nBigCoin = 0;
 
-        for (int i = 0; i < nRdmIdx; ++i)
+        for (int i = 0; i < nCoinDrops; ++i)
         {
+            nBigCoin = UnityEngine.Random.Range(0, 100);
             GameObject CoinInst = Instantiate(m_CoinPrefab) as GameObject;
             CoinInst.SetActive(false);
             CoinInst.transform.parent = m_ObtainParent;
             CoinInst.transform.position =
                 MecroMethod.NormalToNGUIWorldPos(MonsterPosition);
-            CoinInst.transform.localScale = Vector3.one;
 
-            MecroMethod.CheckGetComponent<ChestController>(CoinInst).MoneySize = MoneySize;
+            if (nBigCoin >= 5)
+            {
+                CoinInst.transform.localScale = Vector3.one;
+                MecroMethod.CheckGetComponent<ChestController>(CoinInst).MoneySize = MoneySize;
+            }
+            else
+            {
+                Debug.Log("bigCoin");
+                CoinInst.transform.localScale = Vector3.one * 1.5f;
+                MecroMethod.CheckGetComponent<ChestController>(CoinInst).MoneySize = MoneySize * 5;
+            }
             
             CoinInst.SetActive(true);
         }
     }
 
-    private void DropItemPosition()
+    private void OriginChest(Item_Interface DropTarget,
+        Vector3 _DeadMonsterPos)
     {
+        GameObject ChestObject = Instantiate(
+                    m_LoadedChestPrefabs[DropTarget.itemGrade]) as GameObject;
 
+        ChestObject.SetActive(false);
+        ChestObject.transform.parent = m_ObtainParent;
+        ChestObject.transform.position =
+            MecroMethod.NormalToNGUIWorldPos(_DeadMonsterPos);
+        ChestObject.transform.localScale = Vector3.one;
+        ChestObject.SetActive(true);
     }
 
-    private void DropRate()
-    {
-        
-    }
+   
 }

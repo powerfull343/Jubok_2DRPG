@@ -7,6 +7,14 @@ using System.Linq;
 public class MonsterManager
     : Singleton<MonsterManager>
 {
+    public enum MonsterSummonID
+    {
+        SUMMON_NORMAL,
+        SUMMON_ELITE,
+        SUMMON_SPECIAL,
+        SUMMON_MAX,
+    };
+
     /// <summary>
     /// 로드된 몬스터 항목(일반등급)
     /// </summary>
@@ -17,6 +25,11 @@ public class MonsterManager
     /// 로드된 몬스터 항목(상위등급)
     /// </summary>
     public static Dictionary<MonsterKey_Extension, LoadedMonsterElement> FieldEliteMonsterData
+        = new Dictionary<MonsterKey_Extension, LoadedMonsterElement>();
+    /// <summary>
+    /// 로드된 몬스터 항목(특수한조건)
+    /// </summary>
+    public static Dictionary<MonsterKey_Extension, LoadedMonsterElement> FieldSpecialMonsterData
         = new Dictionary<MonsterKey_Extension, LoadedMonsterElement>();
 
     /// <summary>
@@ -89,7 +102,7 @@ public class MonsterManager
         StartCoroutine(iRegenMonster);
     }
     
-    void InitCreateMonster()
+    void InitCreateMonsters()
     {
         bool isCreateElite;
         int nCreateMonsterCount;
@@ -216,6 +229,7 @@ public class MonsterManager
         Debug.Log("MonsterCount : " + MonsterCount);
     }
 
+    //Loaded XML Monster Looping Method
     private GameObject MonsterFactory(int nMonsterCnt,
         out string findExistKey, bool isElite, SUMMONPOSITIONID CreatePositionID)
     {
@@ -310,7 +324,7 @@ public class MonsterManager
                 float fDelayTime = Random.Range(RegenMinWidth, RegenMaxWidth);
 
                 //몬스터 생성 시작
-                InitCreateMonster();
+                InitCreateMonsters();
 
                 //생성 후 대기
                 yield return new WaitForSeconds(fDelayTime);
@@ -368,8 +382,106 @@ public class MonsterManager
         Debug.Log(nAtkPower);
 
         SelectedMonsterInfo.SetHp(nAtkPower);
-        
+    }
 
+    //If Apply Monster Setting SummonPosition = SUMMONPOSITIONID.POSITION_OUTFIELD
+    //You Must Setting SummonPosition 
+    public static GameObject MonsterFactory(MonsterSummonID SummonGrade,
+        string MonsterPrefabName, Vector3 SummonPosition)
+    {
+        GameObject ResultMonsterInst = null;
+        MonsterKey_Extension SelectedKey = null;
+        LoadedMonsterElement SelectedElement = null;
+        Dictionary<MonsterKey_Extension,
+            LoadedMonsterElement> SelectedMonsterData = null;
+
+        //Select Summon Monster Data Type
+        switch(SummonGrade)
+        {
+            case MonsterSummonID.SUMMON_NORMAL:
+                SelectedMonsterData = FieldMonsterData;
+                break;
+
+            case MonsterSummonID.SUMMON_ELITE:
+                SelectedMonsterData = FieldEliteMonsterData;
+                break;
+
+            case MonsterSummonID.SUMMON_SPECIAL:
+                SelectedMonsterData = FieldSpecialMonsterData;
+                break;
+        }
+
+        //if You Cannot Find MonsterData Cancel this Method
+        if (SelectedMonsterData == null)
+        {
+            Debug.Log("Not Exist SummonType Data");
+            return null;
+        }
+
+
+        int MonsterDataCount = SelectedMonsterData.Count;
+        Debug.Log(MonsterDataCount);
+
+        for (int i = 0; i < MonsterDataCount; ++i)
+        {
+            if(SelectedMonsterData.Keys.ToList()[i].MonsterPrefabName ==
+                 MonsterPrefabName)
+            {
+                SelectedKey = SelectedMonsterData.Keys.ToList()[i];
+                SelectedElement = SelectedMonsterData[SelectedKey];
+                break;
+            }
+        }
+
+        Debug.Log(SelectedKey.ToString());
+        Debug.Log(SelectedElement.ToString());
+
+        if (SelectedElement.OriginGameObject == null)
+            Debug.LogError("SelectedElement.OriginGameObject is null");
+        ResultMonsterInst = Instantiate(SelectedElement.OriginGameObject);
+
+        //MonsterBody Setting
+        Transform MonsterBodyTrans = ResultMonsterInst.transform.FindChild("MonsterBody");
+        MonsterBodyTrans.gameObject.AddComponent(SelectedElement.OriginInterfaceType);
+        Monster_Interface CreatedInterface = MonsterBodyTrans.gameObject.GetComponent<Monster_Interface>();
+
+        if (CreatedInterface == null)
+            Debug.LogError(CreatedInterface.name + " is Null");
+
+        CreatedInterface.CopyInterFace(SelectedElement.OriginInterfaceComp);
+        CreatedInterface.CreatePosition = SelectedKey.MonsterCreatePosition;
+
+        if (CreatedInterface.CreatePosition == SUMMONPOSITIONID.POSITION_OUTFIELD)
+            CreatedInterface.isOutSummonMonster = true;
+
+        //Monster Transform Setting
+        ResultMonsterInst.SetActive(false);
+        ResultMonsterInst.transform.SetParent(MonsterManager.GetInstance().transform);
+
+        //Position
+        if (CreatedInterface.CreatePosition != SUMMONPOSITIONID.POSITION_OPTIONAL)
+        {
+            Vector3 CreatePos = MonsterManager.GetInstance(
+                ).SetCreatedMonsterPosition(CreatedInterface.CreatePosition);
+            CreatePos -= new Vector3(0f, Random.Range(0f, 0.3f), 0f);
+            ResultMonsterInst.transform.position = CreatePos;
+        }
+        else
+            ResultMonsterInst.transform.position = SummonPosition;
+
+        //Scale
+        ResultMonsterInst.transform.localScale = Vector3.one;
+        ResultMonsterInst.SetActive(true);
+
+        MonsterManager.GetInstance().MonsterAddToMonsterList(
+            ResultMonsterInst, CreatedInterface.ObjectName);
+
+        //밖에서 나온몹은 추가된걸 취급하지 않는다.
+        if (CreatedInterface.CreatePosition !=
+            SUMMONPOSITIONID.POSITION_OUTFIELD)
+            ++MonsterCount;
+
+        return ResultMonsterInst;
     }
 }
 

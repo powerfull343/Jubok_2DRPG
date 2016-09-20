@@ -106,6 +106,7 @@ public abstract class Monster_Interface : Moveable_Object {
 
         if (Hp <= 0)
         {
+            Debug.Log("Hp Zero");
             MagicianCtrl.ColMonsters.Remove(this);
             MonsterManager.GetInstance().RemovesMonster(this.ObjectName,
                 this.transform.parent.gameObject);
@@ -181,7 +182,7 @@ public abstract class Monster_Interface : Moveable_Object {
     protected void KillMonster()
     {
         Debug.Log("KillMonster");
-        DropItem();
+        DropItemObjects();
         if (grade >= MONSTERGRADEID.GRADE_BOSS)
             MonsterManager.GetInstance().CheckBossExist = false;
         MecroMethod.CheckGetComponent<GameObject_Extension>(mParentTrans).SelfDestroy();
@@ -194,14 +195,12 @@ public abstract class Monster_Interface : Moveable_Object {
         return MoneyResult;
     }
 
-    private void DropItem()
+    private void DropItemObjects()
     {
         ItemDropManager.GetInstance().DropItem(m_ObjectName, transform.position);
         ItemDropManager.GetInstance().DropCoin(transform.position, 10);
         //ItemDropManager.GetInstance().DropCoin(transform.position, CalcMoneySize());
     }
-
-
 
     protected abstract IEnumerator ActionCoroutine();
 
@@ -233,7 +232,6 @@ public abstract class Monster_Interface : Moveable_Object {
         MecroMethod.CheckExistObejct<GameObject>(MonsterObject);
         Monster.OriginGameObject = MonsterObject;
         //Set Variables
-        //Monster_Interface MonsterInterface = MonsterObject.GetComponent(PrefabName) as Monster_Interface;
         Monster_Interface MonsterInterface = Monster_NameList.CreateMonster(PrefabName);
 
         MonsterInterface.ObjectType = Moveable_Type.TYPE_MONSTER;
