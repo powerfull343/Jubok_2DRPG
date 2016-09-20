@@ -138,11 +138,28 @@ public class MagicianCtrl : Moveable_Object {
     {
         //Skill Choice
         int nRdmIdx = SkillManager.GetInstance().LoadedSkill.Count;
-        
-        //EarthForce, Thunder02, PinPanel
-        m_ChoiceSkillName = "PinPanel";
+        nRdmIdx = Random.Range(0, nRdmIdx);
 
-        if(!SkillManager.GetInstance().CheckingSkillUse(m_ChoiceSkillName))
+        //EarthForce, Thunder02, PinPanel
+        switch (nRdmIdx)
+        {
+            case 0:
+                m_ChoiceSkillName = "EarthForce";
+                break;
+
+            case 1:
+                m_ChoiceSkillName = "Thunder02";
+                break;
+
+            case 2:
+                m_ChoiceSkillName = "PinPanel";
+                break;
+        }
+
+        //int nRdmIdx = SkillManager.GetInstance().LoadedSkill.Count;
+        //m_ChoiceSkillName = "PinPanel";
+
+        if (!SkillManager.GetInstance().CheckingSkillUse(m_ChoiceSkillName))
             _PlayerAnim.SetTrigger("NormalRange");
         else
             _PlayerAnim.SetTrigger("SpecialRange");
@@ -157,7 +174,8 @@ public class MagicianCtrl : Moveable_Object {
     public void SummonSkillEffect()
     {
         //EarthForce, Thunder02, PinPanel
-        //SkillManager.GetInstance().UseSkill(m_ChoiceSkillName);
+        Debug.Log(m_ChoiceSkillName);
+        SkillManager.GetInstance().UseSkill(m_ChoiceSkillName);
     }
 
     public void ActiveNormalRangeAtk()

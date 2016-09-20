@@ -38,7 +38,7 @@ public class Skill_PinPanel : Skill_Interface {
 
     protected override void SkillSetting()
     {
-        transform.localPosition += m_ChildSkillRegenPosition.localPosition;
+        transform.localPosition = m_ChildSkillRegenPosition.localPosition;
         transform.localScale = Vector3.one;
     }
 

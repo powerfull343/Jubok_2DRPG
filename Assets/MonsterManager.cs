@@ -225,8 +225,6 @@ public class MonsterManager
         //밖에서 나온몹은 추가된걸 취급하지 않는다.
         if(CreatePositionID != SUMMONPOSITIONID.POSITION_OUTFIELD)
             ++MonsterCount;
-
-        Debug.Log("MonsterCount : " + MonsterCount);
     }
 
     //Loaded XML Monster Looping Method

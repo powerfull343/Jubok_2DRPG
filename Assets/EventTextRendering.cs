@@ -49,8 +49,9 @@ public class EventTextRendering : MonoBehaviour {
     {
         Vector3 vScaleRate = new Vector3(0.45f, 0.45f, 1f);
         //50 = upperUISize
-        Vector3 vFinalPosition = new Vector3((Screen.width / 2f) - ((m_EventLabelComp.localSize.x * vScaleRate.x) / 2f),
-            (Screen.height / 2f) - ((m_EventLabelComp.localSize.y * vScaleRate.y) / 2f) - 50, 0f);
+        Vector3 vFinalPosition = new Vector3(
+            (BattleScene_NGUI_Panel.fScreenWidth / 2f) - ((m_EventLabelComp.localSize.x * vScaleRate.x) / 2f),
+            (BattleScene_NGUI_Panel.fScreenHeight / 2f) - ((m_EventLabelComp.localSize.y * vScaleRate.y) / 2f) - 100, 0f);
 
         //Test
         TweenPosition.Begin(this.gameObject, 2f, vFinalPosition);

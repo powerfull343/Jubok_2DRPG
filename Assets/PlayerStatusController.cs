@@ -51,8 +51,6 @@ public class PlayerStatusController : MonoBehaviour
 
         //float fHeight = (Screen.height / 2f) - (m_BGWidget.localSize.y / 2f);
         float fHeight = (fScreenHeight / 2f) - (m_BGWidget.localSize.y / 2f);
-        Debug.Log(Screen.height);
-        Debug.Log(fHeight);
         this.transform.localPosition = new Vector3(0f, fHeight, 0f);
         this.transform.localScale = Vector3.one;
         this.gameObject.SetActive(true);

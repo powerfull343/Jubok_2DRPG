@@ -86,6 +86,9 @@ public class SkillManager :
     
     public bool CheckingSkillUse(string SkillName)
     {
+        if (SkillName == string.Empty)
+            return false;
+
         Skill_Key_Extension FindKeyInfo = FindKeyInstance(SkillName);
 
         //Debug.Log(FindKeyInfo.m_nSkillManaCost);

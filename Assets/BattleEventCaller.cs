@@ -42,20 +42,19 @@ public class BattleEventCaller : MonoBehaviour {
     [SerializeField]
     private EventTextRendering m_EventRenderingComp;
 
+    //Event Progress Looping
     public bool m_isEventCall = true;
-
+    private bool m_isPreviousEvent = false;
 
     void Start()
     {
         Mecro.MecroMethod.CheckExistComponent<EventTextRendering>(m_EventRenderingComp);
-
 
         if (m_isEventCall)
         {
             m_EventProcess = ProcessEvents();
             StartCoroutine(m_EventProcess);
         }
-        
     }
 
     IEnumerator ProcessEvents()
@@ -139,8 +138,16 @@ public class BattleEventCaller : MonoBehaviour {
 
     private bool EventChangeSystem()
     {
+        //이벤트가 연속적으로 발생하는 것을 방지하기 위해 막아준다.
+        if(m_isPreviousEvent)
+        {
+            m_isPreviousEvent = false;
+            return false;
+        }
+
         int nRandomOpenEventIndex = Random.Range(0, 100);
-        if (nRandomOpenEventIndex < 0)
+        //Debug.Log("nRandomOpenEventIndex : " + nRandomOpenEventIndex);
+        if (nRandomOpenEventIndex < 30)
             return false;
 
         int nRandomEventIndex = Random.Range(0, (int)PLAYEVENTID.EVENT_MAX);
@@ -151,6 +158,8 @@ public class BattleEventCaller : MonoBehaviour {
         m_fEventProgressRate = 1f;
         m_EventRenderingComp.StartEventTextRendering("Canival Time");
 
+        //이벤트가 연속적으로 발생하는 것을 방지하기 위해 막아준다.
+        m_isPreviousEvent = true;
         return true;
     }
 

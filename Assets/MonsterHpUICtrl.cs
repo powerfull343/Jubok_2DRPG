@@ -24,7 +24,6 @@ public class MonsterHpUICtrl : MonoBehaviour {
 
         m_HpBarOffset = transform.localPosition;
 
-        Debug.Log(MonsterInfo.grade);
         if (MonsterInfo.grade >= MONSTERGRADEID.GRADE_BOSS)
             ShowBossHpUI();
         else
