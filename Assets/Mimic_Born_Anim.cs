@@ -29,7 +29,7 @@ public class Mimic_Born_Anim : StateMachineBehaviour {
         float fSpeed = fNormalizeTime * 0.5f;
         float fFrequency = fSpeed / m_fDestinationLength;
 
-        Debug.Log("fFrequency : " + fFrequency);
+        //Debug.Log("fFrequency : " + fFrequency);
 
         m_MovingTarget.localPosition = Vector3.Lerp(m_MovingTarget.localPosition,
             m_Destination, fFrequency);

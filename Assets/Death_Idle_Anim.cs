@@ -36,6 +36,16 @@ public class Death_Idle_Anim : StateMachineBehaviour {
     {
         if(m_IdleActionCount >= m_IdleActionMaxCount)
         {
+            Debug.Log("Action Processing");
+            Debug.Log(MonsterBody.isOutSummonMonster);
+            if (MonsterBody.isOutSummonMonster)
+            {
+                OutSummonedMonsterFirstMoving(animator);
+                m_isSetActionCount = false;
+                SetActionCount();
+                return;
+            }
+
             int nActionIdx = Random.Range(0, 10);
             if (nActionIdx < 4)
                 Moving(animator);
@@ -59,10 +69,15 @@ public class Death_Idle_Anim : StateMachineBehaviour {
         }
     }
 
+    void OutSummonedMonsterFirstMoving(Animator animator)
+    {
+        Debug.Log("First Summon Out of Screen Monster");
+        Moving(animator);
+        MonsterBody.isOutSummonMonster = false;
+    }
+
     void Moving(Animator animator)
     {
-        Debug.Log("MovingAnimation");
-
         if (MonsterBody.m_isTeleport == true)
         {
             animator.ResetTrigger("Idle");

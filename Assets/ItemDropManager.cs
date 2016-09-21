@@ -172,7 +172,7 @@ public class ItemDropManager :
     {
         if (!m_LoadedItemDropList.ContainsKey(MonsterName))
         {
-            Debug.Log("Cannot Find Item");
+            //Debug.Log("Cannot Find Item");
             return;
         }
 
@@ -216,7 +216,6 @@ public class ItemDropManager :
             }
             else
             {
-                Debug.Log("bigCoin");
                 CoinInst.transform.localScale = Vector3.one * 1.5f;
                 MecroMethod.CheckGetComponent<ChestController>(CoinInst).MoneySize = MoneySize * 5;
             }

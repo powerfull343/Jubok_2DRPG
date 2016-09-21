@@ -175,7 +175,7 @@ public class MagicianCtrl : Moveable_Object {
     public void SummonSkillEffect()
     {
         //EarthForce, Thunder02, PinPanel
-        Debug.Log(m_ChoiceSkillName);
+        //Debug.Log(m_ChoiceSkillName);
         SkillManager.GetInstance().UseSkill(m_ChoiceSkillName);
     }
 
@@ -203,6 +203,7 @@ public class MagicianCtrl : Moveable_Object {
         if(nEffectSkillShuffle > 90) //스킬 데미지를 입힘과 동시에 몬스터 삭제를 관할한다.
             SkillManager.GetInstance().UseSkill("CriticalLighting", ColMonsters[0].transform);
 
+        ResetMeleeAtkTrigger();
         ResetAtkMotionSelect();
     }
 
@@ -221,18 +222,14 @@ public class MagicianCtrl : Moveable_Object {
             //RemoveColMonster(i);
         }
 
-        //ResetMeleeAtkTrigger();
-
+        ResetMeleeAtkTrigger();
         ResetAtkMotionSelect();
     }
 
     public void ResetMeleeAtkTrigger()
     {
-        if (ColMonsterCountCompareZero())
-        {
-            _PlayerAnim.ResetTrigger("NormalMelee");
-            _PlayerAnim.ResetTrigger("SpecialMelee");
-        }
+        _PlayerAnim.ResetTrigger("NormalMelee");
+        _PlayerAnim.ResetTrigger("SpecialMelee");
     }
 
     /// <summary>
@@ -266,8 +263,6 @@ public class MagicianCtrl : Moveable_Object {
 
     public void ResetAtkMotionSelect()
     {
-        //ResetMeleeAtkTrigger();
-        //ResetRangeAtkTrigger();
         isAtkMotionSelect = false;
     }
 }

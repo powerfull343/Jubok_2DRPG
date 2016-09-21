@@ -180,7 +180,6 @@ public abstract class Monster_Interface : Moveable_Object {
 
     protected void KillMonster()
     {
-        Debug.Log("KillMonster");
         DropItemObjects();
         if (grade >= MONSTERGRADEID.GRADE_BOSS)
             MonsterManager.GetInstance().CheckBossExist = false;

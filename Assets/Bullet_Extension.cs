@@ -147,11 +147,7 @@ public class Bullet_Extension : GameObject_Extension {
 
         //영역 초과시 삭제
         if (other.gameObject.CompareTag("OverTheArea"))
-        {
-            Debug.Log("Over Des");
-            Debug.Log(other.gameObject.name);
             SelfDestroy();
-        }
     }
 	
 }

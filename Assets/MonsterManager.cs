@@ -420,7 +420,6 @@ public class MonsterManager
 
 
         int MonsterDataCount = SelectedMonsterData.Count;
-        Debug.Log(MonsterDataCount);
 
         for (int i = 0; i < MonsterDataCount; ++i)
         {
@@ -432,9 +431,6 @@ public class MonsterManager
                 break;
             }
         }
-
-        Debug.Log(SelectedKey.ToString());
-        Debug.Log(SelectedElement.ToString());
 
         if (SelectedElement.OriginGameObject == null)
             Debug.LogError("SelectedElement.OriginGameObject is null");

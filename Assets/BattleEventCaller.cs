@@ -39,6 +39,8 @@ public class BattleEventCaller : MonoBehaviour {
     private float m_OriginRegenMaxSec;
     private int m_OriginRegenMaxCount;
 
+    public int m_CanivalEventRate = 30;
+
     [SerializeField]
     private EventTextRendering m_EventRenderingComp;
 
@@ -136,6 +138,7 @@ public class BattleEventCaller : MonoBehaviour {
         MonsterManager.GetInstance().StartRegenTime = 1f;
     }
 
+    //Canival Time Event
     private bool EventChangeSystem()
     {
         //이벤트가 연속적으로 발생하는 것을 방지하기 위해 막아준다.
@@ -147,7 +150,7 @@ public class BattleEventCaller : MonoBehaviour {
 
         int nRandomOpenEventIndex = Random.Range(0, 100);
         //Debug.Log("nRandomOpenEventIndex : " + nRandomOpenEventIndex);
-        if (nRandomOpenEventIndex < 30)
+        if (nRandomOpenEventIndex <= 100 - m_CanivalEventRate)
             return false;
 
         int nRandomEventIndex = Random.Range(0, (int)PLAYEVENTID.EVENT_MAX);
