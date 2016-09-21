@@ -24,6 +24,7 @@ public class Skill_EarthForce_Anim : StateMachineBehaviour {
         if (!m_isAnimationLoopEnd && fNormalizeTime > 0.95f)
         {
             m_isAnimationLoopEnd = true;
+            Debug.Log("EndSkill");
             m_SkillObject.EndSkill();
         }
     }

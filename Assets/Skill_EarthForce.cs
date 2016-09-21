@@ -38,7 +38,7 @@ public class Skill_EarthForce : Skill_Interface
 
         if (MonsterList.Count <= 0)
         {
-            Debug.LogError("Monster Not Existing");
+            //Debug.LogError("Monster Not Existing");
             EndSkill();
             return;
         }

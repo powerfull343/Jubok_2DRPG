@@ -28,6 +28,7 @@ public class Magician_SpSkill_Casting_Anim : StateMachineBehaviour {
             m_isAnimationLoopEnd = true;
             m_PlayerObject.SummonSkillEffect();
             m_PlayerObject.ResetAtkMotionSelect();
+            animator.ResetTrigger("SpecialRange");
         }
     }
 

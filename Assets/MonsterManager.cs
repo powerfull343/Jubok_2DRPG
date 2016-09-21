@@ -102,7 +102,7 @@ public class MonsterManager
         StartCoroutine(iRegenMonster);
     }
     
-    void InitCreateMonsters()
+    void StartCreateMonsters()
     {
         bool isCreateElite;
         int nCreateMonsterCount;
@@ -157,6 +157,8 @@ public class MonsterManager
         else
         {
             int nEliteDice = Random.Range(0, 100);
+            if (OnlyOneMonster)
+                nEliteDice = 0;
 
             if(nEliteDice > 95) //Elite
             {
@@ -168,7 +170,6 @@ public class MonsterManager
                 isElite = false;
                 ChoiceMonster(isElite, out nChooseCount, out PositionID);
             }
-
         }
     }
 
@@ -322,7 +323,7 @@ public class MonsterManager
                 float fDelayTime = Random.Range(RegenMinWidth, RegenMaxWidth);
 
                 //몬스터 생성 시작
-                InitCreateMonsters();
+                StartCreateMonsters();
 
                 //생성 후 대기
                 yield return new WaitForSeconds(fDelayTime);
@@ -382,6 +383,7 @@ public class MonsterManager
         SelectedMonsterInfo.SetHp(nAtkPower);
     }
 
+    //if you want create monster use to script use this method
     //If Apply Monster Setting SummonPosition = SUMMONPOSITIONID.POSITION_OUTFIELD
     //You Must Setting SummonPosition 
     public static GameObject MonsterFactory(MonsterSummonID SummonGrade,

@@ -83,6 +83,7 @@ public class MagicianCtrl : Moveable_Object {
 
     protected override void Attack()
     {
+        _PlayerAnim.ResetTrigger("Move");
         AttackMotion();
     }
 

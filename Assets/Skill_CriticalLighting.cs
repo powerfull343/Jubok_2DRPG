@@ -26,9 +26,9 @@ public class Skill_CriticalLighting : Skill_Interface {
         
     }
 
-    protected override void SkillSetting(Transform Target)
+    protected override void TargetSkillSetting(Transform Target)
     {
-        base.SkillSetting(Target);
+        base.TargetSkillSetting(Target);
     }
 
     protected override void SetSkillDamage()

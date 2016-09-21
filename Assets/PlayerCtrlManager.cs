@@ -41,19 +41,24 @@ public class PlayerCtrlManager
         //if (PlayerAnim.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
         //    return;
 
-        if (PlayerAnim.GetCurrentAnimatorStateInfo(0).fullPathHash == Animator.StringToHash("Base.Idle"))
-        {
-            Debug.Log("True");
-            Debug.LogError("Animator.StringToHash : " + Animator.StringToHash("Base.Idle"));
-        }
+        //if (PlayerAnim.GetCurrentAnimatorStateInfo(0).fullPathHash == Animator.StringToHash("Base.Idle"))
+        //{
+        //    Debug.Log("True");
+        //    Debug.LogError("Animator.StringToHash : " + Animator.StringToHash("Base.Idle"));
+        //}
 
 
         PlayerCtrl.AutoAction();
 
-        if (MonsterManager.MonsterCount >= 1)
+        if (!PlayerAnim.GetCurrentAnimatorStateInfo(0).IsName("Move"))
             EnvironmentManager.isMoved = false;
         else
             EnvironmentManager.isMoved = true;
+
+        //if (MonsterManager.MonsterCount >= 1)
+        //    EnvironmentManager.isMoved = false;
+        //else
+        //    EnvironmentManager.isMoved = true;
     }
 
     public void PlayerIdleAction()

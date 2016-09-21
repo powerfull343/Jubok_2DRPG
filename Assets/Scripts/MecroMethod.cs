@@ -164,6 +164,10 @@ namespace Mecro
 
             return strResult;
         }
-        
+
+        public static void ShowLog(object T)
+        {
+            Debug.Log(T.ToString() + T);
+        }
     }
 }

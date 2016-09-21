@@ -137,26 +137,7 @@ public class Bullet_Extension : GameObject_Extension {
                 return;
 
             otherInfo.SetHp((int)m_AtkPower);
-            //공격하다가 0이됨.
-            //if (otherInfo.Hp <= 0)
-            //{
-            //    switch(m_TargetTagName)
-            //    {
-            //        case "Monster":
-            //            //if Monster Colliding To RangeAtkDam
-            //            MagicianCtrl.ColMonsters.Remove(other.gameObject.GetComponent<Monster_Interface>());
-            //            MonsterManager.GetInstance().RemoveMonster(otherInfo.ObjectName,
-            //                other.transform.parent.gameObject);
-            //            break;
-
-            //        case "Player":
-            //            SelfDestroy();
-            //            break;
-
-            //        default:
-            //            break;
-            //    }
-            //}
+            
             //몬스터 HP 0일시 관통 그 외에는 삭제
             if (m_isCollisionDestroy)
             {

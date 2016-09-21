@@ -52,18 +52,12 @@ public class SkillManager :
         LoadedSkill.Add(KeyExtension, SkillObject);
     }
 
-    private bool CheckingExistMonster()
-    {    
-        if (MonsterManager.GetInstance().MonsterList.Count <= 0)
-            return false;
-
-        return true;
-    }
+   
 
     public void UseSkill(string SkillName,
         Transform Target = null)
     {
-        if (!CheckingExistMonster())
+        if (MonsterManager.GetInstance().MonsterList.Count <= 0)
         {
             SkillList_KeyUseSetting(SkillName, false);
             return;

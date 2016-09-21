@@ -24,8 +24,6 @@ public class Skill_PinPanel_FireBall : MonoBehaviour {
 	// Use this for initialization
 	void OnEnable () {
 
-        Debug.Log("StartParticle");
-
         m_FireParticle = 
             Mecro.MecroMethod.CheckGetComponent<ParticleSystem>(this.gameObject);
 

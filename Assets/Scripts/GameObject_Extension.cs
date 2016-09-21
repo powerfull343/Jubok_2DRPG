@@ -130,7 +130,9 @@ public class GameObject_Extension
 
         while (true)
         {
-            if(MonsterManager.MonsterCount <= 0)
+            //if(MonsterManager.MonsterCount <= 0)
+            //    transform.localPosition -= vObjectSpeed;
+            if(EnvironmentManager.isMoved)
                 transform.localPosition -= vObjectSpeed;
 
             yield return new WaitForFixedUpdate();

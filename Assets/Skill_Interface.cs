@@ -29,12 +29,13 @@ public abstract class Skill_Interface : MonoBehaviour {
         if (!Target)
             SkillSetting();
         else
-            SkillSetting(Target);
+            TargetSkillSetting(Target);
         SetSkillDamage();
         SetSkillManaCost();
     }
     protected abstract void SkillSetting();
-    protected virtual void SkillSetting(Transform Target)
+    //if Targeting Skill Use this
+    protected virtual void TargetSkillSetting(Transform Target)
     {
         mTargetTrans = Target;
         transform.position = mTargetTrans.position;
@@ -50,7 +51,7 @@ public abstract class Skill_Interface : MonoBehaviour {
         if (mTargetInfo)
             mTargetInfo.SkillTargetFreezing(false);
         SkillManager.GetInstance().SkillList_KeyUseSetting(mSkillName, false);
-        m_ExtensionInfo.SelfDestroy();
+        Destroy(this.gameObject);
     }
 
     //Atk Method
@@ -90,16 +91,11 @@ public abstract class Skill_Interface : MonoBehaviour {
     public void AttackToCollider(Collider other)
     {
         //Damage Setting
-
         if (other.gameObject.CompareTag(GetTargetName()))
         {
             Moveable_Object ObjectInfo =
                 MecroMethod.CheckGetComponent<Moveable_Object>(other.gameObject);
             ObjectInfo.SetHp((int)mAtk);
-            Debug.Log("Dam");
-            Debug.Log(mAtk);
-            //if (ObjectInfo.Hp <= 0)
-            //    SkillManager.GetInstance().MonsterHpZero(ObjectInfo);
         }
     }
 
