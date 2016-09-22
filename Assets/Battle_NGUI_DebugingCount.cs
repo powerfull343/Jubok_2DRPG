@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Linq;
 
 public class Battle_NGUI_DebugingCount : MonoBehaviour {
 
@@ -16,8 +17,16 @@ public class Battle_NGUI_DebugingCount : MonoBehaviour {
 
     void Update()
     {
-        m_DebugingText.text = "Summoned Mon : " + MonsterManager.GetInstance().MonsterList.Count + "\n" + 
-            "Colled Mon : " + MagicianCtrl.ColMonsters.Count;
+        if (MonsterManager.GetInstance().MonsterList.Count == 0)
+        {
+            m_DebugingText.text = "Summoned MonType : " + MonsterManager.GetInstance().MonsterList.Count + "\n" +
+                "Colled Mon : " + MagicianCtrl.ColMonsters.Count;
+        }
+        else
+        {
+            m_DebugingText.text = "Summoned MonType : " + MonsterManager.GetInstance().MonsterList.Count + "\n" +
+                "Colled Mon : " + MagicianCtrl.ColMonsters.Count + "\n" +
+                "MonsterCount : " + MonsterManager.MonsterCount;
+        }
     }
-
 }

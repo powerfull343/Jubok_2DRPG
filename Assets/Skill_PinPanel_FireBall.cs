@@ -153,7 +153,9 @@ public class Skill_PinPanel_FireBall : MonoBehaviour {
         {
             Moveable_Object ObjectInfo =
                 Mecro.MecroMethod.CheckGetComponent<Moveable_Object>(other.gameObject);
-            ObjectInfo.SetHp(AtkPower);
+
+            if(ObjectInfo.Hp > 0)
+                ObjectInfo.SetHp(AtkPower);
 
             //if (ObjectInfo.Hp <= 0)
             //    SkillManager.GetInstance().MonsterHpZero(ObjectInfo);

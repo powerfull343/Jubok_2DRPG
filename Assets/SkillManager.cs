@@ -145,5 +145,4 @@ public class Skill_Key_Extension
     public bool m_isSkillMelee;
     public bool m_isSkillUsing;
     public int m_nSkillManaCost;
-
 }

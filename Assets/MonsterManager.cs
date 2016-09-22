@@ -224,8 +224,7 @@ public class MonsterManager
         MonsterAddToMonsterList(CreatedMonster, FindExistKey);
 
         //밖에서 나온몹은 추가된걸 취급하지 않는다.
-        if(CreatePositionID != SUMMONPOSITIONID.POSITION_OUTFIELD)
-            ++MonsterCount;
+        AddMonsterCount(CreatePositionID);
     }
 
     //Loaded XML Monster Looping Method
@@ -472,12 +471,16 @@ public class MonsterManager
         MonsterManager.GetInstance().MonsterAddToMonsterList(
             ResultMonsterInst, CreatedInterface.ObjectName);
 
-        //밖에서 나온몹은 추가된걸 취급하지 않는다.
-        if (CreatedInterface.CreatePosition !=
-            SUMMONPOSITIONID.POSITION_OUTFIELD)
-            ++MonsterCount;
+        AddMonsterCount(CreatedInterface.CreatePosition);
 
         return ResultMonsterInst;
+    }
+
+    public static void AddMonsterCount(SUMMONPOSITIONID CreatedMon_PositionID)
+    {
+        //밖에서 나온몹은 추가된걸 취급하지 않는다.
+        if (CreatedMon_PositionID != SUMMONPOSITIONID.POSITION_OUTFIELD)
+            ++MonsterCount;
     }
 }
 

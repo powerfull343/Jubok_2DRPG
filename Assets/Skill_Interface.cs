@@ -55,7 +55,7 @@ public abstract class Skill_Interface : MonoBehaviour {
     }
 
     //Atk Method
-    //it Use not Use Collider
+    //it not Use to Collider
     public void MonsterAttack()
     {
         if(mTargetInfo && mTargetInfo.Hp > 0)
@@ -71,8 +71,6 @@ public abstract class Skill_Interface : MonoBehaviour {
                 Debug.LogError(Mon_interface.name);
                 MagicianCtrl.ColMonsters.Remove(Mon_interface);
             }
-            //else
-              //  Debug.LogError("Moninter is null");
         }
     }
 
@@ -95,7 +93,8 @@ public abstract class Skill_Interface : MonoBehaviour {
         {
             Moveable_Object ObjectInfo =
                 MecroMethod.CheckGetComponent<Moveable_Object>(other.gameObject);
-            ObjectInfo.SetHp((int)mAtk);
+            if(ObjectInfo.Hp > 0)
+                ObjectInfo.SetHp((int)mAtk);
         }
     }
 
