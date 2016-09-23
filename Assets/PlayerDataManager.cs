@@ -31,11 +31,14 @@ public class PlayerDataManager :
         m_AddedStat = new PlayerData();
         m_ResultStat = new PlayerData();
 
-        UpdateEquipedStat();
+        InitEquipedStat();
         InitInventoryInst();
         InitStat();
     }
 
+    /// <summary>
+    /// Setting InventoryManager Prefab
+    /// </summary>
     void InitInventoryInst()
     {
         m_InventoryInstance = Instantiate(
@@ -70,9 +73,20 @@ public class PlayerDataManager :
         m_InventoryInstance.gameObject.SetActive(false);
     }
 
-    public void UpdateEquipedStat()
+    /// <summary>
+    /// AddedStat Setting
+    /// </summary>
+    public void InitEquipedStat()
     {
+        Dictionary<EQUIPMENTTYPEID, EquipMent_Interface> SavedEquip =
+            DataController.GetInstance().InGameData.ArmedEquip;
 
+        foreach(KeyValuePair<EQUIPMENTTYPEID, EquipMent_Interface> 
+            Equip in SavedEquip)
+        {
+            m_AddedStat.Attack += Equip.Value.Attack;
+            m_AddedStat.Health += Equip.Value.Hp;
+        }
     }
 
     public void InitStat()
@@ -80,13 +94,39 @@ public class PlayerDataManager :
         UpdateHealth();
         UpdateMana();
         UpdateStamina();
+        UpdateAttack();
     }
 
-    public void UpdateStat(out int _Hp, out int _Mp, out int _Stamina)
+    /// <summary>
+    /// BattleScene 시작시 플레이어 스텟을 지정해주는 역할을 가졌다.
+    /// </summary>
+    /// <param name="_Hp"></param>
+    /// <param name="_Mp"></param>
+    /// <param name="_Stamina"></param>
+    public void UpdateStat(out int _Hp, out int _Mp,
+        out int _Stamina, out int _Attack)
     {
         _Hp = m_ResultStat.Health;
         _Mp = m_ResultStat.Mana;
         _Stamina = m_ResultStat.Stamina;
+        _Attack = m_ResultStat.Attack;
+    }
+
+    public void ChangeEquipMent(EquipMent_Interface OldEquip, 
+        EquipMent_Interface NewEquip)
+    {
+        if (OldEquip != null)
+        {
+            m_AddedStat.Health -= OldEquip.Hp;
+            m_AddedStat.Attack -= OldEquip.Attack;
+        }
+        if (NewEquip != null)
+        {
+            m_AddedStat.Health += NewEquip.Hp;
+            m_AddedStat.Attack += NewEquip.Attack;
+        }
+        InitStat();
+
     }
 
     public void UpdateMoney(int Money)
@@ -98,7 +138,6 @@ public class PlayerDataManager :
     {
         int AddedHealth = m_AddedStat.Health +
             (m_AddedStat.tStat.Str * 10);
-
 
         //Debug.Log("DataController Health : " + DataController.GetInstance().InGameData.Health);
         //Debug.Log(AddedHealth);
@@ -141,6 +180,17 @@ public class PlayerDataManager :
             AddedStamina;
 
         //Debug.Log(m_ResultStat.Stamina);
+    }
+
+    public void UpdateAttack()
+    {
+        int AddedAttackStat = m_AddedStat.Attack +
+            (m_AddedStat.tStat.Int * 1);
+
+        m_ResultStat.Attack =
+            DataController.GetInstance().InGameData.Attack +
+            (DataController.GetInstance().InGameData.tStat.Int * 1) +
+            AddedAttackStat;
     }
 
 }

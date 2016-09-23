@@ -229,9 +229,11 @@ public class UI_Inventory_CursorManager : MonoBehaviour
             if (!ItemEquipOrSwap(_SelectedSlot))
                 return;
         }
-        //3. 인벤 -> 인벤
-        else if (m_SelectedSlotType == ITEM_SLOT_TYPE.SLOT_INVENTORY &&
-            HoveredUpItemSlot.ItemSlotType == ITEM_SLOT_TYPE.SLOT_INVENTORY)
+        //3. 인벤 -> 인벤, 장착창 -> 장착창
+        //else if (m_SelectedSlotType == ITEM_SLOT_TYPE.SLOT_INVENTORY &&
+        //    HoveredUpItemSlot.ItemSlotType == ITEM_SLOT_TYPE.SLOT_INVENTORY)
+        //    return;
+        else if (m_SelectedSlotType == HoveredUpItemSlot.ItemSlotType)
             return;
 
         //4. 장착창 -> 인벤
@@ -309,6 +311,17 @@ public class UI_Inventory_CursorManager : MonoBehaviour
         //아이템 장착창에 해당 종류의 장비가 장착되어 있을때
         UI_EquipStat_PlayerArmed.EquipItem(m_SelectedItem, _HoveredSlot);
         return true;   
+    }
+
+    private bool ItemUnEquip(Item_Slot _HoveredSlot)
+    {
+        if (m_SelectedItem.ItemInfo.itemType != ITEMTYPEID.ITEM_EQUIP)
+        {
+            Debug.Log("Not Equip Type");
+            return false;
+        }
+
+        return true;
     }
 
     private void HoveringReset(out Item_Slot _SelectedSlot)

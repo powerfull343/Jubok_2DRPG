@@ -188,9 +188,18 @@ namespace LobbyManager
         }
 
         //=======Change Level=========//
-        public void HidePanel()
+        public void ChangePanel()
         {
             StartCoroutine("LowerPanelAlpha");
+        }
+
+        public void HideAndShowUpperStatusPanel()
+        {
+            if(!UpperStatusPanel.gameObject.activeSelf)
+                UpperStatusPanel.ActiveUpperStatus();
+            else
+                UpperStatusPanel.InActiveUpperStatus();
+
         }
 
         /// <summary>

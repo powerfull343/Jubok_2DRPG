@@ -14,9 +14,17 @@ public class PlayerStatusController : MonoBehaviour
     private UI_UpperStat_Stamina m_StatminaCtrl;
     [SerializeField]
     private UIButton m_CallMenuButton;
+
+    private GameObject_Extension m_ObjectExtension;
     
 
     public float m_fUISize = 0f;
+
+    void OnEnable()
+    {
+        EventDelegate EventDg = new EventDelegate(this, "CallGameMenu");
+        m_CallMenuButton.onClick.Add(EventDg);
+    }
 
     void Start()
     {
@@ -28,9 +36,10 @@ public class PlayerStatusController : MonoBehaviour
         Mecro.MecroMethod.CheckExistComponent<UI_Money>(m_MoneyCtrl);
         Mecro.MecroMethod.CheckExistComponent<UI_UpperStat_Stamina>(m_StatminaCtrl);
         Mecro.MecroMethod.CheckExistComponent<UIButton>(m_CallMenuButton);
+        m_ObjectExtension = Mecro.MecroMethod.CheckGetComponent<GameObject_Extension>(this.gameObject);
 
-        EventDelegate EventDg = new EventDelegate(this, "CallGameMenu");
-        m_CallMenuButton.onClick.Add(EventDg);
+        //EventDelegate EventDg = new EventDelegate(this, "CallGameMenu");
+        //m_CallMenuButton.onClick.Add(EventDg);
 
         m_fUISize = m_BGWidget.localSize.y;
     }
@@ -89,5 +98,21 @@ public class PlayerStatusController : MonoBehaviour
 
         m_MoneyCtrl.UpdateMoneySize(nMoneySize);
         return true;
+    }
+
+    public void ActiveUpperStatus()
+    {
+        if(m_ObjectExtension != null)
+            m_ObjectExtension.SelfActive();
+        else
+            Debug.LogError("Cannot Find " + this.name + "/" + m_ObjectExtension.name);
+    }
+
+    public void InActiveUpperStatus()
+    {
+        if (m_ObjectExtension != null)
+            m_ObjectExtension.SelfHide();
+        else
+            Debug.LogError("Cannot Find " + this.name + "/" + m_ObjectExtension.name);
     }
 }

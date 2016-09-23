@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using Mecro;
 using System.Linq;
 
-
 //행동 패턴등의 클래스를 담는다.
 public class MagicianCtrl : Moveable_Object {
 
@@ -32,16 +31,17 @@ public class MagicianCtrl : Moveable_Object {
     public int DebugingAtkPower = 1;
 
     void Start () {
-        
-        if (DebugingAtkPower == 0)
-            Atk = 2;
-        else
-            Atk = DebugingAtkPower;
 
-        PlayerDataManager.GetInstance().UpdateStat(out _Hp, out _Mp, out _Stamina);
+        PlayerDataManager.GetInstance().UpdateStat(out _Hp, out _Mp,
+            out _Stamina, out _Atk);
         MaxHp = Hp;
         MaxStamina = Stamina;
         MaxMp = Mp;
+
+        if (DebugingAtkPower == 0)
+            Atk = _Atk;
+        else
+            Atk = DebugingAtkPower;
 
         AtkSpeed = 1f;
 

@@ -36,7 +36,8 @@ public class DetailStat_SimpleStat : MonoBehaviour {
 
     void UpdateInfo()
     {
-        PlayerData LoadedData = DataController.GetInstance().InGameData;
+        //PlayerData LoadedData = DataController.GetInstance().InGameData;
+        PlayerData LoadedData = PlayerDataManager.GetInstance().ResultStat;
 
         m_HpLabel.text = "HP : " + LoadedData.Health;
         m_AtkLabel.text = "Attack : " + LoadedData.Attack;

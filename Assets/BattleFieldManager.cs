@@ -23,7 +23,6 @@ public class BattleFieldManager
     private Transform[] SelectLevels;
 
     //Varable
-    
     public static FIELDID mSelectID { get; set; }
 
     /// <summary>

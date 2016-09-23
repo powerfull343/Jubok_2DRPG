@@ -9,9 +9,8 @@ public class UI_UpperStat_Health : MonoBehaviour {
 
     void OnEnable()
     {
-        if (LobbyController.GetInstance().mCurrentID != FIELDID.ID_VILAGE)
+        //if (LobbyController.GetInstance().mCurrentID != FIELDID.ID_VILAGE)
             StartCoroutine("AutoHealthRendering");
-
     }
 
     void Start()
@@ -31,8 +30,18 @@ public class UI_UpperStat_Health : MonoBehaviour {
 
         while(true)
         {
-            m_HealthText.text = PlayerCtrlManager.GetInstance().PlayerCtrl.Hp.ToString() +
-            " / " + PlayerCtrlManager.GetInstance().PlayerCtrl.MaxHp.ToString();
+            //m_HealthText.text = PlayerCtrlManager.GetInstance().PlayerCtrl.Hp.ToString() +
+            //" / " + PlayerCtrlManager.GetInstance().PlayerCtrl.MaxHp.ToString();
+            if (LobbyController.GetInstance().mCurrentID == FIELDID.ID_VILAGE)
+            {
+                m_HealthText.text = PlayerDataManager.GetInstance().ResultStat.Health.ToString() +
+                   " / " + PlayerDataManager.GetInstance().ResultStat.Health.ToString();
+            }
+            else
+            {
+                m_HealthText.text = PlayerCtrlManager.GetInstance().PlayerCtrl.Hp.ToString() +
+                " / " + PlayerCtrlManager.GetInstance().PlayerCtrl.MaxHp.ToString();
+            }
             yield return new WaitForFixedUpdate();
         }
 

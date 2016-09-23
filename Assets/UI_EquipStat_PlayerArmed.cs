@@ -79,11 +79,16 @@ public class UI_EquipStat_PlayerArmed : MonoBehaviour {
         //이미 해당 부위에 아이템을 착용되있는 경우
         if (m_AttachedItemSlot[SelectedEquip.EqiupmentId].ChildItem != null)
         {
-            //1. Inventory에 있는 아이템과 ArmedEquip에 있는 아이템을 교체한다.
+            //1. PlayerDataManager에 있는 Stat을 갱신시켜준다.
+            PlayerDataManager.GetInstance().ChangeEquipMent(
+                ((EquipMent_Interface)m_AttachedItemSlot[SelectedEquip.EqiupmentId].ChildItem.ItemInfo),
+                ((EquipMent_Interface)_HoveredSlot.ChildItem.ItemInfo));
+
+            //2. Inventory에 있는 아이템과 ArmedEquip에 있는 아이템을 교체한다.
             Item_Slot.SwapItemCollectionPosition(_HoveredSlot,
                 m_AttachedItemSlot[SelectedEquip.EqiupmentId]);
 
-            //2. Item_Slot 내에 있는 아이템의 위치를 교체해준다.
+            //3. Item_Slot 내에 있는 아이템의 위치를 교체해준다.
             Item_Slot.SwapItem(_HoveredSlot, m_AttachedItemSlot[SelectedEquip.EqiupmentId]);
 
         }
@@ -105,11 +110,15 @@ public class UI_EquipStat_PlayerArmed : MonoBehaviour {
             EquipList.Add(SelectedEquip.EqiupmentId, 
                 ((EquipMent_Interface)_SelectedEquip.ItemInfo));
 
-            //4. Inventory내에 존재하는 아이템을 제거한다.
+            //4. PlayerStatManager의 Stat을 갱신시킨다.
+            PlayerDataManager.GetInstance().ChangeEquipMent(
+                null, ((EquipMent_Interface)_SelectedEquip.ItemInfo));
+
+            //5. Inventory내에 존재하는 아이템을 제거한다.
             InventoryManager.GetInstance().RemoveItem(
                 _HoveredSlot.ChildItem.ItemInfo);
 
-            //5. 자동으로 아이템을 밀어준다.
+            //6. 자동으로 아이템을 밀어준다.
             InventoryManager.GetInstance().PushingInventory(_HoveredSlot);
 
             _SelectedEquip.gameObject.SetActive(true);
@@ -117,6 +126,11 @@ public class UI_EquipStat_PlayerArmed : MonoBehaviour {
 
         DataController.GetInstance().Save();
         return ChangedItem;
+    }
+
+    public void UnEquip(Item_Slot ItemSlot)
+    {
+
     }
 
     
