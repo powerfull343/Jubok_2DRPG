@@ -128,11 +128,36 @@ public class UI_EquipStat_PlayerArmed : MonoBehaviour {
         return ChangedItem;
     }
 
-    public void UnEquip(Item_Slot ItemSlot)
+    public static void UnEquip(Item_Slot _UnequipItemSlot)
     {
+        //0. Checking Equip Item and Get Data Variables
+        //Debug.Log(_UnequipItemSlot.ChildItem.gameObject.name);
+        EquipMent_Interface UnEquipItem = 
+            ((EquipMent_Interface)_UnequipItemSlot.ChildItem.ItemInfo);
+
+        if (UnEquipItem == null)
+            return;
+
+        //1. ArmedData -> Inventory Moving
+        EquipMent_Interface DeleteEquipData =
+            DataController.GetInstance().InGameData.ArmedEquip[UnEquipItem.EqiupmentId];
+
+        //1 - 1. Add Inventory MovedItem
+        InventoryManager.GetInstance().AddItem(DeleteEquipData, 1);
+
+        //1 - 2. Remove ArmedEquip Item
+        if (!DataController.GetInstance().InGameData.ArmedEquip.Remove(UnEquipItem.EqiupmentId))
+            Debug.Log("Cannot Remove");
+
+        //2. Stat Update
+        PlayerDataManager.GetInstance().ChangeEquipMent(DeleteEquipData, null);
+
+        //3. Selected ArmedData Clear
+        InventoryManager.GetInstance().MoveItemLastSlot(_UnequipItemSlot);
+
+        //4. Selected Slot's ChildItem Clear
+        _UnequipItemSlot.ChildItem = null;
 
     }
-
-    
 
 }

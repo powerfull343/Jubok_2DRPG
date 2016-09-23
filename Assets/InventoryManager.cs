@@ -269,7 +269,7 @@ public class InventoryManager :
         KindofItem.Remove(FindObject);
     }
 
-
+    //Auto Pusing Inventory
     public void PushingInventory(Item_Slot DeletedSlot)
     {
         Debug.Log("PushingInventory Start");
@@ -311,5 +311,28 @@ public class InventoryManager :
 
         m_ItemSlotList[EndPoint - 1].ChildItem = null;
         Debug.Log(m_ItemSlotList[EndPoint - 1].ChildItem);
+    }
+
+    //Use to Equip Item to Move to Inventory Last ItemSlot
+    public void MoveItemLastSlot(Item_Slot MovedSlot)
+    {
+        Item_Interface_Comp SelectedItem = MovedSlot.ChildItem;
+
+        if(m_ItemSlotList.Count <= m_nItemCreatePosition)
+        {
+            Debug.Log("Item inventory is full");
+            return;
+        }
+
+        SelectedItem.transform.parent = m_ItemSlotList[m_nItemCreatePosition].transform;
+        SelectedItem.transform.localPosition = Vector3.zero;
+        SelectedItem.transform.localScale = Vector3.one;
+        m_ItemSlotList[m_nItemCreatePosition].ChildItem = SelectedItem;
+
+        ++m_nItemCreatePosition;
+
+        UIWidget SelectedItemWidget =
+            Mecro.MecroMethod.CheckGetComponent<UIWidget>(SelectedItem.gameObject);
+        SelectedItemWidget.Update();
     }
 }

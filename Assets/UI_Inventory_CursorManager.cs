@@ -229,10 +229,13 @@ public class UI_Inventory_CursorManager : MonoBehaviour
             if (!ItemEquipOrSwap(_SelectedSlot))
                 return;
         }
-        //3. 인벤 -> 인벤, 장착창 -> 장착창
+        //3 - 1. 장착창 -> 장착창 외부 콜라이더
         //else if (m_SelectedSlotType == ITEM_SLOT_TYPE.SLOT_INVENTORY &&
         //    HoveredUpItemSlot.ItemSlotType == ITEM_SLOT_TYPE.SLOT_INVENTORY)
         //    return;
+        else if (m_SelectedSlotType == ITEM_SLOT_TYPE.SLOT_ARMED && isHoveredUpArmedCollider)
+            return;
+        //3 - 2. 인벤 -> 인벤, 장착창 -> 장착창
         else if (m_SelectedSlotType == HoveredUpItemSlot.ItemSlotType)
             return;
 
@@ -240,7 +243,7 @@ public class UI_Inventory_CursorManager : MonoBehaviour
         else if (m_SelectedSlotType == ITEM_SLOT_TYPE.SLOT_ARMED &&
             HoveredUpItemSlot.ItemSlotType == ITEM_SLOT_TYPE.SLOT_INVENTORY)
         {
-
+            ItemUnEquip(_SelectedSlot);
         }
     }
 
@@ -309,7 +312,8 @@ public class UI_Inventory_CursorManager : MonoBehaviour
         }
 
         //아이템 장착창에 해당 종류의 장비가 장착되어 있을때
-        UI_EquipStat_PlayerArmed.EquipItem(m_SelectedItem, _HoveredSlot);
+        UI_EquipStat_PlayerArmed.EquipItem(
+            m_SelectedItem, _HoveredSlot);
         return true;   
     }
 
@@ -320,6 +324,8 @@ public class UI_Inventory_CursorManager : MonoBehaviour
             Debug.Log("Not Equip Type");
             return false;
         }
+
+        UI_EquipStat_PlayerArmed.UnEquip(_HoveredSlot);
 
         return true;
     }
