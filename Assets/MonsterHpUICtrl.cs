@@ -55,6 +55,7 @@ public class MonsterHpUICtrl : MonoBehaviour {
 
     public void ShowBossHpUI()
     {
+        Debug.Log("ShowBossHp");
         if (MonsterInfo.isOutSummonMonster)
         {
             Debug.Log("OutMonster");

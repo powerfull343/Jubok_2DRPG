@@ -147,9 +147,7 @@ namespace Mecro
             vResult += Target.localPosition;
             if (Target.parent != null && !Target.parent.CompareTag("HighestPanel"))
             {
-                Debug.Log(Target.parent.name);
                 vResult = GetWorldPos(Target.parent, vResult);
-                Debug.Log(vResult);
             }
 
             return vResult;
