@@ -68,7 +68,6 @@ public class ItemManager :
                 break;
         }
 
-
         return newItemObject;
     }
 
@@ -89,5 +88,36 @@ public class ItemManager :
         }
 
         return ResultSprite;
+    }
+
+    public Item_Interface CreateItemInfo(
+        Item_Interface _Original, int _ItemCount)
+    {
+        Item_Interface ResultItemInfo = null;
+        switch (_Original.itemType)
+        {
+            case ITEMTYPEID.ITEM_EQUIP:
+                ResultItemInfo = new EquipMent_Interface();
+                ResultItemInfo.Copyinstance(_Original);
+                break;
+
+            case ITEMTYPEID.ITEM_FOOD:
+                ResultItemInfo = new Supplies_Interface();
+                ResultItemInfo.Copyinstance(_Original);
+                ResultItemInfo.itemType = ITEMTYPEID.ITEM_FOOD;
+                break;
+
+            case ITEMTYPEID.ITEM_POTION:
+                ResultItemInfo = new Supplies_Interface();
+                ResultItemInfo.Copyinstance(_Original);
+                ResultItemInfo.itemType = ITEMTYPEID.ITEM_POTION;
+                break;
+
+            case ITEMTYPEID.ITEM_GEM:
+                break;
+        }
+
+        ResultItemInfo.itemCount = _ItemCount;
+        return ResultItemInfo;
     }
 }

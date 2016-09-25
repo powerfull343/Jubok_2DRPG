@@ -109,7 +109,7 @@ public class Item_Interface
     }
 
     public Item_Interface() { }
-    public void Copyinstance(Item_Interface original)
+    public virtual void Copyinstance(Item_Interface original)
     {
         //this.m_itemSprite = original.m_itemSprite;
         //this.m_itemUISprite = original.m_itemUISprite;

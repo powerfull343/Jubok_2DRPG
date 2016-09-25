@@ -158,6 +158,8 @@ public class UI_EquipStat_PlayerArmed : MonoBehaviour {
         //4. Selected Slot's ChildItem Clear
         _UnequipItemSlot.ChildItem = null;
 
+        //5. Data Save
+        DataController.GetInstance().Save();
     }
 
 }

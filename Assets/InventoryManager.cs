@@ -127,9 +127,10 @@ public class InventoryManager :
 
     //Only Input Container
     //return Type - if you Create Instance true
-    public bool AddItem(Item_Interface ItemComp, int nItemCount)
+    public Item_Interface AddItem(Item_Interface _OriginItem, int _nItemCount)
     {
-        List<Item_Interface> KindofItem;
+        List<Item_Interface> KindofItem = null;
+        Item_Interface newItemInterface = null;
 
         //Input Item Potision
         for (int i = 0; i < m_ItemSlotList.Count; ++i)
@@ -142,48 +143,58 @@ public class InventoryManager :
         }
 
         if (!DataController.GetInstance(
-           ).InGameData.Inventory.ContainsKey(ItemComp.itemName))
+           ).InGameData.Inventory.ContainsKey(_OriginItem.itemName))
+           //기존 인벤토리 컬렉션의 일치하는 Key 항목이 존재하지 않는 경우
         {
+            //새로운 아이템을 할당한다.
+            newItemInterface =
+                ItemManager.GetInstance().CreateItemInfo(_OriginItem, _nItemCount);
             //DataController에 추가한다.
             KindofItem = new List<Item_Interface>();
-            KindofItem.Add(ItemComp);
+            KindofItem.Add(newItemInterface);
             DataController.GetInstance().InGameData.Inventory.Add(
-                ItemComp.itemName, KindofItem);
+                newItemInterface.itemName, KindofItem);
         }
         else
+        //기존 인벤토리 컬렉션의 일치하는 Key 항목이 존재하는 경우
         {
             KindofItem = DataController.GetInstance(
-                ).InGameData.Inventory[ItemComp.itemName];
+                ).InGameData.Inventory[_OriginItem.itemName];
             //장비가 아닐 경우에는 갯수만 추가하고 그렇지 않을 경우 공간을 새로 만든다.
-            if (ItemComp.itemType != ITEMTYPEID.ITEM_EQUIP)
+            if (_OriginItem.itemType != ITEMTYPEID.ITEM_EQUIP)
             {
-                KindofItem[0].itemCount += nItemCount;
+                KindofItem[0].itemCount += _nItemCount;
                 DataController.GetInstance().Save();
-                return false;
+                return null;
             }
             //장비인 경우에는 리스트에 추가한다.
             else
-                KindofItem.Add(ItemComp);
+            {
+                //새로운 아이템을 할당한다.
+                newItemInterface =
+                    ItemManager.GetInstance().CreateItemInfo(_OriginItem, _nItemCount);
+                KindofItem.Add(newItemInterface);
+            }
         }
 
         DataController.GetInstance().Save();
-        return true;
+        return newItemInterface;
     }
 
     //Create Item Object
     public void CreateItem(Item_Interface ItemComp, int nItemCount)
     {
-        if (!AddItem(ItemComp, nItemCount))
+        Item_Interface CreatedItem = AddItem(ItemComp, nItemCount);
+        if (CreatedItem == null)
             return;
 
         GameObject ItemObject = null;
-        Item_Interface_Comp newItemInfo;
+        Item_Interface_Comp newItemInfo = null;
 
         ItemObject = ItemManager.GetInstance().ItemInfoToGameObject(ItemComp);
         ItemObject.SetActive(false);
         newItemInfo = ItemObject.AddComponent<Item_Interface_Comp>();
-        newItemInfo.ItemInfo = ItemComp;
-        newItemInfo.ItemInfo.itemCount = nItemCount;
+        newItemInfo.ItemInfo = CreatedItem;
 
         ItemObject.transform.parent = m_ItemSlotList[m_nItemCreatePosition].transform;
         ItemObject.transform.localScale = Vector3.one;
@@ -203,6 +214,8 @@ public class InventoryManager :
         KindofItem = 
             DataController.GetInstance().InGameData.Inventory[ItemComp.ItemInfo.itemName];
 
+        Debug.Log("Kindofitem Count : " + KindofItem.Count);
+
         Item_Interface FindObject = KindofItem.Find
         (
             delegate (Item_Interface item)
@@ -216,6 +229,8 @@ public class InventoryManager :
             Debug.LogError("Warning) Item is Cannot existing");
             return;
         }
+
+        Debug.Log(FindObject.itemName);
 
         FindObject.itemCount -= nDeleteCount;
 
@@ -272,7 +287,7 @@ public class InventoryManager :
     //Auto Pusing Inventory
     public void PushingInventory(Item_Slot DeletedSlot)
     {
-        Debug.Log("PushingInventory Start");
+        //Debug.Log("PushingInventory Start");
         int SlotCount = m_ItemSlotList.Count;
         int DeletedPoint = 0;
         int EndPoint = SlotCount;
@@ -301,8 +316,8 @@ public class InventoryManager :
         GameObject MovedItem;
         for(int i = DeletedPoint + 1; i < EndPoint; ++i)
         {
-            Debug.Log("Index : " + i);
-            Debug.Log("Child Item : " + m_ItemSlotList[i].ChildItem);
+            //Debug.Log("Index : " + i);
+            //Debug.Log("Child Item : " + m_ItemSlotList[i].ChildItem);
             MovedItem = m_ItemSlotList[i].ChildItem.gameObject;
             m_ItemSlotList[i - 1].ChildItem = m_ItemSlotList[i].ChildItem;
             MovedItem.transform.parent = m_ItemSlotList[i - 1].transform;
@@ -310,7 +325,7 @@ public class InventoryManager :
         }
 
         m_ItemSlotList[EndPoint - 1].ChildItem = null;
-        Debug.Log(m_ItemSlotList[EndPoint - 1].ChildItem);
+        //Debug.Log(m_ItemSlotList[EndPoint - 1].ChildItem);
     }
 
     //Use to Equip Item to Move to Inventory Last ItemSlot
@@ -333,6 +348,6 @@ public class InventoryManager :
 
         UIWidget SelectedItemWidget =
             Mecro.MecroMethod.CheckGetComponent<UIWidget>(SelectedItem.gameObject);
-        SelectedItemWidget.Update();
+        SelectedItemWidget.ParentHasChanged();
     }
 }

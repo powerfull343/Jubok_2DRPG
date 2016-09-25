@@ -147,13 +147,19 @@ public class DataController : MonoBehaviour {
             EQUIPMENTTYPEID.EQUIP_WEAPON, SPRITE_TYPEID.SPRITE_NORMAL,
             NORMAL_SPRITE_ICONS.NORMAL_SPRITE_ICON2, 2);
 
+        EquipMent_Interface Test3 = new EquipMent_Interface();
+        Test3 = EquipMent_Interface.CreateEquipMent("Sword", 100, 3f, 3, 0,
+            ITEMTYPEID.ITEM_EQUIP, ITEMGRADEID.ITEMGRADE_NORMAL,
+            EQUIPMENTTYPEID.EQUIP_WEAPON, SPRITE_TYPEID.SPRITE_NORMAL,
+            NORMAL_SPRITE_ICONS.NORMAL_SPRITE_ICON2, 2);
+
         List<Item_Interface> MultiItem = new List<Item_Interface>();
         MultiItem.Add(Test1);
         m_InGameData.Inventory.Add(Test1.itemName, MultiItem);
 
         List<Item_Interface> MultiItem2 = new List<Item_Interface>();
         MultiItem2.Add(Test2);
-        MultiItem2.Add(Test2);
+        MultiItem2.Add(Test3);
         m_InGameData.Inventory.Add(Test2.itemName, MultiItem2);
         Debug.Log("m_InGameData.Inventory Count : " + m_InGameData.Inventory.Count);
     }

@@ -38,12 +38,12 @@ public class UI_Inventory_CursorManager : MonoBehaviour
         {
             case LobbyButtonFunc.IDSUBPANEL.PANELID_GROCERYSTORE:
                 HoveringUpEvent = StoreInventory_Event;
-                Debug.Log("StoreHoveringEvent");
+                //Debug.Log("StoreHoveringEvent");
                 break;
 
             case LobbyButtonFunc.IDSUBPANEL.PANELID_PLAYERSTAT:
                 HoveringUpEvent = EquipInventory_Event;
-                Debug.Log("EquipHoveringEvent");
+                //Debug.Log("EquipHoveringEvent");
                 break;
 
             default:

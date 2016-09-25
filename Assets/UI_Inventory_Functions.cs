@@ -49,7 +49,6 @@ public class UI_Inventory_Functions : MonoBehaviour {
 
     void OnDisable()
     {
-        Debug.Log("Disable");
         if (m_DetailWindow.gameObject.activeSelf)
             m_DetailWindow.gameObject.SetActive(false);
         if (m_LeftItemWindow.gameObject.activeSelf)

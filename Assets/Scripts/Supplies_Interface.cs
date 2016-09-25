@@ -51,4 +51,12 @@ public class Supplies_Interface : Item_Interface {
 
         return Item;
     }
+
+    public override void Copyinstance(Item_Interface original)
+    {
+        base.Copyinstance(original);
+
+        this.m_SupplieEffectId = ((Supplies_Interface)original).SupplieEffectId;
+        this.m_EffectAmount = ((Supplies_Interface)original).EffectAmount;
+    }
 }

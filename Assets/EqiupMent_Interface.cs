@@ -60,4 +60,14 @@ public class EquipMent_Interface : Item_Interface
 
         return Item;
     }
+
+    public override void Copyinstance(Item_Interface original)
+    {
+        base.Copyinstance(original);
+
+        this.m_EqiupmentId = ((EquipMent_Interface)original).EqiupmentId;
+        this.Hp = ((EquipMent_Interface)original).Hp;
+        this.Attack = ((EquipMent_Interface)original).Attack;
+    }
+
 }

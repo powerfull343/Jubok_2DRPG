@@ -118,8 +118,6 @@ public class UI_Inventory_LeftItemWindow : MonoBehaviour {
         else if (SelectedItem.itemType == ITEMTYPEID.ITEM_FOOD ||
             SelectedItem.itemType == ITEMTYPEID.ITEM_POTION)
             AbilltySetting_Supplies(SelectedItem);
-
-
     }
 
     private void AbilltySetting_EquipMent(Item_Interface SelectedItem)
