@@ -8,7 +8,7 @@ namespace LobbyManager
     public class LobbyController 
         : Singleton<LobbyController>
     {
-        public FIELDID mCurrentID = FIELDID.ID_VILAGE;
+        public FIELDID mCurrentSceneID = FIELDID.ID_VILAGE;
         [SerializeField]
         private bool isSlow = false;
 

@@ -125,22 +125,47 @@ public class InventoryManager :
         return true;
     }
 
+    //Only Insert Target
+    public void InsertItem(Item_Interface _InsertTarget, int _nItemCount)
+    {
+        List<Item_Interface> KindofItem = null;
+
+        if (!DataController.GetInstance(
+           ).InGameData.Inventory.ContainsKey(_InsertTarget.itemName))
+        //기존 인벤토리 컬렉션의 일치하는 Key 항목이 존재하지 않는 경우
+        {
+            //DataController에 추가한다.
+            KindofItem = new List<Item_Interface>();
+            KindofItem.Add(_InsertTarget);
+            DataController.GetInstance().InGameData.Inventory.Add(
+                _InsertTarget.itemName, KindofItem);
+        }
+        else
+        //기존 인벤토리 컬렉션의 일치하는 Key 항목이 존재하는 경우
+        {
+            KindofItem = DataController.GetInstance(
+                ).InGameData.Inventory[_InsertTarget.itemName];
+            //장비가 아닐 경우에는 갯수만 추가하고 그렇지 않을 경우 공간을 새로 만든다.
+            if (_InsertTarget.itemType != ITEMTYPEID.ITEM_EQUIP)
+            {
+                KindofItem[0].itemCount += _nItemCount;
+                DataController.GetInstance().Save();
+                return;
+            }
+            //장비인 경우에는 리스트에 추가한다.
+            else
+                KindofItem.Add(_InsertTarget);
+        }
+
+        DataController.GetInstance().Save();
+    }
+
     //Only Input Container
     //return Type - if you Create Instance true
     public Item_Interface AddItem(Item_Interface _OriginItem, int _nItemCount)
     {
         List<Item_Interface> KindofItem = null;
         Item_Interface newItemInterface = null;
-
-        //Input Item Potision
-        for (int i = 0; i < m_ItemSlotList.Count; ++i)
-        {
-            if (!m_ItemSlotList[i].ChildItem)
-            {
-                m_nItemCreatePosition = i;
-                break;
-            }
-        }
 
         if (!DataController.GetInstance(
            ).InGameData.Inventory.ContainsKey(_OriginItem.itemName))
@@ -190,6 +215,16 @@ public class InventoryManager :
 
         GameObject ItemObject = null;
         Item_Interface_Comp newItemInfo = null;
+
+        //Input Item Potision
+        for (int i = 0; i < m_ItemSlotList.Count; ++i)
+        {
+            if (!m_ItemSlotList[i].ChildItem)
+            {
+                m_nItemCreatePosition = i;
+                break;
+            }
+        }
 
         ItemObject = ItemManager.GetInstance().ItemInfoToGameObject(ItemComp);
         ItemObject.SetActive(false);

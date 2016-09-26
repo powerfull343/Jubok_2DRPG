@@ -31,6 +31,9 @@ public class UI_GroceryStore_SellList :
     [SerializeField]
     private UILabel m_ValueAmount;
 
+    [SerializeField]
+    private UI_GroceryStore_StatusMsg m_StatusMessage;
+
     private Item_Slot m_SelectedItemSlot;
     public Item_Slot SelectedItemSlot
     {
@@ -57,6 +60,7 @@ public class UI_GroceryStore_SellList :
         Mecro.MecroMethod.CheckExistComponent<UILabel>(m_WeightAmount);
         Mecro.MecroMethod.CheckExistComponent<UILabel>(m_ValueAmount);
         Mecro.MecroMethod.CheckExistComponent<UI_GroceryStore_SubTradeUI>(m_SubUI);
+        Mecro.MecroMethod.CheckExistComponent<UI_GroceryStore_StatusMsg>(m_StatusMessage);
         InitMerchantBackPack();
         InitSellList();
     }
@@ -211,11 +215,15 @@ public class UI_GroceryStore_SellList :
 
     public void ClickBuyButton()
     {
+        string StatMessage = string.Empty;
+
         if (!m_SelectedItemSlot ||
             m_SelectedItemSlot.ItemSlotType != 
                 ITEM_SLOT_TYPE.SLOT_STORE)
         {
-            Debug.Log("Buy Failed");
+            StatMessage = "Buy Failed Please Selected Store Item";
+            UseStatusMessage(StatMessage);
+            Debug.Log(StatMessage);
             Debug.Log(m_SelectedItemSlot.ItemSlotType);
             return;
         }
@@ -224,7 +232,11 @@ public class UI_GroceryStore_SellList :
         if (m_SelectedItemSlot.ChildItem.ItemInfo.itemType ==
                 ITEMTYPEID.ITEM_EQUIP)
         {
-            InventoryManager.GetInstance().InvenFunc.BuyItem(m_SelectedItemSlot, 1);
+            StatMessage = 
+                InventoryManager.GetInstance().InvenFunc.BuyItem(m_SelectedItemSlot, 1);
+            if (StatMessage != string.Empty)
+                UseStatusMessage(StatMessage);
+
             return;
         }
 
@@ -238,17 +250,25 @@ public class UI_GroceryStore_SellList :
 
     public void ClickSellButton()
     {
+        string StatMessage = string.Empty;
+
         //if (!m_SelectedItemSlot || m_SelectedItemSlot.isSelleritem)
         if (!m_SelectedItemSlot ||
             m_SelectedItemSlot.ItemSlotType != ITEM_SLOT_TYPE.SLOT_INVENTORY)
         {
+            StatMessage = "Sell Failed Please Selected Inventory Item";
+            UseStatusMessage(StatMessage);
             Debug.Log(m_SelectedItemSlot.ItemSlotType);
             return;
         }
 
         if (m_SelectedItemSlot.ChildItem.ItemInfo.itemType == ITEMTYPEID.ITEM_EQUIP)
         {
-            InventoryManager.GetInstance().InvenFunc.SellItem(m_SelectedItemSlot, 1);
+            StatMessage = 
+                InventoryManager.GetInstance().InvenFunc.SellItem(m_SelectedItemSlot, 1);
+            if (StatMessage != string.Empty)
+                UseStatusMessage(StatMessage);
+
             return;
         }
 
@@ -258,5 +278,16 @@ public class UI_GroceryStore_SellList :
 
         m_SubUI.HideAndShowTradeMenu();
         m_SubUI.InitSubTradeMenu(m_SelectedItemSlot, false);
+    }
+
+    private void UseStatusMessage(string EventText)
+    {
+        if (!m_StatusMessage.gameObject.activeSelf)
+        {
+            m_StatusMessage.gameObject.SetActive(true);
+            m_StatusMessage.StartingShowMessage(EventText);
+        }
+        else
+            m_StatusMessage.StartingShowMessage(EventText);
     }
 }

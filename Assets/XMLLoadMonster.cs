@@ -49,9 +49,9 @@ public class XMLLoadMonster : MonoBehaviour {
     {
         string XMLFileName
             = ConvertFieldIDToXMLName(
-                LobbyController.GetInstance().mCurrentID);
+                LobbyController.GetInstance().mCurrentSceneID);
 
-        Debug.Log(LobbyController.GetInstance().mCurrentID);
+        Debug.Log(LobbyController.GetInstance().mCurrentSceneID);
 
         XmlDocument xmldocu = new XmlDocument();
 

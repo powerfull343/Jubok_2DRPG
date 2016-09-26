@@ -14,7 +14,7 @@ public class DetailStat_SimpleStat : MonoBehaviour {
     [SerializeField]
     private Transform m_ClassDetailStat;
 
-    void Start()
+    void OnEnable()
     {
         InitExistComp();
         UpdateInfo();

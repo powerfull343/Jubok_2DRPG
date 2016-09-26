@@ -32,7 +32,7 @@ public class UI_UpperStat_Health : MonoBehaviour {
         {
             //m_HealthText.text = PlayerCtrlManager.GetInstance().PlayerCtrl.Hp.ToString() +
             //" / " + PlayerCtrlManager.GetInstance().PlayerCtrl.MaxHp.ToString();
-            if (LobbyController.GetInstance().mCurrentID == FIELDID.ID_VILAGE)
+            if (LobbyController.GetInstance().mCurrentSceneID == FIELDID.ID_VILAGE)
             {
                 m_HealthText.text = PlayerDataManager.GetInstance().ResultStat.Health.ToString() +
                    " / " + PlayerDataManager.GetInstance().ResultStat.Health.ToString();

@@ -16,6 +16,9 @@ public class VilageScene_NGUI_Panel :
     private GameObject m_TempCollider;
     private UIPanel m_TempColliderPanelComp;
 
+    [SerializeField]
+    private bool m_isShowDebugingWindow = false;
+
     void Awake()
     {
         CreateInstance();

@@ -290,11 +290,11 @@ public class BattleFieldManager
 
     public void EntryBattleField()
     {
-        if (LobbyController.GetInstance().mCurrentID == mSelectID)
+        if (LobbyController.GetInstance().mCurrentSceneID == mSelectID)
             return;
         Debug.Log(mSelectID);
-        Debug.Log(LobbyController.GetInstance().mCurrentID);
+        Debug.Log(LobbyController.GetInstance().mCurrentSceneID);
 
-        LobbyController.GetInstance().mCurrentID = mSelectID;
+        LobbyController.GetInstance().mCurrentSceneID = mSelectID;
     }
 }

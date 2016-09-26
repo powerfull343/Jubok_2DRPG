@@ -31,7 +31,7 @@ public class NGUI_MenuCtrl : MonoBehaviour
     void OnEnable()
     {
         //Menu Close Button Setting
-        if (LobbyManager.LobbyController.GetInstance().mCurrentID ==
+        if (LobbyManager.LobbyController.GetInstance().mCurrentSceneID ==
             FIELDID.ID_VILAGE)
         {
             EventDelegate EventDg = new EventDelegate(

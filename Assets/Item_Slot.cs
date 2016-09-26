@@ -108,6 +108,7 @@ public class Item_Slot : MonoBehaviour {
             ((EquipMent_Interface)InvenList[ItemName].Find(
             delegate (Item_Interface item)
             {return item == InventorySlot.ChildItem.ItemInfo;}));
+
         InventoryManager.GetInstance().RemoveItem(InventoryItem);
 
         //Equip Data Remove
@@ -117,7 +118,7 @@ public class Item_Slot : MonoBehaviour {
         EquipList.Remove(Equipitem.EqiupmentId);
 
         //Data Swaping
-        InventoryManager.GetInstance().AddItem(Equipitem, 1);
+        InventoryManager.GetInstance().InsertItem(Equipitem, 1);
         EquipList.Add(Equipid, InventoryItem);
 
         //Debuging

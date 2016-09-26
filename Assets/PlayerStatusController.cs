@@ -44,9 +44,16 @@ public class PlayerStatusController : MonoBehaviour
         m_fUISize = m_BGWidget.localSize.y;
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            CallGameMenu();
+    }
+    
+
     void CallGameMenu()
     {
-        if (LobbyController.GetInstance().mCurrentID == FIELDID.ID_VILAGE)
+        if (LobbyController.GetInstance().mCurrentSceneID == FIELDID.ID_VILAGE)
             VilageScene_NGUI_Panel.GetInstance().OpenBehindCollider();
 
         LobbyController.GetInstance().OpenMenuPanel(
@@ -64,8 +71,8 @@ public class PlayerStatusController : MonoBehaviour
         this.transform.localScale = Vector3.one;
         this.gameObject.SetActive(true);
 
-        if(LobbyController.GetInstance().mCurrentID != FIELDID.ID_VILAGE &&
-            LobbyController.GetInstance().mCurrentID != FIELDID.ID_CASTLE)
+        if(LobbyController.GetInstance().mCurrentSceneID != FIELDID.ID_VILAGE &&
+            LobbyController.GetInstance().mCurrentSceneID != FIELDID.ID_CASTLE)
             m_StatminaCtrl.ReducingStatmina();
     }
 

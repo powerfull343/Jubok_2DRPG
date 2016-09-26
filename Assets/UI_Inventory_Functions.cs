@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Mecro;
+using LobbyManager;
+using LobbyButtonFunc;
 
 public class UI_Inventory_Functions : MonoBehaviour {
 
@@ -49,11 +51,11 @@ public class UI_Inventory_Functions : MonoBehaviour {
 
     void OnDisable()
     {
-        if (m_DetailWindow.gameObject.activeSelf)
+        if (m_DetailWindow && m_DetailWindow.gameObject.activeSelf)
             m_DetailWindow.gameObject.SetActive(false);
-        if (m_LeftItemWindow.gameObject.activeSelf)
+        if (m_LeftItemWindow && m_LeftItemWindow.gameObject.activeSelf)
             m_LeftItemWindow.gameObject.SetActive(false);
-        if (m_SelectedEdgeSquare.gameObject.activeSelf)
+        if (m_SelectedEdgeSquare && m_SelectedEdgeSquare.gameObject.activeSelf)
             m_SelectedEdgeSquare.gameObject.SetActive(false);
     }
 
@@ -115,10 +117,18 @@ public class UI_Inventory_Functions : MonoBehaviour {
         m_SelectedEdgeSquare.transform.localScale = Vector3.one;
         m_SelectedEdgeSquare.transform.rotation = Quaternion.identity;
         m_SelectedEdgeSquare.SetActive(true);
+
+        if (LobbyController.GetInstance().OpenedPanel ==
+            IDSUBPANEL.PANELID_GROCERYSTORE)
+        {
+            UI_GroceryStore_SellList.GetInstance().SelectedItemSlot =
+                SlotTarget;
+        }
     }
 
-    public void BuyItem(Item_Slot SelectedItemSlot, int nBuyItemCount)
+    public string BuyItem(Item_Slot SelectedItemSlot, int nBuyItemCount)
     {
+        string StatusMessage = string.Empty;
         Debug.Log("nBuyItemCount : " + nBuyItemCount);
         //슬롯에 존재하는 아이템을 가지고온다.
         Item_Interface_Comp SelectedItem =
@@ -127,23 +137,34 @@ public class UI_Inventory_Functions : MonoBehaviour {
         //아이템이 존재하지 않을시 실행하지 않음.
         if (SelectedItem == null)
         {
-            Debug.Log("Not Have Item");
-            return;
+            StatusMessage = "[ff0000]System Error) Not Have Item[-]";
+            Debug.Log(StatusMessage);
+            return StatusMessage;
         }
 
         //슬롯에 있는 아이템과 현재 소지금을 비교한다.
         if (!LobbyManager.LobbyController.GetInstance().UpperStatusPanel.CompareMoney(
             -SelectedItem.ItemInfo.ItemValue * nBuyItemCount))
         {
-            Debug.Log("Not Have Money");
-            return;
+            StatusMessage = "[ff0000]Cannot Enough Money[-]";
+            Debug.Log(StatusMessage);
+            return StatusMessage;
         }
 
         //무게 제한을 검사한다.
         if (!InventoryManager.GetInstance().CompareWeight(SelectedItem.ItemInfo.itemWeight * nBuyItemCount))
         {
-            Debug.Log("Heavy");
-            return;
+            StatusMessage = "Cannot have item, it's so Heavy";
+            Debug.Log(StatusMessage);
+            return StatusMessage;
+        }
+        
+        //소지가짓수 체크
+        if (InventoryManager.GetInstance().ItemSlotList.Last().ChildItem)
+        {
+            StatusMessage = "Cannot have item, Bag is Full";
+            Debug.Log(StatusMessage);
+            return StatusMessage;
         }
 
         //소지금 감소
@@ -153,20 +174,16 @@ public class UI_Inventory_Functions : MonoBehaviour {
         //소지될 무게 추가
         SetWeight(SelectedItem, nBuyItemCount, true);
 
-        //소지가짓수 체크
-        if (InventoryManager.GetInstance().ItemSlotList.Last().ChildItem)
-        {
-            Debug.Log("Full Bag");
-            return;
-        }
-
         Debug.Log("Additem");
         //아이템 추가
         InventoryManager.GetInstance().CreateItem(SelectedItem.ItemInfo, nBuyItemCount);
+        return StatusMessage;
     }
 
-    public void SellItem(Item_Slot SelectedItemSlot, int nSellItemCount)
+    public string SellItem(Item_Slot SelectedItemSlot, int nSellItemCount)
     {
+        string StatusMessage = string.Empty;
+
         //슬롯에 존재하는 아이템을 가지고온다.
         Item_Interface_Comp SelectedItem =
             SelectedItemSlot.transform.FindChild("Sprite - ItemIcon(Clone)").GetComponent<Item_Interface_Comp>();
@@ -174,8 +191,9 @@ public class UI_Inventory_Functions : MonoBehaviour {
         //아이템이 존재하지 않을시 실행하지 않음.
         if (SelectedItem == null)
         {
-            Debug.Log("Not Have Item");
-            return;
+            StatusMessage = "System Error) Not Have Item";
+            Debug.Log(StatusMessage);
+            return StatusMessage;
         }
 
         int nGetPrice = (int)SelectedItem.ItemInfo.ItemValue * 3 / 10;
@@ -188,6 +206,8 @@ public class UI_Inventory_Functions : MonoBehaviour {
         //아이템 삭제
         InventoryManager.GetInstance(
             ).DestroyItem(SelectedItem, nSellItemCount);
+
+        return StatusMessage;
     }
 
     public void ControllCursorManager()

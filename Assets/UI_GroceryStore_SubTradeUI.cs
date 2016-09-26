@@ -75,16 +75,26 @@ public class UI_GroceryStore_SubTradeUI : MonoBehaviour {
 
     IEnumerator ClickButtonFunc(PressEvent PlayingEvent)
     {
-        float fTickTime = 0.5f;
+        float fTickTime = 0.75f;
+        bool isFirstDelay = false;
+
+        
 
         while(true)
         {
+            if (!isFirstDelay)
+            {
+                isFirstDelay = true;
+                PlayingEvent();
+                yield return new WaitForSeconds(fTickTime);
+            }
+
             if (!Input.GetMouseButton(0))
                 break;
 
             fTickTime *= 0.8f;
-            if (fTickTime <= 0.01f)
-                fTickTime = 0.01f;
+            if (fTickTime <= 0.05f)
+                fTickTime = 0.05f;
 
             PlayingEvent();
 

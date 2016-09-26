@@ -6,7 +6,7 @@ public class UI_GroceryStore_Func : MonoBehaviour {
     private UIPanel OwnPanel;
 
     [SerializeField]
-    private GameObject_Extension m_InvenToryObject;
+    private GameObject_Extension m_InventoryObject;
     [SerializeField]
     private GameObject_Extension m_SellerItemListGameObject;
     //[SerializeField]
@@ -17,7 +17,7 @@ public class UI_GroceryStore_Func : MonoBehaviour {
         OwnPanel = Mecro.MecroMethod.CheckGetComponent<UIPanel>(this.gameObject);
         OwnPanel.alpha = 0f;
 
-        Mecro.MecroMethod.CheckExistComponent<GameObject_Extension>(m_InvenToryObject);
+        Mecro.MecroMethod.CheckExistComponent<GameObject_Extension>(m_InventoryObject);
         Mecro.MecroMethod.CheckExistComponent<GameObject_Extension>(m_SellerItemListGameObject);
         //Mecro.MecroMethod.CheckExistComponent<GameObject_Extension>(m_CursorManager);
     }
@@ -29,7 +29,7 @@ public class UI_GroceryStore_Func : MonoBehaviour {
 
     void InitGroceryFunc()
     {
-        GroceryStroeFuncsHideAndShow();
+        GroceryStoreFuncsHideAndShow();
         TweenAlpha.Begin(this.gameObject, 1f, 1f);
     }
 
@@ -39,11 +39,11 @@ public class UI_GroceryStore_Func : MonoBehaviour {
         Invoke("GroceryStroeFuncsHideAndShow", 1f);
     }
 
-    void GroceryStroeFuncsHideAndShow()
+    void GroceryStoreFuncsHideAndShow()
     {
         PlayerDataManager.GetInstance().InvenInst_HideAndShow(
-            m_InvenToryObject.transform);
-        m_InvenToryObject.HideAndShow();
+            m_InventoryObject.transform);
+        m_InventoryObject.HideAndShow();
         m_SellerItemListGameObject.HideAndShow();
         //m_CursorManager.HideAndShow();
     }

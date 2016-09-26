@@ -16,8 +16,8 @@ public class UI_UpperStat_Stamina : MonoBehaviour {
 	void Start () {
         Mecro.MecroMethod.CheckExistComponent<UILabel>(m_StaminaText);
 
-        if (LobbyController.GetInstance().mCurrentID != FIELDID.ID_VILAGE &&
-            LobbyController.GetInstance().mCurrentID != FIELDID.ID_CASTLE)
+        if (LobbyController.GetInstance().mCurrentSceneID != FIELDID.ID_VILAGE &&
+            LobbyController.GetInstance().mCurrentSceneID != FIELDID.ID_CASTLE)
         {
             ResetStaminaPoint();
             Invoke("ReducingStatmina", 1f);
