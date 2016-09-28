@@ -31,7 +31,6 @@ public class VilageScene_NGUI_Panel :
         MecroMethod.CheckExistObejct<GameObject>(m_TempCollider);
 
         Invoke("UpperPanelMoving", 0.05f);
-        
     }
 
     private void UpperPanelMoving()
