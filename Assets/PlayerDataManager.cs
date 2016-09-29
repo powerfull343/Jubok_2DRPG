@@ -28,7 +28,6 @@ public class PlayerDataManager :
 
     void Start()
     {
-        Mecro.MecroMethod.ShowSceneLogConsole("PlayerDataManager Start");
         m_AddedStat = new PlayerData();
         m_ResultStat = new PlayerData();
 
@@ -42,22 +41,6 @@ public class PlayerDataManager :
     /// </summary>
     void InitInventoryInst()
     {
-        Mecro.MecroMethod.ShowSceneLogConsole("PlayerDataManager Inventory Init1");
-        Mecro.MecroMethod.ShowSceneLogConsole("PlayerDataManager Inventory Init2");
-        Mecro.MecroMethod.ShowSceneLogConsole("PlayerDataManager Inventory Init3");
-        Mecro.MecroMethod.ShowSceneLogConsole("PlayerDataManager Inventory Init4");
-        Mecro.MecroMethod.ShowSceneLogConsole("PlayerDataManager Inventory Init5");
-        Mecro.MecroMethod.ShowSceneLogConsole("PlayerDataManager Inventory Init6");
-        Mecro.MecroMethod.ShowSceneLogConsole("PlayerDataManager Inventory Init7");
-        Mecro.MecroMethod.ShowSceneLogConsole("PlayerDataManager Inventory Init8");
-        Mecro.MecroMethod.ShowSceneLogConsole("PlayerDataManager Inventory Init9");
-        Mecro.MecroMethod.ShowSceneLogConsole("PlayerDataManager Inventory Init10");
-        Mecro.MecroMethod.ShowSceneLogConsole("PlayerDataManager Inventory Init11");
-        Mecro.MecroMethod.ShowSceneLogConsole("PlayerDataManager Inventory Init12");
-        Mecro.MecroMethod.ShowSceneLogConsole("PlayerDataManager Inventory Init13");
-        Mecro.MecroMethod.ShowSceneLogConsole("PlayerDataManager Inventory Init14");
-        Mecro.MecroMethod.ShowSceneLogConsole("PlayerDataManager Inventory Init15");
-
         m_InventoryInstance = Instantiate(
             Resources.Load("UIPanels/InventoryContainer") as GameObject);
         m_InventoryInstance.transform.parent = this.transform;

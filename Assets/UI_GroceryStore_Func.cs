@@ -12,23 +12,32 @@ public class UI_GroceryStore_Func : MonoBehaviour {
     //[SerializeField]
     //private GameObject_Extension m_CursorManager;
 
-    void Start()
-    {
-        OwnPanel = Mecro.MecroMethod.CheckGetComponent<UIPanel>(this.gameObject);
-        OwnPanel.alpha = 0f;
-
-        Mecro.MecroMethod.CheckExistComponent<GameObject_Extension>(m_InventoryObject);
-        Mecro.MecroMethod.CheckExistComponent<GameObject_Extension>(m_SellerItemListGameObject);
-        //Mecro.MecroMethod.CheckExistComponent<GameObject_Extension>(m_CursorManager);
-    }
-    
     void OnEnable()
     {
         Invoke("InitGroceryFunc", 1.5f);
     }
 
+    void Start()
+    {
+        Mecro.MecroMethod.ShowSceneLogConsole("Start");
+        OwnPanel = Mecro.MecroMethod.CheckGetComponent<UIPanel>(this.gameObject);
+        OwnPanel.alpha = 0f;
+        Mecro.MecroMethod.ShowSceneLogConsole("OwnPanel : " + (OwnPanel == null));
+
+        Mecro.MecroMethod.CheckExistComponent<GameObject_Extension>(m_InventoryObject);
+        Mecro.MecroMethod.CheckExistComponent<GameObject_Extension>(m_SellerItemListGameObject);
+    }
+
+    void Update()
+    {
+        if (OwnPanel.alpha < 1f && OwnPanel.alpha > 0f)
+            Mecro.MecroMethod.ShowSceneLogConsole(
+                "GroceryPanel.Alpha : " + OwnPanel.alpha.ToString("N3"));
+    }
+
     void InitGroceryFunc()
     {
+        Mecro.MecroMethod.ShowSceneLogConsole("initGroceryFunc");
         GroceryStoreFuncsHideAndShow();
         TweenAlpha.Begin(this.gameObject, 1f, 1f);
     }
@@ -36,7 +45,7 @@ public class UI_GroceryStore_Func : MonoBehaviour {
     public void EndGroceryFunc()
     {
         TweenAlpha.Begin(this.gameObject, 1f, 0f);
-        Invoke("GroceryStroeFuncsHideAndShow", 1f);
+        Invoke("GroceryStoreFuncsHideAndShow", 1f);
     }
 
     void GroceryStoreFuncsHideAndShow()

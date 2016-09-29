@@ -43,7 +43,7 @@ namespace Mecro
             return component;
         }
 
-        public static void CheckExistObejct<T>(T obj) where T : Object
+        public static void CheckExistObject<T>(T obj) where T : Object
         {
             if (obj == null)
             {
@@ -56,7 +56,7 @@ namespace Mecro
         {
             if (comp == null)
             {
-                Debug.Log(comp.name + " Component is null");
+                Debug.LogError(comp.name + " Component is null");
                 return;
             }
         }
@@ -171,7 +171,7 @@ namespace Mecro
         public static void ShowSceneLogConsole(string Message)
         {
             if (DebugingPanel.GetInstance().gameObject != null)
-                DebugingPanel.GetInstance().ShowDebugingLog(Message);
+                DebugingPanel.GetInstance().AddDebugingLog(Message);
         }
     }
 }

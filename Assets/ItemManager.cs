@@ -53,7 +53,7 @@ public class ItemManager :
     public GameObject ItemInfoToGameObject(Item_Interface ItemInfo)
     {
         GameObject newItemObject = Instantiate(m_ItemSpritePrefab) as GameObject;
-        Mecro.MecroMethod.CheckExistObejct<GameObject>(newItemObject);
+        Mecro.MecroMethod.CheckExistObject<GameObject>(newItemObject);
 
         switch (ItemInfo.SpriteType)
         {

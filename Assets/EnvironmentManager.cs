@@ -47,7 +47,7 @@ public class EnvironmentManager :
         Environment = Instantiate(Resources.Load(
             "BattleScene/Environments/GrassField_Environment") as GameObject);
 
-        MecroMethod.CheckExistObejct<GameObject>(Environment);
+        MecroMethod.CheckExistObject<GameObject>(Environment);
 
         Environment.transform.SetParent(transform);
     }
@@ -64,10 +64,10 @@ public class EnvironmentManager :
     {
         Environment_Element element = new Environment_Element();
         Transform Parent = Environment.transform.FindChild(childName);
-        MecroMethod.CheckExistObejct<Transform>(Parent);
+        MecroMethod.CheckExistObject<Transform>(Parent);
 
         Transform Grid = Parent.FindChild("Grid");
-        MecroMethod.CheckExistObejct<Transform>(Grid);
+        MecroMethod.CheckExistObject<Transform>(Grid);
 
         element.ElementGrid = MecroMethod.CheckGetComponent<UIGrid>(Grid);
 
@@ -80,7 +80,7 @@ public class EnvironmentManager :
 
             element.Element_EnQueue(Grid.GetChild(i));
         }
-        MecroMethod.CheckExistObejct<Transform>(
+        MecroMethod.CheckExistObject<Transform>(
             element.ElementLastNode);
 
         if (element.ElementList.Count <= 0)

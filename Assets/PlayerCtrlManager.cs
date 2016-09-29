@@ -30,7 +30,7 @@ public class PlayerCtrlManager
     void Awake()
     {
         CreateInstance();
-        MecroMethod.CheckExistObejct<Transform>(_Player);
+        MecroMethod.CheckExistObject<Transform>(_Player);
         _PlayerCtrl = MecroMethod.CheckGetComponent<Moveable_Object>(_Player);
         _PlayerAnim = MecroMethod.CheckGetComponent<Animator>(_Player);
 

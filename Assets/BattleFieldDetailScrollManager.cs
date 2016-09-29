@@ -46,16 +46,16 @@ public class BattleFieldDetailScrollManager
         }
 
         foreach (GameObject EdgeCol in ScrollEdgeCollider)
-            MecroMethod.CheckExistObejct<GameObject>(EdgeCol);
+            MecroMethod.CheckExistObject<GameObject>(EdgeCol);
         
-        MecroMethod.CheckExistObejct<GameObject>(PreviousButton);
-        MecroMethod.CheckExistObejct<GameObject>(BehindCollider);
-        MecroMethod.CheckExistObejct<GameObject>(SelectLevelPopupList);
-        MecroMethod.CheckExistObejct<GameObject>(StartLevelButton);
+        MecroMethod.CheckExistObject<GameObject>(PreviousButton);
+        MecroMethod.CheckExistObject<GameObject>(BehindCollider);
+        MecroMethod.CheckExistObject<GameObject>(SelectLevelPopupList);
+        MecroMethod.CheckExistObject<GameObject>(StartLevelButton);
         MecroMethod.CheckExistComponent<GameObject_Extension>(PopupPanel);
         MecroMethod.CheckExistComponent<UILabel>(innerPopupButtonLabel);
 
-        MecroMethod.CheckExistObejct<Transform>(GridTrans);
+        MecroMethod.CheckExistObject<Transform>(GridTrans);
     }
 
     public void ControllChildObjects(bool isShow)
@@ -203,7 +203,7 @@ public class BattleFieldDetailScrollManager
     {
         //Create GameObject
         GameObject oneBox = Resources.Load("Mission/MissionSelectPrefab") as GameObject;
-        MecroMethod.CheckExistObejct<GameObject>(oneBox);
+        MecroMethod.CheckExistObject<GameObject>(oneBox);
 
         Transform SelectedLevelTrans = 
             BattleFieldManager.GetLevels()[levelidx].parent;

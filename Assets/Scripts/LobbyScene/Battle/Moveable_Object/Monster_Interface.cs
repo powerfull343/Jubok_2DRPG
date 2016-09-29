@@ -227,7 +227,7 @@ public abstract class Monster_Interface : Moveable_Object {
         //Load Prefab Object
         string LoadFullPath = "BattleScene/Monsters/" + PrefabName;
         GameObject MonsterObject = Resources.Load(LoadFullPath) as GameObject;
-        MecroMethod.CheckExistObejct<GameObject>(MonsterObject);
+        MecroMethod.CheckExistObject<GameObject>(MonsterObject);
         Monster.OriginGameObject = MonsterObject;
         //Set Variables
         Monster_Interface MonsterInterface = Monster_NameList.CreateMonster(PrefabName);
@@ -255,7 +255,7 @@ public abstract class Monster_Interface : Moveable_Object {
             Debug.LogError("Parse Error - SUMMONPOSITIONID");
 
         Key.MonsterCreatePosition = MonsterInterface.CreatePosition;
-        //MecroMethod.CheckExistObejct<LoadedMonsterElement>(Monster);
+        //MecroMethod.CheckExistObject<LoadedMonsterElement>(Monster);
         Monster.OriginInterfaceComp = MonsterInterface;
 
         return Monster;   

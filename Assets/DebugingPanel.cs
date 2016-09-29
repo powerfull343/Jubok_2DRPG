@@ -6,7 +6,6 @@ using Mecro;
 public class DebugingPanel :
     Singleton<DebugingPanel>
 {
-
     [SerializeField]
     private UISprite m_SpriteBg;
 
@@ -17,7 +16,24 @@ public class DebugingPanel :
     private Queue<GameObject> m_MessageQueue =
         new Queue<GameObject>();
 
-    private int m_nQueueMaxCount = 0;
+    [SerializeField]
+    private UIGrid m_GridPosition;
+    [SerializeField]
+    private UIScrollBar m_ScrollBar;
+
+    [SerializeField]
+    private int m_QueueMaxCount = 500;
+    [SerializeField]
+    private int m_PanelRenderingMaxCount = 8;
+
+    [SerializeField]
+    private GameObject m_UpButton;
+    [SerializeField]
+    private GameObject m_DownButton;
+
+    private delegate void ButtonClickEvent();
+    private IEnumerator m_PlayingEvent = null;
+    private bool m_isCoroutinePlaying = false;
 
     void Awake()
     {
@@ -26,55 +42,59 @@ public class DebugingPanel :
         Debug.Log("Debuging Awake");
         MecroMethod.CheckExistComponent<UISprite>(m_SpriteBg);
         MecroMethod.CheckExistComponent<UILabel>(m_Message);
+        MecroMethod.CheckExistComponent<UIGrid>(m_GridPosition);
+        MecroMethod.CheckExistComponent<UIScrollBar>(m_ScrollBar);
+        MecroMethod.CheckExistObject<GameObject>(m_UpButton);
+        MecroMethod.CheckExistObject<GameObject>(m_DownButton);
         m_MessageInst = m_Message.gameObject;
         if (m_MessageInst == null)
             Debug.LogError("Cannot Find Message GameObject");
 
-        float fSize = m_SpriteBg.localSize.y / m_Message.localSize.y;
-        m_nQueueMaxCount = (int)fSize;
+    }
+
+    void OnEnable()
+    {
+        StartCoroutine("CheckingMiscButtonClick");
     }
 
     void Start()
     {
-        if(LobbyManager.LobbyController.GetInstance().mCurrentSceneID == FIELDID.ID_VILAGE)
+        if (LobbyManager.LobbyController.GetInstance().mCurrentSceneID
+            == FIELDID.ID_VILAGE)
         {
-            float fHeight =
-                -(VilageScene_NGUI_Panel.fScreenHeight / 2f) +
-                (m_SpriteBg.localSize.y / 2f);
-            float fWidth =
-                -(VilageScene_NGUI_Panel.fScreenWidth / 2f) +
-                (m_SpriteBg.localSize.x / 2f);
-
-            transform.localPosition =
-                new Vector3(fWidth, fHeight, 0f);
+            SetPanelPosition(VilageScene_NGUI_Panel.fScreenWidth,
+                VilageScene_NGUI_Panel.fScreenHeight);
         }
         else
         {
-            float fHeight =
-                -(BattleScene_NGUI_Panel.fScreenHeight / 2f) +
-                (m_SpriteBg.localSize.y / 2f);
-            float fWidth =
-                -(BattleScene_NGUI_Panel.fScreenWidth / 2f) +
-                (m_SpriteBg.localSize.x / 2f);
-
-            transform.localPosition =
-                new Vector3(fWidth, fHeight, 0f);
+            SetPanelPosition(BattleScene_NGUI_Panel.fScreenWidth,
+                BattleScene_NGUI_Panel.fScreenHeight);
         }
     }
 
-    public void ShowDebugingLog(string Message)
+    private void SetPanelPosition(float _fWidth, float _fHeight)
     {
-        if (CheckingFullOfQueue())
+        float fWidth =
+            -(_fWidth / 2f) + (m_SpriteBg.localSize.x / 2f);
+        float fHeight =
+            -(_fHeight / 2f) + (m_SpriteBg.localSize.y / 2f);
+
+        transform.localPosition =
+            new Vector3(fWidth, fHeight, 0f);
+    }
+
+    public void AddDebugingLog(string Message)
+    {
+        if(CheckingFullOfQueue())
         {
             Destroy(m_MessageQueue.Dequeue());
-            PushingUpLogMessage();
             m_MessageQueue.Enqueue(CopyMessageInst(Message));
-            
+            PushingUpLogMessage();
         }
         else
         {
-            PushingUpLogMessage();
             m_MessageQueue.Enqueue(CopyMessageInst(Message));
+            PushingUpLogMessage();
         }
     }
 
@@ -86,21 +106,15 @@ public class DebugingPanel :
         Createdinstance = Instantiate(m_MessageInst);
 
         MecroMethod.SetPartent(Createdinstance.transform,
-            this.transform);
+            m_GridPosition.transform);
 
-        Createdinstance.transform.localPosition = 
+        Createdinstance.transform.localPosition =
             m_MessageInst.transform.localPosition;
         Createdinstance.SetActive(true);
 
+        m_ScrollBar.value = 1f;
+
         return Createdinstance;
-    }
-
-    private bool CheckingFullOfQueue()
-    {
-        if (m_MessageQueue.Count >= m_nQueueMaxCount)
-            return true;
-
-        return false;
     }
 
     private void PushingUpLogMessage()
@@ -111,6 +125,105 @@ public class DebugingPanel :
         foreach(GameObject Message in m_MessageQueue)
             Message.transform.localPosition += new Vector3(0f, m_Message.localSize.y, 0f);
     }
-        
 
+    private bool CheckingFullOfQueue()
+    {
+        if (m_MessageQueue.Count >= m_QueueMaxCount)
+            return true;
+
+        return false;
+    }
+        
+    private IEnumerator CheckingMiscButtonClick()
+    {
+        while(true)
+        {
+            if (UICamera.hoveredObject == m_UpButton &&
+                Input.GetMouseButtonDown(0))
+            {
+                if(!m_isCoroutinePlaying)
+                {
+                    m_isCoroutinePlaying = true;
+                    m_PlayingEvent = ClickingInteraction(m_UpButton, 
+                        UpButtonClick);
+                    StartCoroutine(m_PlayingEvent);
+                }
+            }
+            else if (UICamera.hoveredObject == m_DownButton &&
+                Input.GetMouseButtonDown(0))
+            {
+                if(!m_isCoroutinePlaying)
+                {
+                    m_isCoroutinePlaying = true;
+                    m_PlayingEvent = ClickingInteraction(m_DownButton,
+                        DownButtonClick);
+                    StartCoroutine(m_PlayingEvent);
+                }
+            }
+            else
+            {
+                m_isCoroutinePlaying = false;
+            }
+            yield return null;
+        }
+
+        yield return null;
+    }
+
+    public void UpButtonClick()
+    {
+        m_ScrollBar.value -= 1f / m_MessageQueue.Count;
+    }
+
+    public void DownButtonClick()
+    {
+        m_ScrollBar.value += 1f / m_MessageQueue.Count;
+    }
+
+    private IEnumerator ClickingInteraction(
+        GameObject _HoveringObject, ButtonClickEvent _PlayEvent)
+    {
+        float fFlowTime = 0.5f;
+        _PlayEvent();
+
+        yield return new WaitForSeconds(fFlowTime);
+
+        while(true)
+        {
+            if (UICamera.hoveredObject == _HoveringObject &&
+                Input.GetMouseButton(0))
+            {
+                _PlayEvent();
+
+                if (fFlowTime <= 0.1f)
+                    fFlowTime = 0.1f;
+                else
+                    fFlowTime *= 0.8f;
+            }
+            else
+                break;
+
+            yield return new WaitForSeconds(fFlowTime);
+        }
+
+        m_isCoroutinePlaying = false;
+        StopCoroutine(m_PlayingEvent);
+        yield return null;
+    }
+
+    public void FuncLogClear()
+    {
+        GameObject ClearTarget = null;
+
+        while(m_MessageQueue.Count > 0)
+        {
+            ClearTarget = m_MessageQueue.Dequeue();
+            if (ClearTarget == null)
+                break;
+
+            Destroy(ClearTarget);
+        }
+
+        m_ScrollBar.barSize = 1f;
+    }
 }

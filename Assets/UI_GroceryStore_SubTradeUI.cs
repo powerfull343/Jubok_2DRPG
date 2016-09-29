@@ -49,8 +49,8 @@ public class UI_GroceryStore_SubTradeUI : MonoBehaviour {
         MecroMethod.CheckExistComponent<UILabel>(m_TradeTitleText);
         MecroMethod.CheckExistComponent<UIScrollBar>(m_ItemCountScrollBar);
         MecroMethod.CheckExistComponent<UILabel>(m_ItemCountLabel);
-        MecroMethod.CheckExistObejct<GameObject>(m_PlusCollider);
-        MecroMethod.CheckExistObejct<GameObject>(m_MinusCollider);
+        MecroMethod.CheckExistObject<GameObject>(m_PlusCollider);
+        MecroMethod.CheckExistObject<GameObject>(m_MinusCollider);
     }
 
     IEnumerator UpdateUI()

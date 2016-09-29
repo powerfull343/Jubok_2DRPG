@@ -24,7 +24,7 @@ public class NGUI_MenuCtrl : MonoBehaviour
 
         MecroMethod.CheckExistComponent<UIButton>(m_CloseButton);
         MecroMethod.CheckExistComponent<UIButton>(m_AppQuitPopupButton);
-        MecroMethod.CheckExistObejct<GameObject>(m_AppQuitPopup);
+        MecroMethod.CheckExistObject<GameObject>(m_AppQuitPopup);
         m_AppQuitPopup.SetActive(false);
     }
 

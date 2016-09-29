@@ -28,7 +28,7 @@ public class VilageScene_NGUI_Panel :
     {
         MecroMethod.CheckExistComponent<UIWidget>(m_BackGround);
         m_BackGround.SetDimensions(1280, 720);
-        MecroMethod.CheckExistObejct<GameObject>(m_TempCollider);
+        MecroMethod.CheckExistObject<GameObject>(m_TempCollider);
 
         Invoke("UpperPanelMoving", 0.05f);
     }

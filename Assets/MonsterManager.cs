@@ -89,9 +89,9 @@ public class MonsterManager
         OnlyBossMonster = isOnlyBossMonster;
         SummonMonsterIdx = mSummonMonsterIdx;
 
-        MecroMethod.CheckExistObejct<Transform>(InFieldPosition);
-        MecroMethod.CheckExistObejct<Transform>(OutFieldPosition);
-        MecroMethod.CheckExistObejct<BattleEventCaller>(m_BattleEventCaller);
+        MecroMethod.CheckExistObject<Transform>(InFieldPosition);
+        MecroMethod.CheckExistObject<Transform>(OutFieldPosition);
+        MecroMethod.CheckExistObject<BattleEventCaller>(m_BattleEventCaller);
 
         iRegenMonster = RegenMonster();
     }

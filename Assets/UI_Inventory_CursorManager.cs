@@ -112,7 +112,7 @@ public class UI_Inventory_CursorManager : MonoBehaviour
         _SelectedSlot = SelectedObject.GetComponent<Item_Slot>();
         if (!_SelectedSlot)
         {
-            Debug.Log("Not Item Slot Object");
+            //Debug.Log("Not Item Slot Object");
             return false;
         }
 
