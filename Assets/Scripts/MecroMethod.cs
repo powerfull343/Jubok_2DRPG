@@ -5,11 +5,6 @@ namespace Mecro
 {
     public sealed class MecroMethod : MonoBehaviour
     {
-        private static bool m_isInit = false;
-
-        public static float m_fMaxScreenXSize;
-        public static float m_fMaxScreenYSize;
-
         /// <summary>
         /// Find Component in this Gameobject and checking exist Component
         /// </summary>
@@ -133,6 +128,10 @@ namespace Mecro
             ChildTarget.parent = ParentTarget;
             ChildTarget.localPosition = Vector3.zero;
             ChildTarget.localScale = Vector3.one;
+
+            UIWidget ChildWidget = ChildTarget.GetComponent<UIWidget>();
+            if (ChildWidget != null)
+                ChildWidget.ParentHasChanged();
         }
 
         //Second Option use Vector3.zero

@@ -54,7 +54,6 @@ public class UI_GroceryStore_Func : MonoBehaviour {
             m_InventoryObject.transform);
         m_InventoryObject.HideAndShow();
         m_SellerItemListGameObject.HideAndShow();
-        //m_CursorManager.HideAndShow();
     }
     
 }

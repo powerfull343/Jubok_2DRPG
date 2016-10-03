@@ -22,12 +22,14 @@ public class PlayerStatusController : MonoBehaviour
 
     void OnEnable()
     {
+        Mecro.MecroMethod.ShowSceneLogConsole("OnEnable/Status");
         EventDelegate EventDg = new EventDelegate(this, "CallGameMenu");
         m_CallMenuButton.onClick.Add(EventDg);
     }
 
     void Start()
     {
+        Mecro.MecroMethod.ShowSceneLogConsole("Start/Status");
         Mecro.MecroMethod.CheckExistComponent<UIWidget>(m_BGWidget);
         m_BGWidget.SetDimensions((int)BattleScene_NGUI_Panel.fScreenWidth,
             (int)(m_BGWidget.localSize.y));

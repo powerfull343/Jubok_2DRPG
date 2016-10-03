@@ -4,8 +4,8 @@ using System.Collections;
 
 public class Singleton<T> : MonoBehaviour where T : Component
 {
-    private static T _Instance;
-    private static bool newObject = false;
+    protected static T _Instance;
+    protected static bool newObject = false;
 
     protected Singleton() { }
 

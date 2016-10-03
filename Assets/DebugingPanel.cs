@@ -49,7 +49,6 @@ public class DebugingPanel :
         m_MessageInst = m_Message.gameObject;
         if (m_MessageInst == null)
             Debug.LogError("Cannot Find Message GameObject");
-
     }
 
     void OnEnable()
@@ -89,13 +88,11 @@ public class DebugingPanel :
         {
             Destroy(m_MessageQueue.Dequeue());
             m_MessageQueue.Enqueue(CopyMessageInst(Message));
-            PushingUpLogMessage();
         }
         else
-        {
             m_MessageQueue.Enqueue(CopyMessageInst(Message));
-            PushingUpLogMessage();
-        }
+
+        m_ScrollBar.value = 1f;
     }
 
     private GameObject CopyMessageInst(string LogMessage)
@@ -108,22 +105,12 @@ public class DebugingPanel :
         MecroMethod.SetPartent(Createdinstance.transform,
             m_GridPosition.transform);
 
-        Createdinstance.transform.localPosition =
-            m_MessageInst.transform.localPosition;
+        m_GridPosition.AddChild(Createdinstance.transform);
+
+        //Createdinstance.transform.localPosition =
+        //    m_MessageInst.transform.localPosition;
         Createdinstance.SetActive(true);
-
-        m_ScrollBar.value = 1f;
-
         return Createdinstance;
-    }
-
-    private void PushingUpLogMessage()
-    {
-        if (m_MessageQueue.Count < 1)
-            return;
-
-        foreach(GameObject Message in m_MessageQueue)
-            Message.transform.localPosition += new Vector3(0f, m_Message.localSize.y, 0f);
     }
 
     private bool CheckingFullOfQueue()

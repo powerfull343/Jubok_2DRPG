@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Mecro;
 
 public class PlayerDataManager : 
     Singleton<PlayerDataManager>
@@ -28,12 +29,15 @@ public class PlayerDataManager :
 
     void Start()
     {
-        m_AddedStat = new PlayerData();
-        m_ResultStat = new PlayerData();
+        Debug.Log("PlayerDataManager Start");
+        MecroMethod.ShowSceneLogConsole("PlayerDataManager Start");
+        _Instance.m_AddedStat = new PlayerData();
+        _Instance.m_ResultStat = new PlayerData();
 
         InitEquipedStat();
         InitInventoryInst();
         InitStat();
+        MecroMethod.ShowSceneLogConsole("PlayerDataManager End");
     }
 
     /// <summary>
@@ -41,16 +45,21 @@ public class PlayerDataManager :
     /// </summary>
     void InitInventoryInst()
     {
-        m_InventoryInstance = Instantiate(
+        MecroMethod.ShowSceneLogConsole("InitInventoryInst Start");
+
+        _Instance.m_InventoryInstance = Instantiate(
             Resources.Load("UIPanels/InventoryContainer") as GameObject);
-        m_InventoryInstance.transform.parent = this.transform;
-        m_InventoryInstance.SetActive(false);
-        m_AttachedInvenInst = false;
+        _Instance.m_InventoryInstance.transform.SetParent(this.transform);
+        _Instance.m_InventoryInstance.SetActive(false);
+        _Instance.m_AttachedInvenInst = false;
+
+        MecroMethod.ShowSceneLogConsole("PlayerDataManager / m_InventoryInstance Null : " + (m_InventoryInstance == null));
+        MecroMethod.ShowSceneLogConsole("InitInventoryInst End");
     }
 
     public void InvenInst_HideAndShow(Transform TargetTrans)
     {
-        if (!m_AttachedInvenInst)
+        if (!_Instance.m_AttachedInvenInst)
             InventoryInstMoving_Target(TargetTrans);
         else
             InventoryInstMoving_Origin();
@@ -58,19 +67,36 @@ public class PlayerDataManager :
 
     private void InventoryInstMoving_Target(Transform TargetTrans)
     {
-        m_InventoryInstance.transform.parent = TargetTrans;
-        m_InventoryInstance.transform.localPosition = Vector3.zero;
-        m_InventoryInstance.transform.localScale = Vector3.one;
+        //MecroMethod.SetPartent(m_InventoryInstance.transform,
+        //    TargetTrans);
 
-        m_AttachedInvenInst = true;
-        m_InventoryInstance.gameObject.SetActive(true);
+        //MecroMethod.ShowSceneLogConsole("PlayerDataManager / InventoryInstMoving_Target ReParent Start");
+        MecroMethod.ShowSceneLogConsole("PlayerDataManager / m_InventoryInstance Null : " + (_Instance.m_InventoryInstance == null));
+        //m_InventoryInstance.transform.SetParent(TargetTrans, false);
+        _Instance.m_InventoryInstance.transform.parent = TargetTrans.transform;
+        _Instance.m_InventoryInstance.transform.localPosition = Vector3.zero;
+        _Instance.m_InventoryInstance.transform.localScale = Vector3.one;
+        //MecroMethod.ShowSceneLogConsole("PlayerDataManager / InventoryInstMoving_Target ReParent End");
+
+
+        UIWidget ChildWidget = _Instance.m_InventoryInstance.GetComponent<UIWidget>();
+        if (ChildWidget != null)
+            ChildWidget.ParentHasChanged();
+
+        _Instance.m_AttachedInvenInst = true;
+
+        //MecroMethod.ShowSceneLogConsole("PlayerDataManager / InventoryInstMoving_Target / m_InventoryInstance Active : "
+        //    + m_InventoryInstance.gameObject.activeSelf);
+        _Instance.m_InventoryInstance.gameObject.SetActive(true);
+
+        //MecroMethod.ShowSceneLogConsole("PlayerDataManager / InventoryInstMoving_Target end");
     }
 
     private void InventoryInstMoving_Origin()
     {
         //m_InventoryInstance.transform.parent = this.transform;
-        m_AttachedInvenInst = false;
-        m_InventoryInstance.gameObject.SetActive(false);
+        _Instance.m_AttachedInvenInst = false;
+        _Instance.m_InventoryInstance.gameObject.SetActive(false);
     }
 
     /// <summary>
@@ -84,8 +110,8 @@ public class PlayerDataManager :
         foreach(KeyValuePair<EQUIPMENTTYPEID, EquipMent_Interface> 
             Equip in SavedEquip)
         {
-            m_AddedStat.Attack += Equip.Value.Attack;
-            m_AddedStat.Health += Equip.Value.Hp;
+            _Instance.m_AddedStat.Attack += Equip.Value.Attack;
+            _Instance.m_AddedStat.Health += Equip.Value.Hp;
         }
     }
 
@@ -117,13 +143,13 @@ public class PlayerDataManager :
     {
         if (OldEquip != null)
         {
-            m_AddedStat.Health -= OldEquip.Hp;
-            m_AddedStat.Attack -= OldEquip.Attack;
+            _Instance.m_AddedStat.Health -= OldEquip.Hp;
+            _Instance.m_AddedStat.Attack -= OldEquip.Attack;
         }
         if (NewEquip != null)
         {
-            m_AddedStat.Health += NewEquip.Hp;
-            m_AddedStat.Attack += NewEquip.Attack;
+            _Instance.m_AddedStat.Health += NewEquip.Hp;
+            _Instance.m_AddedStat.Attack += NewEquip.Attack;
         }
         InitStat();
 
@@ -136,13 +162,13 @@ public class PlayerDataManager :
 
     public void UpdateHealth()
     {
-        int AddedHealth = m_AddedStat.Health +
-            (m_AddedStat.tStat.Str * 10);
+        int AddedHealth = _Instance.m_AddedStat.Health +
+            (_Instance.m_AddedStat.tStat.Str * 10);
 
         //Debug.Log("DataController Health : " + DataController.GetInstance().InGameData.Health);
         //Debug.Log(AddedHealth);
 
-        m_ResultStat.Health =
+        _Instance.m_ResultStat.Health =
             DataController.GetInstance().InGameData.Health +
             (DataController.GetInstance().InGameData.tStat.Str * 10) +
             AddedHealth;
@@ -152,13 +178,13 @@ public class PlayerDataManager :
 
     public void UpdateMana()
     {
-        int AddedMana = m_AddedStat.Mana +
-            (m_AddedStat.tStat.Int * 10);
+        int AddedMana = _Instance.m_AddedStat.Mana +
+            (_Instance.m_AddedStat.tStat.Int * 10);
 
         //Debug.Log("DataController Mana : " + DataController.GetInstance().InGameData.Mana);
         //Debug.Log(AddedMana);
 
-        m_ResultStat.Mana =
+        _Instance.m_ResultStat.Mana =
             DataController.GetInstance().InGameData.Mana +
             (DataController.GetInstance().InGameData.tStat.Int * 10) +
             AddedMana;
@@ -168,13 +194,13 @@ public class PlayerDataManager :
 
     public void UpdateStamina()
     {
-        int AddedStamina = m_AddedStat.Stamina +
-            (m_AddedStat.tStat.Dex * 1);
+        int AddedStamina = _Instance.m_AddedStat.Stamina +
+            (_Instance.m_AddedStat.tStat.Dex * 1);
 
         //Debug.Log("DataController Stamina : " + DataController.GetInstance().InGameData.Stamina);
         //Debug.Log(AddedStamina);
 
-        m_ResultStat.Stamina =
+        _Instance.m_ResultStat.Stamina =
             DataController.GetInstance().InGameData.Stamina +
             (DataController.GetInstance().InGameData.tStat.Dex * 1) +
             AddedStamina;
@@ -184,10 +210,10 @@ public class PlayerDataManager :
 
     public void UpdateAttack()
     {
-        int AddedAttackStat = m_AddedStat.Attack +
-            (m_AddedStat.tStat.Int * 1);
+        int AddedAttackStat = _Instance.m_AddedStat.Attack +
+            (_Instance.m_AddedStat.tStat.Int * 1);
 
-        m_ResultStat.Attack =
+        _Instance.m_ResultStat.Attack =
             DataController.GetInstance().InGameData.Attack +
             (DataController.GetInstance().InGameData.tStat.Int * 1) +
             AddedAttackStat;

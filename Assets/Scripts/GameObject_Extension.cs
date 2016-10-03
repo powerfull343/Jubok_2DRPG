@@ -66,10 +66,16 @@ public class GameObject_Extension
 
     public void HideAndShow()
     {
+        //Mecro.MecroMethod.ShowSceneLogConsole(gameObject.name + " : " +
+        //     gameObject.activeSelf);
+
         if (!this.gameObject.activeSelf)
             SelfActive();
         else
             SelfHide();
+
+        //Mecro.MecroMethod.ShowSceneLogConsole(gameObject.name + " : " +
+        //     gameObject.activeSelf);
     }
 
     public void SelfDestroy()

@@ -17,8 +17,7 @@ public class DataController : MonoBehaviour {
     }
 
     //Debuging Variable
-    [SerializeField]
-    private bool m_isStartLobbyScene = false;
+    private bool m_isDataLoad = false;
 
     private DataController()
     {
@@ -35,9 +34,9 @@ public class DataController : MonoBehaviour {
         Debug.Log("DataController Awaking");
         if (_instance == null)
         {
-            m_InGameData = new PlayerData();
             DontDestroyOnLoad(gameObject);
             _instance = this;
+            
         }
         else if(_instance != this)
         {
@@ -49,20 +48,35 @@ public class DataController : MonoBehaviour {
         //Invoke("InitDataController", 0.1f);
     }
 
+    void Start()
+    {
+        Debug.Log("DataController Start");
+    }
+
     void InitDataController()
     {
-        if (m_isStartLobbyScene)
+        Debug.Log(_instance.m_InGameData == null);
+        if (_instance.m_InGameData == null)
         {
-            Debug.Log("SceneNumber : " + Application.loadedLevel);
-            if (Application.loadedLevel == 1)
+            _instance.Load();
+            _instance.m_isDataLoad = true;
+        }
+       
+        if (Application.loadedLevel == 1)
+        {
+            
+            if (!_instance.gameObject.GetComponent<PlayerDataManager>())
             {
-                Load();
+                Debug.Log("Add PlayerDataManager");
+                _instance.gameObject.AddComponent<PlayerDataManager>();
             }
         }
 
         //PlayerDataManager.GetInstance().InitPlayerDataManager();
 
     }
+
+    
 
     public void Save()
     {
@@ -85,6 +99,7 @@ public class DataController : MonoBehaviour {
 
     public void Load()
     {
+        m_InGameData = new PlayerData();
         BinaryFormatter bf = new BinaryFormatter();
 
         Debug.Log(Application.persistentDataPath);
