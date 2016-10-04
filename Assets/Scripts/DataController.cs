@@ -61,15 +61,21 @@ public class DataController : MonoBehaviour {
             _instance.Load();
             _instance.m_isDataLoad = true;
         }
-       
+
         if (Application.loadedLevel == 1)
         {
-            
-            if (!_instance.gameObject.GetComponent<PlayerDataManager>())
-            {
-                Debug.Log("Add PlayerDataManager");
-                _instance.gameObject.AddComponent<PlayerDataManager>();
-            }
+
+            //if (!_instance.gameObject.GetComponent<PlayerDataManager>())
+            //{
+            //    Debug.Log("Add PlayerDataManager");
+            //    _instance.gameObject.AddComponent<PlayerDataManager>();
+            //}
+            //PlayerDataManager Loading
+            GameObject PlayerDataMgr = Instantiate(
+                Resources.Load("DataObjects/PlayerDataCalc")
+                as GameObject);
+            Debug.Log("PlayerDataManager Null : " + (PlayerDataMgr == null));
+            PlayerDataMgr.transform.SetParent(_instance.transform, false);
         }
 
         //PlayerDataManager.GetInstance().InitPlayerDataManager();

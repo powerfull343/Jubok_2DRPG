@@ -82,7 +82,7 @@ public class DebugingPanel :
             new Vector3(fWidth, fHeight, 0f);
     }
 
-    public void AddDebugingLog(string Message)
+    public void AddDebugingLog(object Message)
     {
         if(CheckingFullOfQueue())
         {
@@ -95,11 +95,11 @@ public class DebugingPanel :
         m_ScrollBar.value = 1f;
     }
 
-    private GameObject CopyMessageInst(string LogMessage)
+    private GameObject CopyMessageInst(object LogMessage)
     {
         GameObject Createdinstance = null;
 
-        m_Message.text = LogMessage;
+        m_Message.text = LogMessage.ToString();
         Createdinstance = Instantiate(m_MessageInst);
 
         MecroMethod.SetPartent(Createdinstance.transform,

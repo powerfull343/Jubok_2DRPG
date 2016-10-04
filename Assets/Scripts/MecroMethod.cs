@@ -167,10 +167,13 @@ namespace Mecro
             Debug.Log(T.ToString() + T);
         }
 
-        public static void ShowSceneLogConsole(string Message)
+        public static void ShowSceneLogConsole(object Message, bool ShowConsole)
         {
             if (DebugingPanel.GetInstance().gameObject != null)
                 DebugingPanel.GetInstance().AddDebugingLog(Message);
+
+            if (ShowConsole)
+                Debug.Log(Message);
         }
     }
 }

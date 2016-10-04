@@ -40,7 +40,7 @@ public class UI_UpperStat_Health : MonoBehaviour {
             else
             {
                 m_HealthText.text = PlayerCtrlManager.GetInstance().PlayerCtrl.Hp.ToString() +
-                " / " + PlayerCtrlManager.GetInstance().PlayerCtrl.MaxHp.ToString();
+                    " / " + PlayerCtrlManager.GetInstance().PlayerCtrl.MaxHp.ToString();
             }
             yield return new WaitForFixedUpdate();
         }
