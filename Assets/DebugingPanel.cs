@@ -31,9 +31,16 @@ public class DebugingPanel :
     [SerializeField]
     private GameObject m_DownButton;
 
+    //Up & Down Function
     private delegate void ButtonClickEvent();
     private IEnumerator m_PlayingEvent = null;
     private bool m_isCoroutinePlaying = false;
+
+    //Hide & Show Function
+    [SerializeField]
+    private Animator m_ChildBodyAnim;
+    [SerializeField]
+    private UILabel m_ChildFunctionLabel;
 
     void Awake()
     {
@@ -46,6 +53,9 @@ public class DebugingPanel :
         MecroMethod.CheckExistComponent<UIScrollBar>(m_ScrollBar);
         MecroMethod.CheckExistObject<GameObject>(m_UpButton);
         MecroMethod.CheckExistObject<GameObject>(m_DownButton);
+        MecroMethod.CheckExistComponent<Animator>(m_ChildBodyAnim);
+        MecroMethod.CheckExistComponent<UILabel>(m_ChildFunctionLabel);
+
         m_MessageInst = m_Message.gameObject;
         if (m_MessageInst == null)
             Debug.LogError("Cannot Find Message GameObject");
@@ -53,7 +63,7 @@ public class DebugingPanel :
 
     void OnEnable()
     {
-        StartCoroutine("CheckingMiscButtonClick");
+        StartCoroutine("CheckingUpDownButtonClick");
     }
 
     void Start()
@@ -121,7 +131,7 @@ public class DebugingPanel :
         return false;
     }
         
-    private IEnumerator CheckingMiscButtonClick()
+    private IEnumerator CheckingUpDownButtonClick()
     {
         while(true)
         {
@@ -212,5 +222,20 @@ public class DebugingPanel :
         }
 
         m_ScrollBar.barSize = 1f;
+    }
+
+    public void FuncAnimatorHideAndShow()
+    {
+        if(m_ChildFunctionLabel.text == "Show")
+        {
+            m_ChildFunctionLabel.text = "Hide";
+            m_ChildBodyAnim.SetTrigger("Show");
+
+        }
+        else
+        {
+            m_ChildFunctionLabel.text = "Show";
+            m_ChildBodyAnim.SetTrigger("Hide");
+        }
     }
 }

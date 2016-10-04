@@ -55,11 +55,11 @@ public class DataController : MonoBehaviour {
 
     void InitDataController()
     {
-        Debug.Log(_instance.m_InGameData == null);
-        if (_instance.m_InGameData == null)
+        Debug.Log(m_InGameData == null);
+        if (m_InGameData == null)
         {
-            _instance.Load();
-            _instance.m_isDataLoad = true;
+            Load();
+            m_isDataLoad = true;
         }
 
         if (Application.loadedLevel == 1)
@@ -77,12 +77,7 @@ public class DataController : MonoBehaviour {
             Debug.Log("PlayerDataManager Null : " + (PlayerDataMgr == null));
             PlayerDataMgr.transform.SetParent(_instance.transform, false);
         }
-
-        //PlayerDataManager.GetInstance().InitPlayerDataManager();
-
     }
-
-    
 
     public void Save()
     {
