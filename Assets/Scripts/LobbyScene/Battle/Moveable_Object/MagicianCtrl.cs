@@ -252,8 +252,7 @@ public class MagicianCtrl : Moveable_Object {
         {
             if (ColMonsters[nIdx] != null)
             {
-                MonsterManager.GetInstance().RemovesMonster(
-                    ColMonsters[nIdx].ObjectName,
+                MonsterManager.GetInstance().RemoveMonster(
                     ColMonsters[nIdx].transform.parent.gameObject);
             }
 

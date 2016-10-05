@@ -22,6 +22,15 @@ public class VilageScene_NGUI_Panel :
     void Awake()
     {
         CreateInstance();
+        Mecro.MecroMethod.ShowSceneLogConsole("VilageScene_Awake", true);
+        if(Application.loadedLevel == 1)
+        {
+            if (Screen.fullScreen == true)
+            {
+                Mecro.MecroMethod.ShowSceneLogConsole("VilageScene_FullScreen", true);
+                Screen.fullScreen = false;
+            }
+        }
     }
 
     void OnEnable()

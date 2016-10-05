@@ -35,8 +35,10 @@ public class MonsterManager
     /// <summary>
     /// 현재 소환된 몬스터 항목
     /// </summary>
-    public Dictionary<string, List<GameObject>> MonsterList
-        = new Dictionary<string, List<GameObject>>();
+    //public Dictionary<string, List<GameObject>> MonsterList
+    //    = new Dictionary<string, List<GameObject>>();
+    public List<GameObject> MonsterList
+        = new List<GameObject>();
 
     //Variables
     public static int MonsterCount = 0;
@@ -221,7 +223,8 @@ public class MonsterManager
             return;
         }
 
-        MonsterAddToMonsterList(CreatedMonster, FindExistKey);
+        //MonsterAddToMonsterList(CreatedMonster, FindExistKey);
+        MonsterAddToMonsterList(CreatedMonster);
 
         //밖에서 나온몹은 추가된걸 취급하지 않는다.
         AddMonsterCount(CreatePositionID);
@@ -290,19 +293,21 @@ public class MonsterManager
         return vResult;
     }
 
-    private void MonsterAddToMonsterList(GameObject Monster, string FindExistKey)
+    //private void MonsterAddToMonsterList(GameObject Monster, string FindExistKey)
+    private void MonsterAddToMonsterList(GameObject Monster)
     {
-        //Apply MonsterList
-        if (!MonsterManager.GetInstance().MonsterList.ContainsKey(FindExistKey))
-        {
-            List<GameObject> MonsterObjectList = new List<GameObject>();
-            MonsterObjectList.Add(Monster);
-            MonsterManager.GetInstance().MonsterList.Add(FindExistKey, MonsterObjectList);
-        }
-        else
-        {
-            MonsterManager.GetInstance().MonsterList[FindExistKey].Add(Monster);
-        }
+        MonsterList.Add(Monster);
+        ////Apply MonsterList
+        //if (!MonsterManager.GetInstance().MonsterList.ContainsKey(FindExistKey))
+        //{
+        //    List<GameObject> MonsterObjectList = new List<GameObject>();
+        //    MonsterObjectList.Add(Monster);
+        //    MonsterManager.GetInstance().MonsterList.Add(FindExistKey, MonsterObjectList);
+        //}
+        //else
+        //{
+        //    MonsterManager.GetInstance().MonsterList[FindExistKey].Add(Monster);
+        //}
     }
 
     IEnumerator RegenMonster()
@@ -331,7 +336,8 @@ public class MonsterManager
         yield break;
     }
 
-    public void RemovesMonster(string KeyName, GameObject DeleteMonster)
+    //public void RemovesMonster(string KeyName, GameObject DeleteMonster)
+    public void RemoveMonster(GameObject DeleteMonster)
     {
         if(MonsterList.Count <= 0)
         {
@@ -339,11 +345,17 @@ public class MonsterManager
             return;
         }
 
-        List<GameObject> Monsters = MonsterList[KeyName];
-        Monsters.Remove(DeleteMonster);
+        //List<GameObject> Monsters = MonsterList[KeyName];
+        //Monsters.Remove(DeleteMonster);
+        if(MonsterList.Remove(DeleteMonster) == false)
+        {
+            Debug.LogError("Cannot Find Delete Monster Node");
+            return;
+        }
 
         Monster_Interface DelMosnterInterface =
-            MecroMethod.CheckGetComponent<Monster_Interface>(DeleteMonster.transform.FindChild("MonsterBody"));
+            MecroMethod.CheckGetComponent<Monster_Interface>(
+                DeleteMonster.transform.FindChild("MonsterBody"));
 
         DelMosnterInterface.DisableMonsterComps();
 
@@ -353,22 +365,30 @@ public class MonsterManager
 
     public static void AttackFirstSummonedMonster()
     {
-        Debug.Log("MonsterList Count : " + MonsterManager.GetInstance().MonsterList.Count);
-
-        List<GameObject> SelectedMonsterList = MonsterManager.GetInstance(
-            ).MonsterList.ToList()[0].Value;
-
-        if (SelectedMonsterList == null)
-        {
-            Debug.Log("cannot Find Monster Object List");
+        //몬스터 갯수가 한마리도 존재하지 않을 경우는 연산 스킵.
+        if (MonsterManager.MonsterCount <= 0)
             return;
-        }
 
-        Debug.Log("SelectedMonsterListCount : " + SelectedMonsterList.Count);
+        //List<GameObject> SelectedMonsterList = MonsterManager.GetInstance(
+        //    ).MonsterList.ToList()[0].Value;
+
+        //if (SelectedMonsterList == null)
+        //{
+        //    Debug.Log("cannot Find Monster Object List");
+        //    return;
+        //}
+
+        //Debug.Log("SelectedMonsterListCount : " + SelectedMonsterList.Count);
+
+        //Monster_Interface SelectedMonsterInfo =
+        //    Mecro.MecroMethod.CheckGetComponent<Monster_Interface>(
+        //    SelectedMonsterList[0].transform.FindChild("MonsterBody"));
+
+        List<GameObject> _MonsterList = MonsterManager.GetInstance().MonsterList;
 
         Monster_Interface SelectedMonsterInfo =
             Mecro.MecroMethod.CheckGetComponent<Monster_Interface>(
-            SelectedMonsterList[0].transform.FindChild("MonsterBody"));
+            _MonsterList[0].transform.FindChild("MonsterBody"));
 
         if (SelectedMonsterInfo == null)
         {
@@ -377,7 +397,7 @@ public class MonsterManager
         }
 
         int nAtkPower = PlayerCtrlManager.GetInstance().PlayerCtrl.Atk;
-        Debug.Log(nAtkPower);
+        //Debug.Log(nAtkPower);
 
         SelectedMonsterInfo.SetHp(nAtkPower);
     }
@@ -468,8 +488,11 @@ public class MonsterManager
         ResultMonsterInst.transform.localScale = Vector3.one;
         ResultMonsterInst.SetActive(true);
 
+        //Add To MonsterList
         MonsterManager.GetInstance().MonsterAddToMonsterList(
-            ResultMonsterInst, CreatedInterface.ObjectName);
+            ResultMonsterInst);
+        //MonsterManager.GetInstance().MonsterAddToMonsterList(
+        //    ResultMonsterInst, CreatedInterface.ObjectName);
 
         AddMonsterCount(CreatedInterface.CreatePosition);
 

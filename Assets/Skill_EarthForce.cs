@@ -29,21 +29,22 @@ public class Skill_EarthForce : Skill_Interface
 
     protected override void SkillSetting()
     {
-        //아무나 공격하게함.
-        int nRandomSelectedMonster =
-            UnityEngine.Random.Range(0, MonsterManager.GetInstance().MonsterList.Count);
-
-        List<GameObject> MonsterList =
-            MonsterManager.GetInstance().MonsterList.Values.ElementAt(nRandomSelectedMonster);
-
-        if (MonsterList.Count <= 0)
+        if (MonsterManager.GetInstance().MonsterList.Count <= 0)
         {
-            //Debug.LogError("Monster Not Existing");
             EndSkill();
             return;
         }
 
-        mTargetTrans = MonsterList[0].transform;
+        //아무나 공격하게함.
+        int nRandomSelectedMonster =
+            UnityEngine.Random.Range(0, MonsterManager.GetInstance().MonsterList.Count);
+
+        //List<GameObject> MonsterList =
+        //    MonsterManager.GetInstance().MonsterList.Values.ElementAt(nRandomSelectedMonster);
+
+
+        mTargetTrans = 
+            MonsterManager.GetInstance().MonsterList[nRandomSelectedMonster].transform;
 
         transform.localScale = mTargetTrans.localScale;
         transform.position = mTargetTrans.position + new Vector3(0f, 0.5f, 0f);

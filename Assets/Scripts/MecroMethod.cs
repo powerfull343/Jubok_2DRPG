@@ -128,6 +128,7 @@ namespace Mecro
             ChildTarget.parent = ParentTarget;
             ChildTarget.localPosition = Vector3.zero;
             ChildTarget.localScale = Vector3.one;
+            //== ChildTarget.SetParent(ParentTarget, false);
 
             UIWidget ChildWidget = ChildTarget.GetComponent<UIWidget>();
             if (ChildWidget != null)
@@ -169,7 +170,7 @@ namespace Mecro
 
         public static void ShowSceneLogConsole(object Message, bool ShowConsole)
         {
-            if (DebugingPanel.GetInstance().gameObject != null)
+            if (DebugingPanel.GetInstance() != null)
                 DebugingPanel.GetInstance().AddDebugingLog(Message);
 
             if (ShowConsole)

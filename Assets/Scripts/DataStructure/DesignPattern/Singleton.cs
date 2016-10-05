@@ -9,7 +9,6 @@ using System.Linq;
 public class Singleton<T> : MonoBehaviour where T : Component
 {
     protected static T _Instance;
-    protected static bool newObject = false;
 
     protected Singleton() { }
 
@@ -20,46 +19,52 @@ public class Singleton<T> : MonoBehaviour where T : Component
             _Instance = this.gameObject.GetComponent<T>();
             //SetOwnProperty(_Instance);
         }
-        else if (_Instance != this && newObject)
+        else if (_Instance != this)
             Destroy(gameObject);
     }
 
     public static T GetInstance()
     {
         if (_Instance == null)
+        {
+            //string GenericName = typeof(T).FullName;
+            //Type ActivateType = Type.GetType(GenericName, true);
+            //_Instance = (Activator.CreateInstance(ActivateType)) as T;
+
             Debug.Log("You Cannot Create Instance");
+        }
 
         return _Instance;
     }
 
-    protected void SetOwnProperty(T SingletonTarget)
-    {
-        Type OwnType = this.GetType();
-        FieldInfo[] TargetFields = OwnType.GetFields(
-            BindingFlags.NonPublic | BindingFlags.Instance
-            | BindingFlags.Public);
+    //protected void SetOwnProperty(T SingletonTarget)
+    //{
+    //    Type OwnType = this.GetType();
+    //    FieldInfo[] TargetFields = OwnType.GetFields(
+    //        BindingFlags.NonPublic | BindingFlags.Instance
+    //        | BindingFlags.Public);
 
-        Type InstanceType = _Instance.GetType();
-        FieldInfo[] CopyFields = InstanceType.GetFields(
-            BindingFlags.NonPublic | BindingFlags.Instance
-            | BindingFlags.Public);
+    //    Type InstanceType = _Instance.GetType();
+    //    FieldInfo[] CopyFields = InstanceType.GetFields(
+    //        BindingFlags.NonPublic | BindingFlags.Instance
+    //        | BindingFlags.Public);
 
-        //this.member = _Instance.member;
-        for (int i = 0; i < TargetFields.Length; ++i)
-        {
-            Debug.Log("TargetField " + i.ToString() + "th Name : " +
-                TargetFields[i].Name);
-            Debug.Log("CopyFields " + i.ToString() + "th Name : " +
-                CopyFields[i].Name);
+    //    //this.member = _Instance.member;
+    //    for (int i = 0; i < TargetFields.Length; ++i)
+    //    {
+    //        Debug.Log("TargetField " + i.ToString() + "th Name : " +
+    //            TargetFields[i].Name);
+    //        Debug.Log("CopyFields " + i.ToString() + "th Name : " +
+    //            CopyFields[i].Name);
 
 
-            //Debug.Log(TargetFields[i].Name);
-            TargetFields[i].SetValue(this,
-                CopyFields[i].GetValue(_Instance));
-        }
+    //        //Debug.Log(TargetFields[i].Name);
+    //        TargetFields[i].SetValue(this,
+    //            CopyFields[i].GetValue(_Instance));
+    //    }
 
-        //Debug.LogError("====End====");
-    }
+    //    //Debug.LogError("====End====");
+    //}
 
     //    //Class Propertys
     //    protected static readonly T _instance =

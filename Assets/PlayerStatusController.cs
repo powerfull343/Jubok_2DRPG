@@ -56,10 +56,17 @@ public class PlayerStatusController : MonoBehaviour
     void CallGameMenu()
     {
         if (LobbyController.GetInstance().mCurrentSceneID == FIELDID.ID_VILAGE)
+        {
             VilageScene_NGUI_Panel.GetInstance().OpenBehindCollider();
-
-        LobbyController.GetInstance().OpenMenuPanel(
-            VilageScene_NGUI_Panel.GetInstance().transform);
+            LobbyController.GetInstance().OpenMenuPanel(
+                VilageScene_NGUI_Panel.GetInstance().transform);
+        }
+        else
+        {
+            BattleScene_NGUI_Panel.GetInstance().OpenBehindCollider();
+            LobbyController.GetInstance().OpenMenuPanel(
+                BattleScene_NGUI_Panel.GetInstance().transform);
+        }
     }
 
     public void MovingUpperStatusUI(Transform SceneParent, float fScreenHeight)

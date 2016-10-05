@@ -33,12 +33,22 @@ public class BattleScene_NGUI_Panel
         set { m_NGUICamera = value; }
     }
 
+    private GameObject m_TempCollider;
+
     void Awake()
     {
         CreateInstance();
         MecroMethod.CheckExistComponent<BossHpBarCtrlManager>(m_BossHpManager);
         MecroMethod.CheckExistComponent<Battle_NGUI_EventMsg>(m_EventMessageCtrl);
         MecroMethod.CheckExistComponent<Camera>(m_NGUICamera);
+        if (!m_TempCollider)
+        {
+            m_TempCollider =
+                Instantiate(Resources.Load(
+                    "UIPanels/Panel - CannotControl") as GameObject);
+            Mecro.MecroMethod.SetPartent(m_TempCollider.transform,
+                this.transform);
+        }
     }
 
     void OnEnable()
@@ -50,6 +60,16 @@ public class BattleScene_NGUI_Panel
     {
         LobbyController.GetInstance().UpperStatusPanel.MovingUpperStatusUI(
             this.transform, fScreenHeight);
+    }
+
+    public void OpenBehindCollider()
+    {
+        m_TempCollider.SetActive(true);
+    }
+
+    public void CloseBehindCollider()
+    {
+        m_TempCollider.SetActive(false);
     }
 
     public void CallEventMessage(string strMessage, Color LabelColor)

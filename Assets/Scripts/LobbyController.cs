@@ -46,7 +46,15 @@ namespace LobbyManager
         {
             Debug.Log("LobbyCtrl");
 
-            Screen.SetResolution(Screen.width, Screen.width * 16 / 9, true);
+            //Mecro.MecroMethod.ShowSceneLogConsole(
+            //    Screen.width.ToString() + " / " +
+            //    Screen.height.ToString(), true);
+
+            //Screen.SetResolution(Screen.width, Screen.width * 16 / 9, true);
+
+            //Mecro.MecroMethod.ShowSceneLogConsole(
+            //    Screen.currentResolution, true);
+            
 
             if (isSlow)
                 Time.fixedDeltaTime = 0.5f;

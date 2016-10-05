@@ -130,11 +130,29 @@ public class DebugingPanel :
 
         return false;
     }
+
+    private bool CheckingFullSizeOfPanel()
+    {
+        if (m_MessageQueue.Count <= 12)
+        {
+            m_ScrollBar.barSize = 1f;
+            return false;
+        }
+
+        return true;
+    }
         
     private IEnumerator CheckingUpDownButtonClick()
     {
         while(true)
         {
+            //Cannot Up&Down Button Click Function
+            if (!CheckingFullSizeOfPanel())
+            {
+                yield return null;
+                continue;
+            }
+
             if (UICamera.hoveredObject == m_UpButton &&
                 Input.GetMouseButtonDown(0))
             {

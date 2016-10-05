@@ -25,10 +25,6 @@ public class PlayerDataManager :
     void Awake()
     {
         CreateInstance();
-    }
-
-    void Start()
-    {
         MecroMethod.ShowSceneLogConsole("PlayerDataManager Start", true);
 
         //MecroMethod.ShowSceneLogConsole("Testing", true);
@@ -48,6 +44,29 @@ public class PlayerDataManager :
         InitInventoryInst();
         InitStat();
         MecroMethod.ShowSceneLogConsole("PlayerDataManager End", true);
+    }
+
+    void Start()
+    {
+        //MecroMethod.ShowSceneLogConsole("PlayerDataManager Start", true);
+
+        ////MecroMethod.ShowSceneLogConsole("Testing", true);
+        ////MecroMethod.ShowSceneLogConsole("this.m_AddedStat : " + (m_AddedStat == null), true);
+        ////MecroMethod.ShowSceneLogConsole("_Instance.m_AddedStat : " + (m_AddedStat == null), true);
+
+        //m_AddedStat = new PlayerData();
+
+        ////MecroMethod.ShowSceneLogConsole("this.m_AddedStat : " + (m_AddedStat == null), true);
+        ////MecroMethod.ShowSceneLogConsole("_Instance.m_AddedStat : " + (m_AddedStat == null), true);
+        ////MecroMethod.ShowSceneLogConsole((_Instance.m_AddedStat == m_AddedStat), true);
+        ////MecroMethod.ShowSceneLogConsole("TestEnd", true);
+
+        //m_ResultStat = new PlayerData();
+
+        //InitEquipedStat();
+        //InitInventoryInst();
+        //InitStat();
+        //MecroMethod.ShowSceneLogConsole("PlayerDataManager End", true);
     }
 
     /// <summary>
@@ -148,6 +167,9 @@ public class PlayerDataManager :
     public void UpdateStat(out int _Hp, out int _Mp,
         out int _Stamina, out int _Attack)
     {
+        if (m_ResultStat == null)
+            Debug.Log("Null");
+
         _Hp = m_ResultStat.Health;
         _Mp = m_ResultStat.Mana;
         _Stamina = m_ResultStat.Stamina;

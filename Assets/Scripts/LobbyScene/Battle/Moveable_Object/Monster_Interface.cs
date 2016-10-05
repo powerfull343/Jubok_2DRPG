@@ -107,7 +107,7 @@ public abstract class Monster_Interface : Moveable_Object {
         if (Hp <= 0)
         {
             MagicianCtrl.ColMonsters.Remove(this);
-            MonsterManager.GetInstance().RemovesMonster(this.ObjectName,
+            MonsterManager.GetInstance().RemoveMonster(
                 this.transform.parent.gameObject);
             return false;
         }
