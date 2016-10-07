@@ -62,8 +62,10 @@ public class MonsterHpUICtrl : MonoBehaviour {
             return;
         }
 
-        BattleScene_NGUI_Panel.GetInstance().CreateBossHpBar(MonsterInfo.LoadPrefabName);
-        _HpBar = BattleScene_NGUI_Panel.GetInstance().GetSummonedHpBar();
+        NGUI_PanelManager.GetInstance().GetBattleScenePanel(
+            ).CreateBossHpBar(MonsterInfo.LoadPrefabName);
+        _HpBar = NGUI_PanelManager.GetInstance().GetBattleScenePanel(
+            ).GetSummonedHpBar();
         _HpBar.MonsterInfo = MonsterInfo;
         _HpBar.gameObject.SetActive(true);
     }

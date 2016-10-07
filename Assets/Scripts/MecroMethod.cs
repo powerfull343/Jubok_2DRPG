@@ -101,23 +101,25 @@ namespace Mecro
                 return angle;
         }
 
+        //Only Use BattleScene 
         public static Vector3 NGUIToNoramlWorldPos(Vector3 NGUIWorldPos)
         {
             Vector3 vResult;
 
-            vResult = BattleScene_NGUI_Panel.GetInstance(
+            vResult = NGUI_PanelManager.GetInstance().GetBattleScenePanel(
                 ).NGUICamera.WorldToScreenPoint(NGUIWorldPos);
             vResult = Camera.main.ScreenToWorldPoint(vResult);
 
             return vResult;
         }
 
+        //Only Use BattleScene 
         public static Vector3 NormalToNGUIWorldPos(Vector3 NormalWorldPos)
         {
             Vector3 vResult;
 
             vResult = Camera.main.WorldToScreenPoint(NormalWorldPos);
-            vResult = BattleScene_NGUI_Panel.GetInstance(
+            vResult = NGUI_PanelManager.GetInstance().GetBattleScenePanel(
                 ).NGUICamera.ScreenToWorldPoint(vResult);
 
             return vResult;

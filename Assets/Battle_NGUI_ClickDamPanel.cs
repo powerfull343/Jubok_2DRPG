@@ -52,7 +52,7 @@ public class Battle_NGUI_ClickDamPanel : MonoBehaviour {
         CalledHitEffect.transform.parent = m_EffectContainers.transform;
         CalledHitEffect.transform.localScale = Vector3.one;
         CalledHitEffect.transform.position =
-            BattleScene_NGUI_Panel.GetInstance(
+            NGUI_PanelManager.GetInstance().GetBattleScenePanel(
                 ).NGUICamera.ScreenToWorldPoint(
                 Input.mousePosition);
 

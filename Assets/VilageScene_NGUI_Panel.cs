@@ -4,71 +4,30 @@ using Mecro;
 using LobbyManager;
 using LobbyButtonFunc;
 
-public class VilageScene_NGUI_Panel : 
-    Singleton<VilageScene_NGUI_Panel>
+public class VilageScene_NGUI_Panel : Scene_Panel_Interface
 {
-    public static float fScreenWidth = 1280;
-    public static float fScreenHeight = 720;
-
     [SerializeField]
     private UIWidget m_BackGround;
-    [SerializeField]
-    private GameObject m_TempCollider;
-    private UIPanel m_TempColliderPanelComp;
 
     [SerializeField]
     private bool m_isShowDebugingWindow = false;
 
     void Awake()
     {
-        CreateInstance();
-        Mecro.MecroMethod.ShowSceneLogConsole("VilageScene_Awake", true);
-        if(Application.loadedLevel == 1)
-        {
-            if (Screen.fullScreen == true)
-            {
-                Mecro.MecroMethod.ShowSceneLogConsole("VilageScene_FullScreen", true);
-                Screen.fullScreen = false;
-            }
-        }
+        InitComponents();
     }
 
     void OnEnable()
     {
-        MecroMethod.CheckExistComponent<UIWidget>(m_BackGround);
-        m_BackGround.SetDimensions(1280, 720);
-        MecroMethod.CheckExistObject<GameObject>(m_TempCollider);
-
         Invoke("UpperPanelMoving", 0.05f);
     }
 
-    private void UpperPanelMoving()
+    protected override void InitComponents()
     {
-        LobbyManager.LobbyController.GetInstance(
-            ).UpperStatusPanel.MovingUpperStatusUI(
-            this.transform, fScreenHeight);
-    }
-
-    public void OpenBehindCollider()
-    {
-        m_TempCollider.SetActive(true);
-    }
-
-    public void CloseBehindCollider()
-    {
-        m_TempCollider.SetActive(false);
-    }
-
-    public void SetBehindColliderDepth(int ChangeDepthAmount)
-    {
-        if (!m_TempColliderPanelComp)
-        {
-            m_TempColliderPanelComp = 
-                MecroMethod.CheckGetComponent<UIPanel>(m_TempCollider);
-        }
-
-        m_TempColliderPanelComp.depth = ChangeDepthAmount;
-        m_TempColliderPanelComp.Update();
+        base.InitComponents();
+        MecroMethod.CheckExistComponent<UIWidget>(m_BackGround);
+        m_BackGround.SetDimensions((int)fScreenWidth, (int)fScreenHeight);
+        MecroMethod.CheckExistObject<GameObject>(m_TempCollider);
     }
 
     public void ClickMenuXButton()

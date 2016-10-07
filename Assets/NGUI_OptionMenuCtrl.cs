@@ -23,7 +23,7 @@ public class NGUI_OptionMenuCtrl : MonoBehaviour
     [SerializeField]
     private UIButton m_AppQuitNoButton;
 
-    public bool OpenOptionMenuPanel(UIPanel _ParentPanel)
+    public bool OpenOptionMenuPanel(UIPanel _UpperStatusPanel)
     {
         if (this.gameObject == null)
         {
@@ -41,24 +41,15 @@ public class NGUI_OptionMenuCtrl : MonoBehaviour
             m_InitReady = true;
         }
 
-        if (LobbyController.GetInstance().mCurrentSceneID == FIELDID.ID_VILAGE)
-        {
-            VilageScene_NGUI_Panel.GetInstance().OpenBehindCollider();
-            VilageScene_NGUI_Panel.GetInstance().SetBehindColliderDepth(_ParentPanel.depth - 1);
-            Mecro.MecroMethod.SetPartent(this.transform,
-                VilageScene_NGUI_Panel.GetInstance().transform);
-        }
-        else
-        {
-            BattleScene_NGUI_Panel.GetInstance().OpenBehindCollider();
-            BattleScene_NGUI_Panel.GetInstance().SetBehindColliderDepth(_ParentPanel.depth - 1);
-            Mecro.MecroMethod.SetPartent(this.transform,
-                BattleScene_NGUI_Panel.GetInstance().transform);
-        }
+        NGUI_PanelManager.GetInstance().GetCurrentScenePanel(
+            ).OpenBehindCollider();
+        NGUI_PanelManager.GetInstance().GetCurrentScenePanel(
+            ).SetBehindColliderDepth(_UpperStatusPanel.depth - 1);
+        MecroMethod.SetPartent(this.transform,
+            NGUI_PanelManager.GetInstance().GetCurrentScenePanel(
+                ).transform);
 
-        m_OwnPanel = MecroMethod.CheckGetComponent<UIPanel>(this.gameObject);
-
-        m_OwnPanel.depth = _ParentPanel.depth + 1;
+        m_OwnPanel.depth = _UpperStatusPanel.depth + 1;
         this.gameObject.SetActive(true);
 
         return true;
@@ -70,11 +61,8 @@ public class NGUI_OptionMenuCtrl : MonoBehaviour
         if (this.gameObject.activeSelf)
         {
             m_PanelCtrler.disappearWithAnimation();
-
-            if (LobbyController.GetInstance().mCurrentSceneID == FIELDID.ID_VILAGE)
-                VilageScene_NGUI_Panel.GetInstance().CloseBehindCollider();
-            else
-                BattleScene_NGUI_Panel.GetInstance().CloseBehindCollider();
+            NGUI_PanelManager.GetInstance().GetCurrentScenePanel(
+                ).CloseBehindCollider();
 
             return true;
         }
@@ -105,19 +93,11 @@ public class NGUI_OptionMenuCtrl : MonoBehaviour
     private void AddButtonDelegateFunc()
     {
         //App Quit Button Setting
-        if (LobbyManager.LobbyController.GetInstance().mCurrentSceneID ==
-            FIELDID.ID_VILAGE)
-        {
-            EventDelegate EventDg = new EventDelegate(
-                VilageScene_NGUI_Panel.GetInstance(), "CloseBehindCollider");
-            m_CloseButton.onClick.Add(EventDg);
-        }
-        else
-        {
-            EventDelegate EventDg = new EventDelegate(
-                BattleScene_NGUI_Panel.GetInstance(), "CloseBehindCollider");
-            m_CloseButton.onClick.Add(EventDg);
-        }
+        EventDelegate EventDg = new EventDelegate(
+            NGUI_PanelManager.GetInstance().GetCurrentScenePanel(),
+            "CloseBehindCollider");
+        m_CloseButton.onClick.Add(EventDg);
+
         EventDelegate QuitPopupDg = new EventDelegate(
             this, "ShowQuitPopupBox");
         m_AppQuitPopupButton.onClick.Add(QuitPopupDg);
@@ -133,16 +113,8 @@ public class NGUI_OptionMenuCtrl : MonoBehaviour
 
     private void ShowQuitPopupBox()
     {
-        if (LobbyController.GetInstance().mCurrentSceneID == FIELDID.ID_VILAGE)
-        {
-            VilageScene_NGUI_Panel.GetInstance().SetBehindColliderDepth(
-                m_OwnPanel.depth + 1);
-        }
-        else
-        {
-            BattleScene_NGUI_Panel.GetInstance().SetBehindColliderDepth(
-                m_OwnPanel.depth + 1);
-        }
+        NGUI_PanelManager.GetInstance().GetCurrentScenePanel(
+            ).SetBehindColliderDepth(m_OwnPanel.depth + 1);
 
         m_AppQuitPopupPanel.depth = m_OwnPanel.depth + 2;
         m_AppQuitPopupPanel.gameObject.SetActive(true);
@@ -150,16 +122,8 @@ public class NGUI_OptionMenuCtrl : MonoBehaviour
 
     private void HideQuitPopupBox()
     {
-        if (LobbyController.GetInstance().mCurrentSceneID == FIELDID.ID_VILAGE)
-        {
-            VilageScene_NGUI_Panel.GetInstance().SetBehindColliderDepth(
-                m_OwnPanel.depth - 1);
-        }
-        else
-        {
-            BattleScene_NGUI_Panel.GetInstance().SetBehindColliderDepth(
-                m_OwnPanel.depth - 1);
-        }
+        NGUI_PanelManager.GetInstance().GetCurrentScenePanel(
+            ).SetBehindColliderDepth(m_OwnPanel.depth - 1);
 
         m_AppQuitPopupPanel.gameObject.SetActive(false);
     }

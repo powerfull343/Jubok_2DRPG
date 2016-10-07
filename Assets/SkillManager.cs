@@ -91,13 +91,15 @@ public class SkillManager :
         if (PlayerCtrlManager.GetInstance().PlayerCtrl.Mp -
             FindKeyInfo.m_nSkillManaCost < 0)
         {
-            BattleScene_NGUI_Panel.GetInstance().CallEventMessage("Not Enough Mana", Color.red);
+            NGUI_PanelManager.GetInstance().GetBattleScenePanel(
+                ).CallEventMessage("Not Enough Mana", Color.red);
             return false;
         }
 
         if (FindKeyInfo.m_isSkillUsing)
         {
-            BattleScene_NGUI_Panel.GetInstance().CallEventMessage("Skill Still Using", Color.red);
+            NGUI_PanelManager.GetInstance().GetBattleScenePanel(
+                ).CallEventMessage("Skill Still Using", Color.red);
             return false;
         }
 
