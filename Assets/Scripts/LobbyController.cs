@@ -22,7 +22,6 @@ namespace LobbyManager
         //뒤에 배경을 막을 필요가 있을시에 직접적으로 생성한다.
         public GameObject m_InstanceCollider;
 
-        //
         public GameObject[] SubPanels;
 
         private PlayerStatusController m_UpperStatusPanel;
@@ -31,9 +30,6 @@ namespace LobbyManager
             get { return m_UpperStatusPanel; }
             set { m_UpperStatusPanel = value; }
         }
-        private GameObject m_MenuPanel;
-        public GameObject MenuPanel
-        { get { return m_MenuPanel; } }
 
         private IDSUBPANEL m_OpenedPanel = IDSUBPANEL.PANELID_NONE;
         public IDSUBPANEL OpenedPanel
@@ -94,26 +90,6 @@ namespace LobbyManager
                 UpperStatusPanel =
                     Mecro.MecroMethod.CheckGetComponent<PlayerStatusController>(UpperStatUI);
             }
-
-            //Upper Stat UI -> Menu Button Click Function
-            m_MenuPanel = Instantiate(Resources.Load("UIPanels/Panel - FunctionMenu") as GameObject);
-        }
-
-        public void OpenMenuPanel(Transform Parent)
-        {
-            if (!m_MenuPanel)
-            {
-                m_MenuPanel =
-                    Instantiate(Resources.Load("UIPanels/Panel - FunctionMenu") as GameObject);
-            }
-
-            m_MenuPanel.SetActive(false);
-
-            m_MenuPanel.transform.parent = Parent;
-            m_MenuPanel.transform.localPosition = Vector3.zero;
-            m_MenuPanel.transform.localScale = Vector3.one;
-
-            m_MenuPanel.SetActive(true);
         }
 
         public void SettingBlockPanel(int SettingPanelDepth)

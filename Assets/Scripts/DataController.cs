@@ -48,11 +48,6 @@ public class DataController : MonoBehaviour {
         //Invoke("InitDataController", 0.1f);
     }
 
-    void Start()
-    {
-        Debug.Log("DataController Start");
-    }
-
     void InitDataController()
     {
         Debug.Log(m_InGameData == null);

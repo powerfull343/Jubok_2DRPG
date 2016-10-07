@@ -34,6 +34,7 @@ public class BattleScene_NGUI_Panel
     }
 
     private GameObject m_TempCollider;
+    private UIPanel m_TempColliderComp;
 
     void Awake()
     {
@@ -60,6 +61,8 @@ public class BattleScene_NGUI_Panel
     {
         LobbyController.GetInstance().UpperStatusPanel.MovingUpperStatusUI(
             this.transform, fScreenHeight);
+        //if BattleScene Start Reducing Statmina
+        LobbyController.GetInstance().UpperStatusPanel.StartReducingStamina();
     }
 
     public void OpenBehindCollider()
@@ -85,5 +88,17 @@ public class BattleScene_NGUI_Panel
     public BossHpBar GetSummonedHpBar()
     {
         return BossHpManager.SummonedBossHpBar;
+    }
+
+    public void SetBehindColliderDepth(int ChangeDepthAmount)
+    {
+        if (!m_TempColliderComp)
+        {
+            m_TempColliderComp =
+                MecroMethod.CheckGetComponent<UIPanel>(m_TempCollider);
+        }
+
+        m_TempColliderComp.depth = ChangeDepthAmount;
+        m_TempColliderComp.Update();
     }
 }

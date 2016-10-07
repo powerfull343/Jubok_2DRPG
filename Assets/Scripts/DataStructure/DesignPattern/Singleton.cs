@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Linq;
 
-
 public class Singleton<T> : MonoBehaviour where T : Component
 {
     protected static T _Instance;

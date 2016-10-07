@@ -4,6 +4,7 @@ using LobbyManager;
 
 public class PlayerStatusController : MonoBehaviour
 {
+    private UIPanel m_OwnPanel;
     [SerializeField]
     private UIWidget m_BGWidget;
     [SerializeField]
@@ -15,25 +16,35 @@ public class PlayerStatusController : MonoBehaviour
     [SerializeField]
     private UIButton m_CallMenuButton;
 
+    //Menu Fuctions
+    [SerializeField]
+    private NGUI_OptionMenuCtrl m_MenuPanel;
+    public NGUI_OptionMenuCtrl MenuPanel
+    { get { return m_MenuPanel; } }
+
     private GameObject_Extension m_ObjectExtension;
-    
 
     public float m_fUISize = 0f;
 
+    void Awake()
+    {
+        InitComponents();
+    }
+
     void OnEnable()
     {
-        Mecro.MecroMethod.ShowSceneLogConsole("OnEnable/Status", true);
-        EventDelegate EventDg = new EventDelegate(this, "CallGameMenu");
+        EventDelegate EventDg = new EventDelegate(this,
+            "ShowAndHideOptionMenu");
         m_CallMenuButton.onClick.Add(EventDg);
     }
 
-    void Start()
+    void InitComponents()
     {
-        Mecro.MecroMethod.ShowSceneLogConsole("Start/Status", true);
         Mecro.MecroMethod.CheckExistComponent<UIWidget>(m_BGWidget);
         m_BGWidget.SetDimensions((int)BattleScene_NGUI_Panel.fScreenWidth,
             (int)(m_BGWidget.localSize.y));
 
+        m_OwnPanel = Mecro.MecroMethod.CheckGetComponent<UIPanel>(this.gameObject);
         Mecro.MecroMethod.CheckExistComponent<UILabel>(m_HealthLabel);
         Mecro.MecroMethod.CheckExistComponent<UI_Money>(m_MoneyCtrl);
         Mecro.MecroMethod.CheckExistComponent<UI_UpperStat_Stamina>(m_StatminaCtrl);
@@ -44,30 +55,27 @@ public class PlayerStatusController : MonoBehaviour
         //m_CallMenuButton.onClick.Add(EventDg);
 
         m_fUISize = m_BGWidget.localSize.y;
+
+        //Upper Stat UI -> Menu Button Click Function
+        Mecro.MecroMethod.CheckExistComponent<NGUI_OptionMenuCtrl>(m_MenuPanel);
+        //GameObject SubMenuPanel = Instantiate(Resources.Load("UIPanels/Panel - FunctionMenu") as GameObject);
+        //SubMenuPanel.SetActive(false);
+        //SubMenuPanel.transform.SetParent(this.transform, false);
+        //m_MenuPanel = Mecro.MecroMethod.CheckGetComponent<NGUI_OptionMenuCtrl>(SubMenuPanel);
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
-            CallGameMenu();
+            ShowAndHideOptionMenu();
     }
-    
 
-    void CallGameMenu()
+    void ShowAndHideOptionMenu()
     {
-        if (LobbyController.GetInstance().mCurrentSceneID == FIELDID.ID_VILAGE)
-        {
-            VilageScene_NGUI_Panel.GetInstance().OpenBehindCollider();
-            LobbyController.GetInstance().OpenMenuPanel(
-                VilageScene_NGUI_Panel.GetInstance().transform);
-        }
-        else
-        {
-            BattleScene_NGUI_Panel.GetInstance().OpenBehindCollider();
-            LobbyController.GetInstance().OpenMenuPanel(
-                BattleScene_NGUI_Panel.GetInstance().transform);
-        }
+        if (!m_MenuPanel.OpenOptionMenuPanel(m_OwnPanel))
+            m_MenuPanel.CloseOptionMenuPanel();
     }
+
 
     public void MovingUpperStatusUI(Transform SceneParent, float fScreenHeight)
     {
@@ -79,8 +87,11 @@ public class PlayerStatusController : MonoBehaviour
         this.transform.localPosition = new Vector3(0f, fHeight, 0f);
         this.transform.localScale = Vector3.one;
         this.gameObject.SetActive(true);
+    }
 
-        if(LobbyController.GetInstance().mCurrentSceneID != FIELDID.ID_VILAGE &&
+    public void StartReducingStamina()
+    {
+        if (LobbyController.GetInstance().mCurrentSceneID != FIELDID.ID_VILAGE &&
             LobbyController.GetInstance().mCurrentSceneID != FIELDID.ID_CASTLE)
             m_StatminaCtrl.ReducingStatmina();
     }
