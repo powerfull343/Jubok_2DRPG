@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Mecro;
+using LobbyManager;
 
 public class BattleFieldDetailScrollManager
     : Singleton_Parent<BattleFieldDetailScrollManager>
@@ -11,7 +12,7 @@ public class BattleFieldDetailScrollManager
     [SerializeField]
     private GameObject PreviousButton;
     [SerializeField]
-    private GameObject BehindCollider;
+    private UIWidget BehindCollider;
     [SerializeField]
     private GameObject SelectLevelPopupList;
     [SerializeField]
@@ -49,7 +50,7 @@ public class BattleFieldDetailScrollManager
             MecroMethod.CheckExistObject<GameObject>(EdgeCol);
         
         MecroMethod.CheckExistObject<GameObject>(PreviousButton);
-        MecroMethod.CheckExistObject<GameObject>(BehindCollider);
+        MecroMethod.CheckExistObject<UIWidget>(BehindCollider);
         MecroMethod.CheckExistObject<GameObject>(SelectLevelPopupList);
         MecroMethod.CheckExistObject<GameObject>(StartLevelButton);
         MecroMethod.CheckExistComponent<GameObject_Extension>(PopupPanel);
@@ -78,13 +79,13 @@ public class BattleFieldDetailScrollManager
 
     public void ControllBehindCollider(bool isShow)
     {
-        if (BehindCollider.activeSelf != isShow)
-            BehindCollider.SetActive(isShow);
+        if (BehindCollider.gameObject.activeSelf != isShow)
+            BehindCollider.gameObject.SetActive(isShow);
     }
 
     public void ClickScrollEdge(int EdgeId)
     {
-        int SelectLevelidx = (int)BattleFieldManager.mSelectID;
+        int SelectLevelidx = (int)LobbyController.mSelectedSceneID;
 
         HidePreviousiconObjects(SelectLevelidx);
 
@@ -98,7 +99,7 @@ public class BattleFieldDetailScrollManager
         if (EdgeId == 1 && SelectLevelidx >= (int)FIELDID.ID_MAX)
             SelectLevelidx = 0;
 
-        BattleFieldManager.mSelectID = (FIELDID)SelectLevelidx;
+        LobbyController.mSelectedSceneID = (FIELDID)SelectLevelidx;
 
         InnerPopupButtonLabelSetting();
 
@@ -107,14 +108,14 @@ public class BattleFieldDetailScrollManager
 
     public void ClickPopupIcon(int LevelNum)
     {
-        if (LevelNum == (int)BattleFieldManager.mSelectID)
+        if (LevelNum == (int)LobbyController.mSelectedSceneID)
             return;
 
         //1. Hide Scroll icons
-        HidePreviousiconObjects((int)BattleFieldManager.mSelectID);
+        HidePreviousiconObjects((int)LobbyController.mSelectedSceneID);
 
         //2. Apply SelectID
-        BattleFieldManager.mSelectID = (FIELDID)LevelNum;
+        LobbyController.mSelectedSceneID = (FIELDID)LevelNum;
 
         //3. Box Label Setting
         InnerPopupButtonLabelSetting();
@@ -149,7 +150,7 @@ public class BattleFieldDetailScrollManager
     //3-1
     void SetMovedPosition()
     {
-        Currenticon = BattleFieldManager.GetLevels()[(int)BattleFieldManager.mSelectID].parent;
+        Currenticon = BattleFieldManager.GetLevels()[(int)LobbyController.mSelectedSceneID].parent;
 
         BattleFieldManager._SelectedPosition =
             Currenticon.localPosition;
@@ -229,7 +230,7 @@ public class BattleFieldDetailScrollManager
         //SelectLevels - (14)
         innerPopupButtonLabel.text =
             BattleFieldManager.GetLevels()[
-            (int)BattleFieldManager.mSelectID].parent.name.Substring(14);
+            (int)LobbyController.mSelectedSceneID].parent.name.Substring(14);
     }
 
     

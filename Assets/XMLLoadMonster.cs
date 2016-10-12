@@ -81,8 +81,20 @@ public class XMLLoadMonster : MonoBehaviour {
     }
 }
 
-public class LoadedMonsterElement
+public class LoadedMonsterElement : DisposableObject
 {
+    public LoadedMonsterElement()
+    {
+        base.SetOwnProperty();
+    }
+
+    public override void Dispose()
+    {
+        UnityEngine.MonoBehaviour.Destroy(_OriginGameObject);
+        UnityEngine.MonoBehaviour.Destroy(_OriginInterfaceComp);
+        _OriginInterfaceType = null;
+    }
+
     private GameObject _OriginGameObject;
     public GameObject OriginGameObject
     {

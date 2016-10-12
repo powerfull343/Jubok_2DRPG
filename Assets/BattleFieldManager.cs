@@ -22,9 +22,6 @@ public class BattleFieldManager
     [SerializeField]
     private Transform[] SelectLevels;
 
-    //Varable
-    public static FIELDID mSelectID { get; set; }
-
     /// <summary>
     /// Use Focus BattleField icon
     /// </summary>
@@ -112,8 +109,6 @@ public class BattleFieldManager
                 return;
             }
         }
-
-        mSelectID = 0;
     }
 
 
@@ -148,7 +143,7 @@ public class BattleFieldManager
     //0. Click Something Area use this method
     public void ClickArea(int SelectedArea)
     {
-        mSelectID = (FIELDID)SelectedArea;
+        LobbyController.mSelectedSceneID = (FIELDID)SelectedArea;
 
         BattleFieldDetailScrollManager.GetInstance(
             ).InnerPopupButtonLabelSetting();
@@ -210,7 +205,8 @@ public class BattleFieldManager
         ScrollManager.ControllBehindCollider(false);
 
         ChangeDepthtoSelectObejct(
-            SelectLevels[(int)mSelectID].parent.gameObject, false);
+            SelectLevels[(int)LobbyController.mSelectedSceneID
+            ].parent.gameObject, false);
 
         StartCoroutine("ChangeScrollFillAmount", false);
 
@@ -285,16 +281,6 @@ public class BattleFieldManager
     //========SelectLevel=========//
     public void SetSelectLevel(int Level)
     {
-        mSelectID = (FIELDID)Level;
-    }
-
-    public void EntryBattleField()
-    {
-        if (LobbyController.GetInstance().mCurrentSceneID == mSelectID)
-            return;
-        Debug.Log(mSelectID);
-        Debug.Log(LobbyController.GetInstance().mCurrentSceneID);
-
-        LobbyController.GetInstance().mCurrentSceneID = mSelectID;
+        LobbyController.mSelectedSceneID = (FIELDID)Level;
     }
 }

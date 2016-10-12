@@ -9,6 +9,8 @@ namespace LobbyManager
         : Singleton<LobbyController>
     {
         public FIELDID mCurrentSceneID = FIELDID.ID_VILAGE;
+
+        public static FIELDID mSelectedSceneID = FIELDID.ID_ERROR;
         [SerializeField]
         private bool isSlow = false;
 
@@ -172,6 +174,18 @@ namespace LobbyManager
         }
 
         //=======Change Level=========//
+        public void EntryAnotherField()
+        {
+            if (LobbyController.GetInstance().mCurrentSceneID ==
+                LobbyController.mSelectedSceneID)
+                return;
+            Debug.Log(LobbyController.mSelectedSceneID);
+            Debug.Log(LobbyController.GetInstance().mCurrentSceneID);
+
+            LobbyController.GetInstance().mCurrentSceneID =
+                LobbyController.mSelectedSceneID;
+        }
+
         public void ChangePanel()
         {
             StartCoroutine("LowerPanelAlpha");
@@ -192,10 +206,10 @@ namespace LobbyManager
         /// <returns></returns>
         IEnumerator LowerPanelAlpha()
         {
-            Transform HideTrans = BattleFieldManager.mSelectID != FIELDID.ID_VILAGE ?
-                LobbyPanel : BattlePanel;
-            Transform ShowTrans = BattleFieldManager.mSelectID != FIELDID.ID_VILAGE ?
+            Transform HideTrans = LobbyController.mSelectedSceneID == FIELDID.ID_VILAGE ?
                 BattlePanel : LobbyPanel;
+            Transform ShowTrans = LobbyController.mSelectedSceneID == FIELDID.ID_VILAGE ?
+                LobbyPanel : BattlePanel;
 
             if(!HidingPanel.gameObject.activeSelf)
                 HidingPanel.gameObject.SetActive(true);

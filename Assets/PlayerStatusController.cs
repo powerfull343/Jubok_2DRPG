@@ -58,10 +58,6 @@ public class PlayerStatusController : MonoBehaviour
 
         //Upper Stat UI -> Menu Button Click Function
         Mecro.MecroMethod.CheckExistComponent<NGUI_OptionMenuCtrl>(m_MenuPanel);
-        //GameObject SubMenuPanel = Instantiate(Resources.Load("UIPanels/Panel - FunctionMenu") as GameObject);
-        //SubMenuPanel.SetActive(false);
-        //SubMenuPanel.transform.SetParent(this.transform, false);
-        //m_MenuPanel = Mecro.MecroMethod.CheckGetComponent<NGUI_OptionMenuCtrl>(SubMenuPanel);
     }
 
     void Update()
@@ -76,13 +72,11 @@ public class PlayerStatusController : MonoBehaviour
             m_MenuPanel.CloseOptionMenuPanel();
     }
 
-
     public void MovingUpperStatusUI(Transform SceneParent, float fScreenHeight)
     {
         this.gameObject.SetActive(false);
         this.transform.parent = SceneParent;
 
-        //float fHeight = (Screen.height / 2f) - (m_BGWidget.localSize.y / 2f);
         float fHeight = (fScreenHeight / 2f) - (m_BGWidget.localSize.y / 2f);
         this.transform.localPosition = new Vector3(0f, fHeight, 0f);
         this.transform.localScale = Vector3.one;

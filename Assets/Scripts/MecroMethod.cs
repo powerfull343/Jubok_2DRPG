@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 
 namespace Mecro
@@ -38,7 +39,8 @@ namespace Mecro
             return component;
         }
 
-        public static void CheckExistObject<T>(T obj) where T : Object
+        public static void CheckExistObject<T>(T obj) 
+            where T : UnityEngine.Object
         {
             if (obj == null)
             {
@@ -177,6 +179,18 @@ namespace Mecro
 
             if (ShowConsole)
                 Debug.Log(Message);
+        }
+
+        public static EventDelegate.Parameter CreateParm(UnityEngine.Object _value, 
+            Type _type)
+        {
+            EventDelegate.Parameter ResultParm =
+                new EventDelegate.Parameter();
+
+            ResultParm.obj = _value;
+            ResultParm.expectedType = _type;
+
+            return ResultParm;
         }
     }
 }

@@ -15,6 +15,13 @@ public class NGUI_OptionMenuCtrl : MonoBehaviour
     [SerializeField]
     private UIButton m_AppQuitPopupButton;
 
+    //if you use BattleScene back to Vilage
+    [SerializeField]
+    private GameObject m_GoBackVilageObject;
+    [SerializeField]
+    private UIButton m_GoBackVilageButton;
+    private bool m_isBackVilageButtonSetting = false;
+
     //Quit Popup Propertys
     [SerializeField]
     private UIPanel m_AppQuitPopupPanel;
@@ -23,7 +30,7 @@ public class NGUI_OptionMenuCtrl : MonoBehaviour
     [SerializeField]
     private UIButton m_AppQuitNoButton;
 
-    public bool OpenOptionMenuPanel(UIPanel _UpperStatusPanel)
+    public bool OpenOptionMenuPanel(UIPanel _CurrentUpperStatusPanel)
     {
         if (this.gameObject == null)
         {
@@ -44,12 +51,12 @@ public class NGUI_OptionMenuCtrl : MonoBehaviour
         NGUI_PanelManager.GetInstance().GetCurrentScenePanel(
             ).OpenBehindCollider();
         NGUI_PanelManager.GetInstance().GetCurrentScenePanel(
-            ).SetBehindColliderDepth(_UpperStatusPanel.depth - 1);
+            ).SetBehindColliderDepth(_CurrentUpperStatusPanel.depth - 1);
         MecroMethod.SetPartent(this.transform,
             NGUI_PanelManager.GetInstance().GetCurrentScenePanel(
                 ).transform);
 
-        m_OwnPanel.depth = _UpperStatusPanel.depth + 1;
+        m_OwnPanel.depth = _CurrentUpperStatusPanel.depth + 1;
         this.gameObject.SetActive(true);
 
         return true;
@@ -69,6 +76,11 @@ public class NGUI_OptionMenuCtrl : MonoBehaviour
         return false;
     }
 
+    public void GoBackVilageScene()
+    {
+        LobbyController.mSelectedSceneID = FIELDID.ID_VILAGE;
+    }
+
     private void InitMenuFunctions()
     {
         if (!m_OwnPanel)
@@ -84,13 +96,53 @@ public class NGUI_OptionMenuCtrl : MonoBehaviour
         }
 
         MecroMethod.CheckExistComponent<UIButton>(m_CloseButton);
+        InitBacktoVilageButtonFunc();
         MecroMethod.CheckExistComponent<UIButton>(m_AppQuitPopupButton);
         MecroMethod.CheckExistComponent<UIPanel>(m_AppQuitPopupPanel);
         m_AppQuitPopupPanel.gameObject.SetActive(false);
-        AddButtonDelegateFunc();
+        AddButtonDelegateFuncs();
     }
 
-    private void AddButtonDelegateFunc()
+    private void InitBacktoVilageButtonFunc()
+    {
+        if (LobbyController.GetInstance().mCurrentSceneID == FIELDID.ID_VILAGE)
+        {
+            m_GoBackVilageObject.SetActive(false);
+            return;
+        }
+
+        if (m_isBackVilageButtonSetting)
+        {
+            m_GoBackVilageObject.SetActive(true);
+            return;
+        }
+
+        MecroMethod.CheckExistObject<GameObject>(m_GoBackVilageObject);
+        MecroMethod.CheckExistComponent<UIButton>(m_GoBackVilageButton);
+
+        m_GoBackVilageButton.onClick.Add(
+            new EventDelegate(this, "GoBackVilageScene"));
+
+        m_GoBackVilageButton.onClick.Add(
+            new EventDelegate(LobbyController.GetInstance(),
+            "HideAndShowUpperStatusPanel"));
+
+        m_GoBackVilageButton.onClick.Add(
+            new EventDelegate(LobbyController.GetInstance(),
+            "EntryAnotherField"));
+
+        m_GoBackVilageButton.onClick.Add(
+            new EventDelegate(LobbyController.GetInstance(),
+            "ChangePanel"));
+
+        m_GoBackVilageButton.onClick.Add(
+            new EventDelegate(MonsterManager.GetInstance(),
+            "RemoveAllMonsterData"));
+
+        m_GoBackVilageObject.SetActive(true);
+    }
+
+    private void AddButtonDelegateFuncs()
     {
         //App Quit Button Setting
         EventDelegate EventDg = new EventDelegate(
@@ -127,4 +179,6 @@ public class NGUI_OptionMenuCtrl : MonoBehaviour
 
         m_AppQuitPopupPanel.gameObject.SetActive(false);
     }
+
+
 }

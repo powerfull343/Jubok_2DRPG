@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Mecro;
@@ -125,7 +126,7 @@ public class MonsterManager
             CheckBossExist = true;
 
         if (CreatePositionID == SUMMONPOSITIONID.POSITION_INANDOUT)
-            CreatePositionID = (SUMMONPOSITIONID)Random.Range(
+            CreatePositionID = (SUMMONPOSITIONID)UnityEngine.Random.Range(
                 0, (int)SUMMONPOSITIONID.POSITION_INANDOUT);
 
         switch (CreatePositionID)
@@ -158,7 +159,7 @@ public class MonsterManager
         }
         else
         {
-            int nEliteDice = Random.Range(0, 100);
+            int nEliteDice = UnityEngine.Random.Range(0, 100);
             if (OnlyOneMonster)
                 nEliteDice = 0;
 
@@ -180,14 +181,14 @@ public class MonsterManager
     {
         if(isElite)
         {
-            nChooseCount = Random.Range(0, FieldEliteMonsterData.Count);
+            nChooseCount = UnityEngine.Random.Range(0, FieldEliteMonsterData.Count);
             if (OnlyOneMonster)
                 nChooseCount = mSummonMonsterIdx;
             PositionID = FieldEliteMonsterData.Keys.ToList()[nChooseCount].MonsterCreatePosition;
         }
         else
         {
-            nChooseCount = Random.Range(0, FieldMonsterData.Count);
+            nChooseCount = UnityEngine.Random.Range(0, FieldMonsterData.Count);
             if (OnlyOneMonster)
                 nChooseCount = mSummonMonsterIdx;
             PositionID = FieldMonsterData.Keys.ToList()[nChooseCount].MonsterCreatePosition;
@@ -267,7 +268,7 @@ public class MonsterManager
 
         //Position
         Vector3 CreatePos = SetCreatedMonsterPosition(CreatePositionID);
-        CreatePos -= new Vector3(0f, Random.Range(0f, 0.3f), 0f);
+        CreatePos -= new Vector3(0f, UnityEngine.Random.Range(0f, 0.3f), 0f);
         Monster.transform.position = CreatePos;
 
         //Scale
@@ -324,7 +325,8 @@ public class MonsterManager
             else
             {
                 //생성 딜레이 시간 정하기
-                float fDelayTime = Random.Range(RegenMinWidth, RegenMaxWidth);
+                float fDelayTime = 
+                    UnityEngine.Random.Range(RegenMinWidth, RegenMaxWidth);
 
                 //몬스터 생성 시작
                 StartCreateMonsters();
@@ -363,26 +365,54 @@ public class MonsterManager
         Debug.Log(MonsterManager.MonsterCount);
     }
 
+    //if you Change Scene loaded all monster data remove it
+    public void RemoveAllMonsterData()
+    {
+        List<WeakReference> WeakRefList = new List<WeakReference>();
+
+        RemoveLoadedMonsterContainer(FieldMonsterData, ref WeakRefList);
+        RemoveLoadedMonsterContainer(FieldEliteMonsterData, ref WeakRefList);
+        RemoveLoadedMonsterContainer(FieldSpecialMonsterData, ref WeakRefList);
+
+        Debug.Log(WeakRefList.Count);
+
+        FieldMonsterData.Clear();
+        FieldEliteMonsterData.Clear();
+        FieldSpecialMonsterData.Clear();
+
+        for (int i = 0; i < WeakRefList.Count; ++i)
+            WeakRefList.Remove(WeakRefList[i]);
+        WeakRefList.Clear();
+
+        Debug.Log("Clear Comp");
+
+        GameObject DeleteObject = null;
+        for(int i = 0; i < MonsterList.Count; ++i)
+        {
+            DeleteObject = MonsterList[i];
+            MonsterList.Remove(DeleteObject);
+            Destroy(DeleteObject);
+        }
+        MonsterList.Clear();
+    }
+
+    private void RemoveLoadedMonsterContainer(
+        Dictionary<MonsterKey_Extension, LoadedMonsterElement> _DeleteContainer,
+        ref List<WeakReference> _WeakRefList)
+    {
+        int nLength = _DeleteContainer.Count;
+        for (int i = 0; i < nLength; ++i)
+        {
+            _WeakRefList.Add(new WeakReference(_DeleteContainer.ToList()[i].Key));
+            _WeakRefList.Add(new WeakReference(_DeleteContainer.ToList()[i].Value));
+        }
+    }
+
     public static void AttackFirstSummonedMonster()
     {
         //몬스터 갯수가 한마리도 존재하지 않을 경우는 연산 스킵.
         if (MonsterManager.MonsterCount <= 0)
             return;
-
-        //List<GameObject> SelectedMonsterList = MonsterManager.GetInstance(
-        //    ).MonsterList.ToList()[0].Value;
-
-        //if (SelectedMonsterList == null)
-        //{
-        //    Debug.Log("cannot Find Monster Object List");
-        //    return;
-        //}
-
-        //Debug.Log("SelectedMonsterListCount : " + SelectedMonsterList.Count);
-
-        //Monster_Interface SelectedMonsterInfo =
-        //    Mecro.MecroMethod.CheckGetComponent<Monster_Interface>(
-        //    SelectedMonsterList[0].transform.FindChild("MonsterBody"));
 
         List<GameObject> _MonsterList = MonsterManager.GetInstance().MonsterList;
 
@@ -478,7 +508,7 @@ public class MonsterManager
         {
             Vector3 CreatePos = MonsterManager.GetInstance(
                 ).SetCreatedMonsterPosition(CreatedInterface.CreatePosition);
-            CreatePos -= new Vector3(0f, Random.Range(0f, 0.3f), 0f);
+            CreatePos -= new Vector3(0f, UnityEngine.Random.Range(0f, 0.3f), 0f);
             ResultMonsterInst.transform.position = CreatePos;
         }
         else
@@ -507,8 +537,19 @@ public class MonsterManager
     }
 }
 
-public class MonsterKey_Extension
+public class MonsterKey_Extension : DisposableObject
 {
+    public MonsterKey_Extension()
+    {
+        base.SetOwnProperty();
+    }
+
+    public override void Dispose()
+    {
+        m_MonsterPrefabName = string.Empty;
+        m_MonsterCreatePosition = 0;
+    }
+
     private string m_MonsterPrefabName;
     public string MonsterPrefabName
     {
@@ -522,4 +563,6 @@ public class MonsterKey_Extension
         get { return m_MonsterCreatePosition; }
         set { m_MonsterCreatePosition = value; }
     }
+
+   
 }
