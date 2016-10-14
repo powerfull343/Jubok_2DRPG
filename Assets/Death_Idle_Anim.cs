@@ -36,9 +36,7 @@ public class Death_Idle_Anim : StateMachineBehaviour {
     {
         if(m_IdleActionCount >= m_IdleActionMaxCount)
         {
-            Debug.Log("Action Processing");
-            Debug.Log(MonsterBody.isOutSummonMonster);
-            if (MonsterBody.isOutSummonMonster)
+            if (MonsterBody.m_isOutSummonMonster)
             {
                 OutSummonedMonsterFirstMoving(animator);
                 m_isSetActionCount = false;
@@ -73,7 +71,7 @@ public class Death_Idle_Anim : StateMachineBehaviour {
     {
         Debug.Log("First Summon Out of Screen Monster");
         Moving(animator);
-        MonsterBody.isOutSummonMonster = false;
+        MonsterBody.m_isOutSummonMonster = false;
     }
 
     void Moving(Animator animator)

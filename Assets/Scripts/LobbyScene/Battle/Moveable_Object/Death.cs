@@ -235,7 +235,10 @@ public class Death : Monster_Interface
     void OnTriggerEnter(Collider other)
     {
         if (m_isOutSummonMonster)
-            OutFieldMonsterAddMonsterCount(other);
+        {
+            Debug.Log(other.name);
+            OutFieldMonster_CanAttack(other);
+        }
 
         //콜라이더 3개 다써야함. 맨 근접 공격 콜라이더 적용시 텔레포트
         if(other.gameObject.CompareTag(m_ColliderTags[m_nPosIndex]))

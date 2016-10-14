@@ -42,7 +42,8 @@ public class MonsterManager
         = new List<GameObject>();
 
     //Variables
-    public static int MonsterCount = 0;
+    //public static int MonsterCount = 0;
+    public static bool m_isMonsterExist = false;
     public static int MonsterMaxCount = 10;
 
     public float StartRegenTime = 5f;
@@ -225,10 +226,10 @@ public class MonsterManager
         }
 
         //MonsterAddToMonsterList(CreatedMonster, FindExistKey);
-        MonsterAddToMonsterList(CreatedMonster);
+        MonsterList.Add(CreatedMonster);
 
         //밖에서 나온몹은 추가된걸 취급하지 않는다.
-        AddMonsterCount(CreatePositionID);
+        //AddMonsterCount(CreatePositionID);
     }
 
     //Loaded XML Monster Looping Method
@@ -242,7 +243,6 @@ public class MonsterManager
             MonsterData = FieldMonsterData;
         else
             MonsterData = FieldEliteMonsterData;
-            
 
         LoadedMonsterElement LoadedElement = MonsterData.Values.ToList()[nMonsterCnt];
         findExistKey = MonsterData.Keys.ToList()[nMonsterCnt].MonsterPrefabName;
@@ -260,14 +260,15 @@ public class MonsterManager
         CreatedInterface.CreatePosition = CreatePositionID;
         
         if (CreatedInterface.CreatePosition == SUMMONPOSITIONID.POSITION_OUTFIELD)
-            CreatedInterface.isOutSummonMonster = true;
+            CreatedInterface.m_isOutSummonMonster = true;
 
         //Monster Transform Setting
         Monster.SetActive(false);
         Monster.transform.SetParent(MonsterManager.GetInstance().transform);
 
         //Position
-        Vector3 CreatePos = SetCreatedMonsterPosition(CreatePositionID);
+        Vector3 CreatePos = SetCreatedMonsterPosition(
+            CreatePositionID, ref CreatedInterface.m_isOutSummonMonster);
         CreatePos -= new Vector3(0f, UnityEngine.Random.Range(0f, 0.3f), 0f);
         Monster.transform.position = CreatePos;
 
@@ -278,37 +279,25 @@ public class MonsterManager
         return Monster;
     }
 
-    private Vector3 SetCreatedMonsterPosition(SUMMONPOSITIONID _CreatePositionID)
+    private Vector3 SetCreatedMonsterPosition(
+        SUMMONPOSITIONID _CreatePositionID,
+        ref bool OutSummonedMonster)
     {
         Vector3 vResult = Vector3.zero;
         switch (_CreatePositionID)
         {
             case SUMMONPOSITIONID.POSITION_INFIELD:
                 vResult = MonsterManager.GetInstance().InFieldPosition.position;
+                m_isMonsterExist = true;
+                OutSummonedMonster = false;
                 break;
 
             case SUMMONPOSITIONID.POSITION_OUTFIELD:
                 vResult = MonsterManager.GetInstance().OutFieldPosition.position;
+                OutSummonedMonster = true;
                 break;
         }
         return vResult;
-    }
-
-    //private void MonsterAddToMonsterList(GameObject Monster, string FindExistKey)
-    private void MonsterAddToMonsterList(GameObject Monster)
-    {
-        MonsterList.Add(Monster);
-        ////Apply MonsterList
-        //if (!MonsterManager.GetInstance().MonsterList.ContainsKey(FindExistKey))
-        //{
-        //    List<GameObject> MonsterObjectList = new List<GameObject>();
-        //    MonsterObjectList.Add(Monster);
-        //    MonsterManager.GetInstance().MonsterList.Add(FindExistKey, MonsterObjectList);
-        //}
-        //else
-        //{
-        //    MonsterManager.GetInstance().MonsterList[FindExistKey].Add(Monster);
-        //}
     }
 
     IEnumerator RegenMonster()
@@ -320,7 +309,8 @@ public class MonsterManager
             //조건 만족하면 리젠 종료 후 탈출 구문을 쓴다.
             
             //몬스터가 너무 많아지면 일시 대기상태
-            if (MonsterCount >= MonsterMaxCount)
+            //if (MonsterCount >= MonsterMaxCount)
+            if(MonsterList.Count >= MonsterMaxCount)
                 yield return new WaitForFixedUpdate();
             else
             {
@@ -361,8 +351,8 @@ public class MonsterManager
 
         DelMosnterInterface.DisableMonsterComps();
 
-        --MonsterManager.MonsterCount;
-        Debug.Log(MonsterManager.MonsterCount);
+        //--MonsterManager.MonsterCount;
+        //Debug.Log(MonsterManager.MonsterCount);
     }
 
     //if you Change Scene loaded all monster data remove it
@@ -410,11 +400,12 @@ public class MonsterManager
 
     public static void AttackFirstSummonedMonster()
     {
-        //몬스터 갯수가 한마리도 존재하지 않을 경우는 연산 스킵.
-        if (MonsterManager.MonsterCount <= 0)
-            return;
+        List<GameObject> _MonsterList =
+            MonsterManager.GetInstance().MonsterList;
 
-        List<GameObject> _MonsterList = MonsterManager.GetInstance().MonsterList;
+        //몬스터 갯수가 한마리도 존재하지 않을 경우는 연산 스킵.
+        if (_MonsterList.Count <= 0)
+            return;
 
         Monster_Interface SelectedMonsterInfo =
             Mecro.MecroMethod.CheckGetComponent<Monster_Interface>(
@@ -497,7 +488,7 @@ public class MonsterManager
         CreatedInterface.CreatePosition = SelectedKey.MonsterCreatePosition;
 
         if (CreatedInterface.CreatePosition == SUMMONPOSITIONID.POSITION_OUTFIELD)
-            CreatedInterface.isOutSummonMonster = true;
+            CreatedInterface.m_isOutSummonMonster = true;
 
         //Monster Transform Setting
         ResultMonsterInst.SetActive(false);
@@ -507,7 +498,8 @@ public class MonsterManager
         if (CreatedInterface.CreatePosition != SUMMONPOSITIONID.POSITION_OPTIONAL)
         {
             Vector3 CreatePos = MonsterManager.GetInstance(
-                ).SetCreatedMonsterPosition(CreatedInterface.CreatePosition);
+                ).SetCreatedMonsterPosition(CreatedInterface.CreatePosition,
+                ref CreatedInterface.m_isOutSummonMonster);
             CreatePos -= new Vector3(0f, UnityEngine.Random.Range(0f, 0.3f), 0f);
             ResultMonsterInst.transform.position = CreatePos;
         }
@@ -519,22 +511,27 @@ public class MonsterManager
         ResultMonsterInst.SetActive(true);
 
         //Add To MonsterList
-        MonsterManager.GetInstance().MonsterAddToMonsterList(
-            ResultMonsterInst);
+        MonsterManager.GetInstance().MonsterList.Add(ResultMonsterInst);
         //MonsterManager.GetInstance().MonsterAddToMonsterList(
         //    ResultMonsterInst, CreatedInterface.ObjectName);
 
-        AddMonsterCount(CreatedInterface.CreatePosition);
+        //AddMonsterCount(CreatedInterface.CreatePosition);
 
         return ResultMonsterInst;
     }
 
-    public static void AddMonsterCount(SUMMONPOSITIONID CreatedMon_PositionID)
+    public void UpdateScreenMonster()
     {
-        //밖에서 나온몹은 추가된걸 취급하지 않는다.
-        if (CreatedMon_PositionID != SUMMONPOSITIONID.POSITION_OUTFIELD)
-            ++MonsterCount;
+        if (MonsterList.Count <= 0)
+            m_isMonsterExist = false;
     }
+
+    //public static void AddMonsterCount(SUMMONPOSITIONID CreatedMon_PositionID)
+    //{
+    //    //밖에서 나온몹은 추가된걸 취급하지 않는다.
+    //    if (CreatedMon_PositionID != SUMMONPOSITIONID.POSITION_OUTFIELD)
+    //        ++MonsterCount;
+    //}
 }
 
 public class MonsterKey_Extension : DisposableObject

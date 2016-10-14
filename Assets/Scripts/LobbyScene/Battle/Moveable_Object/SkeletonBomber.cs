@@ -61,7 +61,7 @@ public class SkeletonBomber : Monster_Interface
     void OnTriggerEnter(Collider other)
     {
         if (m_isOutSummonMonster)
-            OutFieldMonsterAddMonsterCount(other);
+            OutFieldMonster_CanAttack(other);
 
         if (other.gameObject.CompareTag("MiddleRangeAtkCollider"))
         {

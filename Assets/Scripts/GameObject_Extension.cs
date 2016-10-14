@@ -123,14 +123,17 @@ public class GameObject_Extension
 
     IEnumerator DeadObjectMoving()
     {
-        Vector3 vObjectSpeed = new Vector3(
-                EnvironmentManager.OriginMovingSpeed * EnvironmentManager.SpeedAmount * 0.1f,
-                0f, 0f);
-
+        Vector3 vObjectSpeed;
         if (this.gameObject.GetComponent<UIWidget>())
         {
             vObjectSpeed = new Vector3(
                 EnvironmentManager.OriginMovingSpeed * EnvironmentManager.SpeedAmount * 10f,
+                0f, 0f);
+        }
+        else
+        {
+            vObjectSpeed = new Vector3(
+                EnvironmentManager.OriginMovingSpeed * EnvironmentManager.SpeedAmount * 0.1f,
                 0f, 0f);
         }
 

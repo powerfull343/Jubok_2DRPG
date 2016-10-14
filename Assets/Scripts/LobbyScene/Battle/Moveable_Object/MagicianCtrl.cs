@@ -60,10 +60,16 @@ public class MagicianCtrl : Moveable_Object {
     {
         //Debug.Log("MonsterCount : " + MonsterManager.MonsterCount);
 
-        if (MonsterManager.MonsterCount <= 0)
+        if (!MonsterManager.m_isMonsterExist)
+        {
+            //Debug.Log("Moving");
             Move();
+        }
         else
+        {
+            //Debug.Log("Attacking");
             Attack();
+        }
     }
 
     public override bool SetHp(int discountAmount)
@@ -130,9 +136,15 @@ public class MagicianCtrl : Moveable_Object {
         int RdmIdx = UnityEngine.Random.Range(0, 100);
 
         if (RdmIdx < 50)
+        {
+            //Debug.Log("NormalRange");
             _PlayerAnim.SetTrigger("NormalRange");
+        }
         else
+        {
+            //Debug.Log("SpecialRange");
             SpecialRangeAttack();
+        }
     }
 
     private void SpecialRangeAttack()
@@ -176,6 +188,7 @@ public class MagicianCtrl : Moveable_Object {
     {
         //EarthForce, Thunder02, PinPanel
         //Debug.Log(m_ChoiceSkillName);
+        Debug.Log("SummonSkill");
         SkillManager.GetInstance().UseSkill(m_ChoiceSkillName);
     }
 

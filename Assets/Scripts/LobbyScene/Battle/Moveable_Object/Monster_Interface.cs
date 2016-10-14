@@ -32,12 +32,12 @@ public abstract class Monster_Interface : Moveable_Object {
     protected BoxCollider mboxcol;
     protected Animator mAnim;
     protected bool isColPlayer = false;
-    protected bool m_isOutSummonMonster = false;
-    public bool isOutSummonMonster
-    {
-        get { return m_isOutSummonMonster; }
-        set { m_isOutSummonMonster = value; }
-    }
+    public bool m_isOutSummonMonster = false;
+    //public bool isOutSummonMonster
+    //{
+    //    get { return m_isOutSummonMonster; }
+    //    set { m_isOutSummonMonster = value; }
+    //}
     public bool m_isReadyFight = true;
     
     public float mMonsterWalkingSpeed = 4f;
@@ -102,6 +102,9 @@ public abstract class Monster_Interface : Moveable_Object {
 
     public override bool SetHp(int discountAmount)
     {
+        if (m_isOutSummonMonster)
+            return true;
+
         Hp -= discountAmount;
 
         if (Hp <= 0)
@@ -141,7 +144,8 @@ public abstract class Monster_Interface : Moveable_Object {
 
     protected virtual void MovingPosition()
     {
-        Vector3 MovePos = new Vector3(mParentTrans.localPosition.x - (0.01f * mMonsterWalkingSpeed),
+        Vector3 MovePos = new Vector3(
+            mParentTrans.localPosition.x - (0.01f * mMonsterWalkingSpeed),
                 mParentTrans.localPosition.y,
                 mParentTrans.localPosition.z);
 
@@ -184,6 +188,7 @@ public abstract class Monster_Interface : Moveable_Object {
         if (grade >= MONSTERGRADEID.GRADE_BOSS)
             MonsterManager.GetInstance().CheckBossExist = false;
         MecroMethod.CheckGetComponent<GameObject_Extension>(mParentTrans).SelfDestroy();
+        MonsterManager.GetInstance().UpdateScreenMonster();
     }
 
     private int CalcMoneySize()
@@ -202,12 +207,14 @@ public abstract class Monster_Interface : Moveable_Object {
 
     protected abstract IEnumerator ActionCoroutine();
 
-    protected void OutFieldMonsterAddMonsterCount(Collider collider)
+    protected void OutFieldMonster_CanAttack(Collider collider)
     {
+        Debug.Log(collider.name);
         if (collider.gameObject.CompareTag("OverTheArea"))
         {
-            isOutSummonMonster = false;
-            ++MonsterManager.MonsterCount;
+            MonsterManager.m_isMonsterExist = true;
+            m_isOutSummonMonster = false;
+            //++MonsterManager.MonsterCount;
 
             if (grade >= MONSTERGRADEID.GRADE_BOSS)
                 Mecro.MecroMethod.CheckGetComponent<MonsterHpUICtrl>(mHpStateTransform).ShowBossHpUI();

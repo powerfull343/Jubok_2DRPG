@@ -52,18 +52,23 @@ public class SkillManager :
         LoadedSkill.Add(KeyExtension, SkillObject);
     }
 
-   
-
     public void UseSkill(string SkillName,
         Transform Target = null)
     {
         if (MonsterManager.GetInstance().MonsterList.Count <= 0)
-        {
-            SkillList_KeyUseSetting(SkillName, false);
             return;
-        }
 
         Skill_Key_Extension FindKey = FindKeyInstance(SkillName);
+        if (FindKey == null)
+            Debug.LogError("Cannot Find Skill Effect");
+
+        //스킬 사용이 등록되었나 여부 검사하고 사용이 되었을시 
+        //스킬을 사용하지 못하게 막는다.
+        if (FindKey.m_isSkillUsing == true)
+        {
+            Debug.Log(FindKey.m_isSkillUsing);
+            return;
+        }
 
         GameObject SkillObject = LoadedSkill[FindKey] as GameObject;
         SkillObject = Instantiate(SkillObject);
@@ -76,6 +81,9 @@ public class SkillManager :
         Mecro.MecroMethod.CheckGetComponent<Skill_Interface>(SkillObject).InitializingSkill(Target);
 
         SkillObject.SetActive(true);
+
+        //스킬을 사용했다고 등록
+        SkillList_KeyUseSetting(FindKey, true);
     }
     
     public bool CheckingSkillUse(string SkillName)
@@ -84,6 +92,8 @@ public class SkillManager :
             return false;
 
         Skill_Key_Extension FindKeyInfo = FindKeyInstance(SkillName);
+        if (FindKeyInfo == null)
+            Debug.LogError("Cannot Find Skill Effect");
 
         //Debug.Log(FindKeyInfo.m_nSkillManaCost);
         //Debug.Log(PlayerCtrlManager.GetInstance().PlayerCtrl.Mp);
@@ -102,24 +112,19 @@ public class SkillManager :
                 ).CallEventMessage("Skill Still Using", Color.red);
             return false;
         }
-
-        //스킬 두번 나가는거 방지
-        SkillList_KeyUseSetting(FindKeyInfo, true);
+        
         return true;
     }
 
     public Skill_Key_Extension FindKeyInstance(string SkillName)
     {
-        Skill_Key_Extension ResultKey = new Skill_Key_Extension();
         for (int i = 0; i < LoadedSkill.Count; ++i)
         {
             if (LoadedSkill.Keys.ToList()[i].m_SkillName == SkillName)
-            {
-                ResultKey = LoadedSkill.Keys.ToList()[i];
-                break;
-            }
+                return LoadedSkill.Keys.ToList()[i];
         }
-        return ResultKey;
+
+        return null;
     }
 
     public void SkillList_KeyUseSetting(Skill_Key_Extension SkillKey, bool isUse)
@@ -130,6 +135,8 @@ public class SkillManager :
     public void SkillList_KeyUseSetting(string SkillName, bool isUse)
     {
         Skill_Key_Extension FindKey = FindKeyInstance(SkillName);
+        if (FindKey == null)
+            Debug.LogError("Cannot Find Skill Effect");
         FindKey.m_isSkillUsing = isUse;
     }
 

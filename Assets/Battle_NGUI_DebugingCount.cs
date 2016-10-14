@@ -17,16 +17,7 @@ public class Battle_NGUI_DebugingCount : MonoBehaviour {
 
     void Update()
     {
-        if (MonsterManager.GetInstance().MonsterList.Count == 0)
-        {
-            m_DebugingText.text = "Summoned MonType : " + MonsterManager.GetInstance().MonsterList.Count + "\n" +
-                "Colled Mon : " + MagicianCtrl.ColMonsters.Count;
-        }
-        else
-        {
-            m_DebugingText.text = "Summoned MonType : " + MonsterManager.GetInstance().MonsterList.Count + "\n" +
-                "Colled Mon : " + MagicianCtrl.ColMonsters.Count + "\n" +
-                "MonsterCount : " + MonsterManager.MonsterCount;
-        }
+        m_DebugingText.text = "Summoned MonType : " + MonsterManager.GetInstance().MonsterList.Count + "\n" +
+            "Colled Mon : " + MagicianCtrl.ColMonsters.Count;
     }
 }

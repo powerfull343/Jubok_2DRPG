@@ -61,7 +61,7 @@ public class Battle_NGUI_ClickDamPanel : MonoBehaviour {
 
     private void ClickButtonEvent()
     {
-        if(MonsterManager.MonsterCount > 0)
+        if (MonsterManager.GetInstance().MonsterList.Count > 0)
         {
             EnvironmentManager.isBoosting = false;
             MonsterManager.AttackFirstSummonedMonster();
