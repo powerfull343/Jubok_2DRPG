@@ -59,12 +59,6 @@ public class DataController : MonoBehaviour {
 
         if (Application.loadedLevel == 1)
         {
-
-            //if (!_instance.gameObject.GetComponent<PlayerDataManager>())
-            //{
-            //    Debug.Log("Add PlayerDataManager");
-            //    _instance.gameObject.AddComponent<PlayerDataManager>();
-            //}
             //PlayerDataManager Loading
             GameObject PlayerDataMgr = Instantiate(
                 Resources.Load("DataObjects/PlayerDataCalc")
@@ -143,23 +137,18 @@ public class DataController : MonoBehaviour {
     {
         m_InGameData.Inventory = new Dictionary<string, List<Item_Interface>>();
 
-        Item_Interface Test1 = new Supplies_Interface();
-        //Test1 = Supplies_Interface.CreateSupplies("Apple", 10, 0.3f, 10,
-        //    ITEMTYPEID.ITEM_FOOD, ITEMGRADEID.ITEMGRADE_NORMAL,
-        //    NORMAL_SPRITE_ICONS.NORMAL_SPRITE_ICON2, 78);
-        Test1 = Supplies_Interface.CreateSupplies("Apple", 10, 0.3f, SUPPLIESEFFECTID.EFFECT_STAMINA, 10
+        Item_Interface Test1 =
+            Supplies_Interface.CreateSupplies("Apple", 10, 0.3f, SUPPLIESEFFECTID.EFFECT_STAMINA, 10
             , ITEMTYPEID.ITEM_FOOD, ITEMGRADEID.ITEMGRADE_NORMAL, SPRITE_TYPEID.SPRITE_NORMAL, NORMAL_SPRITE_ICONS.NORMAL_SPRITE_ICON2,
             78);
         Test1.itemCount = 10;
 
-        EquipMent_Interface Test2 = new EquipMent_Interface();
-        Test2 = EquipMent_Interface.CreateEquipMent("Sword", 100, 3f, 3, 0,
+        EquipMent_Interface Test2 = EquipMent_Interface.CreateEquipMent("Sword", 100, 3f, 3, 0,
             ITEMTYPEID.ITEM_EQUIP, ITEMGRADEID.ITEMGRADE_NORMAL,
             EQUIPMENTTYPEID.EQUIP_WEAPON, SPRITE_TYPEID.SPRITE_NORMAL,
             NORMAL_SPRITE_ICONS.NORMAL_SPRITE_ICON2, 2);
 
-        EquipMent_Interface Test3 = new EquipMent_Interface();
-        Test3 = EquipMent_Interface.CreateEquipMent("Sword", 100, 3f, 3, 0,
+        EquipMent_Interface Test3 = EquipMent_Interface.CreateEquipMent("Sword", 100, 3f, 3, 0,
             ITEMTYPEID.ITEM_EQUIP, ITEMGRADEID.ITEMGRADE_NORMAL,
             EQUIPMENTTYPEID.EQUIP_WEAPON, SPRITE_TYPEID.SPRITE_NORMAL,
             NORMAL_SPRITE_ICONS.NORMAL_SPRITE_ICON2, 2);

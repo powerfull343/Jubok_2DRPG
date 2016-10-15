@@ -23,8 +23,24 @@ public class Death_Scythe_Rotation : MonoBehaviour {
 
     void Start()
     {
+        StartCoroutine("SummonedMonsterDead");
         StartCoroutine("AutoRotation");
         MoveUpperScythe();
+    }
+
+    IEnumerator SummonedMonsterDead()
+    {
+        while(true)
+        {
+            if (m_MonsterBody == null)
+                break;
+
+            yield return null;
+        }
+
+        StopAllCoroutines();
+        Destroy(this.gameObject);
+        yield break;
     }
 
     IEnumerator AutoRotation()
@@ -70,6 +86,8 @@ public class Death_Scythe_Rotation : MonoBehaviour {
 
         if (m_MonsterBody)
             m_MonsterBody.m_ScytheSummoned = false;
+
+        StopAllCoroutines();
         Destroy(this.gameObject);
         yield break;
     }

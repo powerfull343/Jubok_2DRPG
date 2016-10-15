@@ -6,8 +6,9 @@ using LobbyManager;
 
 public class XMLLoadMonster : MonoBehaviour {
 
-    void Start()
+    void OnEnable()
     {
+        Debug.Log("XmlLoad OnEnable");
         LoadXML();
     }
 

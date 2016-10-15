@@ -112,6 +112,7 @@ public abstract class Monster_Interface : Moveable_Object {
             MagicianCtrl.ColMonsters.Remove(this);
             MonsterManager.GetInstance().RemoveMonster(
                 this.transform.parent.gameObject);
+            MonsterManager.GetInstance().UpdateScreenMonster();
             return false;
         }
 
@@ -188,7 +189,7 @@ public abstract class Monster_Interface : Moveable_Object {
         if (grade >= MONSTERGRADEID.GRADE_BOSS)
             MonsterManager.GetInstance().CheckBossExist = false;
         MecroMethod.CheckGetComponent<GameObject_Extension>(mParentTrans).SelfDestroy();
-        MonsterManager.GetInstance().UpdateScreenMonster();
+        
     }
 
     private int CalcMoneySize()

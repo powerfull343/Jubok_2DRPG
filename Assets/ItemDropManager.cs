@@ -45,11 +45,15 @@ public class ItemDropManager :
     public GameObject CoinPrefab
     { get { return m_CoinPrefab; } }
 
+    //Obtain Varables
     [SerializeField]
     private Transform m_ObtainTrans;
     private Vector3 m_ObtainPosition;
     public Vector3 ObtainPosition
     { get { return m_ObtainPosition; } }
+
+    //Drop Positions
+    private float m_HeightPosition = 0f;
 
     //it Must NGUI Space Position
     [SerializeField]
@@ -79,10 +83,7 @@ public class ItemDropManager :
         MecroMethod.CheckExistComponent<Transform>(m_ObtainParent);
         MecroMethod.CheckExistComponent<Transform>(m_ObtainTrans);
         m_ObtainPosition = MecroMethod.GetWorldPos(m_ObtainTrans, Vector3.zero);
-
-        //m_ObtainPosition = MecroMethod.NormalToNGUIWorldPos(m_ObtainTrans.position);
         
-        //Debug.LogError(m_ObtainPosition);
     }
 
     private void LoadChestGameObjects()
@@ -176,6 +177,9 @@ public class ItemDropManager :
             return;
         }
 
+        //Monster's Height all different
+        _DeadMonsterPos.y = EnvironmentManager.fMidGroundHeight;
+
         //Debug.LogError(MonsterName);
         List<Item_Interface> itemList = m_LoadedItemDropList[MonsterName];
 
@@ -199,6 +203,9 @@ public class ItemDropManager :
     {
         int nCoinDrops = UnityEngine.Random.Range(MinMoneyDrop, MaxMoneyDrop);
         int nBigCoin = 0;
+
+        //Monster's Height all different
+        MonsterPosition.y = EnvironmentManager.fMidGroundHeight;
 
         for (int i = 0; i < nCoinDrops; ++i)
         {

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Mecro;
 
 public class EnvironmentManager :
@@ -16,13 +17,18 @@ public class EnvironmentManager :
     public static bool isBoosting = false;
     public static float OriginMovingSpeed = 0.05f;
     public static float SpeedAmount = 1f;
+    public static float fMidGroundHeight;
 
     public bool isShaked = false;
 
-    private GameObject Environment;
+    private GameObject m_EnvironmentObject;
 
-    private Dictionary<string, Environment_Element> Elements =
+    private Dictionary<string, Environment_Element> m_GroundElements =
         new Dictionary<string, Environment_Element>();
+    public Dictionary<string, Environment_Element> GroundElements
+    {
+        get { return m_GroundElements; }
+    }
 
     void OnEnable()
     {
@@ -36,6 +42,7 @@ public class EnvironmentManager :
 
         LoadResource();
         SetEnvironment_Variables();
+        SetGroundHeight("MidGround");
     }
 
     void LoadResource()
@@ -44,26 +51,32 @@ public class EnvironmentManager :
         //You Must Setting BG, MG, FG
 
         //Test Func
-        Environment = Instantiate(Resources.Load(
+        m_EnvironmentObject = Instantiate(Resources.Load(
             "BattleScene/Environments/GrassField_Environment") as GameObject);
 
-        MecroMethod.CheckExistObject<GameObject>(Environment);
+        MecroMethod.CheckExistObject<GameObject>(m_EnvironmentObject);
 
-        Environment.transform.SetParent(transform);
+        m_EnvironmentObject.transform.SetParent(transform);
     }
 
     void SetEnvironment_Variables()
     {
-        Elements.Add("BackGround", ImportObject_ToCollection("BackGround"));
-        Elements.Add("MidGround", ImportObject_ToCollection("MidGround"));
-        Elements.Add("ForeGress", ImportObject_ToCollection("ForeGress"));
-        Elements.Add("BackGress", ImportObject_ToCollection("BackGress"));
+        m_GroundElements.Add("BackGround", ImportObject_ToCollection("BackGround"));
+        m_GroundElements.Add("MidGround", ImportObject_ToCollection("MidGround"));
+        m_GroundElements.Add("ForeGress", ImportObject_ToCollection("ForeGress"));
+        m_GroundElements.Add("BackGress", ImportObject_ToCollection("BackGress"));
+    }
+
+    private void SetGroundHeight(string GroundName)
+    {
+        Transform GridPosition = m_GroundElements[GroundName].ElementGrid.transform;
+        fMidGroundHeight = GridPosition.localPosition.y;
     }
 
     Environment_Element ImportObject_ToCollection(string childName)
     {
         Environment_Element element = new Environment_Element();
-        Transform Parent = Environment.transform.FindChild(childName);
+        Transform Parent = m_EnvironmentObject.transform.FindChild(childName);
         MecroMethod.CheckExistObject<Transform>(Parent);
 
         Transform Grid = Parent.FindChild("Grid");
@@ -78,7 +91,7 @@ public class EnvironmentManager :
             if (i == ChildCnt - 1)
                 element.ElementLastNode = Grid.GetChild(i);
 
-            element.Element_EnQueue(Grid.GetChild(i));
+            element.AddElement(Grid.GetChild(i));
         }
         MecroMethod.CheckExistObject<Transform>(
             element.ElementLastNode);
@@ -97,7 +110,7 @@ public class EnvironmentManager :
         if (isMoved)
         {
             foreach (KeyValuePair<string, Environment_Element> element
-                in Elements)
+                in m_GroundElements)
             {
                 element.Value.MoveElements();
             }
@@ -114,6 +127,23 @@ public class EnvironmentManager :
         transform.localPosition = new Vector3(
             Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f), 0f);
     }
+
+    public void ClearAllEnvironmentElements()
+    {
+        string DeleteKeyTarget = string.Empty;
+        Environment_Element DeleteValueTarget = null;
+        int nEnvironmentLength = m_GroundElements.Count;
+
+        for(int i = 0; i < nEnvironmentLength; ++i)
+        {
+            DeleteValueTarget = m_GroundElements.ToList()[i].Value;
+            DeleteValueTarget.RemoveAllClassFunc();
+            m_GroundElements.ToList().RemoveAt(i);
+            Destroy(DeleteValueTarget);
+        }
+        m_GroundElements.Clear();
+        Destroy(m_EnvironmentObject);
+    }
 }
 
 public class Environment_Element
@@ -125,14 +155,27 @@ public class Environment_Element
     {
         get { return Element_List; }
     }
-    public void Element_EnQueue(Transform item)
+    public void AddElement(Transform _Element)
     {
-        Element_List.Add(item);
+        Element_List.Add(_Element);
     }
 
-    public void Element_DeQueue()
+    public void RemoveElement(Transform _Element)
     {
-        Element_List.RemoveAt(Element_List.Count - 1);
+        Element_List.Remove(_Element);
+    }
+
+    public void RemoveAllClassFunc()
+    {
+        Transform DeleteTarget = null;
+        while(Element_List.Count > 0)
+        { 
+            DeleteTarget = Element_List[0];
+            Element_List.Remove(DeleteTarget);
+            Destroy(DeleteTarget.gameObject);
+        }
+        Element_List.Clear();
+        Destroy(Element_Grid.gameObject);
     }
 
     private UIGrid Element_Grid = new UIGrid();

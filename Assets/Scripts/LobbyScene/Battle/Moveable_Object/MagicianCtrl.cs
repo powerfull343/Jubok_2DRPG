@@ -188,7 +188,6 @@ public class MagicianCtrl : Moveable_Object {
     {
         //EarthForce, Thunder02, PinPanel
         //Debug.Log(m_ChoiceSkillName);
-        Debug.Log("SummonSkill");
         SkillManager.GetInstance().UseSkill(m_ChoiceSkillName);
     }
 

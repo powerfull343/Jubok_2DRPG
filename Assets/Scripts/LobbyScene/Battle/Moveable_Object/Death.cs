@@ -25,7 +25,7 @@ public class Death : Monster_Interface
     private Transform m_TelePortTrans;
 
     //Beam Variable
-    private List<GameObject> BeamPrefabs =
+    private static List<GameObject> BeamPrefabs =
         new List<GameObject>();
     private Transform m_BeamAppearTrans;
     private LAZERTYPE m_LazerType;
@@ -79,6 +79,9 @@ public class Death : Monster_Interface
 
     void InitBeamPrefabs()
     {
+        if (BeamPrefabs.Count != 0)
+            return;
+
         BeamPrefabs.Add(Resources.Load("BattleScene/Skills/Death - DeathLazer") as GameObject);
         BeamPrefabs.Add(Resources.Load("BattleScene/Skills/Death - Scythe01") as GameObject);
         BeamPrefabs.Add(Resources.Load("BattleScene/Skills/Death - Scythe02") as GameObject);
@@ -96,6 +99,8 @@ public class Death : Monster_Interface
     public override bool SetHp(int discountAmount)
     {
         base.SetHp(discountAmount);
+            
+
         if (!m_BossHpBar)
         {
             m_BossHpBar = mHpStateTransform.gameObject.GetComponent<MonsterHpUICtrl>().HpBar;
@@ -153,18 +158,17 @@ public class Death : Monster_Interface
 
             Death_Scythe_Rotation ScytheInfo =
                 Mecro.MecroMethod.CheckGetComponent<Death_Scythe_Rotation>(BeamObject);
-            ScytheInfo.AtkPower = (float)Atk / 2;
+            ScytheInfo.AtkPower = (float)Atk / 3;
             BeamObject.transform.localScale = new Vector3(0.5f, 0.5f, 1f);
+            ScytheInfo.MonsterBody = this;
 
             if (type == LAZERTYPE.LAZER_SCYTHE04)
             {
                 m_ScytheSummoned = true;
                 ScytheInfo.m_isLastScythe = true;
-                ScytheInfo.MonsterBody = this;
             }
 
             BeamObject.SetActive(true);
-
         }
     }
 
@@ -227,18 +231,13 @@ public class Death : Monster_Interface
 
             yield return new WaitForFixedUpdate();
         }
-
         yield break;
-
     }
 
     void OnTriggerEnter(Collider other)
     {
         if (m_isOutSummonMonster)
-        {
-            Debug.Log(other.name);
             OutFieldMonster_CanAttack(other);
-        }
 
         //콜라이더 3개 다써야함. 맨 근접 공격 콜라이더 적용시 텔레포트
         if(other.gameObject.CompareTag(m_ColliderTags[m_nPosIndex]))

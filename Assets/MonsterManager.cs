@@ -88,6 +88,7 @@ public class MonsterManager
 
     void OnEnable()
     {
+        Debug.Log("MonsterManager Onenable");
         CreateInstance();
         OnlyOneMonster = isOnlyOneMonster;
         OnlyBossMonster = isOnlyBossMonster;
@@ -98,14 +99,9 @@ public class MonsterManager
         MecroMethod.CheckExistObject<BattleEventCaller>(m_BattleEventCaller);
 
         iRegenMonster = RegenMonster();
-    }
-
-    // Use this for initialization
-    void Start()
-    {
         StartCoroutine(iRegenMonster);
     }
-    
+
     void StartCreateMonsters()
     {
         bool isCreateElite;
@@ -183,6 +179,7 @@ public class MonsterManager
         if(isElite)
         {
             nChooseCount = UnityEngine.Random.Range(0, FieldEliteMonsterData.Count);
+            Debug.Log(FieldEliteMonsterData.Count);
             if (OnlyOneMonster)
                 nChooseCount = mSummonMonsterIdx;
             PositionID = FieldEliteMonsterData.Keys.ToList()[nChooseCount].MonsterCreatePosition;
@@ -267,8 +264,7 @@ public class MonsterManager
         Monster.transform.SetParent(MonsterManager.GetInstance().transform);
 
         //Position
-        Vector3 CreatePos = SetCreatedMonsterPosition(
-            CreatePositionID, ref CreatedInterface.m_isOutSummonMonster);
+        Vector3 CreatePos = SetCreatedMonsterPosition(CreatePositionID);
         CreatePos -= new Vector3(0f, UnityEngine.Random.Range(0f, 0.3f), 0f);
         Monster.transform.position = CreatePos;
 
@@ -280,8 +276,7 @@ public class MonsterManager
     }
 
     private Vector3 SetCreatedMonsterPosition(
-        SUMMONPOSITIONID _CreatePositionID,
-        ref bool OutSummonedMonster)
+        SUMMONPOSITIONID _CreatePositionID)
     {
         Vector3 vResult = Vector3.zero;
         switch (_CreatePositionID)
@@ -289,12 +284,10 @@ public class MonsterManager
             case SUMMONPOSITIONID.POSITION_INFIELD:
                 vResult = MonsterManager.GetInstance().InFieldPosition.position;
                 m_isMonsterExist = true;
-                OutSummonedMonster = false;
                 break;
 
             case SUMMONPOSITIONID.POSITION_OUTFIELD:
                 vResult = MonsterManager.GetInstance().OutFieldPosition.position;
-                OutSummonedMonster = true;
                 break;
         }
         return vResult;
@@ -350,7 +343,7 @@ public class MonsterManager
                 DeleteMonster.transform.FindChild("MonsterBody"));
 
         DelMosnterInterface.DisableMonsterComps();
-
+        UpdateScreenMonster();
         //--MonsterManager.MonsterCount;
         //Debug.Log(MonsterManager.MonsterCount);
     }
@@ -358,6 +351,8 @@ public class MonsterManager
     //if you Change Scene loaded all monster data remove it
     public void RemoveAllMonsterData()
     {
+        StopAllCoroutines();
+
         List<WeakReference> WeakRefList = new List<WeakReference>();
 
         RemoveLoadedMonsterContainer(FieldMonsterData, ref WeakRefList);
@@ -498,8 +493,7 @@ public class MonsterManager
         if (CreatedInterface.CreatePosition != SUMMONPOSITIONID.POSITION_OPTIONAL)
         {
             Vector3 CreatePos = MonsterManager.GetInstance(
-                ).SetCreatedMonsterPosition(CreatedInterface.CreatePosition,
-                ref CreatedInterface.m_isOutSummonMonster);
+                ).SetCreatedMonsterPosition(CreatedInterface.CreatePosition);
             CreatePos -= new Vector3(0f, UnityEngine.Random.Range(0f, 0.3f), 0f);
             ResultMonsterInst.transform.position = CreatePos;
         }

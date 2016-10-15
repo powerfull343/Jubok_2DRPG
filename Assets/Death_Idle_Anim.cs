@@ -69,9 +69,7 @@ public class Death_Idle_Anim : StateMachineBehaviour {
 
     void OutSummonedMonsterFirstMoving(Animator animator)
     {
-        Debug.Log("First Summon Out of Screen Monster");
         Moving(animator);
-        MonsterBody.m_isOutSummonMonster = false;
     }
 
     void Moving(Animator animator)

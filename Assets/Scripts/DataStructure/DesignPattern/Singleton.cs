@@ -30,6 +30,9 @@ public class Singleton<T> : MonoBehaviour where T : Component
             //Type ActivateType = Type.GetType(GenericName, true);
             //_Instance = (Activator.CreateInstance(ActivateType)) as T;
 
+            //GameObject CreateSingleTonobject = new GameObject();
+            //CreateSingleTonobject.name = T.name;
+            //_Instance = CreateSingleTonobject.AddComponent<T>();
             Debug.Log("You Cannot Create Instance");
         }
 
