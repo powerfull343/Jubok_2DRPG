@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Mecro;
-using LobbyManager;
+
 using LobbyButtonFunc;
 
 public class NGUI_OptionMenuCtrl : MonoBehaviour
@@ -30,8 +30,15 @@ public class NGUI_OptionMenuCtrl : MonoBehaviour
     [SerializeField]
     private UIButton m_AppQuitNoButton;
 
+    void OnEnable()
+    {
+        Debug.Log("OptionMenu OnEnable");
+        InitBacktoVilageButtonFunc();
+    }
+
     public bool OpenOptionMenuPanel(UIPanel _CurrentUpperStatusPanel)
     {
+        Debug.Log("openOption");
         if (this.gameObject == null)
         {
             Debug.LogError("Cannot Created MenuPanel");
@@ -70,6 +77,7 @@ public class NGUI_OptionMenuCtrl : MonoBehaviour
             m_PanelCtrler.disappearWithAnimation();
             NGUI_PanelManager.GetInstance().GetCurrentScenePanel(
                 ).CloseBehindCollider();
+            this.gameObject.SetActive(false);
 
             return true;
         }
@@ -96,7 +104,7 @@ public class NGUI_OptionMenuCtrl : MonoBehaviour
         }
 
         MecroMethod.CheckExistComponent<UIButton>(m_CloseButton);
-        InitBacktoVilageButtonFunc();
+        
         MecroMethod.CheckExistComponent<UIButton>(m_AppQuitPopupButton);
         MecroMethod.CheckExistComponent<UIPanel>(m_AppQuitPopupPanel);
         m_AppQuitPopupPanel.gameObject.SetActive(false);
@@ -144,14 +152,15 @@ public class NGUI_OptionMenuCtrl : MonoBehaviour
             "ClearAllEnvironmentElements"));
 
         m_GoBackVilageObject.SetActive(true);
+        m_isBackVilageButtonSetting = true;
     }
 
     private void AddButtonDelegateFuncs()
     {
         //App Quit Button Setting
         EventDelegate EventDg = new EventDelegate(
-            NGUI_PanelManager.GetInstance().GetCurrentScenePanel(),
-            "CloseBehindCollider");
+            LobbyController.GetInstance().UpperStatusPanel,
+            "ShowAndHideOptionMenu");
         m_CloseButton.onClick.Add(EventDg);
 
         EventDelegate QuitPopupDg = new EventDelegate(

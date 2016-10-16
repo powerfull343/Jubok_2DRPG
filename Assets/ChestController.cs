@@ -120,7 +120,7 @@ public class ChestController : MonoBehaviour
 
         if (m_isCoin)
         {
-            LobbyManager.LobbyController.GetInstance(
+            LobbyController.GetInstance(
             ).UpperStatusPanel.SetMoney(m_MoneySize);
         }
 

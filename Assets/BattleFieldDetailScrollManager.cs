@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Mecro;
-using LobbyManager;
+
 
 public class BattleFieldDetailScrollManager
     : Singleton_Parent<BattleFieldDetailScrollManager>
@@ -53,10 +53,51 @@ public class BattleFieldDetailScrollManager
         MecroMethod.CheckExistObject<UIWidget>(BehindCollider);
         MecroMethod.CheckExistObject<GameObject>(SelectLevelPopupList);
         MecroMethod.CheckExistObject<GameObject>(StartLevelButton);
+        InitStartLevelButton();
         MecroMethod.CheckExistComponent<GameObject_Extension>(PopupPanel);
         MecroMethod.CheckExistComponent<UILabel>(innerPopupButtonLabel);
 
         MecroMethod.CheckExistObject<Transform>(GridTrans);
+    }
+
+    private void InitStartLevelButton()
+    {
+        UIButton StartButtonFunc =
+            MecroMethod.CheckGetComponent<UIButton>
+            (StartLevelButton.transform.FindChild("Button - ButtonEvent"));
+
+        EventDelegate HideAndShowUpperStat = new EventDelegate(
+            LobbyController.GetInstance(), "HideAndShowUpperStatusPanel");
+
+        EventDelegate HideScrollMenu = new EventDelegate(
+            BattleFieldManager.GetInstance(), "DisableDetailScroll");
+
+        EventDelegate HidePopupPanel = new EventDelegate(
+            PopupPanel, "SelfHide");
+
+        SubPanelController OwnPanelCtrler =
+            MecroMethod.CheckGetComponent<SubPanelController>(
+                BattleFieldManager.GetInstance().GetBattleFieldPanel);
+
+        EventDelegate disappearBattleFieldPanel = new EventDelegate(
+            OwnPanelCtrler, "disappearWithAnimation");
+
+        EventDelegate MapWindowHideButton = new EventDelegate(
+            NGUI_PanelManager.GetInstance().GetCurrentScenePanel(), "ClickMenuXButton");
+
+        EventDelegate EntryAnotherField = new EventDelegate(
+            LobbyController.GetInstance(), "EntryAnotherField");
+
+        EventDelegate ChangePanel = new EventDelegate(
+            LobbyController.GetInstance(), "ChangePanel");
+
+        StartButtonFunc.onClick.Add(HideAndShowUpperStat);
+        StartButtonFunc.onClick.Add(HideScrollMenu);
+        StartButtonFunc.onClick.Add(HidePopupPanel);
+        StartButtonFunc.onClick.Add(disappearBattleFieldPanel);
+        StartButtonFunc.onClick.Add(MapWindowHideButton);
+        StartButtonFunc.onClick.Add(EntryAnotherField);
+        StartButtonFunc.onClick.Add(ChangePanel);
     }
 
     public void ControllChildObjects(bool isShow)

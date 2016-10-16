@@ -34,7 +34,8 @@ public class MissionItemController : MonoBehaviour
             Resources.Load(LoadPath, typeof(UIAtlas)) as UIAtlas;
         MissionIcon.spriteName = atlasSpriteName;
 
-        //SelectLevel - 14
+        Debug.Log(PanelContants);
+        //SelectLevel - (index : 14)
         string Labelstring =
             PanelContants.Substring(14);
 

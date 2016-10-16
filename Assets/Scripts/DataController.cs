@@ -65,6 +65,12 @@ public class DataController : MonoBehaviour {
                 as GameObject);
             Debug.Log("PlayerDataManager Null : " + (PlayerDataMgr == null));
             PlayerDataMgr.transform.SetParent(_instance.transform, false);
+
+            GameObject LobbyController = Instantiate(
+                Resources.Load("DataObjects/LobbyManager") as GameObject);
+            Debug.Log("LobbyController Null : " + (LobbyController == null));
+            LobbyController.transform.SetParent(_instance.transform, false);
+            LobbyController.SetActive(true);
         }
     }
 

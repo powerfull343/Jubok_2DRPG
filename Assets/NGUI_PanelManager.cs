@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Mecro;
-using LobbyManager;
+
 using LobbyButtonFunc;
 
 public class NGUI_PanelManager :
@@ -26,8 +26,12 @@ public class NGUI_PanelManager :
 
     private void CheckingExistComps()
     {
-        MecroMethod.CheckExistComponent<Scene_Panel_Interface>(m_VilageScenePanel);
-        MecroMethod.CheckExistComponent<Scene_Panel_Interface>(m_BattleScenePanel);
+        m_VilageScenePanel =
+            MecroMethod.CheckGetComponent<VilageScene_NGUI_Panel>(
+        LobbyController.GetInstance().GetLobbyPanel);
+        m_BattleScenePanel =
+            MecroMethod.CheckGetComponent<BattleScene_NGUI_Panel>(
+        LobbyController.GetInstance().GetBattlePanel.FindChild("NGUIPanel - UI Root"));
     }
 
     private void InitScenePanelContainers()

@@ -68,7 +68,7 @@ public class DebugingPanel :
 
     void Start()
     {
-        if (LobbyManager.LobbyController.GetInstance().mCurrentSceneID
+        if (LobbyController.GetInstance().mCurrentSceneID
             == FIELDID.ID_VILAGE)
         {
             SetPanelPosition(VilageScene_NGUI_Panel.fScreenWidth,

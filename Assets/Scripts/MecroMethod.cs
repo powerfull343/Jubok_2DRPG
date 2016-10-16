@@ -181,13 +181,13 @@ namespace Mecro
                 Debug.Log(Message);
         }
 
-        public static EventDelegate.Parameter CreateParm(UnityEngine.Object _value, 
+        public static EventDelegate.Parameter CreateEventParm(object _value, 
             Type _type)
         {
             EventDelegate.Parameter ResultParm =
                 new EventDelegate.Parameter();
 
-            ResultParm.obj = _value;
+            ResultParm.value = _value;
             ResultParm.expectedType = _type;
 
             return ResultParm;

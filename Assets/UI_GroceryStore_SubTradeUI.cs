@@ -144,7 +144,7 @@ public class UI_GroceryStore_SubTradeUI : MonoBehaviour {
         ResetSubTradeUI();
 
         int CurrentDepth = MecroMethod.CheckGetComponent<UIPanel>(this.gameObject).depth;
-        LobbyManager.LobbyController.GetInstance().SettingBlockPanel(CurrentDepth - 1);
+        LobbyController.GetInstance().SettingBlockPanel(CurrentDepth - 1);
     }
 
     private void SetTitleText()
@@ -299,7 +299,7 @@ public class UI_GroceryStore_SubTradeUI : MonoBehaviour {
     private void HideSubTradeUI()
     {
         ResetSubTradeUI();
-        LobbyManager.LobbyController.GetInstance().HidingBlockPanel();
+        LobbyController.GetInstance().HidingBlockPanel();
         InventoryManager.GetInstance().InvenFunc.ControllCursorManager();
         
         HideAndShowTradeMenu();

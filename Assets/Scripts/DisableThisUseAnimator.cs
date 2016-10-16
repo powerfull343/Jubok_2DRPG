@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using LobbyManager;
+
 
 public class DisableThisUseAnimator : StateMachineBehaviour {
 

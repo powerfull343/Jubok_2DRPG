@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using LobbyManager;
+
 
 public class PlayerStatusController : MonoBehaviour
 {
@@ -29,11 +29,7 @@ public class PlayerStatusController : MonoBehaviour
     void Awake()
     {
         InitComponents();
-    }
-
-    void OnEnable()
-    {
-        EventDelegate EventDg = new EventDelegate(this,
+        EventDelegate EventDg = new EventDelegate(LobbyController.GetInstance().UpperStatusPanel,
             "ShowAndHideOptionMenu");
         m_CallMenuButton.onClick.Add(EventDg);
     }

@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using LobbyManager;
 using Mecro;
 
 public class BattleScene_NGUI_Panel : Scene_Panel_Interface

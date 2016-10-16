@@ -112,7 +112,7 @@ public abstract class Monster_Interface : Moveable_Object {
             MagicianCtrl.ColMonsters.Remove(this);
             MonsterManager.GetInstance().RemoveMonster(
                 this.transform.parent.gameObject);
-            MonsterManager.GetInstance().UpdateScreenMonster();
+            
             return false;
         }
 

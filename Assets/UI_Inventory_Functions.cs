@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Mecro;
-using LobbyManager;
+
 using LobbyButtonFunc;
 
 public class UI_Inventory_Functions : MonoBehaviour {
@@ -143,7 +143,7 @@ public class UI_Inventory_Functions : MonoBehaviour {
         }
 
         //슬롯에 있는 아이템과 현재 소지금을 비교한다.
-        if (!LobbyManager.LobbyController.GetInstance().UpperStatusPanel.CompareMoney(
+        if (!LobbyController.GetInstance().UpperStatusPanel.CompareMoney(
             -SelectedItem.ItemInfo.ItemValue * nBuyItemCount))
         {
             StatusMessage = "[ff0000]Cannot Enough Money[-]";
@@ -168,7 +168,7 @@ public class UI_Inventory_Functions : MonoBehaviour {
         }
 
         //소지금 감소
-        LobbyManager.LobbyController.GetInstance(
+        LobbyController.GetInstance(
             ).UpperStatusPanel.SetMoney(-(SelectedItem.ItemInfo.ItemValue * nBuyItemCount));
 
         //소지될 무게 추가
@@ -199,7 +199,7 @@ public class UI_Inventory_Functions : MonoBehaviour {
         int nGetPrice = (int)SelectedItem.ItemInfo.ItemValue * 3 / 10;
 
         //소지금 증가
-        LobbyManager.LobbyController.GetInstance(
+        LobbyController.GetInstance(
             ).UpperStatusPanel.SetMoney(nGetPrice * nSellItemCount);
 
         SetWeight(SelectedItem, nSellItemCount, false);

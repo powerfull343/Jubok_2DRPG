@@ -23,7 +23,7 @@ public class Scene_Panel_Interface : MonoBehaviour {
 
     protected virtual void UpperPanelMoving()
     {
-        LobbyManager.LobbyController.GetInstance().UpperStatusPanel.MovingUpperStatusUI(
+        LobbyController.GetInstance().UpperStatusPanel.MovingUpperStatusUI(
                 this.transform, fScreenHeight);
     }
 
@@ -32,7 +32,7 @@ public class Scene_Panel_Interface : MonoBehaviour {
         m_TempCollider.SetActive(true);
     }
 
-    public void CloseBehindCollider()
+    public virtual void CloseBehindCollider()
     {
         m_TempCollider.SetActive(false);
     }

@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Xml;
 using System;
-using LobbyManager;
+
 
 public class XMLLoadMonster : MonoBehaviour {
 

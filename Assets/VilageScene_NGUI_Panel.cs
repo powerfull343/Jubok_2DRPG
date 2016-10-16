@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Mecro;
-using LobbyManager;
+
 using LobbyButtonFunc;
 
 public class VilageScene_NGUI_Panel : Scene_Panel_Interface
@@ -34,5 +34,16 @@ public class VilageScene_NGUI_Panel : Scene_Panel_Interface
     {
         LobbyController.GetInstance().OpenedPanel = IDSUBPANEL.PANELID_NONE;
         Invoke("CloseBehindCollider", 1f);
+    }
+
+    public override void CloseBehindCollider()
+    {
+        if (LobbyController.GetInstance().OpenedPanel == IDSUBPANEL.PANELID_NONE)
+        {
+            SetBehindColliderDepth(10);
+            m_TempCollider.SetActive(false);
+        }
+        else
+            SetBehindColliderDepth(10);
     }
 }

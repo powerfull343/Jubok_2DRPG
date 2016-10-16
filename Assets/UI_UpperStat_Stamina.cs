@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using LobbyManager;
+
 
 public class UI_UpperStat_Stamina : MonoBehaviour {
 

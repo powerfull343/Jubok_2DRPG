@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Mecro;
-using LobbyManager;
+
 
 public class UI_Inventory_CursorManager : MonoBehaviour
 {

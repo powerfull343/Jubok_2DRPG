@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Mecro;
-using LobbyManager;
+
 
 public class BattleFieldManager
     : Singleton_Parent<BattleFieldManager> {
@@ -11,9 +11,10 @@ public class BattleFieldManager
     private Camera UICameraObject;
     [SerializeField]
     private GameObject BattleFieldPanel;
+    public GameObject GetBattleFieldPanel
+    { get { return BattleFieldPanel; } }
     [SerializeField]
-    private BattleFieldDetailScrollManager
-        ScrollManager;
+    private BattleFieldDetailScrollManager ScrollManager;
 
     [SerializeField]
     private GameObject DetailStat;
