@@ -235,7 +235,7 @@ public class LobbyController
 
         while (hidingwidget.alpha < 1f)
         {
-            hidingwidget.alpha += 0.01f;
+            hidingwidget.alpha += 0.1f;
             yield return new WaitForSeconds(0.01f);
         }
         HideTrans.gameObject.SetActive(false);
@@ -243,7 +243,7 @@ public class LobbyController
         ShowTrans.gameObject.SetActive(true);
         while (hidingwidget.alpha > 0f)
         {
-            hidingwidget.alpha -= 0.03f;
+            hidingwidget.alpha -= 0.01f;
             yield return new WaitForSeconds(0.01f);
         }
 

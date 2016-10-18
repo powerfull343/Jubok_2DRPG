@@ -85,11 +85,20 @@ public class MonsterManager
         get { return m_BattleEventCaller; }
     }
 
+    //Boss hpBar Manager
+    [SerializeField]
+    private BossHpBarCtrlManager m_BossHpManager;
+    public BossHpBarCtrlManager BossHpManager
+    { get { return m_BossHpManager; } }
+
+    //Using MonsterManager 
+    private bool m_Processing = false;
 
     void OnEnable()
     {
         Debug.Log("MonsterManager Onenable");
         CreateInstance();
+        
         OnlyOneMonster = isOnlyOneMonster;
         OnlyBossMonster = isOnlyBossMonster;
         SummonMonsterIdx = mSummonMonsterIdx;
@@ -97,6 +106,7 @@ public class MonsterManager
         MecroMethod.CheckExistObject<Transform>(InFieldPosition);
         MecroMethod.CheckExistObject<Transform>(OutFieldPosition);
         MecroMethod.CheckExistObject<BattleEventCaller>(m_BattleEventCaller);
+        MecroMethod.CheckExistObject<BossHpBarCtrlManager>(m_BossHpManager);
 
         iRegenMonster = RegenMonster();
         StartCoroutine(iRegenMonster);
@@ -179,7 +189,7 @@ public class MonsterManager
         if(isElite)
         {
             nChooseCount = UnityEngine.Random.Range(0, FieldEliteMonsterData.Count);
-            Debug.Log(FieldEliteMonsterData.Count);
+            
             if (OnlyOneMonster)
                 nChooseCount = mSummonMonsterIdx;
             PositionID = FieldEliteMonsterData.Keys.ToList()[nChooseCount].MonsterCreatePosition;
@@ -222,11 +232,13 @@ public class MonsterManager
             return;
         }
 
-        //MonsterAddToMonsterList(CreatedMonster, FindExistKey);
-        MonsterList.Add(CreatedMonster);
+        if (m_Processing == false)
+        {
+            Destroy(CreatedMonster);
+            return;
+        }
 
-        //밖에서 나온몹은 추가된걸 취급하지 않는다.
-        //AddMonsterCount(CreatePositionID);
+        MonsterList.Add(CreatedMonster);
     }
 
     //Loaded XML Monster Looping Method
@@ -251,7 +263,10 @@ public class MonsterManager
         Monster_Interface CreatedInterface = MonsterBodyTrans.gameObject.GetComponent<Monster_Interface>();
 
         if (CreatedInterface == null)
-            Debug.LogError(CreatedInterface.name + " is Null");
+        {
+            Debug.Log(CreatedInterface.name + " is Null");
+            return null;
+        }
 
         CreatedInterface.CopyInterFace(LoadedElement.OriginInterfaceComp);
         CreatedInterface.CreatePosition = CreatePositionID;
@@ -295,14 +310,13 @@ public class MonsterManager
 
     IEnumerator RegenMonster()
     {
+        m_Processing = true;
         yield return new WaitForSeconds(StartRegenTime);
 
-        while (true)
+        //조건 만족하면 리젠 종료 후 탈출 구문을 쓴다.
+        while (m_Processing == true)
         {
-            //조건 만족하면 리젠 종료 후 탈출 구문을 쓴다.
-            
             //몬스터가 너무 많아지면 일시 대기상태
-            //if (MonsterCount >= MonsterMaxCount)
             if(MonsterList.Count >= MonsterMaxCount)
                 yield return new WaitForFixedUpdate();
             else
@@ -353,6 +367,15 @@ public class MonsterManager
     {
         StopAllCoroutines();
 
+        //돌고있는 프로레스 관련
+        m_Processing = false;
+
+        //Boss 관련
+        m_isCheckBossExist = false;
+        m_BossHpManager.RemoveAllData();
+
+        //몬스터 객체 관련
+        m_isMonsterExist = false;
         List<WeakReference> WeakRefList = new List<WeakReference>();
 
         RemoveLoadedMonsterContainer(FieldMonsterData, ref WeakRefList);
@@ -468,7 +491,10 @@ public class MonsterManager
         }
 
         if (SelectedElement.OriginGameObject == null)
-            Debug.LogError("SelectedElement.OriginGameObject is null");
+        {
+            Debug.Log("SelectedElement.OriginGameObject is null");
+            return null;
+        }
         ResultMonsterInst = Instantiate(SelectedElement.OriginGameObject);
 
         //MonsterBody Setting
@@ -504,12 +530,15 @@ public class MonsterManager
         ResultMonsterInst.transform.localScale = Vector3.one;
         ResultMonsterInst.SetActive(true);
 
+        if (MonsterManager.GetInstance().m_Processing == false)
+        {
+            Destroy(ResultMonsterInst);
+            return null;
+        }
+
+        m_isMonsterExist = true;
         //Add To MonsterList
         MonsterManager.GetInstance().MonsterList.Add(ResultMonsterInst);
-        //MonsterManager.GetInstance().MonsterAddToMonsterList(
-        //    ResultMonsterInst, CreatedInterface.ObjectName);
-
-        //AddMonsterCount(CreatedInterface.CreatePosition);
 
         return ResultMonsterInst;
     }
@@ -519,13 +548,6 @@ public class MonsterManager
         if (MonsterList.Count <= 0)
             m_isMonsterExist = false;
     }
-
-    //public static void AddMonsterCount(SUMMONPOSITIONID CreatedMon_PositionID)
-    //{
-    //    //밖에서 나온몹은 추가된걸 취급하지 않는다.
-    //    if (CreatedMon_PositionID != SUMMONPOSITIONID.POSITION_OUTFIELD)
-    //        ++MonsterCount;
-    //}
 }
 
 public class MonsterKey_Extension : DisposableObject

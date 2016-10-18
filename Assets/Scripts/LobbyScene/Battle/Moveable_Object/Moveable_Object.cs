@@ -94,4 +94,6 @@ public abstract class Moveable_Object : MonoBehaviour {
 
     public abstract bool SetHp(int discountAmount);
 
+    public virtual void ClearAllData() { }
+
 }

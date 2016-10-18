@@ -51,6 +51,7 @@ public abstract class Skill_Interface : MonoBehaviour {
         if (mTargetInfo)
             mTargetInfo.SkillTargetFreezing(false);
         SkillManager.GetInstance().SkillList_KeyUseSetting(mSkillName, false);
+        SkillManager.GetInstance().RemoveUsingSkill(this.gameObject);
         Destroy(this.gameObject);
     }
 

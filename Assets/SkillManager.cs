@@ -12,11 +12,23 @@ public class SkillManager :
     public Dictionary<Skill_Key_Extension, GameObject> LoadedSkill
     {
         get { return m_LoadedSkill; }
-    } 
+    }
+
+    private List<GameObject> m_UsingSkill
+        = new List<GameObject>();
+    public List<GameObject> UsingSkill
+    {
+        get { return m_UsingSkill; }
+        set { m_UsingSkill = value; }
+    }
 
     void Awake()
     {
         CreateInstance();
+    }
+
+    void OnEnable()
+    {
         LoadSkillList();
     }
 
@@ -84,6 +96,7 @@ public class SkillManager :
 
         //스킬을 사용했다고 등록
         SkillList_KeyUseSetting(FindKey, true);
+        m_UsingSkill.Add(SkillObject);
     }
     
     public bool CheckingSkillUse(string SkillName)
@@ -138,6 +151,34 @@ public class SkillManager :
         if (FindKey == null)
             Debug.LogError("Cannot Find Skill Effect");
         FindKey.m_isSkillUsing = isUse;
+    }
+
+    public void RemoveUsingSkill(GameObject RemoveTarget)
+    {
+        m_UsingSkill.Remove(RemoveTarget);
+    }
+
+    public void RemoveAllSkillData()
+    {
+        //Using Skill clear
+        GameObject DeleteTarget = null;
+        int nIndex = m_UsingSkill.Count;
+        for(int i = 0; i < nIndex; ++i)
+        {
+            DeleteTarget = m_UsingSkill[i];
+            m_UsingSkill.Remove(DeleteTarget);
+            Destroy(DeleteTarget);
+        }
+        m_UsingSkill.Clear();
+
+        //Prefab Data Clear
+        nIndex = m_LoadedSkill.Count;
+        for(int i = 0; i < nIndex; ++i)
+            m_LoadedSkill.ToList().RemoveAt(i);
+        m_LoadedSkill.Clear();
+
+
+
     }
 
     //public void MonsterHpZero(Moveable_Object otherInfo)

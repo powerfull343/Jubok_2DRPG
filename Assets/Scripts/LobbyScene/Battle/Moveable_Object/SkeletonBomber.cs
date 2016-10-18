@@ -22,6 +22,12 @@ public class SkeletonBomber : Monster_Interface
         StartCoroutine("ActionCoroutine");
     }
 
+    public override void ClearAllData()
+    {
+        base.ClearAllData();
+        mBombThrowTrans.DestroyChildren();
+    }
+
     public override void AutoAction()
     {
         base.AutoAction();
@@ -84,5 +90,6 @@ public class SkeletonBomber : Monster_Interface
     {
         GameObject BombObject = Instantiate(mBomb, mBombThrowTrans.position, Quaternion.identity) as GameObject;
         BombObject.GetComponent<Bullet_Extension>().m_AtkPower = 3f;
+        BombObject.transform.SetParent(mBombThrowTrans, false);
     }
 }

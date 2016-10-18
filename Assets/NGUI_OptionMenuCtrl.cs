@@ -69,7 +69,7 @@ public class NGUI_OptionMenuCtrl : MonoBehaviour
         return true;
     }
 
-    public bool CloseOptionMenuPanel()
+    public void CloseOptionMenuPanel()
     {
         //if Opened MenuPanel SetActive = false;
         if (this.gameObject.activeSelf)
@@ -78,10 +78,7 @@ public class NGUI_OptionMenuCtrl : MonoBehaviour
             NGUI_PanelManager.GetInstance().GetCurrentScenePanel(
                 ).CloseBehindCollider();
             this.gameObject.SetActive(false);
-
-            return true;
         }
-        return false;
     }
 
     public void GoBackVilageScene()
@@ -132,6 +129,9 @@ public class NGUI_OptionMenuCtrl : MonoBehaviour
             new EventDelegate(this, "GoBackVilageScene"));
 
         m_GoBackVilageButton.onClick.Add(
+            new EventDelegate(this, "CloseOptionMenuPanel"));
+
+        m_GoBackVilageButton.onClick.Add(
             new EventDelegate(LobbyController.GetInstance(),
             "HideAndShowUpperStatusPanel"));
 
@@ -144,12 +144,24 @@ public class NGUI_OptionMenuCtrl : MonoBehaviour
             "ChangePanel"));
 
         m_GoBackVilageButton.onClick.Add(
+            new EventDelegate(PlayerCtrlManager.GetInstance(),
+            "ClearBattleScenePlayerData"));
+
+        m_GoBackVilageButton.onClick.Add(
             new EventDelegate(MonsterManager.GetInstance(),
             "RemoveAllMonsterData"));
 
         m_GoBackVilageButton.onClick.Add(
+            new EventDelegate(SkillManager.GetInstance(),
+            "RemoveAllSkillData"));
+
+        m_GoBackVilageButton.onClick.Add(
             new EventDelegate(EnvironmentManager.GetInstance(),
             "ClearAllEnvironmentElements"));
+
+        m_GoBackVilageButton.onClick.Add(
+            new EventDelegate(DataController.GetInstance(),
+            "Save"));
 
         m_GoBackVilageObject.SetActive(true);
         m_isBackVilageButtonSetting = true;

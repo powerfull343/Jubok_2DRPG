@@ -38,27 +38,12 @@ public class PlayerCtrlManager
 
     void Update()
     {
-        //if (PlayerAnim.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
-        //    return;
-
-        //if (PlayerAnim.GetCurrentAnimatorStateInfo(0).fullPathHash == Animator.StringToHash("Base.Idle"))
-        //{
-        //    Debug.Log("True");
-        //    Debug.LogError("Animator.StringToHash : " + Animator.StringToHash("Base.Idle"));
-        //}
-
-
         PlayerCtrl.AutoAction();
 
         if (!PlayerAnim.GetCurrentAnimatorStateInfo(0).IsName("Move"))
             EnvironmentManager.isMoved = false;
         else
             EnvironmentManager.isMoved = true;
-
-        //if (MonsterManager.MonsterCount >= 1)
-        //    EnvironmentManager.isMoved = false;
-        //else
-        //    EnvironmentManager.isMoved = true;
     }
 
     public void PlayerIdleAction()
@@ -67,4 +52,8 @@ public class PlayerCtrlManager
         PlayerAnim.SetTrigger("Idle");
     }
 	
+    public void ClearBattleScenePlayerData()
+    {
+        _PlayerCtrl.ClearAllData();
+    }
 }

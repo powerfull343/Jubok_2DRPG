@@ -84,6 +84,8 @@ public abstract class Monster_Interface : Moveable_Object {
         }
     }
 
+    public override void ClearAllData() { }
+
     protected void Initializing()
     {
         mParentTrans =

@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+
 
 public class MagicianNormalRangeAtkCtrl : MonoBehaviour {
 
@@ -7,7 +9,8 @@ public class MagicianNormalRangeAtkCtrl : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        FireBall = Resources.Load("BattleScene/Skills/FireBall") as GameObject;
+        if(FireBall == null)
+            FireBall = Resources.Load("BattleScene/Skills/FireBall") as GameObject;
 	}
 
     public void CallFireBall(int AtkPower)
@@ -21,7 +24,10 @@ public class MagicianNormalRangeAtkCtrl : MonoBehaviour {
         NewFireBall.transform.parent = this.transform;
 
         NewFireBall.SetActive(true);
-
     }	
     
+    public void ClearAllFireBall()
+    {
+        transform.DestroyChildren();
+    }
 }

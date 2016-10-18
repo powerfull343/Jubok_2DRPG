@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-
 public class BossHpBarCtrlManager : MonoBehaviour { 
 
     private Dictionary<string, GameObject> m_HealthBarList
@@ -15,7 +14,14 @@ public class BossHpBarCtrlManager : MonoBehaviour {
 
     private UIPanel m_OwnPanel;
 
-    void Start()
+    void Awake()
+    {
+        m_OwnPanel =
+           Mecro.MecroMethod.CheckGetComponent<UIPanel>(this.transform);
+    }
+
+
+    void OnEnable()
     {
         //transform.localPosition 
         //    = new Vector3(0f, (Screen.height / 2f) - 110, 0f);
@@ -24,8 +30,7 @@ public class BossHpBarCtrlManager : MonoBehaviour {
         //Debug.Log("Screenheight : " + Screen.height);
         //Debug.Log(transform.position);
 
-        m_OwnPanel =
-            Mecro.MecroMethod.CheckGetComponent<UIPanel>(this.transform);
+       
         //CheckingMonsterList();
         
         Invoke("CheckingBossMonsterList", 0.5f);
@@ -114,5 +119,23 @@ public class BossHpBarCtrlManager : MonoBehaviour {
         m_OwnPanel.Update();
 
         return true;
+    }
+
+    public void RemoveAllData()
+    {
+        int nIndex = m_HealthBarList.Count;
+        Debug.Log(nIndex);
+
+        for(int i = 0; i < nIndex; ++i)
+        {
+            m_HealthBarList.ToList().RemoveAt(i);
+        }
+        m_HealthBarList.Clear();
+
+        if (m_SummonedBossHpBar != null)
+        {
+            m_SummonedBossHpBar.StopAllCoroutines();
+            Destroy(m_SummonedBossHpBar.gameObject);
+        }
     }
 }

@@ -30,10 +30,29 @@ public class MagicianCtrl : Moveable_Object {
     //Debuging
     public int DebugingAtkPower = 1;
 
-    void Start () {
+    void Awake()
+    {
+        ObjectType = Moveable_Type.TYPE_PLAYER;
 
+        _PlayerAnim = MecroMethod.CheckGetComponent<Animator>(this.gameObject);
+        mStateAnim = MecroMethod.CheckGetComponent<Animator>(this.transform.parent.FindChild("ObjectState(Color)"));
+        NoramlRangeAtk = transform.parent.FindChild(
+            "Position - NormalRangeAtkRespawn").GetComponent<MagicianNormalRangeAtkCtrl>();
+        m_PlayerCastingEffect = transform.FindChild("CastingEffect").gameObject;
+        if (!m_PlayerCastingEffect)
+            Debug.LogError(m_PlayerCastingEffect.name);
+    }
+
+    void OnEnable()
+    {
+        InitPlayerStat();
+        InitColMonsterContainer();
+    }
+
+    private void InitPlayerStat()
+    {
         PlayerDataManager.GetInstance().UpdateStat(out _Hp, out _Mp,
-            out _Stamina, out _Atk);
+           out _Stamina, out _Atk);
         MaxHp = Hp;
         MaxStamina = Stamina;
         MaxMp = Mp;
@@ -44,16 +63,25 @@ public class MagicianCtrl : Moveable_Object {
             Atk = DebugingAtkPower;
 
         AtkSpeed = 1f;
+    }
 
-        ObjectType = Moveable_Type.TYPE_PLAYER;
+    private void InitColMonsterContainer()
+    {
+        if (_ColMonsters == null)
+            _ColMonsters = new List<Monster_Interface>();
+    }
 
-        _PlayerAnim = MecroMethod.CheckGetComponent<Animator>(this.gameObject);
-        mStateAnim = MecroMethod.CheckGetComponent<Animator>(this.transform.parent.FindChild("ObjectState(Color)"));
-        NoramlRangeAtk = transform.parent.FindChild(
-            "Position - NormalRangeAtkRespawn").GetComponent<MagicianNormalRangeAtkCtrl>();
-        m_PlayerCastingEffect = transform.FindChild("CastingEffect").gameObject;
-        if(!m_PlayerCastingEffect)
-            Debug.LogError(m_PlayerCastingEffect.name);
+    private void ResetPlayerAction()
+    {
+        ResetMeleeAtkTrigger();
+        ResetRangeAtkTrigger();
+        SpriteRenderer ChildCastingEffectComp =
+            m_PlayerCastingEffect.GetComponent<SpriteRenderer>();
+
+        if (ChildCastingEffectComp != null)
+            ChildCastingEffectComp.sprite = null;
+
+        _PlayerAnim.SetTrigger("Move");
     }
 
     public override void AutoAction()
@@ -212,7 +240,7 @@ public class MagicianCtrl : Moveable_Object {
         }
 
         int nEffectSkillShuffle = UnityEngine.Random.Range(0, 100);
-        if(nEffectSkillShuffle > 90) //스킬 데미지를 입힘과 동시에 몬스터 삭제를 관할한다.
+        if(nEffectSkillShuffle > 90 && ColMonsters[0] != null) //스킬 데미지를 입힘과 동시에 몬스터 삭제를 관할한다.
             SkillManager.GetInstance().UseSkill("CriticalLighting", ColMonsters[0].transform);
 
         ResetMeleeAtkTrigger();
@@ -275,5 +303,20 @@ public class MagicianCtrl : Moveable_Object {
     public void ResetAtkMotionSelect()
     {
         isAtkMotionSelect = false;
+    }
+
+    public override void ClearAllData()
+    {
+        ResetPlayerAction();
+
+        //Remove All ColMonster Data
+        //int nColMonsterLen = ColMonsters.Count;
+        //if(nColMonsterLen > 0)
+        //{
+        //    for(int i = 0; i < nColMonsterLen; ++i)
+        //        ColMonsters.RemoveAt(i);
+        //}
+        ColMonsters.Clear();
+        NoramlRangeAtk.ClearAllFireBall();
     }
 }
