@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 public abstract class Moveable_Object : MonoBehaviour {
 
@@ -73,7 +75,7 @@ public abstract class Moveable_Object : MonoBehaviour {
         get { return m_ObjectName; }
         set { m_ObjectName = value; }
     }
-
+    
     protected bool isSkilledCondition = false;
 
     protected Transform mStateAnimTransform;
@@ -96,4 +98,5 @@ public abstract class Moveable_Object : MonoBehaviour {
 
     public virtual void ClearAllData() { }
 
+    
 }

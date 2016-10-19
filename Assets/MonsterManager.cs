@@ -394,12 +394,12 @@ public class MonsterManager
 
         Debug.Log("Clear Comp");
 
-        GameObject DeleteObject = null;
+        GameObject MonsterParent = null;
         for(int i = 0; i < MonsterList.Count; ++i)
         {
-            DeleteObject = MonsterList[i];
-            MonsterList.Remove(DeleteObject);
-            Destroy(DeleteObject);
+            MonsterParent = MonsterList[i];
+            MonsterList.Remove(MonsterParent);
+            Destroy(MonsterParent);
         }
         MonsterList.Clear();
     }

@@ -86,7 +86,7 @@ public abstract class Monster_Interface : Moveable_Object {
 
     public override void ClearAllData() { }
 
-    protected void Initializing()
+    protected virtual void Initializing()
     {
         mParentTrans =
             Mecro.MecroMethod.CheckGetComponent<Transform>(this.transform.parent);

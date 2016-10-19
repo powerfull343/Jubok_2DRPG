@@ -27,15 +27,14 @@ public class SkeletonBoomerang : Monster_Interface
 
     void Start()
     {
-        base.Initializing();
-
         Initializing();
 
         StartCoroutine("ActionCoroutine");
     }
 
-    void Initializing()
+    protected override void Initializing()
     {
+        base.Initializing();
         m_DeathParticles =
             Mecro.MecroMethod.CheckGetComponent<Transform>(
                 this.transform.parent.FindChild("DeathParticles"));
@@ -125,6 +124,7 @@ public class SkeletonBoomerang : Monster_Interface
             SkeletonBoomerang_Boomerang BoomComp =
                 Mecro.MecroMethod.CheckGetComponent<SkeletonBoomerang_Boomerang>(m_BoomerangObject);
             BoomComp.SetThrowMonsterinfo(this);
+            
         }
         else
         {

@@ -10,7 +10,7 @@ public class BlueSkeleton : Monster_Interface {
 
     void Start() {
 
-        base.Initializing();
+        Initializing();
 
         HeadTrans =
             Mecro.MecroMethod.CheckGetComponent<Transform>(transform.parent.FindChild("Head"));

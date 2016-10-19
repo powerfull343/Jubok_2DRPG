@@ -160,6 +160,9 @@ public class NGUI_OptionMenuCtrl : MonoBehaviour
             "ClearAllEnvironmentElements"));
 
         m_GoBackVilageButton.onClick.Add(
+            new EventDelegate(this, "BulletClear"));
+
+        m_GoBackVilageButton.onClick.Add(
             new EventDelegate(DataController.GetInstance(),
             "Save"));
 
@@ -203,6 +206,14 @@ public class NGUI_OptionMenuCtrl : MonoBehaviour
             ).SetBehindColliderDepth(m_OwnPanel.depth - 1);
 
         m_AppQuitPopupPanel.gameObject.SetActive(false);
+    }
+
+    private void BulletClear()
+    {
+        Transform ClearTarget = 
+            GameObject.FindGameObjectWithTag("BulletParent").transform;
+
+        ClearTarget.DestroyChildren();
     }
 
 

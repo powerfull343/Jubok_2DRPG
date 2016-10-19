@@ -4,6 +4,13 @@ using System.Collections;
 [RequireComponent(typeof(BoxCollider))]
 public class Bullet_Extension : GameObject_Extension {
 
+    private Moveable_Object m_ShotingObject = null;
+    public Moveable_Object ShotingObject
+    {
+        get { return m_ShotingObject; }
+        set { m_ShotingObject = value; }
+    }
+
     public bool m_isAutoRotation = false;
 
     public float m_AtkPower = 1f;
@@ -31,10 +38,20 @@ public class Bullet_Extension : GameObject_Extension {
     private Vector3 m_vCurvingCenter;
     private Vector3 m_vCurvingStartPos;
     private bool m_isEndCurving = false;
-    
+
+    public static Transform ShotingParent;
+
+    void Awake()
+    {
+        if (ShotingParent == null)
+            ShotingParent = GameObject.FindGameObjectWithTag("BulletParent").transform;
+
+    }
 
     void Start()
     {
+        this.transform.SetParent(ShotingParent, true);
+
         if (m_isAutoRotation)
             StartCoroutine("AutoRotation");
 
@@ -108,6 +125,11 @@ public class Bullet_Extension : GameObject_Extension {
         transform.localPosition = Vector3.Lerp(StartRelCenter, DropRelCenter, frecComplete);
     }
 
+    public override void SelfDestroy()
+    {
+        base.SelfDestroy();
+    }
+
     IEnumerator AutoRotation()
     {
         float fRotatePowerRange = Random.Range(2f, 5f);
@@ -149,5 +171,13 @@ public class Bullet_Extension : GameObject_Extension {
         if (other.gameObject.CompareTag("OverTheArea"))
             SelfDestroy();
     }
-	
+    
+    public void ClearBullets()
+    {
+        if (ShotingParent.childCount <= 0)
+            return;
+        
+        ShotingParent.DestroyChildren();
+    }
+
 }

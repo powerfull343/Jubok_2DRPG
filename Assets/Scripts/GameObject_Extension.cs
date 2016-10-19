@@ -78,7 +78,7 @@ public class GameObject_Extension
         //     gameObject.activeSelf);
     }
 
-    public void SelfDestroy()
+    public virtual void SelfDestroy()
     {
         Destroy(this.gameObject);
     }

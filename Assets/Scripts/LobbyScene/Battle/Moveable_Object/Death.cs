@@ -145,7 +145,7 @@ public class Death : Monster_Interface
         //Create Object
         GameObject BeamObject = Instantiate(BeamPrefabs[(int)type],
            m_BeamAppearTrans.position, Quaternion.Euler(new Vector3(0f, 0f, fCosAngle))) as GameObject;
-
+        BeamObject.transform.SetParent(Bullet_Extension.ShotingParent, true);
 
         if (type == LAZERTYPE.LAZER_BEAM)       //Beam Type
         {
