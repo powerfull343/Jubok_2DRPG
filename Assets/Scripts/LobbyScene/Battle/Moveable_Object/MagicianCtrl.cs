@@ -47,6 +47,7 @@ public class MagicianCtrl : Moveable_Object {
     {
         InitPlayerStat();
         InitColMonsterContainer();
+        _PlayerAnim.enabled = true;
     }
 
     private void InitPlayerStat()
@@ -82,6 +83,7 @@ public class MagicianCtrl : Moveable_Object {
             ChildCastingEffectComp.sprite = null;
 
         _PlayerAnim.SetTrigger("Move");
+        _PlayerAnim.enabled = false;
     }
 
     public override void AutoAction()

@@ -197,8 +197,8 @@ public class LobbyController
     {
         if (mCurrentSceneID == mSelectedSceneID)
             return;
-        Debug.Log(mSelectedSceneID);
-        Debug.Log(GetInstance().mCurrentSceneID);
+        //Debug.Log(mSelectedSceneID);
+        //Debug.Log(GetInstance().mCurrentSceneID);
 
         mCurrentSceneID = mSelectedSceneID;
     }

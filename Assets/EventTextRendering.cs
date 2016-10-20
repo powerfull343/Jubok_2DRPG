@@ -40,9 +40,21 @@ public class EventTextRendering : MonoBehaviour {
     {
         transform.localPosition = Vector3.zero;
         transform.localScale = Vector3.one;
+        Debug.Log(transform.localPosition);
+        Debug.Log(transform.localScale);
         m_EventLabelComp.text = string.Empty;
         m_RetentionEvent = RetentionEvent();
         m_ProgressBarTrans.gameObject.SetActive(false);
+    }
+
+    public void ResetAllTextRendering()
+    {
+        StopAllCoroutines();
+        m_AutoTypingComp.ResetAutoTyping();
+        ResetEventRendering();
+
+        TweenPosition.Begin(this.gameObject, 1f, Vector3.zero);
+        TweenScale.Begin(this.gameObject, 1f, Vector3.one);
     }
 
     void EventTextMiniModeAnimation()

@@ -48,16 +48,29 @@ public class BattleEventCaller : MonoBehaviour {
     public bool m_isEventCall = true;
     private bool m_isPreviousEvent = false;
 
-    void Start()
+    void Awake()
     {
         Mecro.MecroMethod.CheckExistComponent<EventTextRendering>(m_EventRenderingComp);
+        
+    }
 
+    void OnEnable()
+    {
         if (m_isEventCall)
         {
+            InitOriginRegenValues();
             m_EventProcess = ProcessEvents();
             StartCoroutine(m_EventProcess);
         }
     }
+
+    private void InitOriginRegenValues()
+    {
+        m_OriginRegenMinSec = MonsterManager.GetInstance().RegenMinWidth;
+        m_OriginRegenMaxSec = MonsterManager.GetInstance().RegenMaxWidth;
+        m_OriginRegenMaxCount = MonsterManager.MonsterMaxCount;
+    }
+
 
     IEnumerator ProcessEvents()
     {
@@ -89,12 +102,6 @@ public class BattleEventCaller : MonoBehaviour {
         {
             //이벤트 상황에 따라 다른 함수를 채용시킨다.
             ResetRegenSpeed();
-            m_fEventStartTime = 0f;
-            m_fEventRetentionTime = 0f;
-            m_EventID = PLAYEVENTID.EVENT_NULL;
-            m_EventRenderingComp.ResetEventRendering();
-            m_fEventProgressRate = 1f;
-            m_isFlowStart = false;
         }
     }
 
@@ -110,24 +117,14 @@ public class BattleEventCaller : MonoBehaviour {
     /// <summary>
     /// isCanival = true(StartEvent), false(EndEvent)
     /// </summary>
-    /// <param name="isCanival"></param>
-    public void ChangeRegenSpeed(bool isCanival)
+    public void ChangeRegenSpeed()
     {
-        if (isCanival)
-        {
-            MonsterManager.GetInstance().RegenMinWidth = 0f;
-            MonsterManager.GetInstance().RegenMaxWidth = 2f;
-            MonsterManager.MonsterMaxCount = 20;
-            MonsterManager.GetInstance().StartRegenTime = 0;
-            StopCoroutine(MonsterManager.GetInstance().iRegenMonster);
-            StartCoroutine(MonsterManager.GetInstance().iRegenMonster);
-        }
-        else
-        {
-            m_OriginRegenMinSec = MonsterManager.GetInstance().RegenMinWidth;
-            m_OriginRegenMaxSec = MonsterManager.GetInstance().RegenMaxWidth;
-            m_OriginRegenMaxCount = MonsterManager.MonsterMaxCount;
-        }
+        MonsterManager.GetInstance().RegenMinWidth = 0f;
+        MonsterManager.GetInstance().RegenMaxWidth = 2f;
+        MonsterManager.MonsterMaxCount = 20;
+        MonsterManager.GetInstance().StartRegenTime = 0;
+        StopCoroutine(MonsterManager.GetInstance().iRegenMonster);
+        StartCoroutine(MonsterManager.GetInstance().iRegenMonster);
     }
 
     public void ResetRegenSpeed()
@@ -136,13 +133,20 @@ public class BattleEventCaller : MonoBehaviour {
         MonsterManager.GetInstance().RegenMaxWidth = m_OriginRegenMaxSec;
         MonsterManager.MonsterMaxCount = m_OriginRegenMaxCount;
         MonsterManager.GetInstance().StartRegenTime = 1f;
+
+        m_fEventStartTime = 0f;
+        m_fEventRetentionTime = 0f;
+        m_EventID = PLAYEVENTID.EVENT_NULL;
+        m_EventRenderingComp.ResetEventRendering();
+        m_fEventProgressRate = 1f;
+        m_isFlowStart = false;
     }
 
     //Canival Time Event
     private bool EventChangeSystem()
     {
         //이벤트가 연속적으로 발생하는 것을 방지하기 위해 막아준다.
-        if(m_isPreviousEvent)
+        if (m_isPreviousEvent)
         {
             m_isPreviousEvent = false;
             return false;
@@ -157,8 +161,9 @@ public class BattleEventCaller : MonoBehaviour {
         m_EventID = (PLAYEVENTID)nRandomEventIndex;
 
         m_fEventStartTime = Time.time;
-        Debug.Log(m_fEventStartTime);
+        //Debug.Log(m_fEventStartTime);
         m_fEventProgressRate = 1f;
+        InitOriginRegenValues();
         m_EventRenderingComp.StartEventTextRendering("Canival Time");
 
         //이벤트가 연속적으로 발생하는 것을 방지하기 위해 막아준다.
@@ -174,9 +179,32 @@ public class BattleEventCaller : MonoBehaviour {
 
         //진짜시작
         
-        //원래 스피드를 먼저 복사한다.
-        ChangeRegenSpeed(false);
         //스피드 상승
-        ChangeRegenSpeed(true);
+        ChangeRegenSpeed();
+    }
+
+    public void ResetEventCaller()
+    {
+        //이미 이벤트가 진행중일때
+        if (m_isFlowStart)
+            ResetRegenSpeed();
+        //이벤트가 진행중이지 않을시
+        else
+        {
+            //이벤트 글씨 효과도 발생하지 않았을때
+            if (m_fEventStartTime == 0f)
+            {
+                Debug.Log("not Reset");
+                return;
+            }
+            //글시 효과 발생중 이벤트 종료시
+            else
+            {
+                Debug.Log("ResetEventRendering");
+                m_EventRenderingComp.StopAllCoroutines();
+                m_EventRenderingComp.ResetAllTextRendering();
+                ResetRegenSpeed();
+            }
+        }
     }
 }

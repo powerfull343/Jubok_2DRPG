@@ -212,7 +212,7 @@ public abstract class Monster_Interface : Moveable_Object {
 
     protected void OutFieldMonster_CanAttack(Collider collider)
     {
-        Debug.Log(collider.name);
+        //Debug.Log(collider.name);
         if (collider.gameObject.CompareTag("OverTheArea"))
         {
             MonsterManager.m_isMonsterExist = true;

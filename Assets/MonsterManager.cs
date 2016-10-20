@@ -363,12 +363,15 @@ public class MonsterManager
     }
 
     //if you Change Scene loaded all monster data remove it
-    public void RemoveAllMonsterData()
+    public void ClearMonsterManager()
     {
         StopAllCoroutines();
 
-        //돌고있는 프로레스 관련
+        //MonsterManager 돌고있는 프로레스 관련
         m_Processing = false;
+
+        //BattleEventCaller 관련
+        MonsterManager.GetInstance().BattleEventCaller.ResetEventCaller();
 
         //Boss 관련
         m_isCheckBossExist = false;

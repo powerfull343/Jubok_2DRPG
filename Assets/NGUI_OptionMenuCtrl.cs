@@ -149,7 +149,7 @@ public class NGUI_OptionMenuCtrl : MonoBehaviour
 
         m_GoBackVilageButton.onClick.Add(
             new EventDelegate(MonsterManager.GetInstance(),
-            "RemoveAllMonsterData"));
+            "ClearMonsterManager"));
 
         m_GoBackVilageButton.onClick.Add(
             new EventDelegate(SkillManager.GetInstance(),

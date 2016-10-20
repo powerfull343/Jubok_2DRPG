@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 public class AutoTyping : MonoBehaviour
 {
-
     private UILabel m_Labelcomp;
 
     private IEnumerator m_TypingCoroutine;
@@ -27,7 +26,7 @@ public class AutoTyping : MonoBehaviour
         m_TypingText = TargetText;
         m_TypingMaxIdx = m_TypingText.Length;
 
-        Debug.Log("StartAction");
+        //Debug.Log("StartAction");
         StartCoroutine(m_TypingCoroutine);
     }
 
@@ -51,6 +50,14 @@ public class AutoTyping : MonoBehaviour
         yield break;
     }
 
+    public void ResetAutoTyping()
+    {
+        StopAllCoroutines();
+        m_TypingIdx = 1;
+        m_TypingMaxIdx = 0;
+        m_isTypingEnd = false;
+        m_Labelcomp.text = string.Empty;
+    }
     
 
 
