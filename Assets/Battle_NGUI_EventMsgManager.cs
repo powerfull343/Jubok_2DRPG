@@ -8,5 +8,9 @@ public class Battle_NGUI_EventMsgManager :
     {
         CreateInstance();
     }
-	
+
+    public void DestroyAllEventMessage()
+    {
+        transform.DestroyChildren();
+    }
 }

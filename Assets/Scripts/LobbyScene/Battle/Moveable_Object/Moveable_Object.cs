@@ -81,6 +81,11 @@ public abstract class Moveable_Object : MonoBehaviour {
     protected Transform mStateAnimTransform;
     protected Animator mStateAnim;
 
+
+    protected GameObject m_LoadedEventText;
+    protected Battle_NGUI_EventMsg mEventMsg;
+
+    //Methods
     public abstract void AutoAction();
     protected abstract void Move();
     protected abstract void Attack();
@@ -95,6 +100,20 @@ public abstract class Moveable_Object : MonoBehaviour {
     }
 
     public abstract bool SetHp(int discountAmount);
+
+    protected virtual void InitEventTextMsg()
+    {
+        if (!m_LoadedEventText)
+        {
+            m_LoadedEventText =
+                Resources.Load("BattleScene/UI/EventMessages") as GameObject;
+        }
+    }
+
+    public void ShowEventTextMsg(string _strMessage, Color _TextColor)
+    {
+        mEventMsg.CallEventMessage(_strMessage, _TextColor);
+    }
 
     public virtual void ClearAllData() { }
 

@@ -100,6 +100,25 @@ public abstract class Monster_Interface : Moveable_Object {
             Mecro.MecroMethod.CheckGetComponent<Animator>(mStateAnimTransform);
         mHpStateTransform =
             Mecro.MecroMethod.CheckGetComponent<Transform>(this.transform.parent.FindChild("HpUI"));
+
+        InitEventTextMsg();
+    }
+
+    protected override void InitEventTextMsg()
+    {
+        Debug.Log("Monster EventText Init");
+        base.InitEventTextMsg();
+        if (!mEventMsg)
+        {
+            GameObject EventTextMsg = Instantiate(m_LoadedEventText);
+            EventTextMsg.transform.SetParent(Battle_NGUI_EventMsgManager.GetInstance().transform, false);
+            mEventMsg = Mecro.MecroMethod.CheckGetComponent<Battle_NGUI_EventMsg>(EventTextMsg);
+            if(m_grade == MONSTERGRADEID.GRADE_NORMAL ||
+                m_grade == MONSTERGRADEID.GRADE_HIDDEN)
+                mEventMsg.InitEventMsg(transform.parent, false);
+            else
+                mEventMsg.InitEventMsg(transform.parent, true);
+        }
     }
 
     public override bool SetHp(int discountAmount)
@@ -108,6 +127,7 @@ public abstract class Monster_Interface : Moveable_Object {
             return true;
 
         Hp -= discountAmount;
+        ShowEventTextMsg("- " + discountAmount.ToString(), Color.red);
 
         if (Hp <= 0)
         {
@@ -117,7 +137,6 @@ public abstract class Monster_Interface : Moveable_Object {
             
             return false;
         }
-
         return true;
     }
 
@@ -133,6 +152,7 @@ public abstract class Monster_Interface : Moveable_Object {
         Move();
         Attack();
     }
+
     protected override void Move()
     {
         if ((int)m_grade > (int)MONSTERGRADEID.GRADE_NORMAL)
@@ -182,7 +202,7 @@ public abstract class Monster_Interface : Moveable_Object {
         mboxcol.enabled = false;
         mStateAnimTransform.gameObject.SetActive(false);
         mHpStateTransform.gameObject.SetActive(false);
-        //Debug.LogError("disableComp");
+        Destroy(mEventMsg.gameObject);
     }
 
     protected void KillMonster()

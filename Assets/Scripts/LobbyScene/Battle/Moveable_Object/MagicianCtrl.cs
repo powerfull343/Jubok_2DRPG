@@ -50,6 +50,11 @@ public class MagicianCtrl : Moveable_Object {
         _PlayerAnim.enabled = true;
     }
 
+    void Start()
+    {
+        InitEventTextMsg();
+    }
+
     private void InitPlayerStat()
     {
         PlayerDataManager.GetInstance().UpdateStat(out _Hp, out _Mp,
@@ -70,6 +75,20 @@ public class MagicianCtrl : Moveable_Object {
     {
         if (_ColMonsters == null)
             _ColMonsters = new List<Monster_Interface>();
+    }
+
+    protected override void InitEventTextMsg()
+    {
+        Debug.Log("Magician EventText Init");
+        base.InitEventTextMsg();
+        if (!mEventMsg)
+        {
+            GameObject EventTextMsg = Instantiate(m_LoadedEventText);
+            EventTextMsg.transform.SetParent(Battle_NGUI_EventMsgManager.GetInstance().transform, false);
+            mEventMsg = Mecro.MecroMethod.CheckGetComponent<Battle_NGUI_EventMsg>(EventTextMsg);
+            mEventMsg.InitEventMsg(transform.parent, false);
+            
+        }
     }
 
     private void ResetPlayerAction()
@@ -105,6 +124,7 @@ public class MagicianCtrl : Moveable_Object {
     public override bool SetHp(int discountAmount)
     {
         Hp -= discountAmount;
+        ShowEventTextMsg("- " + discountAmount.ToString(), Color.red);
 
         if (Hp <= 0)
             return false;

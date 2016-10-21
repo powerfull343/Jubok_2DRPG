@@ -12,13 +12,6 @@ public class BattleScene_NGUI_Panel : Scene_Panel_Interface
     }
 
     [SerializeField]
-    private Battle_NGUI_EventMsg m_EventMessageCtrl;
-    public Battle_NGUI_EventMsg EventMessageCtrl
-    {
-        get { return m_EventMessageCtrl; }
-    }
-
-    [SerializeField]
     private Camera m_NGUICamera;
     public Camera NGUICamera
     {
@@ -35,7 +28,6 @@ public class BattleScene_NGUI_Panel : Scene_Panel_Interface
     {
         base.InitComponents();
         MecroMethod.CheckExistComponent<BossHpBarCtrlManager>(m_BossHpManager);
-        MecroMethod.CheckExistComponent<Battle_NGUI_EventMsg>(m_EventMessageCtrl);
         MecroMethod.CheckExistComponent<Camera>(m_NGUICamera);
     }
 
@@ -49,11 +41,6 @@ public class BattleScene_NGUI_Panel : Scene_Panel_Interface
         base.UpperPanelMoving();
         //if BattleScene Start Reducing Statmina
         LobbyController.GetInstance().UpperStatusPanel.StartReducingStamina();
-    }
-
-    public void CallEventMessage(string strMessage, Color LabelColor)
-    {
-        EventMessageCtrl.CallEventMessage(strMessage, LabelColor);
     }
 
     public void CreateBossHpBar(string MonsterKey)

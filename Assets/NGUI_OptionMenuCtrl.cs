@@ -163,6 +163,10 @@ public class NGUI_OptionMenuCtrl : MonoBehaviour
             new EventDelegate(this, "BulletClear"));
 
         m_GoBackVilageButton.onClick.Add(
+            new EventDelegate(Battle_NGUI_EventMsgManager.GetInstance(),
+            "DestroyAllEventMessage"));
+
+        m_GoBackVilageButton.onClick.Add(
             new EventDelegate(DataController.GetInstance(),
             "Save"));
 

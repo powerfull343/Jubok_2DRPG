@@ -1,48 +1,50 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Battle_NGUI_EventMsg 
-    : Singleton<Battle_NGUI_EventMsg> {
+public class Battle_NGUI_EventMsg : MonoBehaviour {
 
-    private GameObject m_OriginEventLabel;
+    private static GameObject m_OriginEventLabel;
+    private Transform m_TargetTrans;
+    private bool m_isBiggerObject;
 
-    void Start()
+    public void InitEventMsg(Transform TargetTrans, bool isBiggerObject)
     {
-        m_OriginEventLabel = Resources.Load("BattleScene/UI/Label - EventMessage") as GameObject;
-        if(!m_OriginEventLabel)
-            Debug.LogError(m_OriginEventLabel.name + " Object is Null!");
+        if (!m_OriginEventLabel)
+            m_OriginEventLabel = Resources.Load("BattleScene/UI/Label - EventMessage") as GameObject;
 
-        //Vector3 PlayerPosition = 
-        //    Camera.main.WorldToScreenPoint(
-        //        PlayerCtrlManager.GetInstance().Player.position);
-
-        //transform.position =
-        //    BattleScene_NGUI_Panel.GetInstance().NGUICamera.ScreenToWorldPoint(PlayerPosition);
-
-        transform.position =
-            Mecro.MecroMethod.NormalToNGUIWorldPos(
-                PlayerCtrlManager.GetInstance().Player.position);
-
-        transform.localPosition += new Vector3(0f, 50f, 0f);
+        m_TargetTrans = TargetTrans;
+        m_isBiggerObject = isBiggerObject;
 
         CallEventMessage("Test", Color.white);
     }
 
+    private void SetCallingPosition()
+    {
+        transform.position =
+            Mecro.MecroMethod.NormalToNGUIWorldPos(
+                m_TargetTrans.position);
+
+        if (!m_isBiggerObject)
+            transform.localPosition += new Vector3(0f, 50f, 0f);
+        else
+            transform.localPosition += new Vector3(0f, 100f, 0f);
+    }
+
     public void CallEventMessage(string strMessage, Color LabelColor)
     {
-        GameObject EventLabelMsg = Instantiate(m_OriginEventLabel);
+        GameObject EventText = Instantiate(m_OriginEventLabel);
+        EventText.SetActive(false);
+        EventText.transform.SetParent(this.transform, false);
 
-        EventLabelMsg.SetActive(false);
+        SetCallingPosition();
 
-        EventLabelMsg.transform.parent = this.transform;
-        EventLabelMsg.transform.localPosition = Vector3.zero;
-        EventLabelMsg.transform.localScale = Vector3.one;
+        EventText.transform.localScale = Vector3.one * 2f;
 
-        UILabel EventTextInfo = Mecro.MecroMethod.CheckGetComponent<UILabel>(EventLabelMsg);
+        UILabel EventTextInfo = Mecro.MecroMethod.CheckGetComponent<UILabel>(EventText);
 
         EventTextInfo.text = strMessage;
         EventTextInfo.color = LabelColor;
 
-        EventLabelMsg.SetActive(true);
+        EventText.SetActive(true);
     }
 }
