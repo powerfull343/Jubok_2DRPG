@@ -82,7 +82,7 @@ public abstract class Moveable_Object : MonoBehaviour {
     protected Animator mStateAnim;
 
 
-    protected GameObject m_LoadedEventText;
+    protected static GameObject m_LoadedEventText;
     protected Battle_NGUI_EventMsg mEventMsg;
 
     //Methods

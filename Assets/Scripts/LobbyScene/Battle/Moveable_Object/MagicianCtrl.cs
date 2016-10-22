@@ -48,11 +48,7 @@ public class MagicianCtrl : Moveable_Object {
         InitPlayerStat();
         InitColMonsterContainer();
         _PlayerAnim.enabled = true;
-    }
-
-    void Start()
-    {
-        InitEventTextMsg();
+        Invoke("InitEventTextMsg", 0.25f);
     }
 
     private void InitPlayerStat()

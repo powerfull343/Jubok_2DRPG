@@ -14,17 +14,15 @@ public class SkillManager :
         get { return m_LoadedSkill; }
     }
 
-    private List<GameObject> m_UsingSkill
-        = new List<GameObject>();
-    public List<GameObject> UsingSkill
-    {
-        get { return m_UsingSkill; }
-        set { m_UsingSkill = value; }
-    }
+    public Transform m_UsingSkills;
 
     void Awake()
     {
         CreateInstance();
+
+        if (m_UsingSkills == null)
+            m_UsingSkills = transform.FindChild("UsingSkill");
+                
     }
 
     void OnEnable()
@@ -81,22 +79,25 @@ public class SkillManager :
             Debug.Log(FindKey.m_isSkillUsing);
             return;
         }
+                
+        GameObject newSkillObject = 
+            Instantiate(LoadedSkill[FindKey] as GameObject);
 
-        GameObject SkillObject = LoadedSkill[FindKey] as GameObject;
-        SkillObject = Instantiate(SkillObject);
-        
         //Position Setting
-        SkillObject.SetActive(false);
-        SkillObject.transform.parent = this.transform;
-        //SkillObject.transform.position = transform.position;
+        newSkillObject.SetActive(false);
+        newSkillObject.transform.parent = m_UsingSkills;
+        //newSkillObject.transform.parent = m_BulletParent;
+        //newSkillObject.transform.localPosition = Vector3.zero;
+        //newSkillObject.transform.localScale = Vector3.one;
+        
 
-        Mecro.MecroMethod.CheckGetComponent<Skill_Interface>(SkillObject).InitializingSkill(Target);
+        Mecro.MecroMethod.CheckGetComponent<
+            Skill_Interface>(newSkillObject).InitializingSkill(Target);
 
-        SkillObject.SetActive(true);
+        newSkillObject.SetActive(true);
 
         //스킬을 사용했다고 등록
         SkillList_KeyUseSetting(FindKey, true);
-        m_UsingSkill.Add(SkillObject);
     }
     
     public bool CheckingSkillUse(string SkillName)
@@ -153,32 +154,17 @@ public class SkillManager :
         FindKey.m_isSkillUsing = isUse;
     }
 
-    public void RemoveUsingSkill(GameObject RemoveTarget)
-    {
-        m_UsingSkill.Remove(RemoveTarget);
-    }
-
     public void RemoveAllSkillData()
     {
-        //Using Skill clear
-        GameObject DeleteTarget = null;
-        int nIndex = m_UsingSkill.Count;
-        for(int i = 0; i < nIndex; ++i)
-        {
-            DeleteTarget = m_UsingSkill[i];
-            m_UsingSkill.Remove(DeleteTarget);
-            Destroy(DeleteTarget);
-        }
-        m_UsingSkill.Clear();
+        //Using Skill Data Clear
+        m_UsingSkills.DestroyChildren();
+
 
         //Prefab Data Clear
-        nIndex = m_LoadedSkill.Count;
+        int nIndex = m_LoadedSkill.Count;
         for(int i = 0; i < nIndex; ++i)
             m_LoadedSkill.ToList().RemoveAt(i);
         m_LoadedSkill.Clear();
-
-
-
     }
 
     //public void MonsterHpZero(Moveable_Object otherInfo)
