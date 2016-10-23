@@ -121,6 +121,9 @@ public class UI_EquipStat_PlayerArmed : MonoBehaviour {
             //6. 자동으로 아이템을 밀어준다.
             InventoryManager.GetInstance().PushingInventory(_HoveredSlot);
 
+            //7. 생성 위치 조정
+            --InventoryManager.ItemCreatePosition;
+
             _SelectedEquip.gameObject.SetActive(true);
         }
 

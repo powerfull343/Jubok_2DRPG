@@ -190,7 +190,7 @@ public class InventoryManager :
             {
                 KindofItem[0].itemCount += _nItemCount;
                 DataController.GetInstance().Save();
-                return null;
+                return null; 
             }
             //장비인 경우에는 리스트에 추가한다.
             else
@@ -300,6 +300,10 @@ public class InventoryManager :
     public void RemoveItem(Item_Interface SelectedItem)
     {
         List<Item_Interface> KindofItem;
+
+        if (SelectedItem == null)
+            Debug.LogError(SelectedItem.ToString() + "Object is null !");
+
         if (!DataController.GetInstance(
             ).InGameData.Inventory.ContainsKey(SelectedItem.itemName))
             Debug.LogError("Cannot find item Object");

@@ -24,8 +24,8 @@ public class MeleeColScript : MonoBehaviour {
 
             _Player.ResetRangeAtkTrigger();
 
-            if (MagicianCtrl.ColMonsters.Count >= 15)
-                Debug.LogError("Warning");
+            //if (MagicianCtrl.ColMonsters.Count >= 15)
+            //    Debug.LogError("Warning");
             
             MagicianCtrl.ColMonsters.Add(MonsterInfo);
 

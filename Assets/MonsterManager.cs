@@ -46,7 +46,7 @@ public class MonsterManager
     public static bool m_isMonsterExist = false;
     public static int MonsterMaxCount = 10;
 
-    public float StartRegenTime = 5f;
+    public float StartRegenTime = 10f;
     public float RegenMinWidth = 1f;
     public float RegenMaxWidth = 3f;
     public Transform InFieldPosition;

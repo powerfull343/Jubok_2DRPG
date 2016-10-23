@@ -11,7 +11,7 @@ public class UI_UpperStat_Stamina : MonoBehaviour {
     private int m_StaminaAmount;
     private int m_MaxStaminaAmount;
 
-    private float m_StaminaReduceRate = 60f;
+    private float m_StaminaReduceRate = 5f;
 
 	void Start () {
         Mecro.MecroMethod.CheckExistComponent<UILabel>(m_StaminaText);
@@ -20,7 +20,7 @@ public class UI_UpperStat_Stamina : MonoBehaviour {
             LobbyController.GetInstance().mCurrentSceneID != FIELDID.ID_CASTLE)
         {
             ResetStaminaPoint();
-            Invoke("ReducingStatmina", 1f);
+            //Invoke("ReducingStatmina", 1f);
         }
         else
             m_StaminaText.text = "Stamina : " + 
@@ -29,6 +29,7 @@ public class UI_UpperStat_Stamina : MonoBehaviour {
 
     public void ReducingStatmina()
     {
+        Debug.Log("Starting ReducingStatmina");
         StartCoroutine("StaminaReduce");
     }
 
@@ -36,18 +37,22 @@ public class UI_UpperStat_Stamina : MonoBehaviour {
     {
         m_StaminaAmount = PlayerCtrlManager.GetInstance().PlayerCtrl.Stamina;
         m_MaxStaminaAmount = m_StaminaAmount;
+        Debug.Log(m_StaminaAmount.ToString() + m_StaminaAmount);
         m_StaminaText.text = "Stamina : " + m_StaminaAmount;
     }
 
     IEnumerator StaminaReduce()
     {
+        
         yield return new WaitForSeconds(m_StaminaReduceRate);
 
         while (m_StaminaAmount >= 1)
         {
+            Debug.Log("Discount Statmina");
             --m_StaminaAmount;
             m_StaminaText.text = "Stamina : " + m_StaminaAmount;
             DetailStatminaLabel();
+            Debug.Log("m_StaminaAmount : " + m_StaminaAmount);
             yield return new WaitForSeconds(m_StaminaReduceRate);
         }
 

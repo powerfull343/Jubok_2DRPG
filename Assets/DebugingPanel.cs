@@ -63,6 +63,7 @@ public class DebugingPanel :
 
     void OnEnable()
     {
+        Mecro.MecroMethod.ShowSceneLogConsole(Application.persistentDataPath, false);
         StartCoroutine("CheckingUpDownButtonClick");
     }
 

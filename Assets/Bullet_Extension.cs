@@ -158,6 +158,7 @@ public class Bullet_Extension : GameObject_Extension {
             if (otherInfo.Hp <= 0)
                 return;
 
+            //Debug.Log(this.gameObject.name + " : " + m_AtkPower);
             otherInfo.SetHp((int)m_AtkPower);
             
             //몬스터 HP 0일시 관통 그 외에는 삭제

@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Mecro;
-
 using LobbyButtonFunc;
 
 public class UI_Inventory_Functions : MonoBehaviour {
@@ -177,6 +176,7 @@ public class UI_Inventory_Functions : MonoBehaviour {
         Debug.Log("Additem");
         //아이템 추가
         InventoryManager.GetInstance().CreateItem(SelectedItem.ItemInfo, nBuyItemCount);
+        ++InventoryManager.ItemCreatePosition;
         return StatusMessage;
     }
 
@@ -202,6 +202,7 @@ public class UI_Inventory_Functions : MonoBehaviour {
         LobbyController.GetInstance(
             ).UpperStatusPanel.SetMoney(nGetPrice * nSellItemCount);
 
+        --InventoryManager.ItemCreatePosition;
         SetWeight(SelectedItem, nSellItemCount, false);
         //아이템 삭제
         InventoryManager.GetInstance(

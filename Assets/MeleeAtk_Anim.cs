@@ -39,7 +39,7 @@ public class MeleeAtk_Anim : StateMachineBehaviour {
         switch(m_AttackTargetType)
         {
             case Moveable_Type.TYPE_PLAYER:
-                PlayerCtrlManager.GetInstance().PlayerCtrl.Hp -= m_BodyInfo.Atk;
+                PlayerCtrlManager.GetInstance().PlayerCtrl.SetHp(m_BodyInfo.Atk);
                 break;
 
             case Moveable_Type.TYPE_MONSTER:

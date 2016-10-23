@@ -120,6 +120,9 @@ public class MagicianCtrl : Moveable_Object {
     public override bool SetHp(int discountAmount)
     {
         Hp -= discountAmount;
+        if (Hp <= 0)
+            Hp = 1;
+
         ShowEventTextMsg("- " + discountAmount.ToString(), Color.red);
 
         if (Hp <= 0)

@@ -14,8 +14,6 @@ public class Battle_NGUI_EventMsg : MonoBehaviour {
 
         m_TargetTrans = TargetTrans;
         m_isBiggerObject = isBiggerObject;
-
-        CallEventMessage("Test", Color.white);
     }
 
     private void SetCallingPosition()
