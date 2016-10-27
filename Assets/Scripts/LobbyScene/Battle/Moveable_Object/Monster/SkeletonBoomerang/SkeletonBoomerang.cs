@@ -84,8 +84,16 @@ public class SkeletonBoomerang : Monster_Interface
         if (!m_DeathParticles.gameObject.activeSelf)
             m_DeathParticles.gameObject.SetActive(true);
 
+        //DropItemObjects();
         Invoke("KillMonster", 3f);
     }
+
+    //protected override void KillMonster()
+    //{
+    //    if (grade >= MONSTERGRADEID.GRADE_BOSS)
+    //        MonsterManager.GetInstance().CheckBossExist = false;
+    //    Mecro.MecroMethod.CheckGetComponent<GameObject_Extension>(mParentTrans).SelfDestroy();
+    //}
 
     protected override IEnumerator ActionCoroutine()
     {

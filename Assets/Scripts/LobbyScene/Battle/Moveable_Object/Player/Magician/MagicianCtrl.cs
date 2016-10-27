@@ -184,15 +184,16 @@ public class MagicianCtrl : Moveable_Object {
 
         int RdmIdx = UnityEngine.Random.Range(0, 100);
 
-        if (RdmIdx < 50)
+        if (RdmIdx > 80)
         {
             //Debug.Log("NormalRange");
-            _PlayerAnim.SetTrigger("NormalRange");
+            SpecialRangeAttack();
+            
         }
         else
         {
             //Debug.Log("SpecialRange");
-            SpecialRangeAttack();
+            _PlayerAnim.SetTrigger("NormalRange");
         }
     }
 
@@ -261,7 +262,7 @@ public class MagicianCtrl : Moveable_Object {
         }
 
         int nEffectSkillShuffle = UnityEngine.Random.Range(0, 100);
-        if(nEffectSkillShuffle > 90 && ColMonsters[0] != null) //스킬 데미지를 입힘과 동시에 몬스터 삭제를 관할한다.
+        if(nEffectSkillShuffle > 90 && ColMonsters.Count >= 1) //스킬 데미지를 입힘과 동시에 몬스터 삭제를 관할한다.
             SkillManager.GetInstance().UseSkill("CriticalLighting", ColMonsters[0].transform);
 
         ResetMeleeAtkTrigger();

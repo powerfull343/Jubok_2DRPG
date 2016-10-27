@@ -106,7 +106,6 @@ public abstract class Monster_Interface : Moveable_Object {
 
     protected override void InitEventTextMsg()
     {
-        Debug.Log("Monster EventText Init");
         base.InitEventTextMsg();
         if (!mEventMsg)
         {
@@ -205,13 +204,12 @@ public abstract class Monster_Interface : Moveable_Object {
         Destroy(mEventMsg.gameObject);
     }
 
-    protected void KillMonster()
+    protected virtual void KillMonster()
     {
         DropItemObjects();
         if (grade >= MONSTERGRADEID.GRADE_BOSS)
             MonsterManager.GetInstance().CheckBossExist = false;
         MecroMethod.CheckGetComponent<GameObject_Extension>(mParentTrans).SelfDestroy();
-        
     }
 
     private int CalcMoneySize()
@@ -221,7 +219,7 @@ public abstract class Monster_Interface : Moveable_Object {
         return MoneyResult;
     }
 
-    private void DropItemObjects()
+    protected void DropItemObjects()
     {
         ItemDropManager.GetInstance().DropItem(m_ObjectName, transform.position);
         ItemDropManager.GetInstance().DropCoin(transform.position, 10);

@@ -86,10 +86,6 @@ public class SkillManager :
         //Position Setting
         newSkillObject.SetActive(false);
         newSkillObject.transform.parent = m_UsingSkills;
-        //newSkillObject.transform.parent = m_BulletParent;
-        //newSkillObject.transform.localPosition = Vector3.zero;
-        //newSkillObject.transform.localScale = Vector3.one;
-        
 
         Mecro.MecroMethod.CheckGetComponent<
             Skill_Interface>(newSkillObject).InitializingSkill(Target);

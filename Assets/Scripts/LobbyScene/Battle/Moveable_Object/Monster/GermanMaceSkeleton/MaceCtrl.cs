@@ -17,7 +17,7 @@ public class MaceCtrl : MonoBehaviour {
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            PlayerCtrlManager.GetInstance().PlayerCtrl.Hp -= MonsterBody.Atk;
+            PlayerCtrlManager.GetInstance().PlayerCtrl.SetHp(MonsterBody.Atk);
         }
     }
 }

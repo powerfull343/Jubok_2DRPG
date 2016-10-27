@@ -51,9 +51,9 @@ public class BigScytheController : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Collider");
-            Debug.Log(m_fAtkPower);
-            PlayerCtrlManager.GetInstance().PlayerCtrl.Hp -= (int)m_fAtkPower;
+            //Debug.Log("Collider");
+            //Debug.Log(m_fAtkPower);
+            PlayerCtrlManager.GetInstance().PlayerCtrl.SetHp((int)m_fAtkPower);
         }
     }
 }

@@ -94,6 +94,12 @@ public class MonsterManager
     //Using MonsterManager 
     private bool m_Processing = false;
 
+    //CreatedMonster Transform
+    [SerializeField]
+    private Transform m_CreatedMonsterParent;
+    public Transform CreatedMonsterParent
+    { get { return m_CreatedMonsterParent; } }
+
     void OnEnable()
     {
         Debug.Log("MonsterManager Onenable");
@@ -108,6 +114,10 @@ public class MonsterManager
         MecroMethod.CheckExistObject<BattleEventCaller>(m_BattleEventCaller);
         MecroMethod.CheckExistObject<BossHpBarCtrlManager>(m_BossHpManager);
 
+        if (m_CreatedMonsterParent == null)
+            m_CreatedMonsterParent = transform.FindChild("CreatedMonsterParent");
+        MecroMethod.CheckExistComponent<Transform>(m_CreatedMonsterParent);
+        
         iRegenMonster = RegenMonster();
         StartCoroutine(iRegenMonster);
     }
@@ -276,7 +286,8 @@ public class MonsterManager
 
         //Monster Transform Setting
         Monster.SetActive(false);
-        Monster.transform.SetParent(MonsterManager.GetInstance().transform);
+        Monster.transform.SetParent(m_CreatedMonsterParent);
+        //Monster.transform.SetParent(MonsterManager.GetInstance().transform);
 
         //Position
         Vector3 CreatePos = SetCreatedMonsterPosition(CreatePositionID);
@@ -397,14 +408,21 @@ public class MonsterManager
 
         Debug.Log("Clear Comp");
 
-        GameObject MonsterParent = null;
+        //Instantiated Monster Clear
         for(int i = 0; i < MonsterList.Count; ++i)
-        {
-            MonsterParent = MonsterList[i];
-            MonsterList.Remove(MonsterParent);
-            Destroy(MonsterParent);
-        }
+            MonsterList.RemoveAt(i);
         MonsterList.Clear();
+
+        m_CreatedMonsterParent.DestroyChildren();
+
+        //GameObject MonsterParent = null;
+        //for(int i = 0; i < MonsterList.Count; ++i)
+        //{
+        //    MonsterParent = MonsterList[i];
+        //    MonsterList.RemoveAt(MonsterParent);
+        //    Destroy(MonsterParent);
+        //}
+        //MonsterList.Clear();
     }
 
     private void RemoveLoadedMonsterContainer(
@@ -516,7 +534,8 @@ public class MonsterManager
 
         //Monster Transform Setting
         ResultMonsterInst.SetActive(false);
-        ResultMonsterInst.transform.SetParent(MonsterManager.GetInstance().transform);
+        ResultMonsterInst.transform.SetParent(MonsterManager.GetInstance().CreatedMonsterParent);
+        //ResultMonsterInst.transform.SetParent(MonsterManager.GetInstance().transform);
 
         //Position
         if (CreatedInterface.CreatePosition != SUMMONPOSITIONID.POSITION_OPTIONAL)
