@@ -86,7 +86,7 @@ public class MagicianCtrl : Moveable_Object {
             mEventMsg.InitEventMsg(transform.parent, false);
         }
 
-        StartCoroutine("TestEventText");
+        //StartCoroutine("TestEventText");
     }
 
     private void ResetPlayerAction()
