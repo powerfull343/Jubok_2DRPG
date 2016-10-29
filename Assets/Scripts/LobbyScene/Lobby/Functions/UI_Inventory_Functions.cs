@@ -166,9 +166,14 @@ public class UI_Inventory_Functions : MonoBehaviour {
             return StatusMessage;
         }
 
-        //소지금 감소
+        //실질적 소지금 감소
+        int nVariationMoney = -(SelectedItem.ItemInfo.ItemValue * nBuyItemCount);
+
+        DataController.GetInstance().InGameData.Money += nVariationMoney;
+
+        //소지금 감소 표시
         LobbyController.GetInstance(
-            ).UpperStatusPanel.SetMoney(-(SelectedItem.ItemInfo.ItemValue * nBuyItemCount));
+            ).UpperStatusPanel.SetMoney(nVariationMoney);
 
         //소지될 무게 추가
         SetWeight(SelectedItem, nBuyItemCount, true);
@@ -197,10 +202,14 @@ public class UI_Inventory_Functions : MonoBehaviour {
         }
 
         int nGetPrice = (int)SelectedItem.ItemInfo.ItemValue * 3 / 10;
+        //실질적 소지금 증가
+        int nVariationMoney = nGetPrice * nSellItemCount;
+
+        DataController.GetInstance().InGameData.Money += nVariationMoney;
 
         //소지금 증가
         LobbyController.GetInstance(
-            ).UpperStatusPanel.SetMoney(nGetPrice * nSellItemCount);
+            ).UpperStatusPanel.SetMoney(nVariationMoney);
 
         --InventoryManager.ItemCreatePosition;
         SetWeight(SelectedItem, nSellItemCount, false);

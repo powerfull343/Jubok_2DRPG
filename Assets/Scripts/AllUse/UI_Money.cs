@@ -16,10 +16,14 @@ public class UI_Money : MonoBehaviour {
     public float m_fMoneyTickCount = 0.001f;
     public int m_nMoneyChangeMultiplyRate = 8;
 
-	void Start () {
+    void OnEnable()
+    {
         Mecro.MecroMethod.CheckExistComponent<UILabel>(m_MoneyText);
-        m_MoneyText.text = 
+        m_MoneyText.text =
             DataController.GetInstance().InGameData.Money.ToString();
+    }
+
+	void Start () {
 
         Mecro.MecroMethod.CheckExistComponent<Transform>(m_MoneyIcon);
         StartCoroutine("MoneySpriteRotate");
@@ -37,7 +41,7 @@ public class UI_Money : MonoBehaviour {
         else
             m_isUpdatingChange = true;
 
-        DataController.GetInstance().InGameData.Money += MoneySize;
+        //DataController.GetInstance().InGameData.Money += MoneySize;
     }
 
     IEnumerator StartUpdateMoneySize()

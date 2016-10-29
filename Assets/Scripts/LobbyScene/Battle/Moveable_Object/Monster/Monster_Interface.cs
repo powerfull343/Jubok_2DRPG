@@ -48,6 +48,10 @@ public abstract class Monster_Interface : Moveable_Object {
     protected static VariableSetting SetValues;
     protected static bool isSetValueSetting = false;
 
+    //Drop Gold
+    private int m_GoldCount = 5;
+    private int m_GoldAmount = 10;
+
     public Monster_Interface()
     {
         if (!isSetValueSetting)
@@ -192,7 +196,11 @@ public abstract class Monster_Interface : Moveable_Object {
     protected override void Fatal()
     {
         mAnim.SetTrigger("Die");
-        
+
+        //실질적인 골드, 아이템 증가
+        GetGold();
+        GetItem();
+
         Invoke("KillMonster", 0.95f);   
     }
 
@@ -212,17 +220,22 @@ public abstract class Monster_Interface : Moveable_Object {
         MecroMethod.CheckGetComponent<GameObject_Extension>(mParentTrans).SelfDestroy();
     }
 
-    private int CalcMoneySize()
+    protected virtual void GetGold()
     {
-        int MoneyResult = 0;
+        m_GoldCount = UnityEngine.Random.Range(1, m_GoldCount);
+        m_GoldAmount = UnityEngine.Random.Range(1, m_GoldAmount);
+        DataController.GetInstance().InGameData.Money += (m_GoldCount * m_GoldAmount);
+    }
 
-        return MoneyResult;
+    protected virtual void GetItem()
+    {
+
     }
 
     protected void DropItemObjects()
     {
         ItemDropManager.GetInstance().DropItem(m_ObjectName, transform.position);
-        ItemDropManager.GetInstance().DropCoin(transform.position, 10);
+        ItemDropManager.GetInstance().DropCoin(transform.position, m_GoldAmount, m_GoldCount);
         //ItemDropManager.GetInstance().DropCoin(transform.position, CalcMoneySize());
     }
 

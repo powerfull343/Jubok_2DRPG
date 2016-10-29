@@ -156,6 +156,10 @@ public class NGUI_OptionMenuCtrl : MonoBehaviour
             "RemoveAllSkillData"));
 
         m_GoBackVilageButton.onClick.Add(
+            new EventDelegate(ItemDropManager.GetInstance(),
+            "DestroyAllChests"));
+
+        m_GoBackVilageButton.onClick.Add(
             new EventDelegate(EnvironmentManager.GetInstance(),
             "ClearAllEnvironmentElements"));
 

@@ -199,15 +199,15 @@ public class ItemDropManager :
     }
 
     public void DropCoin(Vector3 MonsterPosition, int MoneySize, 
-        int MinMoneyDrop = 3, int MaxMoneyDrop = 5)
+        int DropCount)
     {
-        int nCoinDrops = UnityEngine.Random.Range(MinMoneyDrop, MaxMoneyDrop);
+        //int nCoinDrops = UnityEngine.Random.Range(MinMoneyDrop, MaxMoneyDrop);
         int nBigCoin = 0;
 
         //Monster's Height all different
         MonsterPosition.y = EnvironmentManager.fMidGroundHeight;
 
-        for (int i = 0; i < nCoinDrops; ++i)
+        for (int i = 0; i < DropCount; ++i)
         {
             nBigCoin = UnityEngine.Random.Range(0, 100);
             GameObject CoinInst = Instantiate(m_CoinPrefab) as GameObject;
@@ -245,5 +245,10 @@ public class ItemDropManager :
         ChestObject.SetActive(true);
     }
 
+    public void DestroyAllChests()
+    {
+        ObtainParent.DestroyChildren();
+    }
+    
    
 }
