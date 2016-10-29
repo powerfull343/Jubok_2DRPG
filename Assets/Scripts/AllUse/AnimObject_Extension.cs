@@ -6,6 +6,7 @@ using Mecro;
 public class AnimObject_Extension : GameObject_Extension {
 
     public bool m_isExecuteOnce = true;
+    public float m_isExecuteOncetime = 1f;
 
     /// <summary>
     /// GameObject Has Animation Component
@@ -31,7 +32,6 @@ public class AnimObject_Extension : GameObject_Extension {
     // Use this for initialization
     void Awake() {
         CheckAnimComponent();
-        
     }
 
     void OnEnable()
@@ -41,6 +41,9 @@ public class AnimObject_Extension : GameObject_Extension {
             mOriginAnimSpeed = mAnimator.speed;
             mAnimator.speed = 0f;
         }
+
+        if(m_isExecuteOnce)
+            Invoke("SelfDestroy", m_isExecuteOncetime);
     }
 
     private void CheckAnimComponent()

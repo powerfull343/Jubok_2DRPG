@@ -49,6 +49,7 @@ public class MagicianCtrl : Moveable_Object {
         InitColMonsterContainer();
         _PlayerAnim.enabled = true;
         Invoke("InitEventTextMsg", 0.25f);
+        
     }
 
     private void InitPlayerStat()
@@ -83,8 +84,9 @@ public class MagicianCtrl : Moveable_Object {
             EventTextMsg.transform.SetParent(Battle_NGUI_EventMsgManager.GetInstance().transform, false);
             mEventMsg = Mecro.MecroMethod.CheckGetComponent<Battle_NGUI_EventMsg>(EventTextMsg);
             mEventMsg.InitEventMsg(transform.parent, false);
-            
         }
+
+        StartCoroutine("TestEventText");
     }
 
     private void ResetPlayerAction()
@@ -340,5 +342,14 @@ public class MagicianCtrl : Moveable_Object {
         //}
         ColMonsters.Clear();
         NoramlRangeAtk.ClearAllFireBall();
+    }
+
+    IEnumerator TestEventText()
+    {
+        while(true)
+        {
+            ShowEventTextMsg("Test", Color.white);
+            yield return new WaitForSeconds(0.15f);
+        }
     }
 }

@@ -110,6 +110,12 @@ public abstract class Moveable_Object : MonoBehaviour {
         }
     }
 
+    protected virtual void DeleteEventTextMsg()
+    {
+        if(mEventMsg != null)
+            Destroy(mEventMsg.gameObject);
+    }
+
     public void ShowEventTextMsg(string _strMessage, Color _TextColor)
     {
         mEventMsg.CallEventMessage(_strMessage, _TextColor);

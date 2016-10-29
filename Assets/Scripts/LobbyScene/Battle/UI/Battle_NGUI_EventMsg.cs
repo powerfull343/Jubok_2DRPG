@@ -44,5 +44,7 @@ public class Battle_NGUI_EventMsg : MonoBehaviour {
         EventTextInfo.color = LabelColor;
 
         EventText.SetActive(true);
+
+        
     }
 }

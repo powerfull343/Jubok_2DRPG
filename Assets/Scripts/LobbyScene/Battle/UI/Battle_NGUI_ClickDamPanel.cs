@@ -31,7 +31,9 @@ public class Battle_NGUI_ClickDamPanel : MonoBehaviour {
 
     void SetAtkClickButtonCollider()
     {
-        m_ClickButton.SetDimensions(Screen.width, Screen.height);
+        m_ClickButton.SetDimensions((int)Scene_Panel_Interface.fScreenWidth,
+            (int)Scene_Panel_Interface.fScreenHeight);
+        //m_ClickButton.SetDimensions(Screen.width, Screen.height);
     }
 
     public void ClickAtkButton()

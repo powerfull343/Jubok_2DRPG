@@ -215,6 +215,7 @@ public abstract class Monster_Interface : Moveable_Object {
     protected virtual void KillMonster()
     {
         DropItemObjects();
+        base.DeleteEventTextMsg();
         if (grade >= MONSTERGRADEID.GRADE_BOSS)
             MonsterManager.GetInstance().CheckBossExist = false;
         MecroMethod.CheckGetComponent<GameObject_Extension>(mParentTrans).SelfDestroy();
