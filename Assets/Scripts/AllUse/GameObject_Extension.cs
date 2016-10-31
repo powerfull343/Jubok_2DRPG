@@ -127,7 +127,7 @@ public class GameObject_Extension
         if (this.gameObject.GetComponent<UIWidget>())
         {
             vObjectSpeed = new Vector3(
-                EnvironmentManager.OriginMovingSpeed * EnvironmentManager.SpeedAmount * 10f,
+                EnvironmentManager.OriginMovingSpeed * EnvironmentManager.SpeedAmount * 30f,
                 0f, 0f);
         }
         else
