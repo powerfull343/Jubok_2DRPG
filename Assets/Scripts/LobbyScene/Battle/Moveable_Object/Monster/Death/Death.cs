@@ -53,13 +53,13 @@ public class Death : Monster_Interface
         InitColliderInfo();
 
         m_TelePortTrans = Mecro.MecroMethod.CheckGetComponent<Transform>(
-            transform.parent.parent.FindChild("CreatePosition(InField)"));
+            MonsterManager.GetInstance().transform.FindChild("CreatePosition(InField)"));
         m_BeamAppearTrans = Mecro.MecroMethod.CheckGetComponent<Transform>(
             transform.parent.FindChild("Transform - BeamAtkTrans"));
         m_BigScytheRoatateTrans = Mecro.MecroMethod.CheckGetComponent<Transform>(
-            transform.parent.parent.FindChild("CreatePosition(BigSkillRotate)"));
+            MonsterManager.GetInstance().transform.FindChild("CreatePosition(BigSkillRotate)"));
         m_BigScytheTrans = Mecro.MecroMethod.CheckGetComponent<Transform>(
-            transform.parent.parent.FindChild("CreatePosition(BigSkill)"));
+            MonsterManager.GetInstance().transform.FindChild("CreatePosition(BigSkill)"));
 
         InitBeamPrefabs();
         InitMonsterClones();
