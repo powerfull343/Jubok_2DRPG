@@ -108,12 +108,14 @@ public class PlayerStatusController : MonoBehaviour
         return true;
     }
 
-    public bool SetMoney(int nMoneySize)
+    public bool SetMoney(int nUpdateMoneySize)
     {
-        if (!CompareMoney(nMoneySize))
+        if (!CompareMoney(nUpdateMoneySize))
             return false;
 
-        m_MoneyCtrl.UpdateMoneySize(nMoneySize);
+        Debug.Log("nUpdateMoneySize : " + nUpdateMoneySize);
+
+        m_MoneyCtrl.UpdateMoneySize(nUpdateMoneySize);
         return true;
     }
 

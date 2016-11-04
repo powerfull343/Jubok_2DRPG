@@ -19,7 +19,6 @@ public class ChestController : MonoBehaviour
     }
 
     private bool m_isAnimationLoopEnd = false;
-    
 
     void Start()
     {

@@ -4,16 +4,18 @@ using Mecro;
 
 public class Skill_EarthForce_Anim : StateMachineBehaviour {
 
-    private Skill_Interface m_SkillObject;
+    private Skill_EarthForce m_SkillObject;
     private bool m_isAnimationLoopEnd = false;
+    private bool m_isSkillLanded = false;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         if(!m_SkillObject)
-            m_SkillObject = MecroMethod.CheckGetComponent<Skill_Interface>(animator.gameObject);
+            m_SkillObject = MecroMethod.CheckGetComponent<Skill_EarthForce>(animator.gameObject);
 
         m_isAnimationLoopEnd = false;
+        m_isSkillLanded = false;
     }
 
     //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -21,10 +23,15 @@ public class Skill_EarthForce_Anim : StateMachineBehaviour {
     {
         float fNormalizeTime = Mathf.Repeat(stateInfo.normalizedTime, 1f);
 
-        if (!m_isAnimationLoopEnd && fNormalizeTime > 0.95f)
+        if (!m_isAnimationLoopEnd && fNormalizeTime > 0.9f)
         {
             m_isAnimationLoopEnd = true;
             m_SkillObject.EndSkill();
+        }
+        else if (!m_isSkillLanded && fNormalizeTime > 0.15f)
+        {
+            m_SkillObject.ColliderEnable();
+            m_isSkillLanded = true;
         }
     }
 

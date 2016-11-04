@@ -74,7 +74,7 @@ public abstract class Skill_Interface : MonoBehaviour {
         }
     }
 
-    private string GetTargetName()
+    protected string GetTargetName()
     {
         //type Choice
         string TargetName = string.Empty;
@@ -86,7 +86,7 @@ public abstract class Skill_Interface : MonoBehaviour {
         return TargetName;
     }
 
-    public void AttackToCollider(Collider other)
+    public virtual void AttackToCollider(Collider other)
     {
         //Damage Setting
         if (other.gameObject.CompareTag(GetTargetName()))

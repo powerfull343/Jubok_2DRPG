@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using System.IO.IsolatedStorage;
 using System.Reflection;
 
 public class DataController : MonoBehaviour {
@@ -32,32 +34,32 @@ public class DataController : MonoBehaviour {
     void Awake()
     {
         Debug.Log("DataController Awaking");
+        Debug.Log("_Instance null : " + (_instance == null));
         if (_instance == null)
         {
             DontDestroyOnLoad(gameObject);
             _instance = this;
-            
         }
         else if(_instance != this)
         {
             Debug.Log("Destroy");
             Destroy(gameObject);
         }
-
         InitDataController();
         //Invoke("InitDataController", 0.1f);
     }
 
     void InitDataController()
     {
-        Debug.Log(m_InGameData == null);
+        Debug.Log("m_InGameData : " + (m_InGameData == null));
         if (m_InGameData == null)
         {
             Load();
             m_isDataLoad = true;
         }
 
-        if (Application.loadedLevel == 1)
+        //Debug.Log("buildIndex : " + SceneManager.GetActiveScene().buildIndex);
+        if (SceneManager.GetActiveScene().buildIndex == 1)
         {
             //PlayerDataManager Loading
             GameObject PlayerDataMgr = Instantiate(
@@ -65,6 +67,7 @@ public class DataController : MonoBehaviour {
                 as GameObject);
             Debug.Log("PlayerDataManager Null : " + (PlayerDataMgr == null));
             PlayerDataMgr.transform.SetParent(_instance.transform, false);
+            PlayerDataMgr.SetActive(true);
 
             GameObject LobbyController = Instantiate(
                 Resources.Load("DataObjects/LobbyManager") as GameObject);
@@ -83,8 +86,13 @@ public class DataController : MonoBehaviour {
     public void Save()
     {
         BinaryFormatter bf = new BinaryFormatter();
+        //FileStream file = File.Create(
+        //    Application.persistentDataPath + "/PlayerData.dat");
         FileStream file = File.Create(
-            Application.persistentDataPath + "/PlayerData.dat");
+            Application.dataPath + "/PlayerData.dat");
+
+        //Debug.Log(Application.persistentDataPath);
+        //Debug.Log(Application.dataPath);
 
         PlayerData data = new PlayerData();
         data.Health = m_InGameData.Health;
@@ -104,14 +112,17 @@ public class DataController : MonoBehaviour {
         m_InGameData = new PlayerData();
         BinaryFormatter bf = new BinaryFormatter();
 
-        Debug.Log(Application.persistentDataPath);
+        //Debug.Log(Application.persistentDataPath);
 
         try
         {
+            //FileStream file = File.Open(
+            //    Application.persistentDataPath + "/PlayerData.dat",
+            //    FileMode.Open);
             FileStream file = File.Open(
-            Application.persistentDataPath + "/PlayerData.dat",
-            FileMode.Open);
-        
+                Application.dataPath + "/PlayerData.dat",
+                FileMode.Open);
+
             PlayerData data = (PlayerData)bf.Deserialize(file);
             file.Close();
 
@@ -125,6 +136,11 @@ public class DataController : MonoBehaviour {
             m_InGameData.tStat = data.tStat;
         }
         catch (FileNotFoundException e)
+        {
+            Debug.Log(e.Message);
+            FirstPlay();
+        }
+        catch (IsolatedStorageException e)
         {
             Debug.Log(e.Message);
             FirstPlay();

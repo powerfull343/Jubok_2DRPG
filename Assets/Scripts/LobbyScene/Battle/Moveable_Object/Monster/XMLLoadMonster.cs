@@ -3,7 +3,6 @@ using System.Collections;
 using System.Xml;
 using System;
 
-
 public class XMLLoadMonster : MonoBehaviour {
 
     void OnEnable()
@@ -19,7 +18,8 @@ public class XMLLoadMonster : MonoBehaviour {
         switch (Fieldid)
         {
             case FIELDID.ID_BATTLEFIELD01:
-                result = "BattleField01.xml";
+                //result = "BattleField01.xml";
+                result = "BattleField01";
                 break;
 
             case FIELDID.ID_BATTLEFIELD02:
@@ -56,10 +56,15 @@ public class XMLLoadMonster : MonoBehaviour {
 
         XmlDocument xmldocu = new XmlDocument();
 
-        string XMLFileFullPath = Environment.CurrentDirectory +
-            "\\Assets\\XML_LIST\\" + XMLFileName;
+        //string XMLFileFullPath = Environment.CurrentDirectory +
+        //    "\\Assets\\Resources\\XML_LIST\\" + XMLFileName;
 
-        xmldocu.Load(XMLFileFullPath);
+        //xmldocu.Load(XMLFileFullPath);
+        TextAsset XmlFileFullPath =
+            Resources.Load<TextAsset>("XML_LIST/" + XMLFileName);
+
+        xmldocu.LoadXml(XmlFileFullPath.text);
+
         XmlNodeList nodeList = xmldocu.DocumentElement.SelectNodes("/Field/Monster");
 
         MonsterKey_Extension KeyExtension;

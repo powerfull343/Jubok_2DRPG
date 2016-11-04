@@ -241,6 +241,7 @@ public class MagicianCtrl : Moveable_Object {
         //EarthForce, Thunder02, PinPanel
         //Debug.Log(m_ChoiceSkillName);
         SkillManager.GetInstance().UseSkill(m_ChoiceSkillName);
+        //SkillManager.GetInstance().UseSkill("EarthForce");
     }
 
     public void ActiveNormalRangeAtk()

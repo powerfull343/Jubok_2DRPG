@@ -1,12 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class UI_Money : MonoBehaviour {
 
     [SerializeField]
     private UILabel m_MoneyText;
+    private int m_nRenderingMoney;
+    private int m_nRenderingResult;
     private int m_ChangeAmount = 0;
-    private int m_BeforeMoneyAmount = 0;
+    private static Queue<int> m_ResultContainer =
+        new Queue<int>();
+
     [SerializeField]
     private Transform m_MoneyIcon;
     private bool m_isMoneyUpdating = false;
@@ -19,8 +24,9 @@ public class UI_Money : MonoBehaviour {
     void OnEnable()
     {
         Mecro.MecroMethod.CheckExistComponent<UILabel>(m_MoneyText);
-        m_MoneyText.text =
-            DataController.GetInstance().InGameData.Money.ToString();
+        m_nRenderingMoney = DataController.GetInstance().InGameData.Money;
+        m_nRenderingResult = m_nRenderingMoney;
+        m_MoneyText.text = m_nRenderingMoney.ToString();
     }
 
 	void Start () {
@@ -29,29 +35,37 @@ public class UI_Money : MonoBehaviour {
         StartCoroutine("MoneySpriteRotate");
     }
 
-    public void UpdateMoneySize(int MoneySize)
+    public void UpdateMoneySize(int ChangeMoneySize)
     {
-        m_ChangeAmount += MoneySize;
+        m_ChangeAmount += ChangeMoneySize;
+        //int TickResult = ChangeMoneySize + BeforeMoneySize;
+
+        //Debug.Log("ChangeMoneySize : " + ChangeMoneySize);
+        //Debug.Log("BeforeMoneySize : " + BeforeMoneySize);
+        //Debug.Log("TickResult : " + TickResult);
+        //m_ResultContainer.Enqueue(TickResult);
 
         if (!m_isMoneyUpdating)
         {
-            m_BeforeMoneyAmount = DataController.GetInstance().InGameData.Money;
+            m_nRenderingResult = m_nRenderingMoney + ChangeMoneySize;
             StartCoroutine("StartUpdateMoneySize");
         }
         else
+        {
+            m_nRenderingResult += ChangeMoneySize;
             m_isUpdatingChange = true;
+        }
 
         //DataController.GetInstance().InGameData.Money += MoneySize;
     }
 
     IEnumerator StartUpdateMoneySize()
     {
-        int nRenderingMoney = m_BeforeMoneyAmount;
+        //m_nRenderingMoney = m_BeforeMoneyAmount;
         int nUpdateMoneyAmount = SetTickMoneySize();
-        //Debug.LogError(nUpdateMoneyAmount);
 
-        bool nMoneyRate = ChangeAmountCheck(m_BeforeMoneyAmount,
-                m_BeforeMoneyAmount + m_ChangeAmount);
+        bool nMoneyRate = ChangeAmountCheck(m_nRenderingMoney,
+                m_nRenderingMoney + m_ChangeAmount);
         m_isMoneyUpdating = true;
 
         while(true)
@@ -68,36 +82,40 @@ public class UI_Money : MonoBehaviour {
             {
                 if (m_ChangeAmount <= 0)
                 {
-                    nRenderingMoney -= nUpdateMoneyAmount;
+                    m_nRenderingMoney -= nUpdateMoneyAmount;
                     m_ChangeAmount += nUpdateMoneyAmount;
                 }
                 else
                 {
-                    nRenderingMoney =
-                        DataController.GetInstance().InGameData.Money;
+                    //m_nRenderingMoney =
+                    //    DataController.GetInstance().InGameData.Money;
+                    m_nRenderingMoney = m_nRenderingResult;
                     m_ChangeAmount = 0;
-                    m_MoneyText.text = nRenderingMoney.ToString();
+                    m_MoneyText.text = m_nRenderingMoney.ToString();
+                    //Debug.Log(DataController.GetInstance().InGameData.Money);
                     break;
                 }
 
-                m_MoneyText.text = nRenderingMoney.ToString();
+                m_MoneyText.text = m_nRenderingMoney.ToString();
             }
             else //소지금이 증가할때
             {
                 if (m_ChangeAmount >= 0)
                 {
-                    nRenderingMoney += nUpdateMoneyAmount;
+                    m_nRenderingMoney += nUpdateMoneyAmount;
                     m_ChangeAmount -= nUpdateMoneyAmount;
                 }
                 else
                 {
-                    nRenderingMoney =
-                        DataController.GetInstance().InGameData.Money;
+                    //m_nRenderingMoney =
+                    //    DataController.GetInstance().InGameData.Money;
+                    m_nRenderingMoney = m_nRenderingResult;
                     m_ChangeAmount = 0;
-                    m_MoneyText.text = nRenderingMoney.ToString();
+                    m_MoneyText.text = m_nRenderingMoney.ToString();
+                    //Debug.Log(DataController.GetInstance().InGameData.Money);
                     break;
                 }
-                m_MoneyText.text = nRenderingMoney.ToString();
+                m_MoneyText.text = m_nRenderingMoney.ToString();
             }
             yield return new WaitForSeconds(m_fMoneyTickCount);
         }
@@ -145,5 +163,14 @@ public class UI_Money : MonoBehaviour {
             return false;
 
         return true;
+    }
+
+    /// <summary>
+    /// 소지금의 결과물이 여러번 변경되기 때문에 
+    /// 해당 함수를 통해 결과물을 1차적으로 저장한다.
+    /// </summary>
+    public static void AddResultContainer(int nResult)
+    {
+
     }
 }

@@ -168,7 +168,7 @@ public class UI_Inventory_Functions : MonoBehaviour {
 
         //실질적 소지금 감소
         int nVariationMoney = -(SelectedItem.ItemInfo.ItemValue * nBuyItemCount);
-
+        int nBeforeUpdateMoney = DataController.GetInstance().InGameData.Money;
         DataController.GetInstance().InGameData.Money += nVariationMoney;
 
         //소지금 감소 표시
@@ -204,7 +204,7 @@ public class UI_Inventory_Functions : MonoBehaviour {
         int nGetPrice = (int)SelectedItem.ItemInfo.ItemValue * 3 / 10;
         //실질적 소지금 증가
         int nVariationMoney = nGetPrice * nSellItemCount;
-
+        int nBeforeUpdateMoney = DataController.GetInstance().InGameData.Money;
         DataController.GetInstance().InGameData.Money += nVariationMoney;
 
         //소지금 증가

@@ -8,6 +8,7 @@ using System;
 public class Skill_EarthForce : Skill_Interface
 {
     private Animator mChildGate;
+    private BoxCollider mSkillCollider;
 
     void Start()
     {
@@ -25,6 +26,11 @@ public class Skill_EarthForce : Skill_Interface
             transform.FindChild("EarthForceGate"));
 
         mSkillAnim.enabled = false;
+
+        mSkillCollider =
+            MecroMethod.CheckGetComponent<BoxCollider>(
+                this.gameObject);
+        mSkillCollider.enabled = false;
     }
 
     protected override void SkillSetting()
@@ -84,9 +90,15 @@ public class Skill_EarthForce : Skill_Interface
             mChildGate.gameObject.SetActive(true);
     }
 
+    public void ColliderEnable()
+    {
+        mSkillCollider.enabled = true;
+    }
+
     void OnTriggerEnter(Collider other)
     {
         AttackToCollider(other);
     }
     
+
 }

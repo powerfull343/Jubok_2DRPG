@@ -51,6 +51,7 @@ public abstract class Monster_Interface : Moveable_Object {
     //Drop Gold
     private int m_GoldCount = 5;
     private int m_GoldAmount = 10;
+    
 
     public Monster_Interface()
     {
@@ -204,14 +205,6 @@ public abstract class Monster_Interface : Moveable_Object {
         Invoke("KillMonster", 0.95f);   
     }
 
-    public void DisableMonsterComps()
-    {
-        mboxcol.enabled = false;
-        mStateAnimTransform.gameObject.SetActive(false);
-        mHpStateTransform.gameObject.SetActive(false);
-        Destroy(mEventMsg.gameObject);
-    }
-
     protected virtual void KillMonster()
     {
         DropItemObjects();
@@ -221,11 +214,22 @@ public abstract class Monster_Interface : Moveable_Object {
         MecroMethod.CheckGetComponent<GameObject_Extension>(mParentTrans).SelfDestroy();
     }
 
+    public void DisableMonsterComps()
+    {
+        mboxcol.enabled = false;
+        mStateAnimTransform.gameObject.SetActive(false);
+        mHpStateTransform.gameObject.SetActive(false);
+        Destroy(mEventMsg.gameObject);
+    }
+   
     protected virtual void GetGold()
     {
         m_GoldCount = UnityEngine.Random.Range(1, m_GoldCount);
         m_GoldAmount = UnityEngine.Random.Range(1, m_GoldAmount);
+
+        //Debug.Log("Real Gold before : " + DataController.GetInstance().InGameData.Money);
         DataController.GetInstance().InGameData.Money += (m_GoldCount * m_GoldAmount);
+        //Debug.Log("Real Gold after : " + DataController.GetInstance().InGameData.Money);
     }
 
     protected virtual void GetItem()
