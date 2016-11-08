@@ -18,6 +18,13 @@ public class DataController : MonoBehaviour {
         set { m_InGameData = value; }
     }
 
+    private Player_QuestData m_QuestGameData;
+    public Player_QuestData QuestGameData
+    {
+        get { return m_QuestGameData; }
+        set { m_QuestGameData = value; }
+    }
+
     //Debuging Variable
     private bool m_isDataLoad = false;
 
@@ -52,6 +59,7 @@ public class DataController : MonoBehaviour {
     void InitDataController()
     {
         Debug.Log("m_InGameData : " + (m_InGameData == null));
+        Debug.Log("m_QuestGameData : " + (m_QuestGameData == null));
         if (m_InGameData == null)
         {
             Load();
@@ -145,6 +153,8 @@ public class DataController : MonoBehaviour {
             Debug.Log(e.Message);
             FirstPlay();
         }
+
+        QuestLoad();
     }
 
     public void FirstPlay()
@@ -154,11 +164,49 @@ public class DataController : MonoBehaviour {
         m_InGameData.Attack = 1;
         m_InGameData.Stamina = 10;
         m_InGameData.Money = 2000;
+
+        m_InGameData.tStat = new tagStatInfo(1, 50f, 1, 25f, 1, 80f);
         FirstSettingItems();
         FirstSettingEquipItem();
-        m_InGameData.tStat = new tagStatInfo(1, 50f, 1, 25f, 1, 80f);
 
         Save();
+    }
+
+    public void QuestSave()
+    {
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Create(
+            Application.dataPath + "/QuestData.dat");
+
+        Player_QuestData data = new Player_QuestData();
+        data = m_QuestGameData;
+
+        bf.Serialize(file, data);
+        file.Close();
+    }
+
+    public void QuestLoad()
+    {
+        m_QuestGameData = new Player_QuestData();
+        BinaryFormatter bf = new BinaryFormatter();
+
+        try
+        {
+            FileStream file = File.Open(
+                Application.dataPath + "/QuestData.dat",
+                FileMode.Open);
+
+            Player_QuestData data = 
+                (Player_QuestData)bf.Deserialize(file);
+            file.Close();
+
+            m_QuestGameData = data;
+        }
+        catch (Exception e)
+        {
+            Debug.Log(e.Message);
+            QuestSave();
+        }
     }
 
     private void FirstSettingItems()

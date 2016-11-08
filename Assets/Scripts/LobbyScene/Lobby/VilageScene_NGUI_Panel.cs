@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Mecro;
-
 using LobbyButtonFunc;
 
 public class VilageScene_NGUI_Panel : Scene_Panel_Interface
