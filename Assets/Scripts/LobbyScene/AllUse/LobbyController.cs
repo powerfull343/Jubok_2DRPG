@@ -125,7 +125,7 @@ public class LobbyController
         if (m_InstanceCollider == null)
         {
             m_InstanceCollider =
-                Instantiate(Resources.Load("LobbyScene - LobbyPart/Panel - CannotControl") as GameObject
+                Instantiate(Resources.Load("LobbyScene/LobbyScene - LobbyPart/Panel - CannotControl") as GameObject
                 , Vector3.zero, Quaternion.identity) as GameObject;
         }
 

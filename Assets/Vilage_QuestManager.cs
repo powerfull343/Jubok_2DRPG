@@ -47,28 +47,69 @@ public class Vilage_QuestManager : MonoBehaviour {
                 break;
 
             CreateQuestSlot(
-                LoadedQuestData.AcceptQuest.ToList()[i].Value);
+                LoadedQuestData.AcceptQuest.ToList()[i].Value,
+                Quest_Slot.SLOTTYPE.SLOT_ORDER, 
+                m_OrderedQuestGrid);
         }
     }
 
-    private void CreateQuestSlot(Quest_Interface LoadedQuest)
+    void Start()
+    {
+        InitBasicQuest();
+    }
+
+    private void InitBasicQuest()
+    {
+        CreateQuestSlot(
+            Quest_Interface.CreateQuest("BlueSkeleton", 0, Random.RandomRange(10, 40)),
+            Quest_Slot.SLOTTYPE.SLOT_WAIT,
+            m_WaitQuestGrid);
+
+        CreateQuestSlot(
+            Quest_Interface.CreateQuest("Death", 0, Random.RandomRange(10, 40)),
+            Quest_Slot.SLOTTYPE.SLOT_WAIT,
+            m_WaitQuestGrid);
+
+        CreateQuestSlot(
+            Quest_Interface.CreateQuest("GermanMaceSkeleton", 0, Random.RandomRange(10, 40)),
+            Quest_Slot.SLOTTYPE.SLOT_WAIT,
+            m_WaitQuestGrid);
+
+        CreateQuestSlot(
+            Quest_Interface.CreateQuest("GermanSkeleton", 0, Random.RandomRange(10, 40)),
+            Quest_Slot.SLOTTYPE.SLOT_WAIT,
+            m_WaitQuestGrid);
+
+        CreateQuestSlot(
+            Quest_Interface.CreateQuest("Mimic", 0, Random.RandomRange(10, 40)),
+            Quest_Slot.SLOTTYPE.SLOT_WAIT,
+            m_WaitQuestGrid);
+
+        CreateQuestSlot(
+            Quest_Interface.CreateQuest("SkeletonBomber", 0, Random.RandomRange(10, 40)),
+            Quest_Slot.SLOTTYPE.SLOT_WAIT,
+            m_WaitQuestGrid);
+
+        CreateQuestSlot(
+            Quest_Interface.CreateQuest("SkeletonBoomerang", 0, Random.RandomRange(10, 40)),
+            Quest_Slot.SLOTTYPE.SLOT_WAIT,
+            m_WaitQuestGrid);
+
+        CreateQuestSlot(
+            Quest_Interface.CreateQuest("SkeletonWarrior", 0, Random.RandomRange(10, 40)),
+            Quest_Slot.SLOTTYPE.SLOT_WAIT,
+            m_WaitQuestGrid);
+    }
+
+    private void CreateQuestSlot(Quest_Interface _LoadedQuest,
+        Quest_Slot.SLOTTYPE _QuestType, UIGrid _ParentTarget)
     {
         GameObject newQuestInst = Instantiate(m_LoadedQuestInst);
         Quest_Slot newQuestSlotComp =
             MecroMethod.CheckGetComponent<Quest_Slot>(newQuestInst);
 
         newQuestSlotComp.SetChildQuestInfo(
-            LoadedQuest, Quest_Slot.SLOTTYPE.SLOT_ORDER,
-            m_OrderedQuestGrid);
-    }
-
-    void Start()
-    {
-        InitQuestManager();
-    }
-
-    private void InitQuestManager()
-    {
-
+            _LoadedQuest, _QuestType,
+            _ParentTarget);
     }
 }
