@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
-
+using Mecro;
 
 public class Quest_Slot : MonoBehaviour {
 
@@ -31,6 +31,8 @@ public class Quest_Slot : MonoBehaviour {
     public UILabel QuestExpression
     { get { return m_QuestExpression; } }
 
+    private UIButtonScale m_ButtonScale;
+
     static Quest_Slot()
     {
         string FilePath = "LobbyScene/QuestPart/QuestStillImage/QuestImage - ";
@@ -53,8 +55,15 @@ public class Quest_Slot : MonoBehaviour {
             Resources.Load<GameObject>(FilePath + "SkeletonWarrior"));
     }
 
+    void Awake()
+    {
+        MecroMethod.CheckExistComponent<UILabel>(m_QuestExpression);
+        m_ButtonScale =
+            MecroMethod.CheckGetComponent<UIButtonScale>(this.gameObject);
+    }
+
     public void SetChildQuestInfo(Quest_Interface _QuestInfo, 
-        Quest_Slot.SLOTTYPE _QuestSlotType, UIGrid ParentGrid)
+        Quest_Slot.SLOTTYPE _QuestSlotType)
     {
         //m_ChildQuest = new Quest_Interface_Comp(_QuestInfo);
         m_ChildQuest = _QuestInfo;
@@ -65,17 +74,7 @@ public class Quest_Slot : MonoBehaviour {
         WriteExpressionLabel();
 
         //transform Setting
-        ParentGrid.AddChild(this.transform);
-        switch (m_QuestSlotType)
-        {
-            case SLOTTYPE.SLOT_WAIT:
-                transform.localScale = Vector3.one;
-                break;
-
-            case SLOTTYPE.SLOT_ORDER:
-                transform.localScale = new Vector3(0.8f, 0.8f, 1f);
-                break;
-        }
+        ChangeButtonTrans();
     }
 
     private void AddIconImage()
@@ -96,6 +95,47 @@ public class Quest_Slot : MonoBehaviour {
         builder.Append(m_ChildQuest.QuestTargetMaxCount);
 
         m_QuestExpression.text = builder.ToString();
+    }
+
+    private void ChangeButtonTrans()
+    {
+        switch (m_QuestSlotType)
+        {
+            case SLOTTYPE.SLOT_WAIT:
+                Vilage_QuestManager.GetInstance(
+                    ).WaitQuestGrid.AddChild(this.transform);
+                transform.localScale = Vector3.one;
+                m_ButtonScale.hover = new Vector3(1.1f, 1.1f, 1f);
+                m_ButtonScale.pressed = new Vector3(1.05f, 1.05f, 1f);
+                break;
+
+            case SLOTTYPE.SLOT_ORDER:
+                Vilage_QuestManager.GetInstance(
+                    ).OrderedQuestGrid.AddChild(this.transform);
+                transform.localScale = new Vector3(0.8f, 0.8f, 1f);
+                m_ButtonScale.hover = new Vector3(0.9f, 0.9f, 1f);
+                m_ButtonScale.pressed = new Vector3(0.85f, 0.85f, 1f);
+                break;
+        }
+    }
+
+    public void QuestSlotClick()
+    {
+        switch(m_QuestSlotType)
+        {
+            case SLOTTYPE.SLOT_ORDER:
+                gameObject.SetActive(false);
+
+                gameObject.SetActive(true);
+                break;
+
+            case SLOTTYPE.SLOT_WAIT:
+                gameObject.SetActive(false);
+                m_QuestSlotType = SLOTTYPE.SLOT_ORDER;
+                ChangeButtonTrans();
+                gameObject.SetActive(true);
+                break;
+        }
     }
 
 }
