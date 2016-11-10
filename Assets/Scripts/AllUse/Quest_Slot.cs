@@ -9,6 +9,8 @@ public class Quest_Slot : MonoBehaviour {
     private static Dictionary<string, GameObject> m_LoadedQuestIcons =
         new Dictionary<string, GameObject>();
 
+    private EventDelegate m_QuestSlotFunc;
+
     public enum SLOTTYPE
     {
         SLOT_WAIT = 0,
@@ -31,10 +33,41 @@ public class Quest_Slot : MonoBehaviour {
     public UILabel QuestExpression
     { get { return m_QuestExpression; } }
 
-    private UIButtonScale m_ButtonScale;
+    private UIWidget m_ButtonWidget;
+    public UIWidget ButtonWidget
+    { get { return m_ButtonWidget; } }
+    private UIButton m_ButtonComp;
+    //private UIButtonScale m_ButtonScale;
 
-    static Quest_Slot()
+    void Awake()
     {
+        MecroMethod.CheckExistComponent<UILabel>(m_QuestExpression);
+        m_ButtonComp =
+            MecroMethod.CheckGetComponent<UIButton>(this.gameObject);
+        //m_ButtonScale =
+        //    MecroMethod.CheckGetComponent<UIButtonScale>(this.gameObject);
+        m_ButtonWidget =
+            MecroMethod.CheckGetComponent<UIWidget>(this.gameObject);
+        LoadingQuestIcon();
+    }
+
+    void Start()
+    {
+        if (m_QuestSlotFunc == null)
+        {
+            m_QuestSlotFunc = new EventDelegate(
+               Vilage_QuestManager.GetInstance(), "ActiveExtenstionQuestButton");
+            m_QuestSlotFunc.parameters[0] = MecroMethod.CreateEventParm(
+                this, this.GetType());
+        }
+        m_ButtonComp.onClick.Add(m_QuestSlotFunc);
+    }
+
+    private void LoadingQuestIcon()
+    {
+        if (m_LoadedQuestIcons.Count > 0)
+            return;
+
         string FilePath = "LobbyScene/QuestPart/QuestStillImage/QuestImage - ";
 
         m_LoadedQuestIcons.Add("BlueSkeleton",
@@ -53,13 +86,6 @@ public class Quest_Slot : MonoBehaviour {
             Resources.Load<GameObject>(FilePath + "SkeletonBoomerang"));
         m_LoadedQuestIcons.Add("SkeletonWarrior",
             Resources.Load<GameObject>(FilePath + "SkeletonWarrior"));
-    }
-
-    void Awake()
-    {
-        MecroMethod.CheckExistComponent<UILabel>(m_QuestExpression);
-        m_ButtonScale =
-            MecroMethod.CheckGetComponent<UIButtonScale>(this.gameObject);
     }
 
     public void SetChildQuestInfo(Quest_Interface _QuestInfo, 
@@ -99,24 +125,29 @@ public class Quest_Slot : MonoBehaviour {
 
     private void ChangeButtonTrans()
     {
+        //m_ButtonScale.enabled = false;
         switch (m_QuestSlotType)
         {
             case SLOTTYPE.SLOT_WAIT:
                 Vilage_QuestManager.GetInstance(
                     ).WaitQuestGrid.AddChild(this.transform);
                 transform.localScale = Vector3.one;
-                m_ButtonScale.hover = new Vector3(1.1f, 1.1f, 1f);
-                m_ButtonScale.pressed = new Vector3(1.05f, 1.05f, 1f);
+                m_ButtonWidget.ParentHasChanged();
+                //m_ButtonScale.hover = new Vector3(1.1f, 1.1f, 1f);
+                //m_ButtonScale.pressed = new Vector3(1.05f, 1.05f, 1f);
                 break;
 
             case SLOTTYPE.SLOT_ORDER:
                 Vilage_QuestManager.GetInstance(
                     ).OrderedQuestGrid.AddChild(this.transform);
                 transform.localScale = new Vector3(0.8f, 0.8f, 1f);
-                m_ButtonScale.hover = new Vector3(0.9f, 0.9f, 1f);
-                m_ButtonScale.pressed = new Vector3(0.85f, 0.85f, 1f);
+                Debug.Log(transform.localScale);
+                m_ButtonWidget.ParentHasChanged();
+                //m_ButtonScale.hover = new Vector3(0.9f, 0.9f, 1f);
+                //m_ButtonScale.pressed = new Vector3(0.85f, 0.85f, 1f);
                 break;
         }
+        //m_ButtonScale.enabled = true;
     }
 
     public void QuestSlotClick()
@@ -125,7 +156,7 @@ public class Quest_Slot : MonoBehaviour {
         {
             case SLOTTYPE.SLOT_ORDER:
                 gameObject.SetActive(false);
-
+                
                 gameObject.SetActive(true);
                 break;
 

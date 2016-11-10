@@ -18,16 +18,30 @@ public class Vilage_QuestManager :
     { get { return m_WaitQuestGrid; } }
 
     private static GameObject m_LoadedQuestInst;
+    private static GameObject m_LoadedQuestSelectArea;
+
+    [SerializeField]
+    private UIWidget m_QuestExtensionButtons;
 
     void Awake()
     {
         CreateInstance();
         MecroMethod.CheckExistComponent<UIGrid>(m_OrderedQuestGrid);
         MecroMethod.CheckExistComponent<UIGrid>(m_WaitQuestGrid);
+        MecroMethod.CheckExistComponent<UIWidget>(m_QuestExtensionButtons);
+        m_QuestExtensionButtons.alpha = 0f;
         if (m_LoadedQuestInst == null)
         {
             m_LoadedQuestInst = 
                 Resources.Load<GameObject>("LobbyScene/QuestPart/QuestItem");
+        }
+
+        if(m_LoadedQuestSelectArea == null)
+        {
+            m_LoadedQuestSelectArea =
+                Instantiate(Resources.Load<GameObject>(
+                    "LobbyScene/QuestPart/Sprite - SelectedQuest"));
+            m_LoadedQuestSelectArea.SetActive(false);
         }
     }
 
@@ -107,5 +121,39 @@ public class Vilage_QuestManager :
 
         newQuestSlotComp.SetChildQuestInfo(
             _LoadedQuest, _QuestType);
+    }
+
+    public void ActiveExtenstionQuestButton(Quest_Slot _SlotTarget)
+    {
+        Debug.Log("ClickButton");
+        ShowSelectedQuestArea(_SlotTarget);
+
+        m_QuestExtensionButtons.gameObject.SetActive(true);
+        TweenAlpha.Begin(m_QuestExtensionButtons.gameObject, 0.25f, 1f);
+    }
+
+    private void ShowSelectedQuestArea(Quest_Slot _SlotTarget)
+    {
+        m_LoadedQuestSelectArea.SetActive(false);
+        UISprite SquareSprite = m_LoadedQuestSelectArea.GetComponent<UISprite>();
+        if (SquareSprite == null)
+            Debug.Log("Cannot Find " + SquareSprite.name);
+        SquareSprite.depth = 4;
+        m_LoadedQuestSelectArea.transform.SetParent(_SlotTarget.transform, false);
+        m_LoadedQuestSelectArea.SetActive(true);
+
+    }
+
+    public void HideExtensionQuestButton()
+    {
+        m_LoadedQuestSelectArea.gameObject.SetActive(false);
+        m_LoadedQuestSelectArea.transform.SetParent(this.transform, false);
+        TweenAlpha.Begin(m_QuestExtensionButtons.gameObject, 0.25f, 0f);
+        Invoke("HideExtensionObject", 0.25f);
+    }
+
+    private void HideExtensionObject()
+    {
+        m_QuestExtensionButtons.gameObject.SetActive(false);
     }
 }
