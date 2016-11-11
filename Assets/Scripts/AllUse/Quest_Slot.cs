@@ -56,7 +56,7 @@ public class Quest_Slot : MonoBehaviour {
         if (m_QuestSlotFunc == null)
         {
             m_QuestSlotFunc = new EventDelegate(
-               Vilage_QuestManager.GetInstance(), "ActiveExtenstionQuestButton");
+               Vilage_QuestManager.GetInstance(), "ClickQuestButton");
             m_QuestSlotFunc.parameters[0] = MecroMethod.CreateEventParm(
                 this, this.GetType());
         }
@@ -125,7 +125,6 @@ public class Quest_Slot : MonoBehaviour {
 
     private void ChangeButtonTrans()
     {
-        //m_ButtonScale.enabled = false;
         switch (m_QuestSlotType)
         {
             case SLOTTYPE.SLOT_WAIT:
@@ -133,30 +132,25 @@ public class Quest_Slot : MonoBehaviour {
                     ).WaitQuestGrid.AddChild(this.transform);
                 transform.localScale = Vector3.one;
                 m_ButtonWidget.ParentHasChanged();
-                //m_ButtonScale.hover = new Vector3(1.1f, 1.1f, 1f);
-                //m_ButtonScale.pressed = new Vector3(1.05f, 1.05f, 1f);
                 break;
 
             case SLOTTYPE.SLOT_ORDER:
                 Vilage_QuestManager.GetInstance(
                     ).OrderedQuestGrid.AddChild(this.transform);
                 transform.localScale = new Vector3(0.8f, 0.8f, 1f);
-                Debug.Log(transform.localScale);
                 m_ButtonWidget.ParentHasChanged();
-                //m_ButtonScale.hover = new Vector3(0.9f, 0.9f, 1f);
-                //m_ButtonScale.pressed = new Vector3(0.85f, 0.85f, 1f);
                 break;
         }
-        //m_ButtonScale.enabled = true;
     }
 
-    public void ChangeConditionQuest()
+    public void ChangeQuestCondition()
     {
         switch(m_QuestSlotType)
         {
             case SLOTTYPE.SLOT_ORDER:
                 gameObject.SetActive(false);
-                
+                m_QuestSlotType = SLOTTYPE.SLOT_WAIT;
+                ChangeButtonTrans();
                 gameObject.SetActive(true);
                 break;
 
@@ -167,6 +161,14 @@ public class Quest_Slot : MonoBehaviour {
                 gameObject.SetActive(true);
                 break;
         }
+    }
+
+    public bool GetClearQuestResult()
+    {
+        if (ChildQuest.QuestTargetCount >= ChildQuest.QuestTargetMaxCount)
+            return true;
+
+        return false;
     }
 
 }

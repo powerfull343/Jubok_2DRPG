@@ -107,7 +107,11 @@ public class PlayerStatusController : MonoBehaviour
 
         return true;
     }
-
+    /// <summary>
+    /// nUpdateMoneySize = 증감될 금액을 적는다. 
+    /// </summary>
+    /// <param name="nUpdateMoneySize"></param>
+    /// <returns></returns>
     public bool SetMoney(int nUpdateMoneySize)
     {
         if (!CompareMoney(nUpdateMoneySize))

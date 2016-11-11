@@ -14,7 +14,7 @@ public class AutoTyping : MonoBehaviour
 
     public float m_DelayTime = 0.15f;
 
-    void Start()
+    void Awake()
     {
         m_Labelcomp = Mecro.MecroMethod.CheckGetComponent<UILabel>(this.transform);
         m_TypingCoroutine = AutoTypingAction(m_DelayTime);

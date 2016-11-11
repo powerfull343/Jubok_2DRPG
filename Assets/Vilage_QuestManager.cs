@@ -23,7 +23,7 @@ public class Vilage_QuestManager :
     { get { return m_NPCTalkingText; } }
 
     [SerializeField]
-    private UIWidget m_QuestExtensionButtons;
+    private Vilage_NPCFunction m_NPCExtensionButtons;
 
     private static GameObject m_LoadedQuestInst;
     private static GameObject m_LoadedQuestSelectArea;
@@ -31,15 +31,17 @@ public class Vilage_QuestManager :
     private Transform OwnTrans;
     private Quest_Slot m_SelectedQuestSlot = null;
 
+    private System.Action<string> m_NPCChating;
+
     void Awake()
     {
         CreateInstance();
         OwnTrans = MecroMethod.CheckGetComponent<Transform>(this.gameObject);
         MecroMethod.CheckExistComponent<UIGrid>(m_OrderedQuestGrid);
         MecroMethod.CheckExistComponent<UIGrid>(m_WaitQuestGrid);
-        MecroMethod.CheckExistComponent<UIWidget>(m_QuestExtensionButtons);
+        MecroMethod.CheckExistComponent<Vilage_NPCFunction>(m_NPCExtensionButtons);
         MecroMethod.CheckExistComponent<AutoTyping>(m_NPCTalkingText);
-        m_QuestExtensionButtons.alpha = 0f;
+
         if (m_LoadedQuestInst == null)
         {
             m_LoadedQuestInst =
@@ -53,13 +55,19 @@ public class Vilage_QuestManager :
                     "LobbyScene/QuestPart/Sprite - SelectedQuest"));
             m_LoadedQuestSelectArea.SetActive(false);
         }
+
+        m_NPCChating = NPCTalking;
     }
 
     void OnEnable()
     {
+        m_NPCChating("Hello? Welcome to our vilage!");
+    }
+
+    void Start()
+    {
         GetCurrentAcceptQuestData();
-        Invoke("NPCSayHello", 0.5f);
-        
+        InitBasicQuest();
     }
 
     private void GetCurrentAcceptQuestData()
@@ -84,69 +92,54 @@ public class Vilage_QuestManager :
         }
     }
 
-    void Start()
-    {
-        InitBasicQuest();
-    }
-
-    private void NPCSayHello()
-    {
-        m_NPCTalkingText.StartWriting("Hello? Welcome to our vilage!");
-    }
-
-    public void NPCSayMayIHelpYou()
-    {
-        m_NPCTalkingText.StartWriting("May I Help You?");
-    }
-
     private void InitBasicQuest()
     {
         CreateQuestSlot(
             Quest_Interface.CreateQuest(
                 "BlueSkeleton", "It's Very Dangerous to hunt Blue Skeleton!", 
-                0, Random.RandomRange(10, 40)),
+                0, Random.RandomRange(10, 40), 100),
             Quest_Slot.SLOTTYPE.SLOT_WAIT);
 
         CreateQuestSlot(
             Quest_Interface.CreateQuest(
                 "Death", "Legendery Monster Calling The 'Death'..",
-                0, Random.RandomRange(3, 10)),
+                0, Random.RandomRange(3, 10), 2000),
             Quest_Slot.SLOTTYPE.SLOT_WAIT);
 
         CreateQuestSlot(
             Quest_Interface.CreateQuest(
                 "GermanMaceSkeleton", "Mace Skeleton is very powerful Attacker",
-                0, Random.RandomRange(10, 40)),
+                0, Random.RandomRange(10, 40), 300),
             Quest_Slot.SLOTTYPE.SLOT_WAIT);
 
         CreateQuestSlot(
             Quest_Interface.CreateQuest(
                 "GermanSkeleton", "it's too simple! Destroy it!",
-                0, Random.RandomRange(10, 40)),
+                0, Random.RandomRange(10, 40), 150),
             Quest_Slot.SLOTTYPE.SLOT_WAIT);
 
         CreateQuestSlot(
             Quest_Interface.CreateQuest(
                 "Mimic", "did you hear the weird tresure box?",
-                0, Random.RandomRange(10, 40)),
+                0, Random.RandomRange(10, 40), 500),
             Quest_Slot.SLOTTYPE.SLOT_WAIT);
 
         CreateQuestSlot(
             Quest_Interface.CreateQuest(
                 "SkeletonBomber", "Do you want find some of Crazy Monster?",
-                0, Random.RandomRange(10, 40)),
+                0, Random.RandomRange(10, 40), 300),
             Quest_Slot.SLOTTYPE.SLOT_WAIT);
 
         CreateQuestSlot(
             Quest_Interface.CreateQuest(
                 "SkeletonBoomerang", "Do you think what the... Boomerang is weak?",
-                0, Random.RandomRange(10, 40)),
+                0, Random.RandomRange(10, 40), 100),
             Quest_Slot.SLOTTYPE.SLOT_WAIT);
 
         CreateQuestSlot(
             Quest_Interface.CreateQuest(
                 "SkeletonWarrior", "mad, crazy, hell.. every calls many names",
-                0, Random.RandomRange(10, 40)),
+                0, Random.RandomRange(10, 40), 1000),
             Quest_Slot.SLOTTYPE.SLOT_WAIT);
     }
 
@@ -166,16 +159,19 @@ public class Vilage_QuestManager :
             _LoadedQuest, _QuestType);
     }
 
-    public void ActiveExtenstionQuestButton(Quest_Slot _SlotTarget)
+    public void ClickQuestButton(Quest_Slot _SlotTarget)
     {
         m_SelectedQuestSlot = _SlotTarget;
         ShowSelectedQuestArea(_SlotTarget);
         m_NPCTalkingText.StartWriting(_SlotTarget.ChildQuest.QuestTalking);
 
-        m_QuestExtensionButtons.gameObject.SetActive(true);
-        TweenAlpha.Begin(m_QuestExtensionButtons.gameObject, 0.25f, 1f);
+        //Quest 종류에 따라 달라진다.
+        m_NPCExtensionButtons.ShowNPCExtensionFunc(_SlotTarget);
+        //m_QuestExtensionButtons.gameObject.SetActive(true);
+        //TweenAlpha.Begin(m_QuestExtensionButtons.gameObject, 0.25f, 1f);
     }
 
+    //선택된 퀘스트 표시한다.
     private void ShowSelectedQuestArea(Quest_Slot _SlotTarget)
     {
         m_LoadedQuestSelectArea.SetActive(false);
@@ -191,8 +187,20 @@ public class Vilage_QuestManager :
 
     public void AcceptQuest()
     {
+        //0. 수주받은 퀘스트 수를 검사한다.
+        Debug.Log(DataController.GetInstance(
+            ).QuestGameData.AcceptQuest.Count);
+
+        if (DataController.GetInstance(
+            ).QuestGameData.AcceptQuest.Count >= 3)
+        {
+            m_NPCTalkingText.StartWriting(
+                "it's too much! you cannot accept more Quest..");
+            return;
+        }
+
         //1. UI 퀘스트 갱신
-        m_SelectedQuestSlot.ChangeConditionQuest();
+        m_SelectedQuestSlot.ChangeQuestCondition();
 
         //2. 퀘스트 데이터 갱신
         DataController.GetInstance().QuestGameData.AcceptQuest.Add(
@@ -204,22 +212,72 @@ public class Vilage_QuestManager :
 
         //4. NPC 멘트 장전
         m_NPCTalkingText.StartWriting("Thank You! anything else?");
-
     }
 
-    public void HideExtensionQuestButton()
+    public void DiscardQuest()
     {
+        //1. UI 퀘스트 갱신
+        m_SelectedQuestSlot.ChangeQuestCondition();
+
+        //2. 퀘스트 데이터 갱신
+        DataController.GetInstance().QuestGameData.AcceptQuest.Remove(
+            m_SelectedQuestSlot.ChildQuest.QuestTarget);
+
+        //3. 퀘스트 데이터 저장
+        DataController.GetInstance().QuestSave();
+
+        //4. NPC 멘트 장전
+        m_NPCTalkingText.StartWriting("Well..");
+    }
+
+    public void QuestClear()
+    {
+        int QuestReward = m_SelectedQuestSlot.ChildQuest.QuestReward;
+        //1. UI 퀘스트 갱신
+        m_SelectedQuestSlot.ChangeQuestCondition();
+
+        //2. 퀘스트 데이터 갱신
+        DataController.GetInstance().QuestGameData.AcceptQuest.Remove(
+            m_SelectedQuestSlot.ChildQuest.QuestTarget);
+
+        //3. 보상 추가
+        DataController.GetInstance().InGameData.Money += QuestReward;
+
+        //4. Money UI 최신화
+        LobbyController.GetInstance(
+            ).UpperStatusPanel.SetMoney(QuestReward);
+
+        //5. 퀘스트 데이터 저장
+        DataController.GetInstance().QuestSave();
+
+        //6. 실질적 데이터 저장
+        DataController.GetInstance().Save();
+
+        //7. NPC 멘트 장전
+        m_NPCTalkingText.StartWriting("Good Job! i'll give " + QuestReward.ToString() + "Gold!");
+    }
+
+    public void ResetQuestSelection()
+    {
+        //선택되어 있는 슬롯 해제.
         m_SelectedQuestSlot = null;
+
+        //선택영역을 표시하는 오브젝트 숨기기.
         m_LoadedQuestSelectArea.gameObject.SetActive(false);
         m_LoadedQuestSelectArea.transform.SetParent(OwnTrans, false);
-        TweenAlpha.Begin(m_QuestExtensionButtons.gameObject, 0.25f, 0f);
-        Invoke("HideExtensionObject", 0.25f);
+
+        m_NPCExtensionButtons.HideNPCExtensionFunc();
+        GridsRepositions();
     }
 
-    private void HideExtensionObject()
+    private void GridsRepositions()
     {
-        m_QuestExtensionButtons.gameObject.SetActive(false);
+        m_OrderedQuestGrid.Reposition();
+        m_WaitQuestGrid.Reposition();
     }
 
-    
+    public void NPCTalking(string _Script)
+    {
+        m_NPCTalkingText.StartWriting(_Script);
+    }
 }
