@@ -20,9 +20,9 @@ public class AutoTyping : MonoBehaviour
         m_TypingCoroutine = AutoTypingAction(m_DelayTime);
     }
 
-    public void StartAction(string TargetText)
+    public void StartWriting(string TargetText)
     {
-        InitAutoTyping();
+        ResetAutoTyping();
         m_TypingText = TargetText;
         m_TypingMaxIdx = m_TypingText.Length;
 
@@ -30,14 +30,14 @@ public class AutoTyping : MonoBehaviour
         StartCoroutine(m_TypingCoroutine);
     }
 
-    public void InitAutoTyping()
-    {
-        m_TypingIdx = 1;
-        m_TypingMaxIdx = 0;
-        m_isTypingEnd = false;
+    //public void InitAutoTyping()
+    //{
+    //    m_TypingIdx = 1;
+    //    m_TypingMaxIdx = 0;
+    //    m_isTypingEnd = false;
 
-        m_TypingCoroutine = AutoTypingAction(m_DelayTime);
-    }
+    //    m_TypingCoroutine = AutoTypingAction(m_DelayTime);
+    //}
 
     private IEnumerator AutoTypingAction(float fDelayTime)
     {
@@ -57,6 +57,8 @@ public class AutoTyping : MonoBehaviour
         m_TypingMaxIdx = 0;
         m_isTypingEnd = false;
         m_Labelcomp.text = string.Empty;
+
+        m_TypingCoroutine = AutoTypingAction(m_DelayTime);
     }
     
 

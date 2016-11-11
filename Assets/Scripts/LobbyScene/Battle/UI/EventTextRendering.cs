@@ -33,7 +33,7 @@ public class EventTextRendering : MonoBehaviour {
 
     public void StartEventTextRendering(string strTarget)
     {
-        m_AutoTypingComp.StartAction(strTarget);
+        m_AutoTypingComp.StartWriting(strTarget);
     }
 
     public void ResetEventRendering()

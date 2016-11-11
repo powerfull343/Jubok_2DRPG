@@ -8,12 +8,13 @@ public class UI_Selected_Animation : MonoBehaviour {
         = new List<Color>();
     private static bool m_isColorSetting;
 
+    public float m_ChangeDelayAmount = 0.2f;
+
     void Awake()
     {
         if (!m_isColorSetting)
         {
             m_ColorList.Add(new Color(0f, 0f, 0f, 0f));
-            m_ColorList.Add(Color.black);
             m_ColorList.Add(Color.red);
             m_ColorList.Add(Color.yellow);
             m_ColorList.Add(Color.green);
@@ -34,16 +35,14 @@ public class UI_Selected_Animation : MonoBehaviour {
 
     IEnumerator ColorAnimation()
     {
-        float fChangeDelayAmount = 0.2f;
-
         while (true)
         {
             for (int i = 0; i < m_ColorList.Count; ++i)
             {
-                TweenColor.Begin(this.gameObject, fChangeDelayAmount, m_ColorList[i]);
-                yield return new WaitForSeconds(fChangeDelayAmount);
+                TweenColor.Begin(this.gameObject, m_ChangeDelayAmount, m_ColorList[i]);
+                yield return new WaitForSeconds(m_ChangeDelayAmount);
             }
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.5f);
         }
 
         yield return null;

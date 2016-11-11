@@ -150,7 +150,7 @@ public class Quest_Slot : MonoBehaviour {
         //m_ButtonScale.enabled = true;
     }
 
-    public void QuestSlotClick()
+    public void ChangeConditionQuest()
     {
         switch(m_QuestSlotType)
         {
