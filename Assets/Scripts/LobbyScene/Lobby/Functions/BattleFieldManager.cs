@@ -144,8 +144,8 @@ public class BattleFieldManager
     //0. Click Something Area use this method
     public void ClickArea(int SelectedArea)
     {
-        //LobbyController.mSelectedSceneID = (FIELDID)SelectedArea;
-        LobbyController.mSelectedSceneID = FIELDID.ID_BATTLEFIELD01;
+        LobbyController.mSelectedSceneID = (FIELDID)SelectedArea;
+        //LobbyController.mSelectedSceneID = FIELDID.ID_BATTLEFIELD01;
 
         BattleFieldDetailScrollManager.GetInstance(
             ).InnerPopupButtonLabelSetting();

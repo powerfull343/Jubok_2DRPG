@@ -266,7 +266,8 @@ public class Vilage_QuestManager :
         m_LoadedQuestSelectArea.gameObject.SetActive(false);
         m_LoadedQuestSelectArea.transform.SetParent(OwnTrans, false);
 
-        m_NPCExtensionButtons.HideNPCExtensionFunc();
+        if(m_NPCExtensionButtons.gameObject.activeSelf == true)
+            m_NPCExtensionButtons.HideNPCExtensionFunc();
         GridsRepositions();
     }
 
