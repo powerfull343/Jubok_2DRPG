@@ -19,7 +19,10 @@ public class Quest_Interface {
 
     private int m_QuestTargetCount;
     public int QuestTargetCount
-    { get { return m_QuestTargetCount; } }
+    {
+        get { return m_QuestTargetCount; }
+        set { m_QuestTargetCount = value; }
+    }
 
     private int m_QuestTargetMaxCount;
     public int QuestTargetMaxCount

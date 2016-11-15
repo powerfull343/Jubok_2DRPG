@@ -7,8 +7,8 @@ public class AcceptQuestContainer
     : Singleton<AcceptQuestContainer> {
 
     private Transform m_OwnTrans;
-    private List<Quest_Slot> m_ChildAcceptQuestSlot = 
-        new List<Quest_Slot>();
+    private Dictionary<string, Quest_Slot> m_ChildAcceptQuestSlot =
+        new Dictionary<string, Quest_Slot>();
 
     public int m_MaxAcceptQuestCount = 3;
 
@@ -41,20 +41,22 @@ public class AcceptQuestContainer
                 Quest_Slot.SLOTTYPE.SLOT_ORDER);
             CreatedSlot.transform.SetParent(m_OwnTrans, false);
             CreatedSlot.gameObject.SetActive(false);
-            m_ChildAcceptQuestSlot.Add(CreatedSlot);
+            m_ChildAcceptQuestSlot.Add(
+                CreatedSlot.ChildQuest.QuestTarget,
+                CreatedSlot);
         }
     }
 
     public IEnumerable<Quest_Slot> GetChildQuestSlots(FIELDID _FieldId)
     {
-        return from Quest in m_ChildAcceptQuestSlot
+        return from Quest in m_ChildAcceptQuestSlot.Values
                where Quest.ChildQuest.MonsterRegenPos.Equals(_FieldId)
                select Quest;
     }
 
     public Quest_Slot GetChildQuestSlot(int index)
     {
-        return m_ChildAcceptQuestSlot[index];
+        return m_ChildAcceptQuestSlot.ToList()[index].Value;
     }
 
     public void AddchildQuestSlot(Quest_Slot AddSlot)
@@ -62,7 +64,8 @@ public class AcceptQuestContainer
         if (m_ChildAcceptQuestSlot.Count >= m_MaxAcceptQuestCount)
             return;
 
-        m_ChildAcceptQuestSlot.Add(AddSlot);
+        m_ChildAcceptQuestSlot.Add(AddSlot.ChildQuest.QuestTarget
+            , AddSlot);
     }
 
     public void RemoveChildQuestSlot(Quest_Slot RemoveSlot)
@@ -70,7 +73,8 @@ public class AcceptQuestContainer
         if (m_ChildAcceptQuestSlot.Count <= 0)
             return;
 
-        m_ChildAcceptQuestSlot.Remove(RemoveSlot);
+        m_ChildAcceptQuestSlot.Remove(
+            RemoveSlot.ChildQuest.QuestTarget);
     }
 
     public void GetAllQuestSlotToChild(Transform ParentTrans)
@@ -88,5 +92,21 @@ public class AcceptQuestContainer
         }
     }
 
+    public void UpdateQuestCount(string _QuestTarget)
+    {
+        if (!m_ChildAcceptQuestSlot.ContainsKey(_QuestTarget))
+            return;
+
+        Quest_Slot SelectedTarget = m_ChildAcceptQuestSlot[_QuestTarget];
+        if (SelectedTarget.ChildQuest.QuestTargetCount >=
+            SelectedTarget.ChildQuest.QuestTargetMaxCount)
+            return;
+
+        Debug.Log("Up");
+        ++SelectedTarget.ChildQuest.QuestTargetCount;
+        SelectedTarget.WriteExpressionLabel();
+        DataController.GetInstance().QuestSave();
+
+    }
 	
 }

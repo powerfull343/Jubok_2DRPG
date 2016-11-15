@@ -142,13 +142,25 @@ public class Quest_Slot : MonoBehaviour {
         IconImage.SetActive(true);
     }
 
-    private void WriteExpressionLabel()
+    public void WriteExpressionLabel()
     {
         StringBuilder builder = new StringBuilder();
-        builder.AppendLine(m_ChildQuest.QuestTarget);
-        builder.Append(m_ChildQuest.QuestTargetCount);
-        builder.Append(" / ");
-        builder.Append(m_ChildQuest.QuestTargetMaxCount);
+        if (m_ChildQuest.QuestTargetCount < m_ChildQuest.QuestTargetMaxCount)
+        {
+            builder.AppendLine(m_ChildQuest.QuestTarget);
+            builder.Append(m_ChildQuest.QuestTargetCount);
+            builder.Append(" / ");
+            builder.Append(m_ChildQuest.QuestTargetMaxCount);
+        }
+        else
+        {
+            builder.AppendLine(m_ChildQuest.QuestTarget);
+            builder.Append("[ffff00]");
+            builder.Append(m_ChildQuest.QuestTargetCount);
+            builder.Append(" / ");
+            builder.Append(m_ChildQuest.QuestTargetMaxCount);
+            builder.Append("[-]");
+        }
 
         m_QuestExpression.text = builder.ToString();
     }

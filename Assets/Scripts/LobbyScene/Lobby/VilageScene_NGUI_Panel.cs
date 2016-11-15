@@ -31,7 +31,8 @@ public class VilageScene_NGUI_Panel : Scene_Panel_Interface
 
     public void ClickMenuXButton()
     {
-        LobbyController.GetInstance().OpenedPanel = IDSUBPANEL.PANELID_NONE;
+        LobbyController.GetInstance().OpenedPanel = 
+            IDSUBPANEL.PANELID_NONE;
         Invoke("CloseBehindCollider", 1f);
     }
 

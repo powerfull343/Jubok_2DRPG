@@ -7,7 +7,7 @@ public class Battle_QuestWindow : MonoBehaviour {
 
     public UIWidget m_QuestButtonWidget;
     [SerializeField]
-    private Transform m_QuestShowPosition;
+    private UIGrid m_QuestGridPosition;
     private bool m_isQuestShow = false;
 
     void Awake()
@@ -18,7 +18,7 @@ public class Battle_QuestWindow : MonoBehaviour {
     void Start()
     {
         Mecro.MecroMethod.CheckExistComponent<UIWidget>(m_QuestButtonWidget);
-        Mecro.MecroMethod.CheckExistComponent<Transform>(m_QuestShowPosition);
+        Mecro.MecroMethod.CheckExistComponent<UIGrid>(m_QuestGridPosition);
 
         float fXPos = -(BattleScene_NGUI_Panel.fScreenWidth / 2f) +
             (m_QuestButtonWidget.localSize.x);
@@ -27,13 +27,16 @@ public class Battle_QuestWindow : MonoBehaviour {
             m_QuestButtonWidget.localSize.y;
 
         m_QuestButtonWidget.transform.localPosition = new Vector3(fXPos, fYPos, 1f);
+        m_QuestGridPosition.transform.position = m_QuestButtonWidget.transform.position;
+        m_QuestGridPosition.transform.localPosition += new Vector3(0f, -65f, 0f);
+            
     }
 
     public void QuestWindowOpenAndHide()
     {
-        
         if(!m_isQuestShow)
         {
+            m_isQuestShow = true;
             var LoadedQuestSlots = 
                 AcceptQuestContainer.GetInstance().GetChildQuestSlots(
                 LobbyController.GetInstance().mCurrentSceneID);
@@ -43,16 +46,22 @@ public class Battle_QuestWindow : MonoBehaviour {
             {
                 CalledQuestSlot = LoadedQuestSlots.ToList()[i];
                 CalledQuestSlot.m_QuestNaviSetting = true;
-                CalledQuestSlot.transform.SetParent(m_QuestShowPosition, false);
-                CalledQuestSlot.transform.localScale = new Vector3(0.8f, 0.8f, 1f);
+                m_QuestGridPosition.AddChild(CalledQuestSlot.transform);
+                CalledQuestSlot.transform.localScale = 
+                    new Vector3(0.8f, 0.8f, 1f);
                 CalledQuestSlot.gameObject.SetActive(true);
             }
+            m_QuestGridPosition.Reposition();
         }
         else
-        {
-            AcceptQuestContainer.GetInstance().GetAllQuestSlotToChild(
-                m_QuestShowPosition);
-        }
+            ResetQuestGrid();
+    }
+
+    public void ResetQuestGrid()
+    {
+        m_isQuestShow = false;
+        AcceptQuestContainer.GetInstance().GetAllQuestSlotToChild(
+            m_QuestGridPosition.transform);
     }
 
 }

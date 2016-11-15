@@ -51,7 +51,6 @@ public abstract class Monster_Interface : Moveable_Object {
     //Drop Gold
     private int m_GoldCount = 5;
     private int m_GoldAmount = 10;
-    
 
     public Monster_Interface()
     {
@@ -208,6 +207,7 @@ public abstract class Monster_Interface : Moveable_Object {
     protected virtual void KillMonster()
     {
         DropItemObjects();
+        QuestUpdate();
         base.DeleteEventTextMsg();
         if (grade >= MONSTERGRADEID.GRADE_BOSS)
             MonsterManager.GetInstance().CheckBossExist = false;
@@ -241,7 +241,12 @@ public abstract class Monster_Interface : Moveable_Object {
     {
         ItemDropManager.GetInstance().DropItem(m_ObjectName, transform.position);
         ItemDropManager.GetInstance().DropCoin(transform.position, m_GoldAmount, m_GoldCount);
-        //ItemDropManager.GetInstance().DropCoin(transform.position, CalcMoneySize());
+    }
+
+    protected void QuestUpdate()
+    {
+        Debug.Log(m_LoadPrefabName);
+        AcceptQuestContainer.GetInstance().UpdateQuestCount(m_LoadPrefabName);
     }
 
     protected abstract IEnumerator ActionCoroutine();

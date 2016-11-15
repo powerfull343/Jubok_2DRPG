@@ -95,7 +95,7 @@ public class Vilage_QuestManager :
             Quest_Interface.CreateQuest(
                 "BlueSkeleton", FIELDID.ID_BATTLEFIELD01, 
                 "It's Very Dangerous to hunt Blue Skeleton!", 
-                0, Random.RandomRange(10, 40), 100),
+                0, Random.RandomRange(10, 20), 100),
             Quest_Slot.SLOTTYPE.SLOT_WAIT);
         if(CreatedSlot != null)
             CreatedSlot.ChangeButtonTrans();
@@ -113,7 +113,7 @@ public class Vilage_QuestManager :
             Quest_Interface.CreateQuest(
                 "GermanMaceSkeleton", FIELDID.ID_BATTLEFIELD01,
                  "Mace Skeleton is very powerful Attacker",
-                0, Random.RandomRange(10, 40), 300),
+                0, Random.RandomRange(10, 20), 300),
             Quest_Slot.SLOTTYPE.SLOT_WAIT);
         if (CreatedSlot != null)
             CreatedSlot.ChangeButtonTrans();
@@ -122,7 +122,7 @@ public class Vilage_QuestManager :
             Quest_Interface.CreateQuest(
                 "GermanSkeleton", FIELDID.ID_BATTLEFIELD01,
                  "it's too simple! Destroy it!",
-                0, Random.RandomRange(10, 40), 150),
+                0, Random.RandomRange(10, 20), 150),
             Quest_Slot.SLOTTYPE.SLOT_WAIT);
         if (CreatedSlot != null)
             CreatedSlot.ChangeButtonTrans();
@@ -131,7 +131,7 @@ public class Vilage_QuestManager :
             Quest_Interface.CreateQuest(
                 "Mimic", FIELDID.ID_BATTLEFIELD01,
                  "did you hear the weird tresure box?",
-                0, Random.RandomRange(10, 40), 500),
+                0, Random.RandomRange(10, 20), 500),
             Quest_Slot.SLOTTYPE.SLOT_WAIT);
         if (CreatedSlot != null)
             CreatedSlot.ChangeButtonTrans();
@@ -140,7 +140,7 @@ public class Vilage_QuestManager :
             Quest_Interface.CreateQuest(
                 "SkeletonBomber", FIELDID.ID_BATTLEFIELD01,
                  "Do you want find some of Crazy Monster?",
-                0, Random.RandomRange(10, 40), 300),
+                0, Random.RandomRange(10, 20), 300),
             Quest_Slot.SLOTTYPE.SLOT_WAIT);
         if (CreatedSlot != null)
             CreatedSlot.ChangeButtonTrans();
@@ -149,7 +149,7 @@ public class Vilage_QuestManager :
             Quest_Interface.CreateQuest(
                 "SkeletonBoomerang", FIELDID.ID_BATTLEFIELD01,
                  "Do you think what the... Boomerang is weak?",
-                0, Random.RandomRange(10, 40), 100),
+                0, Random.RandomRange(10, 20), 100),
             Quest_Slot.SLOTTYPE.SLOT_WAIT);
         if (CreatedSlot != null)
             CreatedSlot.ChangeButtonTrans();
@@ -158,7 +158,7 @@ public class Vilage_QuestManager :
             Quest_Interface.CreateQuest(
                 "SkeletonWarrior", FIELDID.ID_BATTLEFIELD01,
                  "many people says 'it calls unknown'",
-                0, Random.RandomRange(10, 40), 1000),
+                0, Random.RandomRange(10, 20), 1000),
             Quest_Slot.SLOTTYPE.SLOT_WAIT);
         if (CreatedSlot != null)
             CreatedSlot.ChangeButtonTrans();

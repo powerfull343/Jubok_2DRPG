@@ -172,6 +172,15 @@ public class NGUI_OptionMenuCtrl : MonoBehaviour
             new EventDelegate(DataController.GetInstance(),
             "Save"));
 
+        m_GoBackVilageButton.onClick.Add(
+            new EventDelegate(
+                NGUI_PanelManager.GetInstance().GetBattleScenePanel().QuestWindow,
+                "ResetQuestGrid"));
+
+        m_GoBackVilageButton.onClick.Add(
+            new EventDelegate(DataController.GetInstance(),
+            "QuestSave"));
+
         m_GoBackVilageObject.SetActive(true);
         m_isBackVilageButtonSetting = true;
     }
