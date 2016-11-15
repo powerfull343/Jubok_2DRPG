@@ -73,14 +73,14 @@ public class AcceptQuestContainer
         m_ChildAcceptQuestSlot.Remove(RemoveSlot);
     }
 
-    public void GetAllQuestSlotToChild(UIGrid GridTarget)
+    public void GetAllQuestSlotToChild(Transform ParentTrans)
     {
         Quest_Slot MovingTarget = null;
-        int AccpetQuestCount = GridTarget.transform.childCount;
+        int AccpetQuestCount = ParentTrans.childCount;
         for (int i = 0; i < AccpetQuestCount; ++i)
         {
-            MovingTarget = 
-                GridTarget.GetChild(0).GetComponent<Quest_Slot>();
+            MovingTarget =
+                ParentTrans.GetChild(0).GetComponent<Quest_Slot>();
             MovingTarget.m_QuestNaviSetting = false;
             MovingTarget.ButtonComp.enabled = true;
             MovingTarget.gameObject.SetActive(false);

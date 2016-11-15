@@ -195,7 +195,7 @@ public class LobbyController
     //=======Change Level=========//
     public void EntryAnotherField()
     {
-        LobbyController.mSelectedSceneID = FIELDID.ID_BATTLEFIELD01;
+        //LobbyController.mSelectedSceneID = FIELDID.ID_BATTLEFIELD01;
         if (mCurrentSceneID == mSelectedSceneID)
             return;
         //Debug.Log(mSelectedSceneID);

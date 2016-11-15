@@ -95,6 +95,8 @@ public class BossHpBar : MonoBehaviour {
     }
 
     /*
+    100 / 7 = 14.28...
+         
     100 - 96 = 4;
     4 % 14 = 4;
     4 / 14 = 0.14;

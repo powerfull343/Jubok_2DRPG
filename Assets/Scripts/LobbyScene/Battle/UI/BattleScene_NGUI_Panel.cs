@@ -12,6 +12,11 @@ public class BattleScene_NGUI_Panel : Scene_Panel_Interface
     }
 
     [SerializeField]
+    private Battle_QuestWindow m_QuestWindow;
+    public Battle_QuestWindow QuestWindow
+    { get { return m_QuestWindow; } }
+
+    [SerializeField]
     private Camera m_NGUICamera;
     public Camera NGUICamera
     {
@@ -29,6 +34,7 @@ public class BattleScene_NGUI_Panel : Scene_Panel_Interface
         base.InitComponents();
         MecroMethod.CheckExistComponent<BossHpBarCtrlManager>(m_BossHpManager);
         MecroMethod.CheckExistComponent<Camera>(m_NGUICamera);
+        MecroMethod.CheckExistComponent<Battle_QuestWindow>(m_QuestWindow);
     }
 
     void OnEnable()
@@ -41,6 +47,9 @@ public class BattleScene_NGUI_Panel : Scene_Panel_Interface
         base.UpperPanelMoving();
         //if BattleScene Start Reducing Statmina
         LobbyController.GetInstance().UpperStatusPanel.StartReducingStamina();
+
+        if (m_QuestWindow.gameObject.activeSelf == false)
+            m_QuestWindow.gameObject.SetActive(true);
     }
 
     public void CreateBossHpBar(string MonsterKey)

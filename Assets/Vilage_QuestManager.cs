@@ -293,7 +293,7 @@ public class Vilage_QuestManager :
         //Accept 상태인 퀘스트 아이템을 
         //AcceptQuestContainter으로 전송
         AcceptQuestContainer.GetInstance(
-            ).GetAllQuestSlotToChild(m_OrderedQuestGrid);
+            ).GetAllQuestSlotToChild(m_OrderedQuestGrid.transform);
         
     }
 

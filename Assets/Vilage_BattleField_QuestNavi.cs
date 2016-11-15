@@ -42,7 +42,7 @@ public class Vilage_BattleField_QuestNavi : MonoBehaviour {
         //다른 선택지로 넘어갈 때에 퀘스트 슬롯을
         //해당 AcceptQuestContainter로 배치한다.
         AcceptQuestContainer.GetInstance(
-            ).GetAllQuestSlotToChild(m_QuestNaviGrid);
+            ).GetAllQuestSlotToChild(m_QuestNaviGrid.transform);
         
     }
 

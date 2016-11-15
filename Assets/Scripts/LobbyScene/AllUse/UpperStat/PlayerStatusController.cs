@@ -24,7 +24,7 @@ public class PlayerStatusController : MonoBehaviour
 
     private GameObject_Extension m_ObjectExtension;
 
-    public float m_fUISize = 0f;
+    public float m_fUIYSize = 0f;
 
     void Awake()
     {
@@ -50,8 +50,7 @@ public class PlayerStatusController : MonoBehaviour
         //EventDelegate EventDg = new EventDelegate(this, "CallGameMenu");
         //m_CallMenuButton.onClick.Add(EventDg);
 
-        m_fUISize = m_BGWidget.localSize.y;
-
+        m_fUIYSize = m_BGWidget.localSize.y;
         //Upper Stat UI -> Menu Button Click Function
         Mecro.MecroMethod.CheckExistComponent<NGUI_OptionMenuCtrl>(m_MenuPanel);
     }
