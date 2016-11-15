@@ -155,12 +155,13 @@ public class SkillManager :
         //Using Skill Data Clear
         m_UsingSkills.DestroyChildren();
 
-
         //Prefab Data Clear
         int nIndex = m_LoadedSkill.Count;
         for(int i = 0; i < nIndex; ++i)
             m_LoadedSkill.ToList().RemoveAt(i);
         m_LoadedSkill.Clear();
+
+        Debug.Log("RemoveAllSkillData");
     }
 
     //public void MonsterHpZero(Moveable_Object otherInfo)

@@ -9,6 +9,10 @@ public class Quest_Interface {
     public string QuestTarget
     { get { return m_QuestTarget; } }
 
+    private FIELDID m_MonsterRegenPos;
+    public FIELDID MonsterRegenPos
+    { get { return m_MonsterRegenPos; } }
+
     private string m_QuestTalking;
     public string QuestTalking
     { get { return m_QuestTalking; } }
@@ -26,11 +30,13 @@ public class Quest_Interface {
     { get { return m_QuestReward; } }
 
     public Quest_Interface(string _QuestTarget,
+        FIELDID _MonsterRegenPos,
         string _QuestTalking,
         int _QuestCount, int _QuestMaxCount,
         int _QuestReward)
     {
         m_QuestTarget = _QuestTarget;
+        m_MonsterRegenPos = _MonsterRegenPos;
         m_QuestTalking = _QuestTalking;
         m_QuestTargetCount = _QuestCount;
         m_QuestTargetMaxCount = _QuestMaxCount;
@@ -38,11 +44,12 @@ public class Quest_Interface {
     }
 
     public static Quest_Interface CreateQuest(string _QuestTarget,
-        string _QuestTalking, int _QuestCount, int _QuestMaxCount, 
+        FIELDID _MonsterRegenPos, string _QuestTalking, 
+        int _QuestCount, int _QuestMaxCount, 
         int _QuestReward)
     {
         Quest_Interface newQuest =
-            new Quest_Interface(_QuestTarget, _QuestTalking, 
+            new Quest_Interface(_QuestTarget, _MonsterRegenPos, _QuestTalking, 
             _QuestCount, _QuestMaxCount, _QuestReward);
         return newQuest;
     }

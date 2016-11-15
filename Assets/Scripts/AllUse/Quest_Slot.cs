@@ -27,6 +27,7 @@ public class Quest_Slot : MonoBehaviour {
         get { return m_QuestSlotType; }
         set { m_QuestSlotType = value; }
     }
+    public bool m_QuestNaviSetting = false;
 
     [SerializeField]
     private UILabel m_QuestExpression;
@@ -37,7 +38,10 @@ public class Quest_Slot : MonoBehaviour {
     public UIWidget ButtonWidget
     { get { return m_ButtonWidget; } }
     private UIButton m_ButtonComp;
+    public UIButton ButtonComp { get { return m_ButtonComp;} }
     //private UIButtonScale m_ButtonScale;
+
+    private static GameObject m_LoadedQuestSlot;
 
     void Awake()
     {
@@ -48,19 +52,24 @@ public class Quest_Slot : MonoBehaviour {
         //    MecroMethod.CheckGetComponent<UIButtonScale>(this.gameObject);
         m_ButtonWidget =
             MecroMethod.CheckGetComponent<UIWidget>(this.gameObject);
+        
         LoadingQuestIcon();
     }
 
-    void Start()
-    {
-        if (m_QuestSlotFunc == null)
+
+    void OnEnable()
+    { 
+        if (m_QuestSlotFunc == null &&
+            m_QuestNaviSetting == false &&
+            Vilage_QuestManager.GetInstance() != null)
         {
             m_QuestSlotFunc = new EventDelegate(
                Vilage_QuestManager.GetInstance(), "ClickQuestButton");
             m_QuestSlotFunc.parameters[0] = MecroMethod.CreateEventParm(
                 this, this.GetType());
+
+            m_ButtonComp.onClick.Add(m_QuestSlotFunc);
         }
-        m_ButtonComp.onClick.Add(m_QuestSlotFunc);
     }
 
     private void LoadingQuestIcon()
@@ -88,6 +97,30 @@ public class Quest_Slot : MonoBehaviour {
             Resources.Load<GameObject>(FilePath + "SkeletonWarrior"));
     }
 
+    public static Quest_Slot CreateQuestSlot(Quest_Interface _LoadedQuest,
+        Quest_Slot.SLOTTYPE _QuestType)
+    {
+        if (m_LoadedQuestSlot == null)
+        {
+            m_LoadedQuestSlot =
+                Resources.Load<GameObject>("LobbyScene/QuestPart/QuestItem");
+        }
+
+        if (_QuestType == Quest_Slot.SLOTTYPE.SLOT_WAIT &&
+             DataController.GetInstance().QuestGameData.AcceptQuest.ContainsKey(
+            _LoadedQuest.QuestTarget))
+            return null;
+
+        GameObject newQuestInst = Instantiate(m_LoadedQuestSlot);
+        Quest_Slot newQuestSlotComp =
+            MecroMethod.CheckGetComponent<Quest_Slot>(newQuestInst);
+
+        newQuestSlotComp.SetChildQuestInfo(
+            _LoadedQuest, _QuestType);
+
+        return newQuestSlotComp;
+    }
+
     public void SetChildQuestInfo(Quest_Interface _QuestInfo, 
         Quest_Slot.SLOTTYPE _QuestSlotType)
     {
@@ -98,9 +131,6 @@ public class Quest_Slot : MonoBehaviour {
         //Image, Quest Info Setting
         AddIconImage();
         WriteExpressionLabel();
-
-        //transform Setting
-        ChangeButtonTrans();
     }
 
     private void AddIconImage()
@@ -123,7 +153,7 @@ public class Quest_Slot : MonoBehaviour {
         m_QuestExpression.text = builder.ToString();
     }
 
-    private void ChangeButtonTrans()
+    public void ChangeButtonTrans()
     {
         switch (m_QuestSlotType)
         {

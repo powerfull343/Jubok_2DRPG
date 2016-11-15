@@ -32,13 +32,11 @@ public class NGUI_OptionMenuCtrl : MonoBehaviour
 
     void OnEnable()
     {
-        Debug.Log("OptionMenu OnEnable");
         InitBacktoVilageButtonFunc();
     }
 
     public bool OpenOptionMenuPanel(UIPanel _CurrentUpperStatusPanel)
     {
-        Debug.Log("openOption");
         if (this.gameObject == null)
         {
             Debug.LogError("Cannot Created MenuPanel");

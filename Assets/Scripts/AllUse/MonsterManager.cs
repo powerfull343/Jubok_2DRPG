@@ -423,6 +423,7 @@ public class MonsterManager
         //    Destroy(MonsterParent);
         //}
         //MonsterList.Clear();
+        Debug.Log("ClearMonsterManager");
     }
 
     private void RemoveLoadedMonsterContainer(

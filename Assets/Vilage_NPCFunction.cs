@@ -59,6 +59,8 @@ public class Vilage_NPCFunction : MonoBehaviour {
                     "AcceptQuest");
                 AddButtonEventDelegate(Vilage_QuestManager.GetInstance(),
                     "ResetQuestSelection");
+                AddButtonEventDelegate(Vilage_QuestManager.GetInstance(),
+                    "GridsRepositions");
                 break;
 
             case Quest_Slot.SLOTTYPE.SLOT_ORDER:
@@ -70,6 +72,8 @@ public class Vilage_NPCFunction : MonoBehaviour {
                         "DiscardQuest");
                     AddButtonEventDelegate(Vilage_QuestManager.GetInstance(),
                         "ResetQuestSelection");
+                    AddButtonEventDelegate(Vilage_QuestManager.GetInstance(),
+                        "GridsRepositions");
                 }
                 else
                 {
@@ -79,6 +83,8 @@ public class Vilage_NPCFunction : MonoBehaviour {
                         "QuestClear");
                     AddButtonEventDelegate(Vilage_QuestManager.GetInstance(),
                         "ResetQuestSelection");
+                    AddButtonEventDelegate(Vilage_QuestManager.GetInstance(),
+                        "GridsRepositions");
                 }
                 break;
         }

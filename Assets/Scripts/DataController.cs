@@ -77,6 +77,13 @@ public class DataController : MonoBehaviour {
             PlayerDataMgr.transform.SetParent(_instance.transform, false);
             PlayerDataMgr.SetActive(true);
 
+            GameObject AcceptQuestContainer = Instantiate(
+                Resources.Load("DataObjects/AcceptQuestContainer")
+                as GameObject);
+            Debug.Log("PlayerDataManager Null : " + (AcceptQuestContainer == null));
+            AcceptQuestContainer.transform.SetParent(_instance.transform, false);
+            AcceptQuestContainer.SetActive(true);
+
             GameObject LobbyController = Instantiate(
                 Resources.Load("DataObjects/LobbyManager") as GameObject);
             Debug.Log("LobbyController Null : " + (LobbyController == null));

@@ -147,8 +147,9 @@ public class BattleFieldManager
         LobbyController.mSelectedSceneID = (FIELDID)SelectedArea;
         //LobbyController.mSelectedSceneID = FIELDID.ID_BATTLEFIELD01;
 
-        BattleFieldDetailScrollManager.GetInstance(
-            ).InnerPopupButtonLabelSetting();
+        //BattleFieldDetailScrollManager.GetInstance(
+        //    ).InnerPopupButtonLabelSetting();
+        ScrollManager.InnerPopupButtonLabelSetting();
 
         _SelectedPosition = 
             SelectLevels[SelectedArea].parent.localPosition;
@@ -166,16 +167,16 @@ public class BattleFieldManager
     }
 
     //1. change button & sprite image depth
-    public static void ChangeDepthtoSelectObejct(GameObject parent, bool isUpper)
+    public static void ChangeDepthtoSelectObejct(GameObject parent, bool isfront)
     {
         UIWidget[] childwidget =
             parent.GetComponentsInChildren<UIWidget>();
 
         foreach (UIWidget widget in childwidget)
         {
-            if (widget.depth < 10 && isUpper)
+            if (widget.depth < 10 && isfront)
                 widget.depth += 10;
-            else if (widget.depth > 10 && !isUpper)
+            else if (widget.depth > 10 && !isfront)
                 widget.depth -= 10;
         }
     }

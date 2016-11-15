@@ -202,11 +202,15 @@ public class LobbyController
         //Debug.Log(GetInstance().mCurrentSceneID);
 
         mCurrentSceneID = mSelectedSceneID;
+
+        Debug.Log("EntryAnotherField");
     }
 
     public void ChangePanel()
     {
         StartCoroutine("LowerPanelAlpha");
+        Debug.Log("ChangePanel");
+
     }
 
     public void HideAndShowUpperStatusPanel()
@@ -215,6 +219,7 @@ public class LobbyController
             UpperStatusPanel.ActiveUpperStatus();
         else
             UpperStatusPanel.InActiveUpperStatus();
+        Debug.Log("HideAndShowUpperStatusPanel");
 
     }
 

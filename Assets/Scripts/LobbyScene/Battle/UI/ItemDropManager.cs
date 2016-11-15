@@ -248,7 +248,6 @@ public class ItemDropManager :
     public void DestroyAllChests()
     {
         ObtainParent.DestroyChildren();
+        Debug.Log("DestroyAllChests");
     }
-    
-   
 }

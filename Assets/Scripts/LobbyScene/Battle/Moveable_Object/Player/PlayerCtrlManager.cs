@@ -55,5 +55,6 @@ public class PlayerCtrlManager
     public void ClearBattleScenePlayerData()
     {
         _PlayerCtrl.ClearAllData();
+        Debug.Log("ClearBattleScenePlayerData");
     }
 }

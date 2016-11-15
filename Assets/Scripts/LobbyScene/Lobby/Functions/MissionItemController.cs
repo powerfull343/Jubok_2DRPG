@@ -4,7 +4,6 @@ using Mecro;
 
 public class MissionItemController : MonoBehaviour
 {
-
     [SerializeField]
     private UISprite MissionIconBackGround;
     [SerializeField]

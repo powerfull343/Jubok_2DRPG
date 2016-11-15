@@ -25,7 +25,7 @@ public class Vilage_QuestManager :
     [SerializeField]
     private Vilage_NPCFunction m_NPCExtensionButtons;
 
-    private static GameObject m_LoadedQuestInst;
+    
     private static GameObject m_LoadedQuestSelectArea;
     
     private Transform OwnTrans;
@@ -42,12 +42,6 @@ public class Vilage_QuestManager :
         MecroMethod.CheckExistComponent<Vilage_NPCFunction>(m_NPCExtensionButtons);
         MecroMethod.CheckExistComponent<AutoTyping>(m_NPCTalkingText);
 
-        if (m_LoadedQuestInst == null)
-        {
-            m_LoadedQuestInst =
-                Resources.Load<GameObject>("LobbyScene/QuestPart/QuestItem");
-        }
-
         if (m_LoadedQuestSelectArea == null)
         {
             m_LoadedQuestSelectArea =
@@ -61,102 +55,113 @@ public class Vilage_QuestManager :
 
     void OnEnable()
     {
+        GetCurrentAcceptQuestData();
         m_NPCChating("Hello? Welcome to our vilage!");
     }
 
     void Start()
     {
-        GetCurrentAcceptQuestData();
         InitBasicQuest();
+        GridsRepositions();
     }
 
     private void GetCurrentAcceptQuestData()
     {
-        if (DataController.GetInstance() == null)
-            Debug.LogError("Cannot find Loaded Data");
+        Debug.Log(DataController.GetInstance().transform.parent);
+        //AcceptQuestContainer에 있는 데이터를 불러온다.
+        int AcceptQuestcount =
+            AcceptQuestContainer.GetInstance().transform.childCount;
 
-        //수주받은 퀘스트 로딩.
-        Player_QuestData LoadedQuestData =
-            DataController.GetInstance().QuestGameData;
-        int OrderedQuestCount =
-            LoadedQuestData.AcceptQuest.ToList().Count;
-
-        for (int i = 0; i < OrderedQuestCount; ++i)
+        Quest_Slot SelectedQuestTarget = null;
+        for(int i = 0; i < AcceptQuestcount; ++i)
         {
-            if (m_OrderedQuestGrid.transform.childCount >= 4)
-                break;
-
-            CreateQuestSlot(
-                LoadedQuestData.AcceptQuest.ToList()[i].Value,
-                Quest_Slot.SLOTTYPE.SLOT_ORDER);
+            SelectedQuestTarget = 
+                AcceptQuestContainer.GetInstance().GetChildQuestSlot(i);
+            //SelectedQuestTarget.ChangeButtonTrans();
+            m_OrderedQuestGrid.AddChild(SelectedQuestTarget.transform);
+            SelectedQuestTarget.transform.localScale = new Vector3(0.8f, 0.8f, 1f);
+            SelectedQuestTarget.ButtonWidget.ParentHasChanged();
+            SelectedQuestTarget.gameObject.SetActive(true);
         }
+
+        Debug.Log(DataController.GetInstance().transform.parent);
+        //m_OrderedQuestGrid.Reposition();
     }
 
     private void InitBasicQuest()
     {
-        CreateQuestSlot(
+        Quest_Slot CreatedSlot = null;
+        CreatedSlot = Quest_Slot.CreateQuestSlot(
             Quest_Interface.CreateQuest(
-                "BlueSkeleton", "It's Very Dangerous to hunt Blue Skeleton!", 
+                "BlueSkeleton", FIELDID.ID_BATTLEFIELD01, 
+                "It's Very Dangerous to hunt Blue Skeleton!", 
                 0, Random.RandomRange(10, 40), 100),
             Quest_Slot.SLOTTYPE.SLOT_WAIT);
+        if(CreatedSlot != null)
+            CreatedSlot.ChangeButtonTrans();
 
-        CreateQuestSlot(
+        CreatedSlot = Quest_Slot.CreateQuestSlot(
             Quest_Interface.CreateQuest(
-                "Death", "Legendery Monster Calling The 'Death'..",
+                "Death", FIELDID.ID_BATTLEFIELD01,
+                 "Legendery Monster Calling The 'Death'..",
                 0, Random.RandomRange(3, 10), 2000),
             Quest_Slot.SLOTTYPE.SLOT_WAIT);
+        if (CreatedSlot != null)
+            CreatedSlot.ChangeButtonTrans();
 
-        CreateQuestSlot(
+        CreatedSlot = Quest_Slot.CreateQuestSlot(
             Quest_Interface.CreateQuest(
-                "GermanMaceSkeleton", "Mace Skeleton is very powerful Attacker",
+                "GermanMaceSkeleton", FIELDID.ID_BATTLEFIELD01,
+                 "Mace Skeleton is very powerful Attacker",
                 0, Random.RandomRange(10, 40), 300),
             Quest_Slot.SLOTTYPE.SLOT_WAIT);
+        if (CreatedSlot != null)
+            CreatedSlot.ChangeButtonTrans();
 
-        CreateQuestSlot(
+        CreatedSlot = Quest_Slot.CreateQuestSlot(
             Quest_Interface.CreateQuest(
-                "GermanSkeleton", "it's too simple! Destroy it!",
+                "GermanSkeleton", FIELDID.ID_BATTLEFIELD01,
+                 "it's too simple! Destroy it!",
                 0, Random.RandomRange(10, 40), 150),
             Quest_Slot.SLOTTYPE.SLOT_WAIT);
+        if (CreatedSlot != null)
+            CreatedSlot.ChangeButtonTrans();
 
-        CreateQuestSlot(
+        CreatedSlot = Quest_Slot.CreateQuestSlot(
             Quest_Interface.CreateQuest(
-                "Mimic", "did you hear the weird tresure box?",
+                "Mimic", FIELDID.ID_BATTLEFIELD01,
+                 "did you hear the weird tresure box?",
                 0, Random.RandomRange(10, 40), 500),
             Quest_Slot.SLOTTYPE.SLOT_WAIT);
+        if (CreatedSlot != null)
+            CreatedSlot.ChangeButtonTrans();
 
-        CreateQuestSlot(
+        CreatedSlot = Quest_Slot.CreateQuestSlot(
             Quest_Interface.CreateQuest(
-                "SkeletonBomber", "Do you want find some of Crazy Monster?",
+                "SkeletonBomber", FIELDID.ID_BATTLEFIELD01,
+                 "Do you want find some of Crazy Monster?",
                 0, Random.RandomRange(10, 40), 300),
             Quest_Slot.SLOTTYPE.SLOT_WAIT);
+        if (CreatedSlot != null)
+            CreatedSlot.ChangeButtonTrans();
 
-        CreateQuestSlot(
+        CreatedSlot = Quest_Slot.CreateQuestSlot(
             Quest_Interface.CreateQuest(
-                "SkeletonBoomerang", "Do you think what the... Boomerang is weak?",
+                "SkeletonBoomerang", FIELDID.ID_BATTLEFIELD01,
+                 "Do you think what the... Boomerang is weak?",
                 0, Random.RandomRange(10, 40), 100),
             Quest_Slot.SLOTTYPE.SLOT_WAIT);
+        if (CreatedSlot != null)
+            CreatedSlot.ChangeButtonTrans();
 
-        CreateQuestSlot(
+        CreatedSlot = Quest_Slot.CreateQuestSlot(
             Quest_Interface.CreateQuest(
-                "SkeletonWarrior", "mad, crazy, hell.. every calls many names",
+                "SkeletonWarrior", FIELDID.ID_BATTLEFIELD01,
+                 "many people says 'it calls unknown'",
                 0, Random.RandomRange(10, 40), 1000),
             Quest_Slot.SLOTTYPE.SLOT_WAIT);
-    }
-
-    private void CreateQuestSlot(Quest_Interface _LoadedQuest,
-        Quest_Slot.SLOTTYPE _QuestType)
-    {
-        if (_QuestType == Quest_Slot.SLOTTYPE.SLOT_WAIT &&
-             DataController.GetInstance().QuestGameData.AcceptQuest.ContainsKey(
-            _LoadedQuest.QuestTarget))
-            return;
-
-        GameObject newQuestInst = Instantiate(m_LoadedQuestInst);
-        Quest_Slot newQuestSlotComp =
-            MecroMethod.CheckGetComponent<Quest_Slot>(newQuestInst);
-
-        newQuestSlotComp.SetChildQuestInfo(
-            _LoadedQuest, _QuestType);
+        if (CreatedSlot != null)
+            CreatedSlot.ChangeButtonTrans();
     }
 
     public void ClickQuestButton(Quest_Slot _SlotTarget)
@@ -171,7 +176,7 @@ public class Vilage_QuestManager :
         //TweenAlpha.Begin(m_QuestExtensionButtons.gameObject, 0.25f, 1f);
     }
 
-    //선택된 퀘스트 표시한다.
+    //선택된 퀘스트의 테두리를 추가하여 표시한다.
     private void ShowSelectedQuestArea(Quest_Slot _SlotTarget)
     {
         m_LoadedQuestSelectArea.SetActive(false);
@@ -182,7 +187,6 @@ public class Vilage_QuestManager :
         SquareSprite.depth = 4;
         m_LoadedQuestSelectArea.transform.SetParent(_SlotTarget.transform, false);
         m_LoadedQuestSelectArea.SetActive(true);
-
     }
 
     public void AcceptQuest()
@@ -202,12 +206,16 @@ public class Vilage_QuestManager :
         //1. UI 퀘스트 갱신
         m_SelectedQuestSlot.ChangeQuestCondition();
 
-        //2. 퀘스트 데이터 갱신
+        //2. AcceptQuestContainer에 등록
+        AcceptQuestContainer.GetInstance().AddchildQuestSlot(
+            m_SelectedQuestSlot);
+
+        //3. 실질적 퀘스트 데이터 갱신
         DataController.GetInstance().QuestGameData.AcceptQuest.Add(
             m_SelectedQuestSlot.ChildQuest.QuestTarget,
             m_SelectedQuestSlot.ChildQuest);
 
-        //3. 퀘스트 데이터 저장
+        //4. 실질적 퀘스트 데이터 저장
         DataController.GetInstance().QuestSave();
 
         //4. NPC 멘트 장전
@@ -219,14 +227,18 @@ public class Vilage_QuestManager :
         //1. UI 퀘스트 갱신
         m_SelectedQuestSlot.ChangeQuestCondition();
 
-        //2. 퀘스트 데이터 갱신
+        //2. AcceptQuestContainer에 갱신
+        AcceptQuestContainer.GetInstance().RemoveChildQuestSlot(
+            m_SelectedQuestSlot);
+
+        //3. 실질적 퀘스트 데이터 갱신
         DataController.GetInstance().QuestGameData.AcceptQuest.Remove(
             m_SelectedQuestSlot.ChildQuest.QuestTarget);
 
-        //3. 퀘스트 데이터 저장
+        //4. 실질적 퀘스트 데이터 저장
         DataController.GetInstance().QuestSave();
 
-        //4. NPC 멘트 장전
+        //5. NPC 멘트 장전
         m_NPCTalkingText.StartWriting("Well..");
     }
 
@@ -236,24 +248,28 @@ public class Vilage_QuestManager :
         //1. UI 퀘스트 갱신
         m_SelectedQuestSlot.ChangeQuestCondition();
 
-        //2. 퀘스트 데이터 갱신
+        //2. AcceptQuestContainter에 갱신
+        AcceptQuestContainer.GetInstance().RemoveChildQuestSlot(
+            m_SelectedQuestSlot);
+
+        //3. 퀘스트 데이터 갱신
         DataController.GetInstance().QuestGameData.AcceptQuest.Remove(
             m_SelectedQuestSlot.ChildQuest.QuestTarget);
 
-        //3. 보상 추가
+        //4. 보상 추가
         DataController.GetInstance().InGameData.Money += QuestReward;
 
-        //4. Money UI 최신화
+        //5. Money UI 최신화
         LobbyController.GetInstance(
             ).UpperStatusPanel.SetMoney(QuestReward);
 
-        //5. 퀘스트 데이터 저장
+        //6. 퀘스트 데이터 저장
         DataController.GetInstance().QuestSave();
 
-        //6. 실질적 데이터 저장
+        //7. 실질적 데이터 저장
         DataController.GetInstance().Save();
 
-        //7. NPC 멘트 장전
+        //8. NPC 멘트 장전
         m_NPCTalkingText.StartWriting("Good Job! i'll give " + QuestReward.ToString() + "Gold!");
     }
 
@@ -268,10 +284,20 @@ public class Vilage_QuestManager :
 
         if(m_NPCExtensionButtons.gameObject.activeSelf == true)
             m_NPCExtensionButtons.HideNPCExtensionFunc();
+
         GridsRepositions();
     }
 
-    private void GridsRepositions()
+    public void MoveAcceptQuestContainer()
+    {
+        //Accept 상태인 퀘스트 아이템을 
+        //AcceptQuestContainter으로 전송
+        AcceptQuestContainer.GetInstance(
+            ).GetAllQuestSlotToChild(m_OrderedQuestGrid);
+        
+    }
+
+    public void GridsRepositions()
     {
         m_OrderedQuestGrid.Reposition();
         m_WaitQuestGrid.Reposition();

@@ -24,13 +24,13 @@ public class SubPanelController : MonoBehaviour {
 
     public void DisableAnimator()
     {
-        if(animator.enabled != false)
+        if(animator.enabled == true)
             animator.enabled = false;
     }
 
     public void EnableAnimator()
     {
-        if(animator.enabled != true)
+        if(animator.enabled == false)
             animator.enabled = true;
     }
 

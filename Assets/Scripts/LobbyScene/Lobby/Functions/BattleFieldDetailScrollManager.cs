@@ -6,7 +6,6 @@ using Mecro;
 public class BattleFieldDetailScrollManager
     : Singleton_Parent<BattleFieldDetailScrollManager>
 {
-
     [SerializeField]
     private GameObject[] ScrollEdgeCollider;
     [SerializeField]
@@ -21,6 +20,8 @@ public class BattleFieldDetailScrollManager
     private GameObject_Extension PopupPanel;
     [SerializeField]
     private UILabel innerPopupButtonLabel;
+    [SerializeField]
+    private Vilage_BattleField_QuestNavi QuestNavi;
 
     /// <summary>
     /// Selected Map Icon Parent Transform
@@ -48,7 +49,7 @@ public class BattleFieldDetailScrollManager
 
         foreach (GameObject EdgeCol in ScrollEdgeCollider)
             MecroMethod.CheckExistObject<GameObject>(EdgeCol);
-        
+
         MecroMethod.CheckExistObject<GameObject>(PreviousButton);
         MecroMethod.CheckExistObject<UIWidget>(BehindCollider);
         MecroMethod.CheckExistObject<GameObject>(SelectLevelPopupList);
@@ -116,6 +117,17 @@ public class BattleFieldDetailScrollManager
 
         if (StartLevelButton.activeSelf != isShow)
             StartLevelButton.SetActive(isShow);
+
+        if (QuestNavi.gameObject.activeSelf != isShow)
+        {
+            Debug.Log("QuestNavi SetActive : " + isShow);
+            QuestNavi.gameObject.SetActive(isShow);
+            if (isShow == true)
+            {
+                QuestNavi.QuestNaviGridReset();
+                QuestNavi.QuestNaviGridUpdate();
+            }
+        }
     }
 
     public void ControllBehindCollider(bool isShow)
@@ -183,8 +195,13 @@ public class BattleFieldDetailScrollManager
         BattleFieldManager.MovePanelObjects(Currenticon.localPosition);
         MoveScrollObjects();
 
-        //Move end - Show icon Object
+        //Move end.1 - Show icon Object
         Invoke("ShowNexticonObjects",
+            (BattleFieldManager.GetInstance().fAnimationMoveSpeed + 0.05f));
+        //Move end.2 - Quest Navi Update
+        QuestNavi.Invoke("QuestNaviGridReset",
+            (BattleFieldManager.GetInstance().fAnimationMoveSpeed + 0.05f));
+        QuestNavi.Invoke("QuestNaviGridUpdate",
             (BattleFieldManager.GetInstance().fAnimationMoveSpeed + 0.05f));
     }
 
