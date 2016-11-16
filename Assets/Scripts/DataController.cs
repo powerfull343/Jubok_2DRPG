@@ -166,11 +166,11 @@ public class DataController : MonoBehaviour {
 
     public void FirstPlay()
     {
-        m_InGameData.Health = 20;
+        m_InGameData.Health = 30;
         m_InGameData.Mana = 20;
         m_InGameData.Attack = 1;
         m_InGameData.Stamina = 10;
-        m_InGameData.Money = 2000;
+        m_InGameData.Money = 1594;
 
         m_InGameData.tStat = new tagStatInfo(1, 50f, 1, 25f, 1, 80f);
         FirstSettingItems();

@@ -116,7 +116,7 @@ public class PlayerStatusController : MonoBehaviour
         if (!CompareMoney(nUpdateMoneySize))
             return false;
 
-        Debug.Log("nUpdateMoneySize : " + nUpdateMoneySize);
+        //Debug.Log("nUpdateMoneySize : " + nUpdateMoneySize);
 
         m_MoneyCtrl.UpdateMoneySize(nUpdateMoneySize);
         return true;

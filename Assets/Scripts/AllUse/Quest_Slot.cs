@@ -144,6 +144,7 @@ public class Quest_Slot : MonoBehaviour {
 
     public void WriteExpressionLabel()
     {
+        Debug.Log("UpdateLabel");
         StringBuilder builder = new StringBuilder();
         if (m_ChildQuest.QuestTargetCount < m_ChildQuest.QuestTargetMaxCount)
         {
@@ -204,6 +205,14 @@ public class Quest_Slot : MonoBehaviour {
                 break;
         }
     }
+
+    public void ResetQuestCount()
+    {
+        ChildQuest.QuestTargetCount = 0;
+        ChildQuest.QuestTargetMaxCount = Random.RandomRange(10, 20);
+        WriteExpressionLabel();
+    }
+       
 
     public bool GetClearQuestResult()
     {

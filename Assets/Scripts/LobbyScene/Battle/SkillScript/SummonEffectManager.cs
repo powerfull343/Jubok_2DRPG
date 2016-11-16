@@ -8,7 +8,6 @@ public class SummonEffectManager :
     private Dictionary<string, GameObject> m_SummonEffectDic =
         new Dictionary<string, GameObject>();
 
-
     void Awake()
     {
         CreateInstance();
@@ -52,5 +51,8 @@ public class SummonEffectManager :
         SummonEffect.transform.parent = this.transform;
     }
 
-   
+    public void DestroyAllSummonEffect()
+    {
+        this.transform.DestroyChildren();
+    }
 }

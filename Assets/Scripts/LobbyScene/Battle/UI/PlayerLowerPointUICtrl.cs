@@ -10,21 +10,28 @@ public class PlayerLowerPointUICtrl : MonoBehaviour {
     private Moveable_Object m_PlayerInfo;
     private UISprite m_HpUI;
     private int m_AtlasMaxCount;
-    
 
-    // Use this for initialization
-    void Start() {
+    void Awake() {
         m_HpUI = GetComponent<UISprite>();
         m_AtlasMaxCount = m_HpUI.atlas.spriteList.Count;
+    }
+
+    void OnEnable()
+    {
+        Invoke("StartUIAnimation", 0.05f);
+    }
+
+    void StartUIAnimation()
+    {
         m_PlayerInfo = PlayerCtrlManager.GetInstance().PlayerCtrl;
         StartCoroutine("UIAnimation");
-
         m_HpUI.spriteName = "UI34";
     }
 
     float CalcHpToAtlas()
     {
-        float fResult = (float)m_PlayerInfo.Hp / m_PlayerInfo.MaxHp;
+        float fResult = 
+            (float)m_PlayerInfo.Hp / m_PlayerInfo.MaxHp;
 
         if (fResult <= 0f)
             fResult = 0f;

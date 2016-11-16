@@ -15,7 +15,8 @@ public class AcceptQuestContainer
     void Awake()
     {
         CreateInstance();
-        m_OwnTrans = Mecro.MecroMethod.CheckGetComponent<Transform>(this.gameObject);
+        m_OwnTrans = 
+            Mecro.MecroMethod.CheckGetComponent<Transform>(this.gameObject);
         LoadAcceptQuest();
     }
 
@@ -80,11 +81,12 @@ public class AcceptQuestContainer
     public void GetAllQuestSlotToChild(Transform ParentTrans)
     {
         Quest_Slot MovingTarget = null;
-        int AccpetQuestCount = ParentTrans.childCount;
-        for (int i = 0; i < AccpetQuestCount; ++i)
+        int AcceptQuestCount = ParentTrans.childCount;
+        for (int i = 0; i < AcceptQuestCount; ++i)
         {
             MovingTarget =
                 ParentTrans.GetChild(0).GetComponent<Quest_Slot>();
+            Debug.Log(MovingTarget);
             MovingTarget.m_QuestNaviSetting = false;
             MovingTarget.ButtonComp.enabled = true;
             MovingTarget.gameObject.SetActive(false);
@@ -102,8 +104,9 @@ public class AcceptQuestContainer
             SelectedTarget.ChildQuest.QuestTargetMaxCount)
             return;
 
-        Debug.Log("Up");
+        
         ++SelectedTarget.ChildQuest.QuestTargetCount;
+        Debug.Log(SelectedTarget.ChildQuest.QuestTargetCount);
         SelectedTarget.WriteExpressionLabel();
         DataController.GetInstance().QuestSave();
 

@@ -151,6 +151,7 @@ public class Skill_PinPanel_FireBall : MonoBehaviour {
         }
         else if(other.gameObject.CompareTag("Monster"))
         {
+            Debug.Log("FireBallDam");
             Moveable_Object ObjectInfo =
                 Mecro.MecroMethod.CheckGetComponent<Moveable_Object>(other.gameObject);
 

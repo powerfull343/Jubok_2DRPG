@@ -55,6 +55,7 @@ public class Vilage_QuestManager :
 
     void OnEnable()
     {
+        Debug.Log("QuestManager_OnEnable");
         GetCurrentAcceptQuestData();
         m_NPCChating("Hello? Welcome to our vilage!");
     }
@@ -122,7 +123,7 @@ public class Vilage_QuestManager :
             Quest_Interface.CreateQuest(
                 "GermanSkeleton", FIELDID.ID_BATTLEFIELD01,
                  "it's too simple! Destroy it!",
-                0, Random.RandomRange(10, 20), 150),
+                0, 18, 150),
             Quest_Slot.SLOTTYPE.SLOT_WAIT);
         if (CreatedSlot != null)
             CreatedSlot.ChangeButtonTrans();
@@ -226,6 +227,7 @@ public class Vilage_QuestManager :
     {
         //1. UI 퀘스트 갱신
         m_SelectedQuestSlot.ChangeQuestCondition();
+        m_SelectedQuestSlot.ResetQuestCount();
 
         //2. AcceptQuestContainer에 갱신
         AcceptQuestContainer.GetInstance().RemoveChildQuestSlot(
@@ -247,6 +249,7 @@ public class Vilage_QuestManager :
         int QuestReward = m_SelectedQuestSlot.ChildQuest.QuestReward;
         //1. UI 퀘스트 갱신
         m_SelectedQuestSlot.ChangeQuestCondition();
+        m_SelectedQuestSlot.ResetQuestCount();
 
         //2. AcceptQuestContainter에 갱신
         AcceptQuestContainer.GetInstance().RemoveChildQuestSlot(
@@ -269,8 +272,9 @@ public class Vilage_QuestManager :
         //7. 실질적 데이터 저장
         DataController.GetInstance().Save();
 
-        //8. NPC 멘트 장전
-        m_NPCTalkingText.StartWriting("Good Job! i'll give " + QuestReward.ToString() + "Gold!");
+        //8. NPC 멘트
+        m_NPCTalkingText.StartWriting("Good Job!\n Rewards : " +
+            QuestReward.ToString() + " Gold!");
     }
 
     public void ResetQuestSelection()

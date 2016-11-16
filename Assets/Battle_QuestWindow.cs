@@ -59,6 +59,7 @@ public class Battle_QuestWindow : MonoBehaviour {
 
     public void ResetQuestGrid()
     {
+        Debug.Log("ResetQuestGrid");
         m_isQuestShow = false;
         AcceptQuestContainer.GetInstance().GetAllQuestSlotToChild(
             m_QuestGridPosition.transform);

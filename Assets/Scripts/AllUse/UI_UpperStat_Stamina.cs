@@ -34,9 +34,9 @@ public class UI_UpperStat_Stamina : MonoBehaviour {
 
     private void ResetStaminaPoint()
     {
-        m_StaminaAmount = PlayerCtrlManager.GetInstance().PlayerCtrl.Stamina;
+        m_StaminaAmount = 
+            PlayerCtrlManager.GetInstance().PlayerCtrl.Stamina;
         m_MaxStaminaAmount = m_StaminaAmount;
-        Debug.Log(m_StaminaAmount.ToString() + m_StaminaAmount);
         m_StaminaText.text = "Stamina : " + m_StaminaAmount;
     }
 

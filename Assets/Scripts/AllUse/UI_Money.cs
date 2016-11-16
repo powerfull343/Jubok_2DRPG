@@ -25,6 +25,7 @@ public class UI_Money : MonoBehaviour {
     {
         Mecro.MecroMethod.CheckExistComponent<UILabel>(m_MoneyText);
         m_nRenderingMoney = DataController.GetInstance().InGameData.Money;
+        Debug.Log("UI_Money OnEnable : " + m_nRenderingMoney);
         m_nRenderingResult = m_nRenderingMoney;
         m_MoneyText.text = m_nRenderingMoney.ToString();
     }
@@ -38,12 +39,6 @@ public class UI_Money : MonoBehaviour {
     public void UpdateMoneySize(int ChangeMoneySize)
     {
         m_ChangeAmount += ChangeMoneySize;
-        //int TickResult = ChangeMoneySize + BeforeMoneySize;
-
-        //Debug.Log("ChangeMoneySize : " + ChangeMoneySize);
-        //Debug.Log("BeforeMoneySize : " + BeforeMoneySize);
-        //Debug.Log("TickResult : " + TickResult);
-        //m_ResultContainer.Enqueue(TickResult);
 
         if (!m_isMoneyUpdating)
         {

@@ -13,7 +13,7 @@ public class Battle_NGUI_LowerStat : MonoBehaviour
     [SerializeField]
     private UIWidget m_BagUI;
 
-    void Start()
+    void Awake()
     {
         MecroMethod.CheckExistComponent<UIWidget>(m_HpStatus);
         MecroMethod.CheckExistComponent<UIWidget>(m_MpStatus);
@@ -34,7 +34,6 @@ public class Battle_NGUI_LowerStat : MonoBehaviour
         m_MpStatus.SetDimensions((int)(vScreen.x * 0.95f),
             (int)(vScreen.y / 2.75f));
         m_StatusBackGround.SetDimensions((int)vScreen.x, (int)(vScreen.y / 3.5f));
-
 
         float fheight = ((vScreen.y / 2f) - (m_StatusBackGround.localSize.y / 2f)) * -1f;
 

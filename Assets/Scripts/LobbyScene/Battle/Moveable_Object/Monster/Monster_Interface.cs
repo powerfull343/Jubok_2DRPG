@@ -196,16 +196,16 @@ public abstract class Monster_Interface : Moveable_Object {
     protected override void Fatal()
     {
         mAnim.SetTrigger("Die");
-
+        
         //실질적인 골드, 아이템 증가
         GetGold();
         GetItem();
-
-        Invoke("KillMonster", 0.95f);   
     }
 
-    protected virtual void KillMonster()
+    //it Use To Animator State
+    public virtual void KillMonster()
     {
+        Debug.Log("KillMonster");
         DropItemObjects();
         QuestUpdate();
         base.DeleteEventTextMsg();
@@ -226,9 +226,12 @@ public abstract class Monster_Interface : Moveable_Object {
     {
         m_GoldCount = UnityEngine.Random.Range(1, m_GoldCount);
         m_GoldAmount = UnityEngine.Random.Range(1, m_GoldAmount);
+        //Debug.Log("m_GoldCount : " + m_GoldCount);
+        //Debug.Log("m_GoldCount : " + m_GoldAmount);
 
         //Debug.Log("Real Gold before : " + DataController.GetInstance().InGameData.Money);
-        DataController.GetInstance().InGameData.Money += (m_GoldCount * m_GoldAmount);
+        DataController.GetInstance().InGameData.Money += 
+            (m_GoldCount * m_GoldAmount);
         //Debug.Log("Real Gold after : " + DataController.GetInstance().InGameData.Money);
     }
 
@@ -245,7 +248,7 @@ public abstract class Monster_Interface : Moveable_Object {
 
     protected void QuestUpdate()
     {
-        Debug.Log(m_LoadPrefabName);
+        Debug.Log(m_LoadPrefabName + " QuestUpdate");
         AcceptQuestContainer.GetInstance().UpdateQuestCount(m_LoadPrefabName);
     }
 

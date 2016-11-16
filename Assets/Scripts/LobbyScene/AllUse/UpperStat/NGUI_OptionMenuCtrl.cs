@@ -142,6 +142,10 @@ public class NGUI_OptionMenuCtrl : MonoBehaviour
             "ChangePanel"));
 
         m_GoBackVilageButton.onClick.Add(
+            new EventDelegate(SummonEffectManager.GetInstance(),
+            "DestroyAllSummonEffect"));
+
+        m_GoBackVilageButton.onClick.Add(
             new EventDelegate(PlayerCtrlManager.GetInstance(),
             "ClearBattleScenePlayerData"));
 

@@ -81,7 +81,7 @@ public abstract class Moveable_Object : MonoBehaviour {
     protected Transform mStateAnimTransform;
     protected Animator mStateAnim;
 
-
+    //Damage Font
     protected static GameObject m_LoadedEventText;
     protected Battle_NGUI_EventMsg mEventMsg;
 

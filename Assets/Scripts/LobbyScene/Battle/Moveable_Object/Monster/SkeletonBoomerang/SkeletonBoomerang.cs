@@ -93,7 +93,7 @@ public class SkeletonBoomerang : Monster_Interface
         Invoke("KillMonster", 3f);
     }
 
-    protected override void KillMonster()
+    public override void KillMonster()
     {
         if (grade >= MONSTERGRADEID.GRADE_BOSS)
             MonsterManager.GetInstance().CheckBossExist = false;
